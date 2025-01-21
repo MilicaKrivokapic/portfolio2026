@@ -10,9 +10,11 @@ export default function BlogPosts() {
   let allBlogs = getBlogPosts();
 
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">Our Blog</h1>
-      <div>
+    <section className="space-y-8">
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-light to-accent-light dark:from-primary-dark dark:to-accent-dark bg-clip-text text-transparent animate-gradient bg-300% mb-8">
+        Our Blog
+      </h1>
+      <div className="grid gap-6">
         {allBlogs
           .sort((a, b) => {
             if (
@@ -26,14 +28,14 @@ export default function BlogPosts() {
           .map((post) => (
             <Link
               key={post.slug}
-              className="flex flex-col space-y-1 mb-5 transition-opacity duration-200 hover:opacity-80"
               href={`/blog/${post.slug}`}
+              className="group p-4 rounded-xl bg-surface-light dark:bg-surface-dark hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <h2 className="text-black dark:text-white">
+              <div className="flex flex-col space-y-2">
+                <h2 className="text-xl font-semibold text-primary-light dark:text-primary-dark group-hover:text-accent-light dark:group-hover:text-accent-dark transition-colors">
                   {post.metadata.title}
                 </h2>
-                <p className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                   {formatDate(post.metadata.publishedAt, false)}
                 </p>
               </div>

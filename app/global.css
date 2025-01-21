@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-300\% {
+    background-size: 300% 300%;
+  }
+}
+
 ::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
+  background-color: #FF3366;
+  color: #FFFFFF;
 }
 
 /* Light theme colors */
@@ -36,6 +42,7 @@
 
 html {
   min-width: 360px;
+  scroll-behavior: smooth;
 }
 
 .prose {
