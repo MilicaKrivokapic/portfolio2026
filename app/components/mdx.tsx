@@ -1,7 +1,10 @@
+'use client';
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote as MDXRemoteComponent } from 'next-mdx-remote';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { highlight } from "sugar-high";
 import { TweetComponent } from "./tweet";
 import { CaptionComponent } from "./caption";
@@ -121,7 +124,7 @@ let components = {
 
 export function CustomMDX(props) {
   return (
-    <MDXRemote
+    <MDXRemoteComponent
       {...props}
       components={{ ...components, ...(props.components || {}) }}
       options={{
@@ -132,4 +135,12 @@ export function CustomMDX(props) {
       }}
     />
   );
+}
+
+interface MDXProps {
+  source: MDXRemoteSerializeResult;
+}
+
+export default function MDX({ source }: MDXProps) {
+  return <MDXRemoteComponent {...source} />;
 }

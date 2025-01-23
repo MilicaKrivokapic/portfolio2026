@@ -13,37 +13,28 @@ const iconMap = {
 };
 
 export default function Skills() {
-  const getIcon = (iconName: string) => {
-    const Icon = iconMap[iconName];
-    return Icon ? (
-      <Icon className="w-12 h-12 text-primary-light dark:text-primary-dark group-hover:text-accent-light dark:group-hover:text-accent-dark transition-colors" />
-    ) : null;
-  };
-
   return (
-    <section className="py-12">
-      <h2 className="text-4xl font-bold bg-gradient-to-r from-primary-light to-accent-light dark:from-primary-dark dark:to-accent-dark bg-clip-text text-transparent mb-8">
-        Accessibility Skills
-      </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-        {skillsData.map((skill) => (
-          <div
-            key={skill.name}
-            className="group p-6 bg-surface-light dark:bg-surface-dark rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-          >
-            <div className="flex flex-col items-center space-y-4">
-              {getIcon(skill.icon)}
-              <h3 className="text-lg font-medium">{skill.name}</h3>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div
-                  className="bg-primary-light dark:bg-primary-dark h-2.5 rounded-full transition-all duration-500 ease-out group-hover:bg-accent-light dark:group-hover:bg-accent-dark"
+    <div className="space-y-8">
+      <h2 className="text-3xl font-bold">Skills & Expertise</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skillsData.map((skill) => {
+          const Icon = iconMap[skill.icon];
+          return (
+            <div key={skill.name} className="p-4 bg-surface-light dark:bg-surface-dark rounded-lg">
+              <div className="flex items-center gap-3">
+                {Icon && <Icon className="w-5 h-5 text-accent-light dark:text-accent-dark" />}
+                <span className="font-medium">{skill.name}</span>
+              </div>
+              <div className="mt-2 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-accent-light dark:bg-accent-dark rounded-full transition-all duration-500"
                   style={{ width: `${skill.level}%` }}
                 />
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }

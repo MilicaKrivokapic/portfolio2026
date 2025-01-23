@@ -2,15 +2,15 @@ export const projectData = [
   {
     title: 'Accessibility Dashboard',
     description: 'A comprehensive dashboard for monitoring web accessibility metrics and WCAG compliance.',
-    image: '/images/projects/accessibility-dashboard.jpg',
-    link: 'https://github.com/yourusername/accessibility-dashboard',
+    image: 'https://picsum.photos/800/400',
+    link: '#',
     tags: ['Next.js', 'WCAG', 'TypeScript', 'Tailwind'],
   },
   {
     title: 'Screen Reader Plus',
     description: 'Enhanced screen reader extension with customizable shortcuts and voice commands.',
-    image: '/images/projects/screen-reader.jpg',
-    link: 'https://github.com/yourusername/screen-reader-plus',
+    image: 'https://picsum.photos/800/400?random=2',
+    link: '#',
     tags: ['JavaScript', 'ARIA', 'Chrome Extension'],
   }
 ];

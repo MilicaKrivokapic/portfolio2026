@@ -1,30 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./public/**/*.svg"],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./public/**/*.svg", './components/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
-        'primary': {
-          light: '#FFFFFF',
-          dark: '#FFFFFF'
-        },
-        'accent': {
-          light: '#FF3366',
-          dark: '#FF3366'
-        },
-        'background': {
-          light: '#000000',
-          dark: '#000000'
-        },
-        'surface': {
-          light: '#111111',
-          dark: '#111111'
-        },
-        'muted': {
-          light: '#666666',
-          dark: '#666666'
-        }
+        'background-light': '#ffffff',
+        'background-dark': '#121212',
+        'surface-light': '#f5f5f5',
+        'surface-dark': '#1e1e1e',
+        'primary-light': '#000000',
+        'primary-dark': '#ffffff',
+        'accent-light': '#FF3366',
+        'accent-dark': '#FF6B99',
+        'muted-light': '#666666',
+        'muted-dark': '#999999',
       },
       animation: {
         'gradient': 'gradient 8s linear infinite',

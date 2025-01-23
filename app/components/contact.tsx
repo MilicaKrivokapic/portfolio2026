@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { socialLinks } from '../config';
 import { socialData } from '../config/mockData';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
@@ -44,7 +45,7 @@ export default function Contact() {
           <form className="flex-1 space-y-4">
             <input
               type="text"
-              placeholder="Your Name"
+              placeholder="Milica Krivokapic"
               className="w-full p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark outline-none transition-all"
             />
             <input
@@ -64,6 +65,17 @@ export default function Contact() {
               Send Message
             </button>
           </form>
+        </div>
+        <div className="space-y-8 mt-8">
+          <p className="text-lg text-muted-light dark:text-muted-dark">
+            Feel free to reach out for collaborations or just a friendly hello
+          </p>
+          <a 
+            href={socialLinks.email}
+            className="inline-block px-6 py-3 bg-accent-light dark:bg-accent-dark text-white rounded-lg hover:opacity-90 transition-opacity"
+          >
+            Send me an email
+          </a>
         </div>
       </div>
     </section>

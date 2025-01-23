@@ -6,7 +6,6 @@ import { Navbar } from "./components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
-import { ThemeProvider } from "./components/theme-switch";
 import { metaData } from "./config";
 import ProfileSidebar from './components/profile-sidebar';
 
@@ -54,38 +53,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cx(GeistSans.variable, GeistMono.variable)}>
+    <html lang="en" className={cx(GeistSans.variable, GeistMono.variable)} suppressHydrationWarning>
       <head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          href="/rss.xml"
-          title="RSS Feed"
-        />
-        <link
-          rel="alternate"
-          type="application/atom+xml"
-          href="/atom.xml"
-          title="Atom Feed"
-        />
-        <link
-          rel="alternate"
-          type="application/feed+json"
-          href="/feed.json"
-          title="JSON Feed"
-        />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            try {
+              if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark')
+              } else {
+                document.documentElement.classList.remove('dark')
+              }
+            } catch (e) {}`
+        }} />
       </head>
       <body className="antialiased bg-background-light dark:bg-background-dark min-h-screen text-primary-light dark:text-primary-dark">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <div className="flex min-h-screen">
-            <ProfileSidebar />
-            <main className="flex-1 ml-[400px] px-20 py-20 max-w-4xl">
+        <div className="flex min-h-screen">
+          <ProfileSidebar />
+          <div className="flex-1 md:ml-[400px]">
+            <div className="md:hidden h-20"></div> {/* Spacer for mobile card */}
+            <Navbar />
+            <main className="px-4 md:px-20 py-8 md:py-20 max-w-4xl">
               {children}
             </main>
           </div>
-          <Analytics />
-          <SpeedInsights />
-        </ThemeProvider>
+        </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
