@@ -6,7 +6,6 @@ import Image from "next/image";
 import { MDXRemote as MDXRemoteComponent } from 'next-mdx-remote';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { highlight } from "sugar-high";
-import { TweetComponent } from "./tweet";
 import { CaptionComponent } from "./caption";
 import { YouTubeComponent } from "./youtube";
 import { ImageGrid } from "./image-grid";
@@ -113,7 +112,6 @@ let components = {
   Image: RoundedImage,
   ImageGrid,
   a: CustomLink,
-  StaticTweet: TweetComponent,
   Caption: CaptionComponent,
   YouTube: YouTubeComponent,
   code: Code,

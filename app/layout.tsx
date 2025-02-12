@@ -1,51 +1,12 @@
+'use client';
+
 import "./global.css";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Navbar } from "./components/nav";
+import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "./components/footer";
-import { metaData } from "./config";
+import { Navbar } from "./components/nav";
 import ProfileSidebar from './components/profile-sidebar';
-
-export const metadata: Metadata = {
-  metadataBase: new URL(metaData.baseUrl),
-  title: {
-    default: metaData.title,
-    template: `%s | ${metaData.title}`,
-  },
-  description: metaData.description,
-  openGraph: {
-    images: metaData.ogImage,
-    title: metaData.title,
-    description: metaData.description,
-    url: metaData.baseUrl,
-    siteName: metaData.name,
-    locale: "en_US",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  twitter: {
-    title: metaData.name,
-    card: "summary_large_image",
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
-
-const cx = (...classes) => classes.filter(Boolean).join(" ");
+import { LanguageProvider } from './context/language-context';
 
 export default function RootLayout({
   children,
@@ -53,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cx(GeistSans.variable, GeistMono.variable)} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -66,19 +27,23 @@ export default function RootLayout({
             } catch (e) {}`
         }} />
       </head>
-      <body className="antialiased bg-background-light dark:bg-background-dark min-h-screen text-primary-light dark:text-primary-dark">
-        <div className="flex min-h-screen">
-          <ProfileSidebar />
-          <div className="flex-1 md:ml-[400px]">
-            <div className="md:hidden h-20"></div> {/* Spacer for mobile card */}
-            <Navbar />
-            <main className="px-4 md:px-20 py-8 md:py-20 max-w-4xl">
-              {children}
-            </main>
-          </div>
-        </div>
-        <Analytics />
-        <SpeedInsights />
+      <body className="antialiased bg-background-light dark:bg-background-dark min-h-screen text-primary-light dark:text-primary-dark font-sans">
+        <ThemeProvider>
+          <LanguageProvider>
+            <div className="flex min-h-screen">
+              <ProfileSidebar />
+              <div className="flex-1 md:ml-[400px]">
+                <div className="md:hidden h-20"></div> {/* Spacer for mobile card */}
+                <Navbar />
+                <main className="px-4 md:px-20 py-8 md:py-20 max-w-4xl">
+                  {children}
+                </main>
+              </div>
+            </div>
+            <Analytics />
+            <SpeedInsights />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

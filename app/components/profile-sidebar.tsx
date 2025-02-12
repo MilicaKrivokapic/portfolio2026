@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { socialData } from '../config/mockData';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { IconType } from 'react-icons';
+import { useLanguage } from '../context/language-context';
 
 interface IconMap {
   [key: string]: IconType;
@@ -11,11 +12,11 @@ interface IconMap {
 
 const iconMap: IconMap = {
   FaGithub,
-  FaLinkedin,
-  FaTwitter
+  FaLinkedin
 };
 
 export default function ProfileSidebar() {
+  const { t } = useLanguage();
   const getIcon = (iconName: string) => {
     const Icon = iconMap[iconName];
     return Icon ? <Icon size={20} /> : null;
@@ -39,7 +40,7 @@ export default function ProfileSidebar() {
           <div>
             <h1 className="text-lg font-bold">Milica Krivokapic</h1>
             <p className="text-sm text-muted-light dark:text-muted-dark">
-              Accessibility Engineer
+              {t('sidebar.role')}
             </p>
           </div>
         </div>
@@ -60,7 +61,7 @@ export default function ProfileSidebar() {
           </div>
           <h1 className="text-2xl font-bold">MILICA KRIVOKAPIC</h1>
           <p className="text-muted-light dark:text-muted-dark text-center">
-            Accessibility Engineer & Web Developer
+            {t('sidebar.role')}
           </p>
         </div>
 
@@ -69,7 +70,7 @@ export default function ProfileSidebar() {
             {['about', 'experience', 'projects', 'contact'].map((item) => (
               <li key={item}>
                 <a href={`#${item}`} className="text-lg hover:text-accent-light dark:hover:text-accent-dark transition-colors capitalize">
-                  {item}
+                  {t(`sidebar.${item}`)}
                 </a>
               </li>
             ))}

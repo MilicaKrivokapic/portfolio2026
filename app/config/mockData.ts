@@ -26,6 +26,5 @@ export const skillsData = [
 
 export const socialData = [
   { name: 'GitHub', url: 'https://github.com/yourusername', icon: 'FaGithub' },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: 'FaLinkedin' },
-  { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: 'FaTwitter' }
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: 'FaLinkedin' }
 ];
