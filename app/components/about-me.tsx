@@ -47,7 +47,7 @@ export default function AboutMe() {
 
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="mt-4 text-accent-light dark:text-accent-dark hover:underline focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark rounded-md px-2 py-1"
+        className="mt-4 text-primary-light dark:text-primary-dark border border-accent-light dark:border-accent-dark hover:bg-accent-light/10 dark:hover:bg-accent-dark/10 transition-all focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark rounded-md px-3 py-1.5"
       >
         {isExpanded ? 'Read less' : 'Read more'}
       </button>

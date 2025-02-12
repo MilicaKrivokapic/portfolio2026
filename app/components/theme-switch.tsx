@@ -22,10 +22,14 @@ export function ThemeSwitch() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="w-8 h-8 flex items-center justify-center"
+      className="p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all group focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-500"
       aria-label="Toggle theme"
     >
-      {isDark ? <FiSun size={20} /> : <FiMoon size={20} />}
+      {isDark ? (
+        <FiSun className="w-5 h-5 md:w-4 md:h-4 text-white/80 group-hover:text-white transition-colors" />
+      ) : (
+        <FiMoon className="w-5 h-5 md:w-4 md:h-4 text-black/80 group-hover:text-black transition-colors" />
+      )}
     </button>
   );
 }
