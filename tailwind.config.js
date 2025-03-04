@@ -17,8 +17,10 @@ module.exports = {
         'primary-dark': '#D4D4D4',
         'muted-light': '#666666',
         'muted-dark': '#A0A0A0',
-        'accent-light': '#FF3366',
-        'accent-dark': '#FF6B99',
+        accent: {
+          light: '#FF3366',
+          dark: '#FF6B99',
+        }
       },
     },
   },

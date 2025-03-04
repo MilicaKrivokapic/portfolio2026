@@ -36,6 +36,9 @@ export const translations = {
       projects: 'Projects',
       contact: 'Contact'
     },
+    recommendations: {
+      title: 'What people say about me',
+    },
   },
   fi: {
     nav: {
@@ -68,11 +71,14 @@ export const translations = {
       title: 'Taidot & Osaaminen',
     },
     sidebar: {
-      role: 'Saavutettavuusasiantuntija & Web-kehittäjä',
+      role: 'Saavutettavuusasintoilija & web-kehittäjä',
       about: 'Minusta',
       experience: 'Kokemus',
       projects: 'Projektit',
       contact: 'Yhteystiedot'
+    },
+    recommendations: {
+      title: 'Mitä muut sanovat minusta',
     },
   },
 };

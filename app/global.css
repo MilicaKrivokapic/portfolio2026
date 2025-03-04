@@ -24,6 +24,7 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+  --icon-color: theme('colors.accent.light');
 }
 
 /* Dark theme colors */
@@ -38,6 +39,7 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+  --icon-color: theme('colors.accent.dark');
 }
 
 html {
@@ -157,4 +159,14 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+/* SVG styles */
+.fill-current {
+  fill: currentColor;
+}
+
+svg {
+  display: block;
+  vertical-align: middle;
 }

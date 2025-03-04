@@ -4,8 +4,9 @@ import { socialLinks } from '../config';
 import { socialData } from '../config/mockData';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import { useLanguage } from '../context/language-context';
+import type { IconType } from 'react-icons';
 
-const iconMap = {
+const iconMap: Record<string, IconType> = {
   FaGithub,
   FaLinkedin,
   FaTwitter,
