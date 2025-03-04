@@ -34,7 +34,7 @@ export interface Recommendation {
   role: string;
   email: string;
   text: string;
-  icon: 'panda-bear' | 'seahorse' | 'elephant';
+  icon: 'panda-bear' | 'seahorse' | 'hedgehog' |'elephant';
 }
 
 export interface MultilingualRecommendation extends Omit<Recommendation, 'text'> {
@@ -83,6 +83,6 @@ export const recommendationsData: MultilingualRecommendation[] = [
       en: 'A truly pleasant person who not only wants to do her job well but also ensures her colleagues are doing well. She\'s the voice of reason in the workplace who tries to keep things on track before they even start to derail.',
       fi: 'Todella miellyttävä ihminen joka haluaa paitsi tehdä työnsä hyvin, huolehtia myös että hänen työkaverinsa voivat hyvin. Työpaikan järjen ääni joka pyrkii palauttamaan asiat raiteilleen jo ennen kun ne lähtevät sivuluisuun..'
     },
-    icon: 'panda-bear'
+    icon: 'hedgehog'
   }
 ];
