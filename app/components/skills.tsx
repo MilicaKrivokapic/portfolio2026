@@ -14,26 +14,23 @@ const iconMap = {
 };
 
 export default function Skills() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <h2 className="text-3xl font-bold">{t('skills.title')}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-12">
         {skillsData.map((skill) => {
-          const Icon = iconMap[skill.icon];
+          const Icon = iconMap[skill.icon as keyof typeof iconMap];
           return (
-            <div key={skill.name} className="p-4 bg-surface-light dark:bg-surface-dark rounded-lg">
+            <div key={skill.name[language]} className="space-y-4">
               <div className="flex items-center gap-3">
-                {Icon && <Icon className="w-5 h-5 text-accent-light dark:text-accent-dark" />}
-                <span className="font-medium">{skill.name}</span>
+                {Icon && <Icon className="w-6 h-6 text-accent-light dark:text-accent-dark" />}
+                <h3 className="text-xl font-semibold">{skill.name[language]}</h3>
               </div>
-              <div className="mt-2 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-accent-light dark:bg-accent-dark rounded-full transition-all duration-500"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
+              <p className="text-muted-light dark:text-muted-dark leading-relaxed max-w-prose">
+                {skill.description[language]}
+              </p>
             </div>
           );
         })}
