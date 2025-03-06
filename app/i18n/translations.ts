@@ -30,9 +30,9 @@ export const translations = {
       title: 'Skills & Expertise',
     },
     sidebar: {
-      role: 'Accessibility Engineer & Web Developer',
+      role: 'Accessibility Enthuastic & Web Developer',
       about: 'About',
-      experience: 'Experience',
+      experience: 'Skills & Expertise',
       projects: 'Projects',
       contact: 'Contact'
     },
@@ -73,7 +73,7 @@ export const translations = {
     sidebar: {
       role: 'Saavutettavuusasintoilija & web-kehittäjä',
       about: 'Minusta',
-      experience: 'Kokemus',
+      experience: 'Taidot & osaaminen',
       projects: 'Projektit',
       contact: 'Yhteystiedot'
     },
