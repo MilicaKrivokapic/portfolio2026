@@ -60,7 +60,7 @@ export const recommendationsData: MultilingualRecommendation[] = [
     role: 'Developer',
     email: 'mailto:aaro.paukkunen@woolman.io',
     text: {
-      en: 'Milica is precise and conscientious, and values an open atmosphere and clear communication. Plus, she\'s absolutely fantastic company! (You should hire her, right away)',
+      en: 'Milica is precise and thoughtful, and values an open atmosphere and clear communication. Plus, she\'s absolutely fantastic company!',
       fi: 'Milica on tarkka ja tunnollinen, ja arvostaa avointa ilmapiiriä ja selkeää kommunikaatiota. Lisäksi vielä mainiota seuraa, jestas!'
     },
     icon: 'elephant'
@@ -70,17 +70,17 @@ export const recommendationsData: MultilingualRecommendation[] = [
     role: 'Theme Developer',
     email: 'mailto: rosemari.marttinen-lahtinen@woolman.io',
     text: {
-      en: 'As a colleague, Milica is curious, systematic, and responsible. Communication and collaboration with her are clear and straightforward. She knows when to ask for help but also how to guide others and voice her own thoughts. Milica can see the big picture and considers perspectives that others might easily miss. She is considerate towards others and has an inspiring effect on the work atmosphere.',
+      en: 'As a colleague, Milica is curious, systematic, and responsible. Communication and collaboration with her are always clear and straightforward. She knows when to ask for help, but also how to guide others and express her own thoughts. Milica has a strong ability to see the big picture and considers perspectives that others might easily overlook. She is thoughtful towards her colleagues and has an inspiring impact on the work atmosphere.',
       fi: 'Milica on työkaverina utelias, järjestelmällinen ja vastuullinen. Hänen kanssaan on selkeää kommunikoida ja työskennellä. Tarvittaessa hän osaa kysyä apua, mutta myös neuvoa muita sekä tuoda omat ajatuksensa esille. Milica osaa ajatella asioita kokonaisuuksina ja huomioida myös näkokulmia, mitkä saattaisivat muilta jäädä helposti huomaamatta. Muita kohtaan hän on huomaavainen ja hänellä on työilmapiiriään innostava vaikutus.'
     },
     icon: 'panda-bear'
   },
   {
     name: 'Jani Sompi',
-    role: 'Shopify Expert, developer',
+    role: 'Shopify Expert, Developer',
     email: 'jani.sompi@woolman.io',
     text: {
-      en: 'A truly pleasant person who not only wants to do her job well but also ensures her colleagues are doing well. She\'s the voice of reason in the workplace who tries to keep things on track before they even start to derail.',
+      en: 'A genuinely pleasant person who not only takes pride in doing her job well but also cares about the well-being of her colleagues. She’s the voice of reason in the workplace, always keeping things on track before they even have a chance to go off course.',
       fi: 'Todella miellyttävä ihminen joka haluaa paitsi tehdä työnsä hyvin, huolehtia myös että hänen työkaverinsa voivat hyvin. Työpaikan järjen ääni joka pyrkii palauttamaan asiat raiteilleen jo ennen kun ne lähtevät sivuluisuun..'
     },
     icon: 'hedgehog'
