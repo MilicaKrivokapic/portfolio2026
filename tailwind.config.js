@@ -8,6 +8,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif'],
+        heading: ['var(--font-syne)', 'sans-serif'],
+      },
       colors: {
         'background-light': '#FFFFFF',
         'background-dark': '#121212',

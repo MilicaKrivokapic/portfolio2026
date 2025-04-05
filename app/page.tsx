@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="space-y-32">
       <section id="about" className="space-y-8">
-        <h2 className="text-7xl font-bold">
+        <h2 className="text-7xl font-bold font-heading">
           Building accessible
           <span className="text-accent-light"> digital experiences</span>
         </h2>
