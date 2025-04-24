@@ -7,6 +7,12 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Kattokomppania",
+    year: 2025,
+    description: "Digital transformation for roofing services",
+    url: "/projects/kattokomppania",
+  },
+  {
     title: "Mithril AI",
     year: 2024,
     description: "Open science AI resarch lab",
