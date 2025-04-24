@@ -1,10 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { socialData } from '../config/mockData';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 import { useLanguage } from '../context/language-context';
+import { useActiveSection } from '../hooks/useActiveSection';
 
 interface IconMap {
   [key: string]: IconType;
@@ -17,10 +20,34 @@ const iconMap: IconMap = {
 
 export default function ProfileSidebar() {
   const { t } = useLanguage();
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  const sectionIds = ['about', 'experience', 'projects', 'recommendations', 'contact'];
+  const activeSection = useActiveSection(sectionIds);
+
   const getIcon = (iconName: string) => {
     const Icon = iconMap[iconName];
     return Icon ? <Icon size={20} /> : null;
   };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    if (!isHome) {
+      // Don't prevent default if we're navigating to home page
+      return;
+    }
+    
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navItems = sectionIds.map((item) => ({
+    id: item,
+    label: t(`sidebar.${item}`),
+    href: isHome ? `#${item}` : `/#${item}`
+  }));
 
   return (
     <>
@@ -67,11 +94,23 @@ export default function ProfileSidebar() {
 
         <nav className="mt-12">
           <ul className="space-y-4">
-            {['about', 'experience', 'projects', 'contact'].map((item) => (
-              <li key={item}>
-                <a href={`#${item}`} className="text-lg hover:text-accent-light dark:hover:text-accent-dark transition-colors capitalize">
-                  {t(`sidebar.${item}`)}
-                </a>
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <Link
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  className={`text-lg block relative py-1
+                    after:content-[''] after:absolute after:left-0 after:bottom-0 after:right-0 
+                    after:h-[2px] after:bg-accent-light dark:after:bg-accent-dark
+                    after:origin-left after:transition-transform after:duration-300
+                    ${activeSection === item.id ? 
+                      'after:scale-x-100' : 
+                      'after:scale-x-0 hover:after:scale-x-100'
+                    }
+                  `}
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>

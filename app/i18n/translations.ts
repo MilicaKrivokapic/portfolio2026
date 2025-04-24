@@ -34,6 +34,7 @@ export const translations = {
       about: 'About',
       experience: 'Skills & Expertise',
       projects: 'Projects',
+      recommendations: 'Recommendations',
       contact: 'Contact'
     },
     recommendations: {
@@ -75,6 +76,7 @@ export const translations = {
       about: 'Minusta',
       experience: 'Taidot & osaaminen',
       projects: 'Projektit',
+      recommendations: 'Suositukset',
       contact: 'Yhteystiedot'
     },
     recommendations: {

@@ -24,7 +24,7 @@ export default function Projects() {
               key={index}
               className="group relative flex flex-col md:flex-row gap-8 items-center"
             >
-              <div className="w-full md:w-2/3 aspect-video relative overflow-hidden rounded-xl">
+              <div key="image" className="w-full md:w-2/3 aspect-video relative overflow-hidden rounded-xl">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -32,7 +32,7 @@ export default function Projects() {
                   className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="w-full md:w-1/3 space-y-4">
+              <div key="content" className="w-full md:w-1/3 space-y-4">
                 <h3 className="text-2xl font-bold">{project.title}</h3>
                 <p className="text-neutral-600 dark:text-neutral-400">
                   {project.description}
