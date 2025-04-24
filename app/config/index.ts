@@ -1,7 +1,8 @@
 export const metaData = {
-  title: "Your Portfolio",
-  name: "Your Name",
-  description: "Accessibility Engineer & Web Developer Portfolio",
+  title: "Milica's Portfolio",
+  name: "Milica Krivokapic",
+  role: "Accessibility Engineer & UI Web Developer",
+  description: "I am a passionate accessibility engineer and UI web developer with a focus on creating inclusive digital experiences.",
   baseUrl: "http://localhost:3000",
   ogImage: "/og-image.png",
 };

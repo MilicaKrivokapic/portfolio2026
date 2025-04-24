@@ -30,7 +30,7 @@ export const translations = {
       title: 'Skills & Expertise',
     },
     sidebar: {
-      role: 'Accessibility Enthuastic & Web Developer',
+      role: 'Accessibility Enthuastic & UI Web Developer',
       about: 'About',
       experience: 'Skills & Expertise',
       projects: 'Projects',
