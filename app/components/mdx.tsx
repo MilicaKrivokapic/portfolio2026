@@ -1,5 +1,3 @@
-'use client';
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,12 +7,10 @@ import { highlight } from "sugar-high";
 import { CaptionComponent } from "./caption";
 import { YouTubeComponent } from "./youtube";
 import { ImageGrid } from "./image-grid";
-import rehypeKatex from "rehype-katex";
-import remarkMath from "remark-math";
 import "katex/dist/katex.min.css";
 
-function CustomLink(props) {
-  let href = props.href;
+function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const { href = '#' } = props; // Provide a default value
   if (href.startsWith("/")) {
     return (
       <Link href={href} {...props}>
@@ -33,8 +29,24 @@ function RoundedImage(props) {
 }
 
 function Code({ children, ...props }) {
-  let codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+  const highlightedCode = highlight(children);
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(highlightedCode, 'text/html');
+  const spans = Array.from(doc.body.children);
+  
+  return (
+    <code {...props}>
+      {spans.map((span, i) => (
+        <span 
+          key={i} 
+          style={{ color: span.style.color }}
+          className={span.className}
+        >
+          {span.textContent}
+        </span>
+      ))}
+    </code>
+  );
 }
 
 function Table({ data }) {
@@ -127,8 +139,7 @@ export function CustomMDX(props) {
       components={{ ...components, ...(props.components || {}) }}
       options={{
         mdxOptions: {
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
+          
         },
       }}
     />

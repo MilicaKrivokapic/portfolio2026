@@ -7,11 +7,11 @@ export const projectData = [
     tags: ['Next.js', 'WCAG', 'TypeScript', 'Tailwind'],
   },
   {
-    title: 'Screen Reader Plus',
-    description: 'Enhanced screen reader extension with customizable shortcuts and voice commands.',
+    title: 'Kattokomppania website',
+    description: 'A website for a Finnish company spealising on roofs maintanance and repairs.',
     image: 'https://picsum.photos/800/400?random=2',
     link: '#',
-    tags: ['JavaScript', 'ARIA', 'Chrome Extension'],
+    tags: ['UX', 'Squarespace', 'UI'],
   }
 ];
 

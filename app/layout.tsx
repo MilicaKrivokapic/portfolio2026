@@ -30,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${syne.variable} ${inter.variable} antialiased bg-background-light dark:bg-background-dark min-h-screen text-primary-light dark:text-primary-dark font-sans`}>
+      <body className={`${syne.variable} ${inter.variable} antialiased bg-background-light dark:bg-background-dark min-h-screen text-primary-light dark:text-primary-dark font-sans prose-h1:font-heading prose-h2:font-heading`}>
         <script dangerouslySetInnerHTML={{
           __html: `
             try {
