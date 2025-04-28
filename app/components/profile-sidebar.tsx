@@ -5,17 +5,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { socialData } from '../config/mockData';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { TbMailFilled } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 import { useLanguage } from '../context/language-context';
 import { useActiveSection } from '../hooks/useActiveSection';
 
-interface IconMap {
-  [key: string]: IconType;
-}
-
-const iconMap: IconMap = {
+const iconMap: Record<string, IconType> = {
   FaGithub,
-  FaLinkedin
+  FaLinkedin,
+  TbMailFilled
 };
 
 export default function ProfileSidebar() {
@@ -56,7 +54,7 @@ export default function ProfileSidebar() {
         <div className="flex items-center space-x-4">
           <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
             <Image
-              src="https://picsum.photos/400"
+              src="/profile.png"
               alt="Profile picture"
               width={48}
               height={48}
@@ -78,7 +76,7 @@ export default function ProfileSidebar() {
         <div className="flex flex-col items-center space-y-4">
           <div className="relative w-40 h-40 rounded-full overflow-hidden bg-gray-200">
             <Image
-              src="https://picsum.photos/400"
+              src="/profile.png"
               alt="Profile picture"
               width={160}
               height={160}

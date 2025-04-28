@@ -170,3 +170,14 @@ svg {
   display: block;
   vertical-align: middle;
 }
+
+/* reCAPTCHA Badge Styling */
+.grecaptcha-badge {
+  z-index: 50 !important;
+}
+
+/* Ensure form elements stay above sidebar */
+.form-layer {
+  position: relative;
+  z-index: 5;
+}

@@ -23,8 +23,11 @@ export const translations = {
       email: 'Your Email',
       message: 'Your Message',
       send: 'Send Message',
+      sending: 'Sending...',
       reachOut: 'Feel free to reach out for collaborations or just a friendly hello',
       sendEmail: 'Send me an email',
+      successMessage: 'Thank you! Your message has been sent successfully.',
+      errorMessage: 'Sorry, there was an error sending your message. Please try again.',
     },
     skills: {
       title: 'Skills & Expertise',
@@ -65,8 +68,11 @@ export const translations = {
       email: 'Sähköpostisi',
       message: 'Viestisi',
       send: 'Lähetä viesti',
+      sending: 'Lähetetään...',
       reachOut: 'Ota yhteyttä yhteistyön merkeissä tai vain sanoaksesi hei',
       sendEmail: 'Lähetä sähköpostia',
+      successMessage: 'Kiitos! Viestisi on lähetetty onnistuneesti.',
+      errorMessage: 'Pahoittelut, viestin lähetyksessä tapahtui virhe. Yritä uudelleen.',
     },
     skills: {
       title: 'Taidot & Osaaminen',

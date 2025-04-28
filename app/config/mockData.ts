@@ -97,8 +97,9 @@ export const skillsData: MultilingualSkill[] = [
 ];
 
 export const socialData = [
-  { name: 'GitHub', url: 'https://github.com/yourusername', icon: 'FaGithub' },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: 'FaLinkedin' }
+  { name: 'GitHub', url: 'https://github.com/1msirius/Nextfolio', icon: 'FaGithub' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/', icon: 'FaLinkedin' },
+  { name: 'Email', url: 'mailto:Milica.portfolio@proton.me', icon: 'TbMailFilled' }
 ];
 
 export interface Recommendation {

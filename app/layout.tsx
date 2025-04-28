@@ -1,24 +1,27 @@
 import "./global.css";
+import type { Metadata } from "next";
+import { Inter, Syne } from 'next/font/google';
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Navbar } from "./components/nav";
+import Footer from "./components/footer";
 import ProfileSidebar from './components/profile-sidebar';
 import { LanguageProvider } from './context/language-context';
-import { Syne, Inter } from 'next/font/google'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 const syne = Syne({
   subsets: ['latin'],
   variable: '--font-syne',
   display: 'swap',
-})
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
+});
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Milica Krivokapic | Portfolio",
   description: "Milica Krivokapic's portfolio website",
 }
@@ -29,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${syne.variable} ${inter.variable} antialiased bg-background-light dark:bg-background-dark min-h-screen text-primary-light dark:text-primary-dark font-sans prose-h1:font-heading prose-h2:font-heading`}>
+    <html lang="en" className={`${inter.variable} ${syne.variable}`}>
+      <head>
         <script dangerouslySetInnerHTML={{
           __html: `
             try {
@@ -41,20 +44,25 @@ export default function RootLayout({
               }
             } catch (e) {}`
         }} />
-        <ThemeProvider>
+      </head>
+      <body className="antialiased font-sans bg-background-light dark:bg-background-dark text-primary-light dark:text-primary-dark">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <LanguageProvider>
-            <div className="flex min-h-screen">
+            <div className="min-h-screen">
               <ProfileSidebar />
-              <div className="flex-1 md:ml-[400px]">
-                <div className="md:hidden h-20"/> {/* Spacer for mobile card */}
+              <main className="md:ml-[400px]">
                 <Navbar />
-                <main className="px-4 md:px-20 py-8 md:py-20 max-w-4xl">
-                  {children}
-                </main>
-              </div>
+                {children}
+                <Footer />
+              </main>
+              <Analytics />
+              <SpeedInsights />
             </div>
-            <Analytics />
-            <SpeedInsights />
           </LanguageProvider>
         </ThemeProvider>
       </body>

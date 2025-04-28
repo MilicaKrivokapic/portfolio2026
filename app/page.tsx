@@ -6,11 +6,11 @@ import Recommendations from './components/recommendations';
 
 export default function Home() {
   return (
-    <div className="space-y-32">
+    <div className="px-6 py-12 md:py-24 space-y-32 max-w-4xl mx-auto">
       <section id="about" className="space-y-8">
-        <h2 className="text-7xl font-bold font-heading">
+        <h2 className="text-4xl md:text-7xl font-bold font-heading">
           Building accessible
-          <span className="text-accent-light"> digital experiences</span>
+          <span className="text-accent-light dark:text-accent-dark"> digital experiences</span>
         </h2>
         <AboutMe />
       </section>
