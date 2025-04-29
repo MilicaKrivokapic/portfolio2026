@@ -28,6 +28,9 @@ export const translations = {
       sendEmail: 'Send me an email',
       successMessage: 'Thank you! Your message has been sent successfully.',
       errorMessage: 'Sorry, there was an error sending your message. Please try again.',
+      namePlaceholder: 'Enter your name',
+      emailPlaceholder: 'Enter your email address',
+      messagePlaceholder: 'Write your message here...'
     },
     skills: {
       title: 'Skills & Expertise',
@@ -73,6 +76,9 @@ export const translations = {
       sendEmail: 'Lähetä sähköpostia',
       successMessage: 'Kiitos! Viestisi on lähetetty onnistuneesti.',
       errorMessage: 'Pahoittelut, viestin lähetyksessä tapahtui virhe. Yritä uudelleen.',
+      namePlaceholder: 'Kirjoita nimesi',
+      emailPlaceholder: 'Kirjoita sähköpostiosoitteesi',
+      messagePlaceholder: 'Kirjoita viestisi tähän...'
     },
     skills: {
       title: 'Taidot & Osaaminen',
