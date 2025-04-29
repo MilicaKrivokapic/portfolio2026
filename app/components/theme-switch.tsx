@@ -22,7 +22,7 @@ export function ThemeSwitch() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all group focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-500"
+      className="p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all group focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark"
       aria-label="Toggle theme"
     >
       {isDark ? (

@@ -161,7 +161,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-accent-light to-primary-light dark:from-accent-dark dark:to-primary-dark text-white py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark"
+              className="w-full px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] shadow-accent-light/40 dark:shadow-accent-dark shadow-[0_0_12px_rgba(255,51,102,0.4)] hover:shadow-[0_0_8px_rgba(255,51,102,0.4)] dark:hover:shadow-[0_0_8px_rgba(249,58,106,0.6)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-white dark:disabled:hover:bg-neutral-900 disabled:hover:shadow-[0_0_12px_rgba(255,51,102,0.4)]"
             >
               {isSubmitting ? t('contact.sending') : t('contact.send')}
             </button>
@@ -187,7 +187,7 @@ export default function Contact() {
           </p>
           <a 
             href={socialLinks.email}
-            className="inline-block px-8 py-3 bg-background-light dark:bg-background-dark text-accent-light dark:text-accent-dark border-2 border-accent-light dark:border-accent-dark rounded-lg hover:bg-accent-light dark:hover:bg-accent-dark hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark"
+            className="inline-block px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] shadow-accent-light/40 dark:shadow-accent-dark shadow-[0_0_12px_rgba(255,51,102,0.4)] hover:shadow-[0_0_8px_rgba(255,51,102,0.4)] dark:hover:shadow-[0_0_8px_rgba(249,58,106,0.6)]"
           >
             {t('contact.sendEmail')}
           </a>

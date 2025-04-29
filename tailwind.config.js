@@ -23,7 +23,7 @@ module.exports = {
         'muted-dark': '#A0A0A0',
         accent: {
           light: '#FF3366',
-          dark: '#FF6B99',
+          dark: '#F93A6AFF',
         }
       },
     },
