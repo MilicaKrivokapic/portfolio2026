@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { MDXRemote as MDXRemoteComponent } from 'next-mdx-remote';
+import Image, { ImageProps } from "next/image";
+import { MDXRemote } from 'next-mdx-remote';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { highlight } from "sugar-high";
 import { CaptionComponent } from "./caption";
@@ -10,7 +10,7 @@ import { ImageGrid } from "./image-grid";
 import "katex/dist/katex.min.css";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
-  const { href = '#' } = props; // Provide a default value
+  const { href = '#' } = props;
   if (href.startsWith("/")) {
     return (
       <Link href={href} {...props}>
@@ -24,57 +24,44 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+function RoundedImage(props: ImageProps) {
+  return <Image className="rounded-lg" {...props} />;
 }
 
-function Code({ children, ...props }) {
-  const highlightedCode = highlight(children);
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(highlightedCode, 'text/html');
-  const spans = Array.from(doc.body.children);
-  
+interface CodeProps {
+  children: string;
+  [key: string]: any;
+}
+
+function Code({ children, ...props }: CodeProps) {
+  const codeHTML = highlight(children);
   return (
-    <code {...props}>
-      {spans.map((span, i) => (
-        <span 
-          key={i} 
-          style={{ color: span.style.color }}
-          className={span.className}
-        >
-          {span.textContent}
-        </span>
-      ))}
-    </code>
+    <code {...props} dangerouslySetInnerHTML={{ __html: codeHTML }} />
   );
 }
 
-function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
-  let rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ));
+function Table({ children, ...props }: React.TableHTMLAttributes<HTMLTableElement>) {
   return (
-    <table>
-      <thead>
-        <tr className="text-left">{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
+    <table className="border-collapse border w-full my-4" {...props}>
+      {children}
     </table>
   );
 }
 
-function Strikethrough(props) {
-  return <del {...props} />;
+interface StrikethroughProps {
+  children: React.ReactNode;
 }
 
-function Callout(props) {
+function Strikethrough(props: StrikethroughProps) {
+  return <del>{props.children}</del>;
+}
+
+interface CalloutProps {
+  emoji: React.ReactNode;
+  children: React.ReactNode;
+}
+
+function Callout(props: CalloutProps) {
   return (
     <div className="px-4 py-3 bg-[#F7F7F7] dark:bg-[#181818] rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
@@ -83,7 +70,7 @@ function Callout(props) {
   );
 }
 
-function slugify(str) {
+function slugify(str: string) {
   return str
     .toString()
     .toLowerCase()
@@ -94,62 +81,54 @@ function slugify(str) {
     .replace(/\-\-+/g, "-");
 }
 
-function createHeading(level) {
-  const Heading = ({ children }) => {
-    let slug = slugify(children);
-    return React.createElement(
-      `h${level}`,
-      { id: slug },
-      [
-        React.createElement("a", {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: "anchor",
-        }),
-      ],
-      children
+function createHeading(level: number) {
+  interface HeadingProps {
+    children: React.ReactNode;
+  }
+  
+  const Heading = ({ children }: HeadingProps) => {
+    const slug = slugify(children as string);
+    const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+
+    return (
+      <Tag id={slug}>
+        <a href={`#${slug}`} className="anchor">
+          #
+        </a>
+        {children}
+      </Tag>
     );
   };
-  Heading.displayName = `Heading${level}`;
+
   return Heading;
 }
 
-let components = {
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
-  Image: RoundedImage,
-  ImageGrid,
   a: CustomLink,
-  Caption: CaptionComponent,
-  YouTube: YouTubeComponent,
-  code: Code,
-  Table,
+  Image: RoundedImage,
+  pre: Code,
+  table: Table,
   del: Strikethrough,
   Callout,
-};
+  Caption: CaptionComponent,
+  YouTube: YouTubeComponent,
+  ImageGrid,
+} as const;
 
-export function CustomMDX(props) {
-  return (
-    <MDXRemoteComponent
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-      options={{
-        mdxOptions: {
-          
-        },
-      }}
-    />
-  );
-}
-
-interface MDXProps {
+interface CustomMDXProps {
   source: MDXRemoteSerializeResult;
 }
 
-export default function MDX({ source }: MDXProps) {
-  return <MDXRemoteComponent {...source} />;
+export function CustomMDX(props: CustomMDXProps) {
+  return (
+    <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+      <MDXRemote {...props.source} components={components} />
+    </article>
+  );
 }
