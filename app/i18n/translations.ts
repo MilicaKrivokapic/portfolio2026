@@ -46,6 +46,10 @@ export const translations = {
     recommendations: {
       title: 'What people say about me',
     },
+    projects: {
+      featuredWork: 'Featured Work',
+      seeProject: 'See Project'
+    }
   },
   fi: {
     nav: {
@@ -94,6 +98,10 @@ export const translations = {
     recommendations: {
       title: 'Mitä muut sanovat minusta',
     },
+    projects: {
+      featuredWork: 'Merkittävät työt',
+      seeProject: 'Katso projekti'
+    }
   },
 };
 
