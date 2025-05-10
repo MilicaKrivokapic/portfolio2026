@@ -14,34 +14,30 @@ export default function KattokomppaniaProject() {
       subtitle: "A comprehensive website redesign project for a Finnish roofing company, focusing on improving user experience and digital presence.",
       overview: {
         title: "Project Overview",
-        text: "Kattokomppania needed a modern, user-friendly website that would effectively showcase their roofing services and make it easy for potential customers to request quotes. The project involved a complete redesign of their digital presence, with a focus on user experience and conversion optimization."
+        text: "Kattokomppania needed a new look for their website. The goal was to create a modern and user-friendly site considering their customer segment that would effectively showcase their services and make it easier for potential customers to get in touch. I created an initial design for the project, which can be viewed here (link). We spent a long time with Kattokomppania considering suitable platforms and technology, as they wanted a CMS that would allow them to modify content easily and quickly without having to touch the code. We ultimately decided to stick with Squarespace, as the client was already familiar with the platform, their previous site was also on Squarespace. After the visual design phase, I got to work and built the site following my designed style. However, I had to be quite flexible with the original design, as Squarespace wasn't nearly as flexible or 'open' in the way that Shopify or WordPress, which I'm familiar with, are. Injecting CSS into the pages was sometimes challenging because you had to find exactly the right selectors. The HTML produced by Squarespace often doesn't seem logical to me, and many of the so-called ready-made components used non-semantic solutions (e.g., heading hierarchies used only graphically, but forgetting that it's not quite conventional to ignore accessibility and SEO in heading hierarchies). SVGs caused the most headaches, as they had to be added by injecting CSS because adding them normally didn't work, the format had to be changed to BASE64. I'm still a bit worried about the site's accessibility, but at least graphically I've tried my best with the site! I think the site became more functional and clearer than the previous version."
       },
       features: {
         title: "Key Features",
         list: [
-          "Responsive design optimized for all device sizes",
+          "Visual refresh and user-friendliness",
           "Streamlined quote request process",
-          "Portfolio showcase of completed roofing projects",
-          "Service area map integration",
-          "Customer testimonials section",
-          "Bilingual support (Finnish/English)"
+          "Responsive design for all device sizes",
+          "Clear service presentation",
+          "Customer testimonials section"
         ]
       },
       tech: {
         title: "Technologies Used",
         list: [
           "Squarespace as the primary platform",
-          "Custom CSS for unique styling",
-          "JavaScript for interactive elements",
-          "Integration with various third-party tools for forms and analytics"
+          "Custom CSS for unique styling"
         ]
       },
       results: {
         title: "Results",
-        intro: "The new website has significantly improved Kattokomppania's online presence, leading to:",
+        intro: "The new website is clearer and more accessible",
         list: [
-          "40% increase in quote requests",
-          "Improved user engagement metrics",
+          "Improved user engagement",
           "Better visibility in search results",
           "Positive feedback from both clients and staff"
         ]
@@ -61,40 +57,36 @@ export default function KattokomppaniaProject() {
       subtitle: "Kattava verkkosivuston uudistusprojekti suomalaiselle kattoalan yritykselle, keskittyen käyttäjäkokemuksen ja digitaalisen läsnäolon parantamiseen.",
       overview: {
         title: "Projektin Yleiskatsaus",
-        text: "Kattokomppania tarvitsi modernin, käyttäjäystävällisen verkkosivuston, joka esittelisi tehokkaasti heidän kattopalveluitaan ja helpottaisi potentiaalisten asiakkaiden tarjouspyyntöjen tekemistä. Projekti sisälsi heidän digitaalisen läsnäolonsa täydellisen uudistamisen, keskittyen käyttäjäkokemukseen ja konversio-optimointiin."
+        text: "Kattokomppania tarvitsi uuden ulkoasun sivuilleen. Tarkoituksena oli tehdä sivusta moderni ja mahdollisimman käyttäjäystävällinen huomioiden asiakassegmentin joka esittelisi tehokkaasti tarjottavia palveluita ja helpottaisi potentiaalisten asiakkaiden yhteyden saamista. Tein projektiin alustavan designin, se on nähtävissä täällä (linkki). Mietimme Kattokomppanian kanssa pitkään sopivaa alustaa ja teknologiaa, sillä he halusivat jonkin CMS:n jonka avulla sisältöä voisi muokata helposti ja nopeasti ilman, että heidän tarvitsis koodiin tarvitsisi koskea. Lopulta päätimme pitäytyä Squarespacessa, sillä se oli asiakkaalle alustana tuttu entuudestaan, heidän edellisetkin sivunsa olivat Squarespacessa. Ulkoasusuunnittelun jälkeen aloin hommiin ja tein sivuston mukaillen suunnitteleemaani tyyliä. Jouduin kuitenkin joustamaan melko paljon alkuperäisestä suunnitelmasta, sillä Squarespace ei ollut ollenkaan niin joustava tai 'aukinainen' sillä tavalla miten vaikka minulle tutut Shopify tai WordPress ovat. CSS:n injektointi sivuille oli välillä hieman haastavaa, koska piti löytää juuri oikeat selectorit. Squarespacen tuottama HTML ei mielestäni vaikuta useinkaan loogiselta, ja monissa ns. valmiskomponenteissa mielestäni oli käytetty epäsemanttisia ratkaisuja (esim. otsikkohierarkioita käytetty vain graafisessa mielessä, mutta unohdettu että ei ole ihan konventionaalista ignorata saavutettavuus ja SEO otsikkohierarkioissa). Eniten päänvaivaa aiheuttivat SVG:t, jotka oli lisättävä injektoimalla CSS:ää, koska niiden lisääminen normaalisti ei onnistunut, vaan formaatti piti muuttaa BASE64:seen. Hieman itseäni jäi murehdittumaan sivuston saavutettavuus, mutta ainakin graafisesti olen yrittänyt sivuston kanssa parhaani! Sivustosta tuli mielestäni toimivampi ja selkeämpi kuin edellisestä versiosta. "
       },
       features: {
-        title: "Tärkeimmät Ominaisuudet",
+        title: "Tärkeimmät ominaisuudet",
         list: [
-          "Responsiivinen suunnittelu kaikille laitekoille",
+          "Ulkoasun freesaus ja käyttäjäystävällisyys", 
           "Sujuvoitettu tarjouspyyntöprosessi",
-          "Portfolionäkymä toteutetuista kattoprojekteista",
-          "Palvelualueen karttaintegraatio",
-          "Asiakassuositukset-osio",
-          "Kaksikielinen tuki (suomi/englanti)"
+          "Responsiivinen suunnittelu kaikille laitekoille",
+          "Palvelujen esittely selkeästi",
+          "Asiakassuositukset-osio"
         ]
       },
       tech: {
-        title: "Käytetyt Teknologiat",
+        title: "Käytetyt teknologiat",
         list: [
           "Squarespace pääalustana",
           "Mukautettu CSS yksilölliseen tyylittelyyn",
-          "JavaScript interaktiivisiin elementteihin",
-          "Integraatio eri kolmannen osapuolen työkalujen kanssa lomakkeille ja analytiikalle"
         ]
       },
       results: {
         title: "Tulokset",
-        intro: "Uusi verkkosivusto on merkittävästi parantanut Kattokomppanian verkkonäkyvyyttä, johtaen seuraaviin tuloksiin:",
+        intro: "Uusi verkkosivusto on selkeämpi ja helpommin saavutetta",
         list: [
-          "40% kasvu tarjouspyynnöissä",
-          "Parantunut käyttäjien sitoutuminen",
+          "Käyttäjien sitoutuminnen ",
           "Parempi näkyvyys hakutuloksissa",
           "Positiivinen palaute sekä asiakkailta että henkilöstöltä"
         ]
       },
       learning: {
-        title: "Mitä Opin",
+        title: "Mitä opin",
         list: [
           "Asiakkaan tarpeiden ja käyttäjäkokemuksen parhaiden käytäntöjen tasapainottaminen",
           "Selkeän viestinnän merkitys projektinhallinnassa",
