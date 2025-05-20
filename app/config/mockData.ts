@@ -9,7 +9,7 @@ export const projectData = [
   {
     title: 'Kattokomppania website',
     description: 'A website for a Finnish company spealising on roofs maintanance and repairs.',
-    image: 'https://picsum.photos/800/400?random=2',
+    image: '/images/projects/kattokomppania.jpeg',
     link: '/projects/kattokomppania',
     tags: ['UX', 'Squarespace', 'UI'],
   }
