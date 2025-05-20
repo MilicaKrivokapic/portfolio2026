@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { ThemeSwitch } from "./theme-switch";
 import { LanguageSwitch } from "./language-switch";

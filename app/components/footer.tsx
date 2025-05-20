@@ -14,7 +14,7 @@ const YEAR = new Date().getFullYear();
 
 function SocialLink({ href, icon: Icon }: { href: string, icon: React.ElementType }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">
       <Icon />
     </a>
   );
@@ -36,17 +36,15 @@ function SocialLinks() {
 
 export default function Footer() {
   return (
-    <small className="block lg:mt-24 mt-16 text-[#1C1C1C] dark:text-[#D4D4D4]">
-      <time>© {YEAR}</time>{" "}
-      <style jsx>{`
-        @media screen and (max-width: 480px) {
-          article {
-            padding-top: 2rem;
-            padding-bottom: 4rem;
-          }
-        }
-      `}</style>
-      <SocialLinks />
-    </small>
+    <footer className="mt-32 pb-16">
+      <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          © {YEAR}
+        </div>
+        <div />
+        <SocialLinks />
+      </div>
+    </footer>
   );
 }

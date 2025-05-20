@@ -21,8 +21,7 @@ A clean, fast, and lightweight portfolio template built with [Next.js](https://n
 - **Dynamic Feed Generation**: Automatic dynamic [RSS](https://nextfolio-template.vercel.app/rss.xml), [Atom](https://nextfolio-template.vercel.app/atom.xml), and [JSON](https://nextfolio-template.vercel.app/feed.json) feeds.
 - **[KaTeX](https://katex.org/) Integration**: Render mathematical expressions smoothly.
 - **Performance Tracking**: Monitor web performance with [Vercel Web Analytics](https://vercel.com/docs/speed-insights) and [Speed Insights](https://vercel.com/docs/speed-insights).
-- **Interactive Embeds**: Easily embed interactive tweets and YouTube videos.
-- **Captions**: Add descriptive captions to photos, tweets, and videos.
+- **Captions**: Add descriptive captions to photos and videos.
 - **Image Grid**: Easily showcase image galleries or photos.
 
 ## Installation
@@ -58,3 +57,27 @@ Contributions are welcome! To get involved, just push your code to the repo. Whe
 ## Licence
 
 Nextfolio is open-source and released under the MIT License.
+
+## Writing Blog Posts:
+
+Create your blog posts as .mdx files in the content directory
+Each post needs a frontmatter section at the top with metadata:
+-
+Writing Content: You can use several features in your blog posts:
+
+Regular Markdown syntax (headings, bold, italic, lists, etc.)
+Images using Next.js Image component
+Code blocks with syntax highlighting
+Tables
+Special components like:
+Callouts (for important notes)
+Image grids (for photo galleries)
+Captions (for balanced text captions)
+Custom links (automatically handles internal/external links)
+Accessing Your Blog:
+
+The main blog page is at /blog
+Individual posts are accessed at /blog/[post-slug]
+The slug is automatically generated from your MDX filename
+Posts are sorted by date, with newest appearing first
+There are already some example posts in your content directory that you can reference, like custom-mdx-examples.mdx, which shows all the available features and components you can use in your blog posts.

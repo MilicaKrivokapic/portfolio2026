@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import Link from "next/link";
 import Image, { ImageProps } from "next/image";
@@ -5,9 +7,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { highlight } from "sugar-high";
 import { CaptionComponent } from "./caption";
-import { YouTubeComponent } from "./youtube";
 import { ImageGrid } from "./image-grid";
-import "katex/dist/katex.min.css";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href = '#' } = props;
@@ -117,7 +117,6 @@ const components = {
   del: Strikethrough,
   Callout,
   Caption: CaptionComponent,
-  YouTube: YouTubeComponent,
   ImageGrid,
 } as const;
 
@@ -126,6 +125,16 @@ interface CustomMDXProps {
 }
 
 export function CustomMDX(props: CustomMDXProps) {
+  const [isClient, setIsClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // or a loading state
+  }
+
   return (
     <article className="prose prose-quoteless prose-neutral dark:prose-invert">
       <MDXRemote {...props.source} components={components} />

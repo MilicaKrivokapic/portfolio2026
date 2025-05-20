@@ -41,6 +41,7 @@ export const translations = {
       experience: 'Skills & Expertise',
       projects: 'Projects',
       recommendations: 'Recommendations',
+      blog: 'Visit the blog',
       contact: 'Contact'
     },
     recommendations: {
@@ -93,6 +94,7 @@ export const translations = {
       experience: 'Taidot & osaaminen',
       projects: 'Projektit',
       recommendations: 'Suositukset',
+      blog: 'Siirry blogiin',
       contact: 'Yhteystiedot'
     },
     recommendations: {

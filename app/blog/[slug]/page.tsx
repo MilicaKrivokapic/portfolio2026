@@ -3,6 +3,13 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/lib/posts";
 import { metaData } from "app/config";
+import { serialize } from 'next-mdx-remote/serialize';
+
+interface PageParams {
+  params: {
+    slug: string;
+  };
+}
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -14,7 +21,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}): Promise<Metadata | undefined> {
+}: PageParams): Promise<Metadata | undefined> {
   const { slug } = await params;
   let post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
@@ -55,13 +62,15 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({ params }) {
+export default async function Blog({ params }: PageParams) {
   const { slug } = await params;
   let post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
   }
+
+  const source = await serialize(post.content);
 
   return (
     <section>
@@ -95,9 +104,7 @@ export default async function Blog({ params }) {
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
-        <CustomMDX source={post.content} />
-      </article>
+      <CustomMDX source={source} />
     </section>
   );
 }

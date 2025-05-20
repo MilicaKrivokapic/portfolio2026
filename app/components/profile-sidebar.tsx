@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { socialData } from '../config/mockData';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaPenNib } from 'react-icons/fa6';
 import { TbMailFilled } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 import { useLanguage } from '../context/language-context';
@@ -13,15 +13,20 @@ import { useActiveSection } from '../hooks/useActiveSection';
 const iconMap: Record<string, IconType> = {
   FaGithub,
   FaLinkedin,
-  TbMailFilled
+  TbMailFilled,
+  FaPenNib
 };
 
 export default function ProfileSidebar() {
   const { t } = useLanguage();
   const pathname = usePathname();
   const isHome = pathname === '/';
+  const isBlogPage = pathname.startsWith('/blog');
   const sectionIds = ['about', 'experience', 'projects', 'recommendations', 'contact'];
-  const activeSection = useActiveSection(sectionIds);
+  const intersectionActiveSection = useActiveSection(sectionIds);
+  
+  // Only use intersection active section if we're not on the blog page
+  const activeSection = isBlogPage ? '' : intersectionActiveSection;
 
   const getIcon = (iconName: string) => {
     const Icon = iconMap[iconName];
@@ -41,11 +46,16 @@ export default function ProfileSidebar() {
     }
   };
 
-  const navItems = sectionIds.map((item) => ({
+  const navItems = [...sectionIds.map((item) => ({
     id: item,
     label: t(`sidebar.${item}`),
     href: isHome ? `#${item}` : `/#${item}`
-  }));
+  })),
+  {
+    id: 'blog',
+    label: t('sidebar.blog'),
+    href: '/blog'
+  }];
 
   return (
     <>
@@ -96,12 +106,12 @@ export default function ProfileSidebar() {
               <li key={item.id}>
                 <Link
                   href={item.href}
-                  onClick={(e) => handleNavClick(e, item.id)}
+                  onClick={(e) => item.id !== 'blog' ? handleNavClick(e, item.id) : undefined}
                   className={`text-lg block relative py-1
                     after:content-[''] after:absolute after:left-0 after:bottom-0 after:right-0 
                     after:h-[2px] after:bg-accent-light dark:after:bg-accent-dark
                     after:origin-left after:transition-transform after:duration-300
-                    ${activeSection === item.id ? 
+                    ${(item.id === 'blog' && isBlogPage) || (item.id !== 'blog' && activeSection === item.id) ? 
                       'after:scale-x-100' : 
                       'after:scale-x-0 hover:after:scale-x-100'
                     }
@@ -128,6 +138,13 @@ export default function ProfileSidebar() {
                 {getIcon(link.icon)}
               </a>
             ))}
+            <Link
+              href="/blog"
+              className="p-2 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+              aria-label="Blog"
+            >
+              <FaPenNib size={20} />
+            </Link>
           </div>
         </div>
       </aside>
