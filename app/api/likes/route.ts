@@ -24,3 +24,15 @@ export async function POST(request: Request) {
   
   return NextResponse.json({ likes: likesData[slug] });
 }
+
+export async function DELETE(request: Request) {
+  const { slug } = await request.json();
+  const likesData = JSON.parse(fs.readFileSync(likesFilePath, 'utf-8'));
+  if (likesData[slug] && likesData[slug] > 0) {
+    likesData[slug] -= 1;
+  } else {
+    likesData[slug] = 0;
+  }
+  fs.writeFileSync(likesFilePath, JSON.stringify(likesData, null, 2));
+  return NextResponse.json({ likes: likesData[slug] });
+}

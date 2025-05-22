@@ -51,6 +51,15 @@ html {
   @apply text-[#333333] dark:text-[#D4D4D4];
 }
 
+@layer components {
+  .prose {
+    color: #232323;
+  }
+  .dark .prose {
+    color: #e5e5e5;
+  }
+}
+
 .prose .anchor {
   position: absolute;
   visibility: hidden;
@@ -175,4 +184,16 @@ svg {
 .form-layer {
   position: relative;
   z-index: 5;
+}
+
+@keyframes beat-once {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.2); }
+  40% { transform: scale(0.95); }
+  60% { transform: scale(1.1); }
+  80% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+.animate-beat-once {
+  animation: beat-once 0.5s;
 }
