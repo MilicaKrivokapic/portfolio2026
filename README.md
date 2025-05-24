@@ -81,3 +81,45 @@ Individual posts are accessed at /blog/[post-slug]
 The slug is automatically generated from your MDX filename
 Posts are sorted by date, with newest appearing first
 There are already some example posts in your content directory that you can reference, like custom-mdx-examples.mdx, which shows all the available features and components you can use in your blog posts.
+
+## Adding Images to Blog Posts
+
+You can add images to your blog posts in two main ways:
+
+### 1. Blog Post Thumbnail (for Blog List)
+
+To show a thumbnail image for your post on the /blog page, add an `image` field to your post’s frontmatter:
+
+```yaml
+---
+title: "My Blog Post"
+publishedAt: "2025-05-22"
+summary: "A summary of my post."
+image: "/images/my-image.jpg" # Path to your image in the public/images folder
+---
+```
+
+Place your image in the `public/images` directory (e.g., `public/images/my-image.jpg`).
+
+### 2. Embedding Images in MDX Content
+
+You can embed images directly in your post content using the Next.js `<Image />` component:
+
+```mdx
+import Image from 'next/image'
+
+<Image
+  src="/images/my-image.jpg"
+  alt="Description of image"
+  width={600}
+  height={400}
+/>
+```
+
+- Make sure the `src` path is relative to the `public` directory.
+- Adjust `width` and `height` as needed.
+
+### Tips
+
+- For image galleries, use the custom `<ImageGrid />` component (see `content/custom-mdx-examples.mdx` for examples).
+- For captions, use the `<Caption />` component.
