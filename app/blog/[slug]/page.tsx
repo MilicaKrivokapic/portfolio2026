@@ -102,29 +102,29 @@ export default async function Blog({ params }: PageParams) {
   const bannerImage = post.metadata.image || "/opengraph-image.png";
 
   return (
-    <section className="flex justify-center w-full px-4">
-      <article className="prose prose-neutral dark:prose-invert max-w-2xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-6 md:p-10 mt-10 mb-16 text-[1.15rem] md:text-[1.2rem]">
-        {/* Back to Blog link */}
-        <div className="mb-6 flex items-center">
-          <a href="/blog" className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-accent-light dark:hover:text-accent-dark transition-colors">
-            <FaArrowLeft className="w-4 h-4" />
-            <span>Back to Blog</span>
-          </a>
-        </div>
-        <div className="w-full mb-6 rounded-lg overflow-hidden">
+    <section className="flex flex-col items-center w-full px-4">
+      {/* Back to Blog link outside the article box */}
+      <div className="w-full max-w-5xl mb-4">
+        <a href="/blog" className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-accent-light dark:hover:text-accent-dark transition-colors">
+          <FaArrowLeft className="w-4 h-4" />
+          <span>Back to Blog</span>
+        </a>
+      </div>
+      <article className="prose prose-neutral dark:prose-invert max-w-5xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
+        <div className="w-full mb-8 rounded-lg overflow-hidden">
           <Image
             src={bannerImage}
             alt={post.metadata.title}
-            width={800}
-            height={320}
-            className="w-full h-64 object-cover object-center rounded-lg"
+            width={1200}
+            height={500}
+            className="w-full h-auto max-h-[500px] object-contain rounded-lg"
             priority
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-2 leading-tight text-center">
+        <h1 className="text-4xl md:text-5xl text-left font-extrabold mb-2 leading-tight">
           {post.metadata.title}
         </h1>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
+        <div className="flex flex-col md:flex-row items-center gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
           <span>📅 {formatDate(post.metadata.publishedAt)}</span>
           <span className="hidden md:inline">&bull;</span>
           <span>{readTime} min read</span>

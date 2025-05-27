@@ -64,14 +64,13 @@ export function LikeButton({ postSlug, initialLikes }: LikeButtonProps) {
       onClick={handleLike}
       onMouseEnter={handleMouseEnter}
       onAnimationEnd={handleAnimationEnd}
-      className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors text-red-500 dark:text-red-400 
-        hover:text-red-600 dark:hover:text-red-300`}
+      className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors text-red-500 dark:text-red-400`}
       aria-label={hasLiked ? "Unlike this post" : "Like this post"}
       type="button"
     >
       <span className="relative">
-        <FaRegHeart className={`w-5 h-5 absolute left-0 top-0 ${isBeating ? 'animate-beat-once' : ''} ${hasLiked ? 'opacity-0' : 'group-hover:opacity-0'}`} />
-        <FaHeart className={`w-5 h-5 ${isBeating ? 'animate-beat-once' : ''} ${hasLiked ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-200`} />
+        <FaRegHeart className={`w-5 h-5 absolute left-0 top-0 ${isBeating ? 'animate-beat-once' : ''} ${hasLiked ? 'opacity-0' : ''}`} />
+        <FaHeart className={`w-5 h-5 ${isBeating ? 'animate-beat-once' : ''} ${hasLiked ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`} />
       </span>
       <span>{likes}</span>
     </button>
