@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { metaData } from "./config";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-production-url.com"), // Change to your real production URL
+  metadataBase: new URL("https://portfolio2025-delta-dusky.vercel.app/"), // Change to your real production URL
   title: {
     default: metaData.title,
     template: `%s | ${metaData.title}`,

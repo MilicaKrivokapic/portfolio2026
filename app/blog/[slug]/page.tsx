@@ -10,12 +10,6 @@ import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { LikeButton } from '../../components/like-button';
 
-interface PageParams {
-  params: {
-    slug: string;
-  };
-}
-
 export async function generateStaticParams() {
   let posts = getBlogPosts();
 
@@ -24,10 +18,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageParams): Promise<Metadata | undefined> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | undefined> {
+  const { slug } = params;
   let post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
     return;
@@ -73,8 +65,8 @@ function getReadTime(text: string) {
   return Math.max(1, Math.round(words / wordsPerMinute));
 }
 
-export default async function Blog({ params }: PageParams) {
-  const { slug } = await params;
+export default async function Blog({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   let allPosts = getBlogPosts();
   let postIndex = allPosts.findIndex((p) => p.slug === slug);
   let prevPost = postIndex > 0 ? allPosts[postIndex - 1] : null;
