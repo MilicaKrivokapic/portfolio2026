@@ -62,15 +62,17 @@ export default function ProfileSidebar() {
       {/* Mobile Card */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800 p-4">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-            <Image
-              src="/profile.png"
-              alt="Profile picture"
-              width={48}
-              height={48}
-              className="object-cover"
-              priority
-            />
+          <div className="w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#1B3157] p-[3px]">
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <Image
+                src="/profile.png"
+                alt="Profile picture"
+                width={80}
+                height={80}
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
           <div>
             <h1 className="text-lg font-bold">Milica Krivokapic</h1>
@@ -84,15 +86,17 @@ export default function ProfileSidebar() {
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[400px] bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-800 p-8 flex-col">
         <div className="flex flex-col items-center space-y-4">
-          <div className="relative w-40 h-40 rounded-full overflow-hidden bg-gray-200">
-            <Image
-              src="/profile.png"
-              alt="Profile picture"
-              width={160}
-              height={160}
-              className="object-cover"
-              priority
-            />
+          <div className="relative w-56 h-48 rounded-3xl overflow-hidden bg-gradient-to-br from-[#0A192F] via-[#081a38] to-[#001437] p-[3px]">
+            <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+              <Image
+                src="/profile.png"
+                alt="Profile picture"
+                width={192}
+                height={192}
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
           <h1 className="text-2xl font-bold">MILICA KRIVOKAPIC</h1>
           <p className="text-muted-light dark:text-muted-dark text-center">

@@ -119,26 +119,6 @@ export interface MultilingualRecommendation extends Omit<Recommendation, 'text'>
 
 export const recommendationsData: MultilingualRecommendation[] = [
   {
-    name: 'Niko Rissanen',
-    role: 'Senior Developer',
-    email: 'mailto: niko.rissanen@woolman.io',
-    text: {
-      en: 'Working with Milica is often fruitful, because she is great at exploring multiple perspectives. She can expertly provide and explain her solutions in easy-to-understand language. She is also very kind and considerate to others :) ',
-      fi: 'Milica on työkaverina huomaavainen ja useista näkökulmista asioita tarkasteleva, tämä rikastuttaa yhteistyötä. Hän tekee huolella ja tarkkuudella töitä ja pystyy perustelemaan valitsemasi ratkaisut asiantuntevasti ja myös keskustellen eri painopisteistä sekä näkökulmista. Hän on myös mukava ja ystävällinen muita kohtaan :) '
-    },
-    icon: 'seahorse'
-  },
-  {
-    name: 'Aaro Paukkunen',
-    role: 'Developer',
-    email: 'mailto:aaro.paukkunen@woolman.io',
-    text: {
-      en: 'Milica is precise and thoughtful, and values an open atmosphere and clear communication. Plus, she\'s absolutely fantastic company!',
-      fi: 'Milica on tarkka ja tunnollinen, ja arvostaa avointa ilmapiiriä ja selkeää kommunikaatiota. Lisäksi vielä mainiota seuraa, jestas!'
-    },
-    icon: 'elephant'
-  },
-  {
     name: 'Rosemari Marttinen-Lahtinen',
     role: 'Theme Developer',
     email: 'mailto: rosemari.marttinen-lahtinen@woolman.io',
@@ -149,6 +129,16 @@ export const recommendationsData: MultilingualRecommendation[] = [
     icon: 'panda-bear'
   },
   {
+    name: 'Niko Rissanen',
+    role: 'Senior Developer',
+    email: 'mailto: niko.rissanen@woolman.io',
+    text: {
+      en: 'Working with Milica is often fruitful, because she is great at exploring multiple perspectives. She can expertly provide and explain her solutions in easy-to-understand language. She is also very kind and considerate to others :) ',
+      fi: 'Milica on työkaverina huomaavainen ja useista näkökulmista asioita tarkasteleva, tämä rikastuttaa yhteistyötä. Hän tekee huolella ja tarkkuudella töitä ja pystyy perustelemaan valitsemasi ratkaisut asiantuntevasti ja myös keskustellen eri painopisteistä sekä näkökulmista. Hän on myös mukava ja ystävällinen muita kohtaan :) '
+    },
+    icon: 'seahorse'
+  },
+  {
     name: 'Jani Sompi',
     role: 'Shopify Expert, Developer',
     email: 'jani.sompi@woolman.io',
@@ -157,5 +147,15 @@ export const recommendationsData: MultilingualRecommendation[] = [
       fi: 'Todella miellyttävä ihminen joka haluaa paitsi tehdä työnsä hyvin, huolehtia myös että hänen työkaverinsa voivat hyvin. Työpaikan järjen ääni joka pyrkii palauttamaan asiat raiteilleen jo ennen kun ne lähtevät sivuluisuun..'
     },
     icon: 'hedgehog'
+  },
+  {
+    name: 'Aaro Paukkunen',
+    role: 'Developer',
+    email: 'mailto:aaro.paukkunen@woolman.io',
+    text: {
+      en: 'Milica is precise and thoughtful, and values an open atmosphere and clear communication. Plus, she\'s absolutely fantastic company!',
+      fi: 'Milica on tarkka ja tunnollinen, ja arvostaa avointa ilmapiiriä ja selkeää kommunikaatiota. Lisäksi vielä mainiota seuraa, jestas!'
+    },
+    icon: 'elephant'
   }
 ];

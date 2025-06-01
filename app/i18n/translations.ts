@@ -101,7 +101,7 @@ export const translations = {
       title: 'Mitä muut sanovat minusta',
     },
     projects: {
-      featuredWork: 'Merkittävät työt',
+      featuredWork: 'Töitäni',
       seeProject: 'Katso projekti'
     }
   },

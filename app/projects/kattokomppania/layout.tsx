@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Kattokomppania Project | Milica Krivokapic",
-  description: "Case study of the Kattokomppania website redesign project - A digital transformation for roofing services",
+  description: "Case study of the Kattokomppania website redesign project - fresh design, improved user experience, and enhanced functionality.",
 };
 
 export default function KattokomppaniaLayout({
