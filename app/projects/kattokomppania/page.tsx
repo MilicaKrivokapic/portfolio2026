@@ -14,7 +14,10 @@ export default function KattokomppaniaProject() {
       subtitle: "A comprehensive website redesign project for a Finnish roofing company, focusing on improving user experience and digital presence.",
       overview: {
         title: "Project Overview",
-        text: "Kattokomppania, specializing in roof repairs and maintenance, needed a fresh look for their website. I aimed to create a modern and user-friendly site that would effectively showcase their services while considering their specific customer segment. The main goal was to present their services in a straightforward, understandable way and make it easier for potential customers to get in touch. I created an initial design for the project which can be viewed here (link). We spent considerable time with Kattokomppania discussing suitable platforms and technology choices, as they wanted a CMS that would allow them to modify content easily without touching the code. We ultimately decided to continue with Squarespace, as they were already familiar with the platform from their previous site. After finalizing the visual design phase, I implemented the site following my designed style, though I had to be flexible with the original design due to Squarespace's platform limitations compared to more open platforms like Shopify or WordPress that I had worked with before."
+        text: [
+          <>Kattokomppania, specializing in roof repairs and maintenance, needed a fresh look for their website. I aimed to create a modern and user-friendly site that would effectively showcase their services while considering their specific customer segment. The main goal was to present their services in a straightforward, understandable way and make it easier for potential customers to get in touch. I created an initial design for the project which can be viewed <Link href="https://www.kattokomppania.fi/">here</Link>.</>,
+          "We spent considerable time with Kattokomppania discussing suitable platforms and technology choices, as they wanted a CMS that would allow them to modify content easily without touching the code. We ultimately decided to continue with Squarespace, as they were already familiar with the platform from their previous site. After finalizing the visual design phase, I implemented the site following my designed style, though I had to be flexible with the original design due to Squarespace's platform limitations compared to more open platforms like Shopify or WordPress that I had worked with before."
+        ]
       },
       features: {
         title: "Key Features",
@@ -48,7 +51,9 @@ export default function KattokomppaniaProject() {
       subtitle: "Kattava verkkosivuston uudistusprojekti suomalaiselle kattoalan yritykselle, keskittyen käyttäjäkokemuksen ja digitaalisen läsnäolon parantamiseen.",
       overview: {
         title: "Projektista",
-        text: "Kattokorjauksiin ja kattojen ylläpitoon erikoistunut Kattokomppania tarvitsi uuden ulkoasun nettisivuilleen. Ajatuksenani oli tehdä sivusta moderni ja mahdollisimman käyttäjäystävällinen huomioiden asiakassegmentin. Halusimme, että sivuso esittelee mutkattomasti ja ymmärrettävästi tarjottavia palveluita ja helpottaa potentiaalisiin asiakkaisiin yhteyden saamisessa. Tein projektiin alustavan designin, se on nähtävissä täällä (linkki). Mietimme Kattokomppanian kanssa pitkään sopivaa alustaa ja teknologiaa, sillä he halusivat jonkin CMS:n jonka avulla voisivat muokata sisältöä helposti ja nopeasti koskematta koodiin. Päädyimme Squarespaceen, sillä asiakas oli tottunut siihen - aiempi sivu oli tehty samalla alustalla. Visuaalisen suunnittelun jälkeen ryhdyin työhön ja toteutin sivuston suunnittelemani tyylin mukaan. Jouduin olemaan alkuperäisen suunnitelman kanssa kuitenkin hyvin joustava, sillä Squarespace ei ollut läheskään niin joustava tai 'avoin' kuin Shopify tai WordPress, joiden kanssa olin aiemmin tottunut työskentelemään."
+        text: [
+        <>Kattokorjauksiin ja kattojen ylläpitoon erikoistunut Kattokomppania tarvitsi uuden ulkoasun nettisivuilleen. Ajatuksenani oli tehdä sivusta moderni ja mahdollisimman käyttäjäystävällinen huomioiden asiakassegmentin. Halusin, että sivusto esittelee selkeästi tarjottavia palveluita ja auttaa asiakkaita saamaan yhteyden yritykseen helposti. Tein projektiin alustavan designin, se on nähtävissä <Link href="https://www.kattokomppania.fi/">täällä</Link>.</>, 
+        "Mietimme Kattokomppanian kanssa pitkään sopivaa alustaa ja teknologiaa, sillä he halusivat jonkin CMS:n jonka avulla voisivat muokata sisältöä helposti ja nopeasti koskematta koodiin. Päädyimme Squarespaceen, sillä asiakas oli tottunut siihen - aiempi sivu oli tehty samalla alustalla. Visuaalisen suunnittelun jälkeen ryhdyin työhön ja toteutin sivuston suunnittelemani tyylin mukaan. Jouduin olemaan alkuperäisen suunnitelman kanssa kuitenkin hyvin joustava, sillä Squarespace ei ollut läheskään niin joustava tai 'avoin' kuin Shopify tai WordPress, joiden kanssa olin aiemmin tottunut työskentelemään."]
       },
       features: {
         title: "Uudet ominaisuudet",
@@ -113,7 +118,7 @@ export default function KattokomppaniaProject() {
       <div className="prose dark:prose-invert max-w-none">
         <section>
           <h2>{currentContent.overview.title}</h2>
-          <p>{currentContent.overview.text}</p>
+          <div>{currentContent.overview.text.map((t, i) => (<p key={i}>{t}</p>))}</div>
         </section>
 
         <section className="mt-12">

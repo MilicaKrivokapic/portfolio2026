@@ -1,17 +1,20 @@
 export const projectData = [
   {
-    title: 'Accessibility Dashboard',
-    description: 'A comprehensive dashboard for monitoring web accessibility metrics and WCAG compliance.',
-    image: 'https://picsum.photos/800/400',
-    link: '#',
-    tags: ['Next.js', 'WCAG', 'TypeScript', 'Tailwind'],
-  },
-  {
     title: 'Kattokomppania website',
     description: 'A website for a Finnish company spealising on roofs maintanance and repairs.',
     image: '/images/projects/kattokomppania.jpeg',
     link: '/projects/kattokomppania',
     tags: ['UX', 'Squarespace', 'UI'],
+  },
+  {
+    title: 'Accessibility Audits',
+    title_fi: 'Saavutettavuusauditoinnit',
+    description: 'A comprehensive dashboard for monitoring web accessibility metrics and WCAG compliance.',
+    description_fi: 'Kattava työkalu saavutettavuuden mittaamiseen ja WCAG-vaatimusten seurantaan.',
+    image: 'https://picsum.photos/800/400',
+    link: '#',
+    tags: ['Next.js', 'WCAG', 'TypeScript', 'Tailwind'],
+    underConstruction: true,
   }
 ];
 
@@ -97,7 +100,7 @@ export const skillsData: MultilingualSkill[] = [
 ];
 
 export const socialData = [
-  { name: 'GitHub', url: 'https://github.com/1msirius/Nextfolio', icon: 'FaGithub' },
+  { name: 'GitHub', url: 'https://github.com/MilicaKrivokapic', icon: 'FaGithub' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/', icon: 'FaLinkedin' },
   { name: 'Email', url: 'mailto:Milica.portfolio@proton.me', icon: 'TbMailFilled' }
 ];
