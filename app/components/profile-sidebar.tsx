@@ -98,7 +98,7 @@ export default function ProfileSidebar() {
               />
             </div>
           </div>
-          <h1 className="text-2xl font-bold">MILICA KRIVOKAPIC</h1>
+          <h1 className="text-2xl font-bold mt-2">MILICA KRIVOKAPIC</h1>
           <p className="text-muted-light dark:text-muted-dark text-center">
             {t('sidebar.role')}
           </p>
