@@ -1,18 +1,16 @@
+'use client';
+
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import Image, { ImageProps } from "next/image";
+import { MDXRemote } from 'next-mdx-remote';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { highlight } from "sugar-high";
-import { TweetComponent } from "./tweet";
 import { CaptionComponent } from "./caption";
-import { YouTubeComponent } from "./youtube";
 import { ImageGrid } from "./image-grid";
-import rehypeKatex from "rehype-katex";
-import remarkMath from "remark-math";
-import "katex/dist/katex.min.css";
 
-function CustomLink(props) {
-  let href = props.href;
+function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const { href = '#' } = props;
   if (href.startsWith("/")) {
     return (
       <Link href={href} {...props}>
@@ -26,41 +24,44 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+function RoundedImage(props: ImageProps) {
+  return <Image className="rounded-lg" {...props} />;
 }
 
-function Code({ children, ...props }) {
-  let codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+interface CodeProps {
+  children: string;
+  [key: string]: any;
 }
 
-function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
-  let rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ));
+function Code({ children, ...props }: CodeProps) {
+  const codeHTML = highlight(children);
   return (
-    <table>
-      <thead>
-        <tr className="text-left">{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
+    <code {...props} dangerouslySetInnerHTML={{ __html: codeHTML }} />
+  );
+}
+
+function Table({ children, ...props }: React.TableHTMLAttributes<HTMLTableElement>) {
+  return (
+    <table className="border-collapse border w-full my-4" {...props}>
+      {children}
     </table>
   );
 }
 
-function Strikethrough(props) {
-  return <del {...props} />;
+interface StrikethroughProps {
+  children: React.ReactNode;
 }
 
-function Callout(props) {
+function Strikethrough(props: StrikethroughProps) {
+  return <del>{props.children}</del>;
+}
+
+interface CalloutProps {
+  emoji: React.ReactNode;
+  children: React.ReactNode;
+}
+
+function Callout(props: CalloutProps) {
   return (
     <div className="px-4 py-3 bg-[#F7F7F7] dark:bg-[#181818] rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
@@ -69,7 +70,7 @@ function Callout(props) {
   );
 }
 
-function slugify(str) {
+function slugify(str: string) {
   return str
     .toString()
     .toLowerCase()
@@ -80,56 +81,63 @@ function slugify(str) {
     .replace(/\-\-+/g, "-");
 }
 
-function createHeading(level) {
-  const Heading = ({ children }) => {
-    let slug = slugify(children);
-    return React.createElement(
-      `h${level}`,
-      { id: slug },
-      [
-        React.createElement("a", {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: "anchor",
-        }),
-      ],
-      children
+function createHeading(level: number) {
+  interface HeadingProps {
+    children: React.ReactNode;
+  }
+  
+  const Heading = ({ children }: HeadingProps) => {
+    const slug = slugify(children as string);
+    const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+
+    return (
+      <Tag id={slug}>
+        <a href={`#${slug}`} className="anchor">
+          #
+        </a>
+        {children}
+      </Tag>
     );
   };
-  Heading.displayName = `Heading${level}`;
+
   return Heading;
 }
 
-let components = {
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
-  Image: RoundedImage,
-  ImageGrid,
   a: CustomLink,
-  StaticTweet: TweetComponent,
-  Caption: CaptionComponent,
-  YouTube: YouTubeComponent,
-  code: Code,
-  Table,
+  Image: RoundedImage,
+  pre: Code,
+  table: Table,
   del: Strikethrough,
   Callout,
-};
+  Caption: CaptionComponent,
+  ImageGrid,
+} as const;
 
-export function CustomMDX(props) {
+interface CustomMDXProps {
+  source: MDXRemoteSerializeResult;
+}
+
+export function CustomMDX(props: CustomMDXProps) {
+  const [isClient, setIsClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // or a loading state
+  }
+
   return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-      options={{
-        mdxOptions: {
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
-        },
-      }}
-    />
+    <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+      <MDXRemote {...props.source} components={components} />
+    </article>
   );
 }

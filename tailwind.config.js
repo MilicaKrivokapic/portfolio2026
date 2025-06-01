@@ -1,22 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
-  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./public/**/*.svg"],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        sans: ['var(--font-inter)', 'sans-serif'],
+        heading: ['var(--font-syne)', 'sans-serif'],
       },
-      typography: {
-        quoteless: {
-          css: {
-            "blockquote p:first-of-type::before": { content: "none" },
-            "blockquote p:first-of-type::after": { content: "none" },
-          },
-        },
+      colors: {
+        'background-light': '#FFFFFF',
+        'background-dark': '#121212',
+        'surface-light': '#F7F7F7',
+        'surface-dark': '#1E1E1E',
+        'primary-light': '#333333',
+        'primary-dark': '#D4D4D4',
+        'muted-light': '#666666',
+        'muted-dark': '#A0A0A0',
+        accent: {
+          light: '#FF3366',
+          dark: '#F93A6AFF',
+        }
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
-};
+  plugins: [require('@tailwindcss/typography')],
+}

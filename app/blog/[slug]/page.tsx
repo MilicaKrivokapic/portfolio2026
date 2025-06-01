@@ -3,6 +3,18 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/lib/posts";
 import { metaData } from "app/config";
+import { serialize } from 'next-mdx-remote/serialize';
+import fs from 'fs';
+import path from 'path';
+import Image from "next/image";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { LikeButton } from '../../components/like-button';
+
+interface PageParams {
+  params: {
+    slug: string;
+  };
+}
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -14,7 +26,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}): Promise<Metadata | undefined> {
+}: PageParams): Promise<Metadata | undefined> {
   const { slug } = await params;
   let post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
@@ -55,48 +67,110 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({ params }) {
+function getReadTime(text: string) {
+  const wordsPerMinute = 200;
+  const words = text.split(/\s+/).length;
+  return Math.max(1, Math.round(words / wordsPerMinute));
+}
+
+export default async function Blog({ params }: PageParams) {
   const { slug } = await params;
-  let post = getBlogPosts().find((post) => post.slug === slug);
+  let allPosts = getBlogPosts();
+  let postIndex = allPosts.findIndex((p) => p.slug === slug);
+  let prevPost = postIndex > 0 ? allPosts[postIndex - 1] : null;
+  let nextPost = postIndex < allPosts.length - 1 ? allPosts[postIndex + 1] : null;
+  let post = allPosts[postIndex];
 
   if (!post) {
     notFound();
   }
 
+  // Get likes from likes.json
+  let likes = 0;
+  try {
+    const likesPath = path.join(process.cwd(), 'content', 'likes.json');
+    if (fs.existsSync(likesPath)) {
+      const likesData = JSON.parse(fs.readFileSync(likesPath, 'utf-8'));
+      likes = likesData[slug] || 0;
+    }
+  } catch (error) {
+    console.error('Error reading likes:', error);
+  }
+
+  const source = await serialize(post.content);
+  const readTime = getReadTime(post.content);
+  const bannerImage = post.metadata.image || "/opengraph-image.png";
+
   return (
-    <section>
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${metaData.baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${metaData.baseUrl}/blog/${post.slug}`,
-            author: {
-              "@type": "Person",
-              name: metaData.name,
-            },
-          }),
-        }}
-      />
-      <h1 className="title mb-3 font-medium text-2xl tracking-tight">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-medium">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+    <section className="flex flex-col items-center w-full px-4">
+      {/* Back to Blog link outside the article box */}
+      <div className="w-full max-w-5xl mb-4">
+        <a href="/blog" className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-accent-light dark:hover:text-accent-dark transition-colors">
+          <FaArrowLeft className="w-4 h-4" />
+          <span>Back to Blog</span>
+        </a>
       </div>
-      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
-        <CustomMDX source={post.content} />
+      <article className="prose prose-neutral dark:prose-invert max-w-5xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
+        <div className="w-full mb-8 rounded-lg overflow-hidden">
+          <Image
+            src={bannerImage}
+            alt={post.metadata.title}
+            width={1200}
+            height={500}
+            className="w-full h-auto max-h-[500px] object-contain rounded-lg"
+            priority
+          />
+        </div>
+        <h1 className="text-4xl md:text-5xl text-left font-extrabold mb-2 leading-tight">
+          {post.metadata.title}
+        </h1>
+        <div className="flex flex-col md:flex-row items-center gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
+          <span>📅 {formatDate(post.metadata.publishedAt)}</span>
+          <span className="hidden md:inline">&bull;</span>
+          <span>{readTime} min read</span>
+          <span className="hidden md:inline">&bull;</span>
+          <LikeButton postSlug={post.slug} initialLikes={likes} />
+        </div>
+        <CustomMDX source={source} />
+        {post.metadata.tags && (
+          <div className="mt-10 flex flex-wrap gap-2">
+            {post.metadata.tags.split(',').map((tag: string) => {
+              const trimmed = tag.trim();
+              return (
+                <a
+                  key={trimmed}
+                  href={`/blog?tag=${encodeURIComponent(trimmed)}`}
+                  className="inline-block bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs font-medium hover:bg-accent-light hover:text-white dark:hover:bg-accent-dark transition-colors"
+                >
+                  #{trimmed}
+                </a>
+              );
+            })}
+          </div>
+        )}
+        {/* Prev/Next arrows with labels and links below */}
+        <div className="flex justify-between items-center mt-12 gap-2">
+          {prevPost ? (
+            <div className="flex flex-col items-start max-w-[45%]">
+              <span className="text-sm md:text-base font-semibold text-neutral-700 dark:text-neutral-100 mb-1 flex items-center gap-1">
+                <FaArrowLeft className="w-5 h-5 inline mr-1" /> Previous
+              </span>
+              <a href={`/blog/${prevPost.slug}`} className="truncate text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold">
+                {prevPost.metadata.title}
+              </a>
+            </div>
+          ) : <span />}
+          {nextPost ? (
+            <div className="flex flex-col items-end max-w-[45%]">
+              <span className="text-sm md:text-base font-semibold text-neutral-700 dark:text-neutral-100 mb-1 flex items-center gap-1 justify-end">
+                Up next <FaArrowRight className="w-5 h-5 inline ml-1" />
+              </span>
+              <a href={`/blog/${nextPost.slug}`} className="truncate text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold text-right">
+                {nextPost.metadata.title}
+              </a>
+            </div>
+          ) : <span />}
+        </div>
       </article>
     </section>
   );

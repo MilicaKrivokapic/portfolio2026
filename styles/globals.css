@@ -1,0 +1,15 @@
+// ...existing code...
+
+/* Add this to prevent flash */
+.no-transitions * {
+  transition: none !important;
+}
+
+/* Add this to handle initial load */
+:root {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
