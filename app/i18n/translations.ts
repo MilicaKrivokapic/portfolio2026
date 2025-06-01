@@ -49,7 +49,10 @@ export const translations = {
     },
     projects: {
       featuredWork: 'Featured Work',
-      seeProject: 'See Project'
+      seeProject: 'See Project',
+      accessibilityAudits: 'Accessibility Audits',
+      accessibilityAuditsDesc: 'A comprehensive dashboard for monitoring web accessibility metrics and WCAG compliance.',
+      underConstruction: 'Under construction'
     }
   },
   fi: {
@@ -102,7 +105,10 @@ export const translations = {
     },
     projects: {
       featuredWork: 'Töitäni',
-      seeProject: 'Katso projekti'
+      seeProject: 'Katso projekti',
+      accessibilityAudits: 'Saavutettavuusauditoinnit',
+      accessibilityAuditsDesc: 'Kattava työkalu saavutettavuuden mittaamiseen ja WCAG-vaatimusten seurantaan.',
+      underConstruction: 'Rakenteilla'
     }
   },
 };
