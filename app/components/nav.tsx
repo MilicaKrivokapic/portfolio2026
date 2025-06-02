@@ -1,15 +1,67 @@
 "use client";
 
+import React, { useState } from "react";
 import { ThemeSwitch } from "./theme-switch";
 import { LanguageSwitch } from "./language-switch";
+import Link from "next/link";
 
 export function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Example nav items, replace with your actual navigation
+  const navItems = [
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Recommendations", href: "#recommendations" },
+    { label: "Contact", href: "#contact" },
+    { label: "Blog", href: "/blog" },
+  ];
+
   return (
-    <header className="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
-      <nav className="px-6 py-4 flex justify-end items-center gap-4">
-        <LanguageSwitch />
-        <ThemeSwitch />
+    <header className="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-[100]">
+      <nav className="px-6 py-4 flex justify-between items-center gap-4">
+        {/* Hamburger icon for mobile that transforms to X */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none z-[110]"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <div className="relative w-6 h-4 flex justify-center items-center">
+            <span className={`absolute w-6 h-0.5 bg-gray-800 dark:bg-gray-100 transition-all duration-100 ${
+              menuOpen ? 'rotate-45' : '-translate-y-2'
+            }`}></span>
+            <span className={`absolute w-6 h-0.5 bg-gray-800 dark:bg-gray-100 transition-all duration-100 ${
+              menuOpen ? 'opacity-0' : ''
+            }`}></span>
+            <span className={`absolute w-6 h-0.5 bg-gray-800 dark:bg-gray-100 transition-all duration-100 ${
+              menuOpen ? '-rotate-45' : 'translate-y-2'
+            }`}></span>
+          </div>
+        </button>
+        {/* Language and Theme Switches (always visible) */}
+        <div className="flex gap-4 z-[110]">
+          <LanguageSwitch />
+          <ThemeSwitch />
+        </div>
       </nav>
+      {/* Mobile menu overlay */}
+      {menuOpen && (
+        <div className="fixed top-0 left-0 w-full h-[50vh] bg-background-light dark:bg-background-dark z-[100] flex flex-col items-center pt-16 shadow-lg transition-all animate-fade-in-down md:hidden">
+          <div className="flex flex-col gap-6 mt-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
