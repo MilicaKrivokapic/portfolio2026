@@ -161,7 +161,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] shadow-accent-light/40 dark:shadow-accent-dark shadow-[0_0_12px_rgba(255,51,102,0.4)] hover:shadow-accent hover:shadow-shadow-[0_0_12px_rgba(107,205,233,0.5)] dark:hover:shadow-[0_0_8px_rgba(249,58,106,0.6)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-white dark:disabled:hover:bg-neutral-900 disabled:hover:shadow-[0_0_12px_rgba(255,51,102,0.4)]"
+              className="w-full px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] shadow-accent-light/40 dark:shadow-accent-dark shadow-[0_0_12px_rgba(255,51,102,0.4)] hover:shadow-accent hover:shadow-[0_0_8px_rgba(255,51,102,0.4)] dark:hover:shadow-[0_0_8px_rgba(249,58,106,0.6)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-white dark:disabled:hover:bg-neutral-900 disabled:hover:shadow-[0_0_12px_rgba(255,51,102,0.4)]"
             >
               {isSubmitting ? t('contact.sending') : t('contact.send')}
             </button>

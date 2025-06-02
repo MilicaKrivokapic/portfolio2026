@@ -59,8 +59,8 @@ export default function ProfileSidebar() {
 
   return (
     <>
-      {/* Mobile Card */}
-      <div className="md:hidden fixed top-0 left-0 right-0 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800 p-4">
+      {/* Profile Card (not fixed, not sticky, just below the top bar) */}
+      <div className="md:hidden mt-0 p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800">
         <div className="flex items-center space-x-4">
           <div className="w-20 h-20 rounded-full overflow-hidden p-[3px] border-4 border-accent-light dark:border-accent-dark bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#1B3157]">
             <div className="w-full h-full rounded-full overflow-hidden">
@@ -104,7 +104,7 @@ export default function ProfileSidebar() {
           </p>
         </div>
 
-        <nav className="mt-12">
+        <nav className="mt-12 z-50">
           <ul className="space-y-4">
             {navItems.map((item) => (
               <li key={item.id}>
@@ -114,7 +114,7 @@ export default function ProfileSidebar() {
                   className={`text-lg block relative py-1
                     after:content-[''] after:absolute after:left-0 after:bottom-0 after:right-0 
                     after:h-[2px] after:bg-accent-light dark:after:bg-accent-dark
-                    after:origin-left after:transition-transform after:duration-300
+                    after:origin-left after:transition-transform after:duration-300 z-40
                     ${(item.id === 'blog' && isBlogPage) || (item.id !== 'blog' && activeSection === item.id) ? 
                       'after:scale-x-100' : 
                       'after:scale-x-0 hover:after:scale-x-100'
