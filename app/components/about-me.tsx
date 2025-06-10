@@ -9,7 +9,7 @@ export default function AboutMe() {
   return (
     <div className="prose prose-neutral dark:prose-invert max-w-none">
       <p className="text-xl leading-relaxed mb-6">
-        {t('about.intro')}
+        {t('about.summary')}
       </p>
       
       <div className={`transition-all duration-500 space-y-6 ${isExpanded ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
