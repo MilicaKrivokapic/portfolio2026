@@ -9,8 +9,8 @@ export const projectData = [
   {
     title: 'Accessibility Audits',
     title_fi: 'Saavutettavuusauditoinnit',
-    description: 'A comprehensive dashboard for monitoring web accessibility metrics and WCAG compliance.',
-    description_fi: 'Kattava työkalu saavutettavuuden mittaamiseen ja WCAG-vaatimusten seurantaan.',
+    description: 'Accessibility reports aimed to help and clarify cognitive and technical accessibility of websites.',
+    description_fi: 'Saavutettavuusraportteja joiden tarkoituksena on auttaa ja selkeyttää sivujen kognitiivista ja teknistä saavutettavuutta.',
     image: 'https://picsum.photos/800/400',
     link: '#',
     tags: ['Next.js', 'WCAG', 'TypeScript', 'Tailwind'],
@@ -38,8 +38,8 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: 'FaUniversalAccess',
     description: {
-      en: ' Learning to create more accessible websites. Currently focusing on understanding WCAG guidelines and implementing basic accessibility features in projects. I believe accessible web services are a significant factor for equality and general well-being.',
-      fi: 'Opettelen luomaan saavutettavampia verkkosivustoja. Keskityn tällä hetkellä WCAG-ohjeistojen ymmärtämiseen ja saavutettavien perusominaisuuksien toteuttamiseen projekteissa. Mielestäni saavutettavat verkkopalvelut ovat yhteiskunnallisesti merkittävä asia tasa-arvon ja yleisen hyvinvoinnin kannalta.'
+      en: ' Learning to create more accessible websites. Currently focusing on understanding WCAG guidelines and implementing basic accessibility features in projects.',
+      fi: 'Opettelen luomaan saavutettavampia verkkosivustoja. Keskityn tällä hetkellä WCAG-ohjeistojen ymmärtämiseen ja saavutettavien perusominaisuuksien toteuttamiseen projekteissa sekä harjoittelen saavutettavuusraporttien laatimista. '
     }
   },
   {
@@ -71,8 +71,8 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: 'FaPencilRuler',
     description: {
-      en: "Developing an eye for user-friendly interfaces. Learning about user research, wireframing, and the importance of user testing. I'm particularly interested in how UX intersects with accessibility. I can use Figma, but I’m also eager to learn Adobe XD. I have extensive experience with other Adobe programs like Photoshop and Lightroom.",
-      fi: 'Kehitän taitojani käyttäjäystävällisten käyttöliittymien ja yleensäottaen hyvien designratkaisujen ymmärtämiseksi. Haluan oppia enemmän käyttäjätutkimuksesta, rautalankamallien tekemisestä ja käyttäjätestauksen tärkeydestä. Kaikista kiinnostunein olen UX:n ja saavutettavuuden yhtymäkohdista, sellaisesta "design for all"-ajattelusta. Olen tottunut käyttämään Figmaa, mutta uskon oppivina myös Adobe XD:n käytön. Adoben muista ohjelmista (Photoshop, Light Room) minulla on pitkällistä kokemusta. '
+      en: "Developing an eye for user-friendly interfaces. Learning about user research, wireframing, and the importance of user testing. I'm particularly interested in how UX intersects with accessibility. I can use Figma. I have extensive experience with other Adobe programs like Photoshop and Lightroom.",
+      fi: 'Kehitän taitojani käyttäjäystävällisten käyttöliittymien ja yleensäottaen hyvien designratkaisujen ymmärtämiseksi. Haluan oppia enemmän käyttäjätutkimuksesta, rautalankamallien tekemisestä ja käyttäjätestauksen tärkeydestä. Kaikista kiinnostunein olen UX:n ja saavutettavuuden yhtymäkohdista, eli ns. "design for all"-ajattelusta. Olen tottunut käyttämään Figmaa. Adoben ohjelmista (Photoshop, Lightroom) minulla on pitkällistä kokemusta. '
     }
   },
   {
@@ -93,8 +93,8 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: 'FaPalette',
     description: {
-      en: 'Constantly expanding my knowledge through online courses, documentation, and practical projects. Active in developer communities and always eager to learn from others. Currently focusing on accessibility and modern frontend practices.',
-      fi: 'Laajennan jatkuvasti osaamistani verkkokurssien, dokumentaation ja käytännön projektien kautta. Olen aktiivinen kehittäjäyhteisöissä ja innokas oppimaan muilta. Keskityn tällä hetkellä saavutettavuuteen ja moderneihin frontend-käytäntöihin.'
+      en: 'I am continually expanding my skill set through online courses, intensive study of documentation, and hands-on projects. I actively discuss accessibility with my developer friends and am eager to learn from others. At the moment, I’m focusing on accessibility and modern front-end best practices.',
+      fi: 'Laajennan jatkuvasti osaamistani verkkokurssien, dokumentaation tankkaamisen ja käytännön projektien kautta. Keskustelen aktiivisesti kehittäjäystävieni kanssa saavutettavuudesta ja olen innokas oppimaan muilta. Keskityn tällä hetkellä saavutettavuuteen ja moderneihin frontend-käytäntöihin.'
     }
   }
 ];

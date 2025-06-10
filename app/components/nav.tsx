@@ -19,8 +19,8 @@ export function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-[100]">
-      <nav className="px-6 py-4 flex justify-between items-center gap-4">
+    <header className="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-[100] md:justify-end">
+      <nav className="px-6 py-4 flex justify-between md:justify-end items-center gap-4">
         {/* Hamburger icon for mobile that transforms to X */}
         <button
           className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none z-[110]"
