@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/lib/posts";
-{/*  import { LikeCounter } from "../components/like-counter"; */}
+{/*  import { LikeCounter } from "../components/like-counter"; 
 import fs from 'fs';
-import path from 'path';
+import path from 'path'; */}
 
 export const metadata = {
   title: "Blog",
@@ -11,16 +11,16 @@ export const metadata = {
 
 export default function BlogPosts() {
   let allBlogs = getBlogPosts();
-  let likes: Record<string, number> = {};
+  // let likes: Record<string, number> = {};
   
-  try {
+ {/*  try {
     const likesPath = path.join(process.cwd(), 'content', 'likes.json');
     if (fs.existsSync(likesPath)) {
-      likes = JSON.parse(fs.readFileSync(likesPath, 'utf-8'));
+       = JSON.parselikes(fs.readFileSync(likesPath, 'utf-8'));
     }
   } catch (error) {
     console.error('Error reading likes:', error);
-  }
+  } */}
 
   return (
     <div className="max-w-4xl mx-auto px-6">
@@ -58,7 +58,7 @@ export default function BlogPosts() {
                         <time>{formatDate(post.metadata.publishedAt, false)}</time>
                       </div>
                       {/* <LikeCounter likes={likes[post.slug] || 0} /> */}
-                       
+
                     </div>
                   </article>
                 </Link>
