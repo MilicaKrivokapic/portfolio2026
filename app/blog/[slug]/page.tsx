@@ -4,8 +4,6 @@ import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/lib/posts";
 import { metaData } from "app/config";
 import { serialize } from 'next-mdx-remote/serialize';
-import fs from 'fs';
-import path from 'path';
 import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
    {/* import { LikeButton } from '../../components/like-button';   */}
