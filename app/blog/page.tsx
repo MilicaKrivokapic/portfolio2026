@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/lib/posts";
-import { LikeCounter } from "../components/like-counter";
+{/*  import { LikeCounter } from "../components/like-counter"; */}
 import fs from 'fs';
 import path from 'path';
 
@@ -57,7 +57,8 @@ export default function BlogPosts() {
                         <span role="img" aria-label="calendar">📅</span>
                         <time>{formatDate(post.metadata.publishedAt, false)}</time>
                       </div>
-                      <LikeCounter likes={likes[post.slug] || 0} />
+                      {/* <LikeCounter likes={likes[post.slug] || 0} /> */}
+                       
                     </div>
                   </article>
                 </Link>
