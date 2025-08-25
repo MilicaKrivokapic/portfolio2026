@@ -8,7 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { LikeButton } from '../../components/like-button';
+   {/* import { LikeButton } from '../../components/like-button';   */}
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -77,7 +77,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
-  // Get likes from likes.json
+  {/*// Get likes from likes.json
   let likes = 0;
   try {
     const likesPath = path.join(process.cwd(), 'content', 'likes.json');
@@ -87,7 +87,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     }
   } catch (error) {
     console.error('Error reading likes:', error);
-  }
+  } */}
 
   const source = await serialize(post.content);
   const readTime = getReadTime(post.content);
@@ -121,7 +121,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           <span className="hidden md:inline">&bull;</span>
           <span>{readTime} min read</span>
           <span className="hidden md:inline">&bull;</span>
-          <LikeButton postSlug={post.slug} initialLikes={likes} />
+         {/* <LikeButton postSlug={post.slug} initialLikes={likes} /> */}
         </div>
         <CustomMDX source={source} />
         {post.metadata.tags && (
