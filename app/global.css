@@ -25,6 +25,7 @@
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
   --icon-color: theme('colors.accent.light');
+  --accent-shadow: 51, 177, 215; /* #33B1D7 in RGB for rgba() */
 }
 
 /* Dark theme colors */
@@ -40,6 +41,7 @@
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
   --icon-color: theme('colors.accent.dark');
+  --accent-shadow: 249, 58, 106; /* #F93A6A in RGB for rgba() */
 }
 
 html {
