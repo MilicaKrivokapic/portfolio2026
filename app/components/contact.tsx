@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { TbMailFilled } from 'react-icons/tb';
 import { useLanguage } from '../context/language-context';
 import type { IconType } from 'react-icons';
+import Button from './ui/Button';
 
 const iconMap: Record<string, IconType> = {
   FaGithub,
@@ -77,8 +78,8 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-12">
-      <h2 className="text-4xl font-bold font-heading bg-gradient-to-r from-primary-light to-accent-light dark:from-primary-dark dark:to-accent-dark bg-clip-text text-transparent mb-8">
+    <section className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <h2 className="text-4xl font-bold font-heading bg-gradient-to-r from-primary-light to-accent-light dark:from-primary-dark dark:to-accent-dark bg-clip-text text-transparent">
         {t('contact.title')}
       </h2>
       <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-8 form-layer transition-all duration-300 hover:shadow-lg dark:hover:shadow-2xl dark:hover:shadow-accent-dark/5">
@@ -87,7 +88,7 @@ export default function Contact() {
             <h3 className="text-xl font-semibold mb-6 text-primary-light dark:text-primary-dark">
               {t('contact.connect')}
             </h3>
-            <div className="flex gap-4 p-4 bg-gradient-to-r from-background-light to-surface-light dark:from-background-dark dark:to-surface-dark rounded-lg border border-gray-100 dark:border-gray-800">
+            <div className="flex gap-4 p-4 bg-white/90 dark:bg-white/10 rounded-lg border border-gray-100 dark:border-gray-800">
               {socialData.map((link) => (
                 <a
                   key={link.name}
@@ -102,7 +103,7 @@ export default function Contact() {
               ))}
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="flex-1 space-y-6">
+          <form onSubmit={handleSubmit} className="flex-1 space-y-4">
             <div className="opacity-0 absolute -z-10 select-none pointer-events-none">
               <input
                 type="text"
@@ -124,7 +125,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:border-transparent outline-none transition-all duration-300 placeholder:text-muted-light dark:placeholder:text-muted-dark"
+                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 dark:bg-white/5 dark:border-white/20 dark:focus:ring-white"
                 placeholder={t('contact.namePlaceholder')}
               />
             </div>
@@ -139,7 +140,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:border-transparent outline-none transition-all duration-300 placeholder:text-muted-light dark:placeholder:text-muted-dark"
+                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 dark:bg-white/5 dark:border-white/20 dark:focus:ring-white"
                 placeholder={t('contact.emailPlaceholder')}
               />
             </div>
@@ -154,26 +155,26 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full p-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:border-transparent outline-none transition-all duration-300 placeholder:text-muted-light dark:placeholder:text-muted-dark resize-none"
+                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 dark:bg-white/5 dark:border-white/20 dark:focus:ring-white resize-none"
                 placeholder={t('contact.messagePlaceholder')}
               />
             </div>
-            <button
+            <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] shadow-accent-light/40 dark:shadow-accent-dark shadow-[0_0_12px_rgba(255,51,102,0.4)] hover:shadow-accent hover:shadow-[0_0_8px_rgba(255,51,102,0.4)] dark:hover:shadow-[0_0_8px_rgba(249,58,106,0.6)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-white dark:disabled:hover:bg-neutral-900 disabled:hover:shadow-[0_0_12px_rgba(255,51,102,0.4)]"
+              className="w-full"
             >
               {isSubmitting ? t('contact.sending') : t('contact.send')}
-            </button>
+            </Button>
             {submitStatus === 'success' && (
-              <div className="p-4 bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/20 rounded-lg">
+              <div className="p-4 bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/20 rounded-xl" aria-live="polite">
                 <p className="text-green-600 dark:text-green-400 text-sm">
                   {t('contact.successMessage')}
                 </p>
               </div>
             )}
             {submitStatus === 'error' && (
-              <div className="p-4 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-lg">
+              <div className="p-4 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-xl" aria-live="polite">
                 <p className="text-red-600 dark:text-red-400 text-sm">
                   {t('contact.errorMessage')}
                 </p>
@@ -185,12 +186,12 @@ export default function Contact() {
           <p className="text-lg text-muted-light dark:text-muted-dark max-w-2xl mx-auto mb-6">
             {t('contact.reachOut')}
           </p>
-          <a 
+          <Button 
+            as="a"
             href={socialLinks.email}
-            className="inline-block px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] shadow-accent-light/40 dark:shadow-accent-dark shadow-[0_0_12px_rgba(255,51,102,0.4)] hover:shadow-shadow-[0_0_12px_rgba(107,205,233,0.5)] dark:hover:shadow-[0_0_8px_rgba(249,58,106,0.6)]"
           >
             {t('contact.sendEmail')}
-          </a>
+          </Button>
         </div>
       </div>
     </section>
