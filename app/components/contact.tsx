@@ -163,6 +163,7 @@ export default function Contact() {
               type="submit"
               disabled={isSubmitting}
               className="w-full"
+              shadow="soft"
             >
               {isSubmitting ? t('contact.sending') : t('contact.send')}
             </Button>
@@ -188,6 +189,7 @@ export default function Contact() {
           </p>
           <Button 
             as="a"
+            shadow="soft"
             href={socialLinks.email}
           >
             {t('contact.sendEmail')}

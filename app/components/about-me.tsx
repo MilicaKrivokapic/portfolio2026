@@ -24,6 +24,7 @@ export default function AboutMe() {
       <Button
         onClick={() => setIsExpanded(!isExpanded)}
         className="mt-4"
+         shadow="strong"
       >
         {isExpanded ? t('about.readLess') : t('about.readMore')}
       </Button>
