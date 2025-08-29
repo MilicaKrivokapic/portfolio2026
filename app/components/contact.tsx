@@ -82,7 +82,7 @@ export default function Contact() {
       <h2 className="text-4xl font-bold font-heading bg-gradient-to-r from-primary-light to-accent-light dark:from-primary-dark dark:to-accent-dark bg-clip-text text-transparent">
         {t('contact.title')}
       </h2>
-      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-8 form-layer transition-all duration-300 hover:shadow-lg dark:hover:shadow-2xl dark:hover:shadow-accent-dark/5">
+      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-8 form-layer transition-all duration-300">
         <div className="flex flex-col md:flex-row gap-12">
           <div className="flex-1">
             <h3 className="text-xl font-semibold mb-6 text-primary-light dark:text-primary-dark">
