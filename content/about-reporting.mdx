@@ -28,21 +28,41 @@ Mielestäni hyvässä saavutettavuusraportissa on tärkeää ilmaista seuraavat 
 
 Ohessa erimuotoisia saavutettavuusraportteja, joita olen nähnyt (huom. Kuvat eivät ole oikeista raporteista, vaan oikeiden raporttien pohjalta tehtyjä havainnekuvia):
 
-<div style={{ border: '2px solid blue', padding: '10px' }}>
 
-<Image
-  src="/images/projects/Esimerkkiprese.png"
-  alt="Esimerkkikuva presentaatiopohjaiseesta raportista"
-  width={640}
-  height={500}
-/>
+<div
+  role="region"
+  aria-labelledby="ppt-heading"
+  className="rounded-lg border-2 p-4 transition-colors mb-8 
+             bg-surface-light dark:bg-surface-dark
+             border-gray-200 dark:border-gray-800"
+>
+  <figure>
+    <Image
+      src="/images/projects/Esimerkkiprese.png"
+      alt="Esimerkkikuva presentaatiopohjaiseesta raportista"
+      width={640}
+      height={500}
+    />
+    <figcaption className="sr-only">Esimerkkikuva presentaatiopohjaiseesta raportista</figcaption>
+  </figure>
 
-#### Powerpointesitys:
-Tässä tyylissä on kiinnitetty paljon huomiota designiin ja raportin esitettävyyteen läpikäynnin aikana. Ulkonäkö on powerpointmaisen raportin vahvuus, vaikka se samalla on myös sen heikkous. Näkemässäni raportissa oli paljon visuaalisia elementtejä ja värejä. Lisäksi korjauspriorisaatio oli esitetty kuvaikkeilla (yksi mutteri vastasi low priority-tasoa, neljä mutteria high priority jne), joka mielestäni oli itsessään hieman epäsaavutettavaa ja tuntui hieman “clipartmaiselta” ratkaisulta. 
+  <div className="rounded-md bg-surface-light dark:bg-surface-dark p-2">
+    <h4 id="ppt-heading" className="m-0">
+      <a href="#ppt-heading" className="anchor mr-2">#</a>
+      Powerpointesitys:
+    </h4>
 
-Minusta olisi hyvä jos priorisointi olisi esitetty selkeämmin tekstinä, jotta se varmasti ymmärrettäisiin oikein, eikä sitä tarvitsisi mennä erikseen lunttailemaan raportin alusta, tai lopusta, jossa priorisointitasot on selitetty auki. Tai vähintään mutterien vieressä voisi olla vielä numeraalinen arvo, jota muttereilla yritetään viestittää, esim. esimerkkikuvassamme tämä olisi: "Prioriteettitaso: 3/4". Huomiot voisivat olla myös tarkempia ja kohdistetumpia, jotta korjaaja ymmärtäisi tarkalleen mistä kohdasta on kyse. Myöhemmin käsiteltävä "tekstimuotoinen raportti, jossa höysteenä kuvia" on mielestäni seuraava evoluutio tästä.  
+    
+      Tässä tyylissä on kiinnitetty paljon huomiota designiin ja raportin esitettävyyteen läpikäynnin aikana. Ulkonäkö on powerpointmaisen raportin vahvuus, vaikka se samalla on myös sen heikkous. Näkemässäni raportissa oli paljon visuaalisia elementtejä ja värejä. Lisäksi korjauspriorisaatio oli esitetty kuvaikkeilla (yksi mutteri vastasi low priority-tasoa, neljä mutteria high priority jne), joka mielestäni oli itsessään hieman epäsaavutettavaa ja tuntui hieman “clipartmaiselta” ratkaisulta.
+    
 
-</div>
+ 
+      Minusta olisi hyvä jos priorisointi olisi esitetty selkeämmin tekstinä, jotta se varmasti ymmärrettäisiin oikein, eikä sitä tarvitsisi mennä erikseen lunttailemaan raportin alusta, tai lopusta, jossa priorisointitasot on selitetty auki. Tai vähintään mutterien vieressä voisi olla vielä numeraalinen arvo, jota muttereilla yritetään viestittää, esim. esimerkkikuvassamme tämä olisi: "Prioriteettitaso: 3/4". Huomiot voisivat olla myös tarkempia ja kohdistetumpia, jotta korjaaja ymmärtäisi tarkalleen mistä kohdasta on kyse. Myöhemmin käsiteltävä "tekstimuotoinen raportti, jossa höysteenä kuvia" on mielestäni seuraava evoluutio tästä.
+ 
+  </div>
+  </div>
+
+
 
 
 
@@ -65,4 +85,4 @@ Ehdoton lempparini. Tässä yhdistyy taulukon hyvä luettavuus ja selkeä asette
 En ole ihan varma ovatko näkemäni raportit tuotettu jonkun automatisoidun tarkistustyökalun kautta, vai onko saavutettavuusfirmoilla omat pohjansa joita he uudelleenkierrättävät. Olisi todella mielenkiintoista kuulla asiasta lisää!
 
 
-Yhteenveto: Taidan itse pitäytyä tekstimuotoisen ja taulukkoraportin yhteismuodostelmassa. 
+Yhteenveto: Taidan itse pitäytyä tekstimuotoisen ja taulukkoraportin yhteismuodostelmassa.
