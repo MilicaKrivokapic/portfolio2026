@@ -83,10 +83,10 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
                 setVisibleCount(6);
               }}
               className={
-                `px-4 py-2 rounded-full text-sm font-medium transition-colors ` +
+                `px-4 py-2 rounded-full text-sm md:text-base font-semibold transition-colors ring-1 focus-visible:outline-none ` +
                 (isActive
-                  ? 'bg-accent-light text-white dark:bg-accent-dark'
-                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700')
+                  ? 'bg-black text-white ring-black/30 focus-visible:ring-2 focus-visible:ring-black dark:bg-white dark:text-black dark:ring-white/40 dark:focus-visible:ring-white'
+                  : 'bg-white text-black ring-black/20 hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-black dark:bg-black dark:text-white dark:ring-white/30 dark:hover:bg-white/10 dark:focus-visible:ring-white')
               }
             >
               {tag === ALL ? t('blog.all') : tag}
@@ -105,8 +105,12 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
           const firstTag = tagString?.split(',')[0]?.trim();
           const img = post.metadata.image || '/opengraph-image.png';
           return (
-            <Link key={post.slug} href={`${basePath}/${post.slug}`} className="group block rounded-xl overflow-hidden bg-white dark:bg-neutral-900 shadow-md hover:shadow-lg transition-shadow">
-              <div className="relative aspect-[16/9] w-full overflow-hidden">
+            <Link
+              key={post.slug}
+              href={`${basePath}/${post.slug}`}
+              className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white"
+            >
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                 <Image
                   src={img}
                   alt={title}
@@ -115,16 +119,16 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
                 {firstTag && (
-                  <span className="absolute top-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full">
+                  <span className="absolute top-3 left-3 text-xs md:text-sm px-2.5 py-1.5 rounded-full bg-black text-white dark:bg-white dark:text-black shadow-sm ring-1 ring-black/20 dark:ring-white/30">
                     {firstTag}
                   </span>
                 )}
               </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-primary-light dark:text-primary-dark mb-2 group-hover:text-accent-light dark:group-hover:text-accent-dark">
+              <div className="pt-4">
+                <h3 className="text-xl md:text-2xl font-medium leading-snug text-primary-light dark:text-primary-dark group-hover:text-accent-light dark:group-hover:text-accent-dark">
                   {title}
                 </h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3">
+                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3">
                   {summary}
                 </p>
                 <div className="mt-3 text-xs text-neutral-500 dark:text-neutral-400">
