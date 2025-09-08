@@ -125,3 +125,35 @@ import Image from 'next/image'
 - For captions, use the `<Caption />` component.
 
 <!-- BlogCard removed: component and documentation deleted -->
+
+## Managing Tags (Blog & Audits)
+
+- Where to edit:
+  - Blog posts live in `content/` (e.g., `content/my-first-post.mdx`).
+  - Audit posts live in `content/audits/` (e.g., `content/audits/example-audit.mdx`).
+
+- Frontmatter field:
+
+```yaml
+---
+title: "My Post"
+publishedAt: "2025-05-22"
+summary: "A short summary."
+tags: "Accessibility, WCAG, Audit"  # comma-separated list
+image: "/images/optional-thumb.jpg"
+---
+```
+
+- Format notes:
+  - Provide tags as a single comma-separated string. Whitespace is trimmed.
+  - Tags are case-sensitive in filters; keep capitalization consistent.
+  - The first tag is shown as the pill/badge on the card.
+
+- Filters and prefiltering:
+  - Tag pills on `/blog` and `/audits` are generated automatically from all post frontmatters.
+  - You can link directly to a filtered view with the `?tag=` query:
+    - `/blog?tag=WCAG`
+    - `/audits?tag=Accessibility`
+
+- No extra steps needed:
+  - Just save the MDX file; tags update automatically in dev. In production, they’ll appear after the next build/deploy.

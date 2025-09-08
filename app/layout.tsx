@@ -1,6 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { Inter, Syne } from 'next/font/google';
+import { Bricolage_Grotesque, Syne } from 'next/font/google';
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -10,9 +10,10 @@ import ProfileSidebar from './components/profile-sidebar';
 import { LanguageProvider } from './context/language-context';
 import BackToTop from './components/back-to-top';
 
-const inter = Inter({
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-bricolage',
   display: 'swap',
 });
 
@@ -33,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${bricolage.variable} ${syne.variable}`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/photos/favicon.png" />
         <link rel="shortcut icon" href="/photos/favicon.ico" />
