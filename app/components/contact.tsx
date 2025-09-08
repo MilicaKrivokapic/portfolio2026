@@ -88,7 +88,7 @@ export default function Contact() {
             <h3 className="text-xl font-semibold mb-6 text-primary-light dark:text-primary-dark">
               {t('contact.connect')}
             </h3>
-            <div className="flex gap-4 p-4 bg-white/90 dark:bg-white/10 rounded-lg border border-gray-100 dark:border-gray-800">
+            <div className="flex gap-4 p-4 bg-white/90 dark:bg-white/10 rounded-lg border border-gray-100 dark:border-zinc-800">
               {socialData.map((link) => (
                 <a
                   key={link.name}
