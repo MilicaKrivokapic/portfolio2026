@@ -13,7 +13,7 @@ type ButtonProps = {
 
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ children, className = '', variant = 'primary', as = 'button', shadow = 'default', ...props }, ref) => {
-    const baseClasses = "block text-center px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:ring-offset-2";
+    const baseClasses = "block text-center px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] shadow";
     
     const disabledClasses = (as === 'button' && (props as any).disabled)
       ? "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-white dark:disabled:hover:bg-neutral-900"
@@ -29,13 +29,11 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
     }[shadow];
 
     const shadowStyle = {
-      boxShadow: `0 0 ${preset.baseRadius}px rgba(var(--accent-shadow), ${preset.baseOpacity})`,
       '--tw-shadow': `0 0 ${preset.baseRadius}px rgba(var(--accent-shadow), ${preset.baseOpacity})`,
       ...(props as any).style,
     } as React.CSSProperties;
 
     const hoverShadowStyle = {
-      boxShadow: `0 0 ${preset.hoverRadius}px rgba(var(--accent-shadow), ${preset.hoverOpacity})`,
       '--tw-shadow': `0 0 ${preset.hoverRadius}px rgba(var(--accent-shadow), ${preset.hoverOpacity})`,
     } as React.CSSProperties;
 
