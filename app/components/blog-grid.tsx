@@ -23,17 +23,19 @@ interface BlogGridProps {
 }
 
 function getUniqueTags(posts: BlogListItem[], language: 'en' | 'fi'): string[] {
-  const set = new Set<string>();
+  const counts = new Map<string, number>();
   posts.forEach((p) => {
     const meta: any = p.metadata as any;
     const tagString = language === 'fi' && meta.tags_fi ? meta.tags_fi : p.metadata.tags;
     if (!tagString) return;
-    tagString.split(',').forEach((t: string) => {
-      const trimmed = t.trim();
-      if (trimmed) set.add(trimmed);
-    });
+    const first = tagString.split(',')[0]?.trim();
+    if (!first) return;
+    counts.set(first, (counts.get(first) || 0) + 1);
   });
-  return Array.from(set).sort((a, b) => a.localeCompare(b));
+  return Array.from(counts.entries())
+    .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
+    .slice(0, 6)
+    .map(([name]) => name);
 }
 
 export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: BlogGridProps) {
@@ -124,14 +126,14 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
                   </span>
                 )}
               </div>
-              <div className="pt-4">
+              <div className="pt-5">
                 <h3 className="text-xl md:text-2xl font-medium leading-snug text-primary-light dark:text-primary-dark group-hover:text-accent-light dark:group-hover:text-accent-dark">
                   {title}
                 </h3>
-                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3">
+                <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300 line-clamp-3">
                   {summary}
                 </p>
-                <div className="mt-3 text-xs text-neutral-500 dark:text-neutral-400">
+                <div className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
                   {new Date(post.metadata.publishedAt).toLocaleDateString(language === 'fi' ? 'fi-FI' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </div>
               </div>

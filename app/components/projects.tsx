@@ -21,7 +21,7 @@ export default function Projects() {
           const description = project.description_fi && language === 'fi' ? project.description_fi : project.description;
 
           return (
-            <div key={index} className="group relative flex flex-col md:flex-row gap-8 items-center">
+            <div key={index} className="group relative flex flex-col md:flex-row gap-12 items-center">
               <div className="w-full md:w-2/3 md:shrink-0 aspect-video relative overflow-hidden rounded-xl">
                 <Image
                   src={project.image}
@@ -52,9 +52,9 @@ export default function Projects() {
                   </div>
                 )}
               </div>
-              <div className="w-full md:w-1/3 md:min-w-0 space-y-4">
+              <div className="w-full md:w-1/3 md:min-w-0 space-y-5">
                 <h3 className="text-2xl font-bold">{title}</h3>
-                <p className="text-neutral-600 dark:text-neutral-400">
+                <p className="text-neutral-600 dark:text-neutral-300">
                   {description}
                 </p>
                 <div className="flex flex-wrap gap-2">
