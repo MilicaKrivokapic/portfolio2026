@@ -60,7 +60,7 @@ export default function ProfileSidebar() {
   return (
     <>
       {/* Profile Card (not fixed, not sticky, just below the top bar) */}
-      <div className="md:hidden mt-0 p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800">
+  <div className="md:hidden mt-0 p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-zinc-800">
         <div className="flex items-center space-x-4">
           <div className="w-20 h-20 rounded-full overflow-hidden p-[3px] border-4 border-accent-light dark:border-accent-dark bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#1B3157]">
             <div className="w-full h-full rounded-full overflow-hidden">
@@ -84,7 +84,7 @@ export default function ProfileSidebar() {
       </div>
 
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[400px] bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-800 p-8 flex-col">
+  <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[400px] bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-zinc-800 p-8 flex-col">
         <div className="flex flex-col items-center space-y-4">
           <div className="relative w-56 h-48 rounded-3xl overflow-hidden p-[3px] border-2 border-accent-light dark:border-accent-dark bg-gradient-to-br bg-black flex items-center justify-center">
             <div className="w-full h-full overflow-hidden flex items-center justify-center">
