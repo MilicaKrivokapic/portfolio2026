@@ -33,6 +33,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${syne.variable}`} suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/photos/favicon.png" />
+        <link rel="shortcut icon" href="/photos/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/photos/favicon-96x96.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/photos/apple-touch-icon.png" />
+        <link rel="manifest" href="/photos/web-app-manifest-192x192.png" />
+      </head>
       <body className="antialiased font-sans bg-background-light dark:bg-background-dark text-primary-light dark:text-primary-dark">
         <ThemeProvider
           attribute="class"
