@@ -1,0 +1,68 @@
+---
+title: "Hyvä saavutettavuusraportti - pohdintoja ja esimerkkejä"
+publishedAt: "2025-05-20"
+summary: "Ajatuksia saavutettavuusraporteista"
+tags: "accessibility, web development, ARIA, inclusive design"
+image: "/images/projects/pupu_ihmettelee.png"
+---
+
+
+## Saavutettavuusraporttien tyylit
+
+### Minkälainen on hyvä saavutettavuusraportti? 
+Olen kiinnostuneena tutkiskellut erilaisia saavutettavusuraportteja. Katselmuksieni mukaan raporttien muodot vaihtelevat suuresti toisistaan eikä mitään yhtenäistä tapaa kirjoittaa saavutettavuusraportteja taida olla olemassa!
+Oma mielipiteeni on se, että ennenkaikkea hyvä saavutettavuusraportti on saavutettava (heh heh). 
+Eli se on selkeä, mahdollisimman helposti ja yksiselitteisesti ymmärrettävä ja sen termit on selitetty auki niin, että myös ei-tekninen tai saavutettavuuteen perehtymätön henkilö ymmärtää, mistä on kyse.
+
+Mielestäni hyvässä saavutettavuusraportissa on tärkeää ilmaista seuraavat asiat:
+- Yleinen johdanto, selitetään auki korjausten kriittisyystasot ja testaukseen käytetyt kriteeristöt, metodit ja työkalut
+- Ongelma otsikoitu selkeästi, mukana kuva
+- Ongelman kuvaus
+- Ongelman prioriteetti
+- Ongelman sijainti
+- Ongelman uudelleen toistaminen (miten tämän voi itse havannoida, ja millä työkalulla tai metodilla myös onnistuneen korjauksen voi tunnistaa)
+– Millä testattiin (laitteet, selaimet)
+- WCAG-säännöstön kohta josta voi itse tarkistaa miten siellä sääntö on muotoiltu
+- Mahdollinen korjausehdotus (on ehkä parempi välttää koodiin puuttuvia tai yksityiskohtaisia korjausehdotuksia, ellei näitä ole erikseen pyydetty ja testaaja on hyvin perillä käytetystä teknologiasta)
+- Bonus: kenelle rooli kuuluu? Tämä mielestäni ei välttämättä ole pakollista, mutta usein helpottaa organisaatioissa tehtävien jakamista ja saavutettavuusraportin hyödyntämistä konkreettisesti korjaustyössä. 
+
+Ohessa erimuotoisia saavutettavuusraportteja, joita olen nähnyt (huom. Kuvat eivät ole oikeista raporteista, vaan oikeiden raporttien pohjalta tehtyjä havainnekuvia):
+
+<div style={{ border: '2px solid blue', padding: '10px' }}>
+
+<Image
+  src="/images/projects/Esimerkkiprese.png"
+  alt="Esimerkkikuva presentaatiopohjaiseesta raportista"
+  width={640}
+  height={500}
+/>
+
+#### Powerpointesitys:
+Tässä tyylissä on kiinnitetty paljon huomiota designiin ja raportin esitettävyyteen läpikäynnin aikana. Ulkonäkö on powerpointmaisen raportin vahvuus, vaikka se samalla on myös sen heikkous. Näkemässäni raportissa oli paljon visuaalisia elementtejä ja värejä. Lisäksi korjauspriorisaatio oli esitetty kuvaikkeilla (yksi mutteri vastasi low priority-tasoa, neljä mutteria high priority jne), joka mielestäni oli itsessään hieman epäsaavutettavaa ja tuntui hieman “clipartmaiselta” ratkaisulta. 
+
+Minusta olisi hyvä jos priorisointi olisi esitetty selkeämmin tekstinä, jotta se varmasti ymmärrettäisiin oikein, eikä sitä tarvitsisi mennä erikseen lunttailemaan raportin alusta, tai lopusta, jossa priorisointitasot on selitetty auki. Tai vähintään mutterien vieressä voisi olla vielä numeraalinen arvo, jota muttereilla yritetään viestittää, esim. esimerkkikuvassamme tämä olisi: "Prioriteettitaso: 3/4". Huomiot voisivat olla myös tarkempia ja kohdistetumpia, jotta korjaaja ymmärtäisi tarkalleen mistä kohdasta on kyse. Myöhemmin käsiteltävä "tekstimuotoinen raportti, jossa höysteenä kuvia" on mielestäni seuraava evoluutio tästä.  
+
+</div>
+
+
+
+<Image
+  src="/images/projects/Esimerkkitable.png"
+  alt="Esimerkkikuva taulukkopohjaisesta raportista"
+  width={740}
+  height={600}
+/>
+
+#### Taulukkoraportti:
+Tämä taulukkomuotoinen raportti ei sisällä kuvia ollenkaan. Koska kuville ei taulukossa ole tilaa, kannattaa ongelma kuvata hyvin tarkasti jotta väärinymmärrystä kohteesta tai ongelmasta ei synny.  
+
+Taulukkomuodossa hyvää on sen selkeys, mutta ongelmia tulee siinä, että korjaajan voi olla vaikea hahmottaa vain sanallisia ohjeita. Jos tekstiä on paljon, taulukko venyy rumasti ja sen luettavuus kärsii, joka todennäköisesti tapahtuu koska ei ole kuvia selkeyttämässä. Taulukossa voi tulla myös tahatonta toisteisuutta, jos tilaa saatesanoille (esimerkiksi raportissa tekoon käytetyille työkaluille ) ei missään ole. 
+
+
+#### Tekstimuotoisen ja taulukkoraportin hybridi:
+Ehdoton lempparini. Tässä yhdistyy taulukon hyvä luettavuus ja selkeä asettelu, sekä raporttimuodon vapaus kirjoittaa pidemmin ilman että solut venyvät tarpeettomasti. Raportissa on hyvin tilaa tekstille, ja pdf-tiedostomuoto avautuu helposti kaikilla laitteilla (toisin kuin taulukkomuotoinen .xsm tai Sheets/Powerpoint prese)
+
+En ole ihan varma ovatko näkemäni raportit tuotettu jonkun automatisoidun tarkistustyökalun kautta, vai onko saavutettavuusfirmoilla omat pohjansa joita he uudelleenkierrättävät. Olisi todella mielenkiintoista kuulla asiasta lisää!
+
+
+Yhteenveto: Taidan itse pitäytyä tekstimuotoisen ja taulukkoraportin yhteismuodostelmassa. 

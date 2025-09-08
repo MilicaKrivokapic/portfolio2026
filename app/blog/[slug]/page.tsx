@@ -107,7 +107,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             alt={post.metadata.title}
             width={1200}
             height={500}
-            className="w-full h-auto max-h-[500px] object-contain rounded-lg"
+            className="w-full h-auto max-h-[800px] object-contain rounded-lg"
             priority
           />
         </div>
