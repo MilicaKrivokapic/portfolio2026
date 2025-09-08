@@ -123,3 +123,5 @@ import Image from 'next/image'
 
 - For image galleries, use the custom `<ImageGrid />` component (see `content/custom-mdx-examples.mdx` for examples).
 - For captions, use the `<Caption />` component.
+
+<!-- BlogCard removed: component and documentation deleted -->
