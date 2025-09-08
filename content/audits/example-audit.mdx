@@ -1,0 +1,51 @@
+---
+title: "Sample Accessibility Audit – Marketing Site"
+publishedAt: "2025-01-05"
+summary: "High-level audit findings covering color contrast, keyboard traps, and landmark structure."
+tags: "accessibility, wcag, audit"
+image: "/opengraph-image.png"
+---
+
+# Executive Summary
+
+This case study demonstrates how I report findings and propose fixes. It mirrors the structure of my blog posts for consistency and readability.
+
+## Scope
+
+- Pages: Home, Product, Pricing, Checkout
+- Standards: WCAG 2.2 AA
+
+## Key Findings
+
+### 1. Color Contrast
+
+Text on the primary buttons failed contrast (3.8:1). Update the color tokens to meet 4.5:1 for normal text.
+
+### 2. Keyboard Navigation
+
+Modal close button was not reachable. Ensure focus is trapped within the modal and close action is available via Escape key.
+
+### 3. Landmarks and Headings
+
+Missing `main` landmark and skipped heading levels (h2 → h4). Introduce semantic regions and normalize heading hierarchy.
+
+## Remediation Plan
+
+1. Adjust `--color-primary-600` and `--on-primary` to meet contrast.
+2. Add `aria-modal="true"`, focus trap, and Escape handling.
+3. Add `main` landmark and refactor headings.
+
+## Evidence
+
+<Caption>Contrast analysis for primary button states</Caption>
+
+## Next Steps
+
+- Re-test impacted components after fixes
+- Add Axe, Playwright a11y checks to CI
+
+---
+
+If you want a similar audit, reach out via the contact form.
+
+

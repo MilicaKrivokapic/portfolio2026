@@ -70,6 +70,13 @@ export function Navbar() {
           >
             Blog
           </Link>
+          <Link
+            href="/audits"
+            className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Audits
+          </Link>
         </div>
       </div>
     </header>
