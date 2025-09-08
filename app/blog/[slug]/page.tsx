@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 function getReadTime(text: string) {
-  const wordsPerMinute = 200;
+  const wordsPerMinute = 120;
   const words = text.split(/\s+/).length;
   return Math.max(1, Math.round(words / wordsPerMinute));
 }

@@ -9,6 +9,12 @@ export const metadata = {
   description: "Nextfolio Blog",
 };
 
+function getReadTime(text: string) {
+  const wordsPerMinute = 120;
+  const words = text.split(/\s+/).length;
+  return Math.max(1, Math.round(words / wordsPerMinute));
+}
+
 export default function BlogPosts() {
   let allBlogs = getBlogPosts();
   // let likes: Record<string, number> = {};
@@ -56,6 +62,8 @@ export default function BlogPosts() {
                       <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
                         <span role="img" aria-label="calendar">📅</span>
                         <time>{formatDate(post.metadata.publishedAt, false)}</time>
+                        <span className="hidden sm:inline">•</span>
+                        <span>{getReadTime(post.content)} min read</span>
                       </div>
                       {/* <LikeCounter likes={likes[post.slug] || 0} /> */}
 
