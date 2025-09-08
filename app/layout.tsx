@@ -8,6 +8,7 @@ import { Navbar } from "./components/nav";
 import Footer from "./components/footer";
 import ProfileSidebar from './components/profile-sidebar';
 import { LanguageProvider } from './context/language-context';
+import BackToTop from './components/back-to-top';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -55,6 +56,7 @@ export default function RootLayout({
                 <Navbar />
                 {children}
                 <Footer />
+                <BackToTop />
               </main>
               <Analytics />
               <SpeedInsights />

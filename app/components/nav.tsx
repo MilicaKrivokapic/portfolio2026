@@ -57,7 +57,7 @@ export function Navbar() {
             <Link
               key={item.id}
               href={{ pathname: "/", hash: item.id }}
-              className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark"
+              className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
@@ -65,10 +65,17 @@ export function Navbar() {
           ))}
           <Link
             href="/blog"
-            className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark"
+            className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
             onClick={() => setMenuOpen(false)}
           >
             Blog
+          </Link>
+          <Link
+            href="/audits"
+            className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Audits
           </Link>
         </div>
       </div>

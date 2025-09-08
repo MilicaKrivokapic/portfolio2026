@@ -1,37 +1,24 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
-import { formatDate, getBlogPosts } from "app/lib/posts";
+import { formatDate, getAuditPosts } from "app/lib/posts";
 import { metaData } from "app/config";
 import { serialize } from 'next-mdx-remote/serialize';
 import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-   {/* import { LikeButton } from '../../components/like-button';   */}
 
 export async function generateStaticParams() {
-  let posts = getBlogPosts();
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  let posts = getAuditPosts();
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata | undefined> {
   const { slug } = await params;
-  let post = getBlogPosts().find((post) => post.slug === slug);
-  if (!post) {
-    return;
-  }
+  let post = getAuditPosts().find((post) => post.slug === slug);
+  if (!post) return;
 
-  let {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-  } = post.metadata;
-  let ogImage = image
-    ? image
-    : `${metaData.baseUrl}/og?title=${encodeURIComponent(title)}`;
+  let { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
+  let ogImage = image ? image : `${metaData.baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -41,12 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description,
       type: "article",
       publishedTime,
-      url: `${metaData.baseUrl}/blog/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
+      url: `${metaData.baseUrl}/audits/${post.slug}`,
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: "summary_large_image",
@@ -63,29 +46,15 @@ function getReadTime(text: string) {
   return Math.max(1, Math.round(words / wordsPerMinute));
 }
 
-export default async function Blog({ params }: { params: Promise<{ slug: string }> }) {
+export default async function AuditPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  let allPosts = getBlogPosts();
+  let allPosts = getAuditPosts();
   let postIndex = allPosts.findIndex((p) => p.slug === slug);
   let prevPost = postIndex > 0 ? allPosts[postIndex - 1] : null;
   let nextPost = postIndex < allPosts.length - 1 ? allPosts[postIndex + 1] : null;
   let post = allPosts[postIndex];
 
-  if (!post) {
-    notFound();
-  }
-
-  {/*// Get likes from likes.json
-  let likes = 0;
-  try {
-    const likesPath = path.join(process.cwd(), 'content', 'likes.json');
-    if (fs.existsSync(likesPath)) {
-      const likesData = JSON.parse(fs.readFileSync(likesPath, 'utf-8'));
-      likes = likesData[slug] || 0;
-    }
-  } catch (error) {
-    console.error('Error reading likes:', error);
-  } */}
+  if (!post) notFound();
 
   const source = await serialize(post.content);
   const readTime = getReadTime(post.content);
@@ -93,11 +62,10 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
 
   return (
     <section className="flex flex-col items-center w-full px-4">
-      {/* Back to Blog link outside the article box */}
       <div className="w-full max-w-5xl mb-4">
-        <a href="/blog" className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-accent-light dark:hover:text-accent-dark transition-colors">
+        <a href="/audits" className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-accent-light dark:hover:text-accent-dark transition-colors">
           <FaArrowLeft className="w-4 h-4" />
-          <span>Back to Blog</span>
+          <span>Back to Audits</span>
         </a>
       </div>
       <article className="prose prose-neutral dark:prose-invert max-w-5xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
@@ -118,8 +86,6 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           <span>📅 {formatDate(post.metadata.publishedAt)}</span>
           <span className="hidden md:inline">&bull;</span>
           <span>{readTime} min read</span>
-          <span className="hidden md:inline">&bull;</span>
-         {/* <LikeButton postSlug={post.slug} initialLikes={likes} /> */}
         </div>
         <CustomMDX source={source} />
         {post.metadata.tags && (
@@ -129,7 +95,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
               return (
                 <a
                   key={trimmed}
-                  href={`/blog?tag=${encodeURIComponent(trimmed)}`}
+                  href={`/audits?tag=${encodeURIComponent(trimmed)}`}
                   className="inline-block bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs font-medium hover:bg-accent-light hover:text-white dark:hover:bg-accent-dark transition-colors"
                 >
                   #{trimmed}
@@ -138,14 +104,13 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             })}
           </div>
         )}
-        {/* Prev/Next arrows with labels and links below */}
         <div className="flex justify-between items-center mt-12 gap-2">
           {prevPost ? (
             <div className="flex flex-col items-start max-w-[45%]">
               <span className="text-sm md:text-base font-semibold text-neutral-700 dark:text-neutral-100 mb-1 flex items-center gap-1">
                 <FaArrowLeft className="w-5 h-5 inline mr-1" /> Previous
               </span>
-              <a href={`/blog/${prevPost.slug}`} className="truncate text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold">
+              <a href={`/audits/${prevPost.slug}`} className="truncate text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold">
                 {prevPost.metadata.title}
               </a>
             </div>
@@ -155,7 +120,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
               <span className="text-sm md:text-base font-semibold text-neutral-700 dark:text-neutral-100 mb-1 flex items-center gap-1 justify-end">
                 Up next <FaArrowRight className="w-5 h-5 inline ml-1" />
               </span>
-              <a href={`/blog/${nextPost.slug}`} className="truncate text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold text-right">
+              <a href={`/audits/${nextPost.slug}`} className="truncate text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold text-right">
                 {nextPost.metadata.title}
               </a>
             </div>
@@ -165,3 +130,5 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     </section>
   );
 }
+
+

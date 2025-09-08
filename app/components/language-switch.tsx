@@ -10,7 +10,7 @@ export function LanguageSwitch() {
     <button
       type="button"
       onClick={() => setLanguage(language === 'en' ? 'fi' : 'en')}
-      className="p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all group focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark"
+      className="p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all group"
       aria-label={`Switch language to ${language === 'en' ? 'Finnish' : 'English'}`}
     >
       <div className="flex items-center gap-2">

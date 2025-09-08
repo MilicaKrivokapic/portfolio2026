@@ -95,7 +95,7 @@ export default function Contact() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-background-light dark:bg-background-dark rounded-xl hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark"
+                  className="p-4 bg-background-light dark:bg-background-dark rounded-xl hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 hover:scale-110"
                   aria-label={`Connect on ${link.name}`}
                 >
                   {getIcon(link.icon)}
@@ -125,7 +125,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 dark:bg-white/5 dark:border-white/20 dark:focus:ring-white"
+                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm dark:bg-white/5 dark:border-white/20"
                 placeholder={t('contact.namePlaceholder')}
               />
             </div>
@@ -140,7 +140,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 dark:bg-white/5 dark:border-white/20 dark:focus:ring-white"
+                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm dark:bg-white/5 dark:border-white/20"
                 placeholder={t('contact.emailPlaceholder')}
               />
             </div>
@@ -155,7 +155,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 dark:bg-white/5 dark:border-white/20 dark:focus:ring-white resize-none"
+                className="block w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-2 shadow-sm dark:bg-white/5 dark:border-white/20 resize-none"
                 placeholder={t('contact.messagePlaceholder')}
               />
             </div>

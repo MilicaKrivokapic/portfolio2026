@@ -1,5 +1,8 @@
 export const translations = {
   en: {
+    common: {
+      backToTop: 'Back to top',
+    },
     nav: {
       blog: 'Blog',
       projects: 'Projects',
@@ -57,6 +60,9 @@ export const translations = {
     }
   },
   fi: {
+    common: {
+      backToTop: 'Takaisin ylös',
+    },
     nav: {
       blog: 'Blogi',
       projects: 'Projektit',

@@ -26,6 +26,12 @@
   --sh-entity: #e25a1c;
   --icon-color: theme('colors.accent.light');
   --accent-shadow: 51, 177, 215; /* #33B1D7 in RGB for rgba() */
+  --ring-accent: theme('colors.accent.light');
+  /* Default Tailwind ring variables */
+  --tw-ring-color: var(--ring-accent);
+  --tw-ring-offset-color: theme('colors.surface-light');
+  /* Focus outline color for light theme (dark outline) */
+  --focus-outline-color: theme('colors.primary-light');
 }
 
 /* Dark theme colors */
@@ -42,6 +48,19 @@
   --sh-entity: #e25a1c;
   --icon-color: theme('colors.accent.dark');
   --accent-shadow: 249, 58, 106; /* #F93A6A in RGB for rgba() */
+  --ring-accent: theme('colors.accent.dark');
+  /* Default Tailwind ring variables */
+  --tw-ring-color: var(--ring-accent);
+  --tw-ring-offset-color: theme('colors.surface-dark');
+  /* Focus outline color for dark theme (white outline) */
+  --focus-outline-color: #FFFFFF;
+}
+
+@layer base {
+  :where(a, button, input, select, textarea, summary, [role="button"], [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: 3px;
+  }
 }
 
 html {
