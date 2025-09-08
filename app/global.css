@@ -66,6 +66,7 @@
 html {
   min-width: 360px;
   scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 .prose {
