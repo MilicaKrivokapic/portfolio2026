@@ -8,6 +8,12 @@ export const translations = {
       projects: 'Projects',
       photos: 'Photos',
     },
+    blog: {
+      heading: 'Blog',
+      intro: "Exploring design trends, sharing lessons, and offering a peek behind the scenes.",
+      all: 'All',
+      loadMore: 'Load More'
+    },
     about: {
       title: 'About Me',
       readMore: 'Read more',
@@ -67,6 +73,12 @@ export const translations = {
       blog: 'Blogi',
       projects: 'Projektit',
       photos: 'Kuvat',
+    },
+    blog: {
+      heading: 'Blogi',
+      intro: 'Tutkin design-trendejä, jaan oppeja ja kurkistuksia kulissien taakse.',
+      all: 'Kaikki',
+      loadMore: 'Näytä lisää'
     },
     about: {
       title: 'Minusta',

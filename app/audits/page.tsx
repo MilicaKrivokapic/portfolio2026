@@ -6,9 +6,10 @@ export const metadata = {
   description: "Accessibility audit case studies and reports",
 };
 
-export default function AuditPosts({ searchParams }: { searchParams?: { tag?: string } }) {
+export default async function AuditPosts({ searchParams }: { searchParams: Promise<{ tag?: string }> }) {
   let allAudits = getAuditPosts();
-  const initialTag = searchParams?.tag;
+  const { tag } = await searchParams;
+  const initialTag = tag;
 
   return (
     <div className="max-w-6xl mx-auto px-6">
@@ -17,7 +18,7 @@ export default function AuditPosts({ searchParams }: { searchParams?: { tag?: st
           Accessibility Audits
         </h1>
         <p className="text-neutral-600 dark:text-neutral-400 mb-10">Case studies and reports focused on practical WCAG improvements.</p>
-        <BlogGrid posts={allAudits as any} initialTag={initialTag} />
+        <BlogGrid posts={allAudits as any} initialTag={initialTag} basePath="/audits" />
       </section>
     </div>
   );
