@@ -8,6 +8,7 @@ import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { highlight } from "sugar-high";
 import { CaptionComponent } from "./caption";
 import { ImageGrid } from "./image-grid";
+import PresentationCard from "./PresentationCard";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href = '#' } = props;
@@ -118,6 +119,7 @@ const components = {
   Callout,
   Caption: CaptionComponent,
   ImageGrid,
+  PresentationCard,
 } as const;
 
 interface CustomMDXProps {
