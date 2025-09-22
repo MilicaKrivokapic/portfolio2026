@@ -13,6 +13,9 @@ export type BlogListItem = {
     summary: string;
     tags: string;
     image?: string;
+    title_fi?: string;
+    summary_fi?: string;
+    tags_fi?: string;
   };
 };
 
@@ -22,20 +25,23 @@ interface BlogGridProps {
   basePath?: string; // defaults to /blog; set to /audits for audits
 }
 
+function normalizeAndSplitTags(tagString?: string): string[] {
+  if (!tagString) return [];
+  return tagString
+    .split(',')
+    .map((t) => t.trim())
+    .map((t) => t.replace(/^#/, ''))
+    .filter(Boolean);
+}
+
 function getUniqueTags(posts: BlogListItem[], language: 'en' | 'fi'): string[] {
-  const counts = new Map<string, number>();
+  const set = new Set<string>();
   posts.forEach((p) => {
     const meta: any = p.metadata as any;
     const tagString = language === 'fi' && meta.tags_fi ? meta.tags_fi : p.metadata.tags;
-    if (!tagString) return;
-    const first = tagString.split(',')[0]?.trim();
-    if (!first) return;
-    counts.set(first, (counts.get(first) || 0) + 1);
+    normalizeAndSplitTags(tagString).forEach((t) => set.add(t));
   });
-  return Array.from(counts.entries())
-    .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
-    .slice(0, 6)
-    .map(([name]) => name);
+  return Array.from(set).sort((a, b) => a.localeCompare(b));
 }
 
 export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: BlogGridProps) {
@@ -57,10 +63,7 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
     return sorted.filter((p) => {
       const meta: any = p.metadata as any;
       const tagString = language === 'fi' && meta.tags_fi ? meta.tags_fi : p.metadata.tags;
-      return tagString
-        ?.split(',')
-        .map((t: string) => t.trim())
-        .includes(activeTag);
+      return normalizeAndSplitTags(tagString).includes(activeTag);
     });
   }, [posts, activeTag, language]);
 
@@ -104,7 +107,8 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
           const title = language === 'fi' && meta.title_fi ? meta.title_fi : post.metadata.title;
           const summary = language === 'fi' && meta.summary_fi ? meta.summary_fi : post.metadata.summary;
           const tagString = language === 'fi' && meta.tags_fi ? meta.tags_fi : post.metadata.tags;
-          const firstTag = tagString?.split(',')[0]?.trim();
+          const allTags = normalizeAndSplitTags(tagString);
+          const firstTag = allTags[0];
           const img = post.metadata.image || '/opengraph-image.png';
           return (
             <Link
@@ -133,6 +137,25 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
                 <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300 line-clamp-3">
                   {summary}
                 </p>
+                {allTags.length > 1 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {allTags.map((tag) => (
+                      <button
+                        key={`${post.slug}-${tag}`}
+                        type="button"
+                        aria-label={`Filter by ${tag}`}
+                        className="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setActiveTag(tag);
+                          setVisibleCount(6);
+                        }}
+                      >
+                        #{tag}
+                      </button>
+                    ))}
+                  </div>
+                )}
                 <div className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
                   {new Date(post.metadata.publishedAt).toLocaleDateString(language === 'fi' ? 'fi-FI' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </div>
