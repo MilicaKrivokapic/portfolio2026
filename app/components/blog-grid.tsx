@@ -108,7 +108,6 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
           const summary = language === 'fi' && meta.summary_fi ? meta.summary_fi : post.metadata.summary;
           const tagString = language === 'fi' && meta.tags_fi ? meta.tags_fi : post.metadata.tags;
           const allTags = normalizeAndSplitTags(tagString);
-          const firstTag = allTags[0];
           const img = post.metadata.image || '/opengraph-image.png';
           return (
             <Link
@@ -124,10 +123,17 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
-                {firstTag && (
-                  <span className="absolute top-3 left-3 text-xs md:text-sm px-2.5 py-1.5 rounded-full bg-black text-white dark:bg-white dark:text-black shadow-sm ring-1 ring-black/20 dark:ring-white/30">
-                    {firstTag}
-                  </span>
+                {allTags.length > 0 && (
+                  <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-2">
+                    {allTags.map((tag) => (
+                      <span
+                        key={`${post.slug}-badge-${tag}`}
+                        className="text-xs md:text-sm px-2.5 py-1.5 rounded-full bg-black/80 text-white backdrop-blur-sm dark:bg-white/90 dark:text-black shadow-sm ring-1 ring-black/20 dark:ring-white/30"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
               <div className="pt-5">
@@ -137,25 +143,6 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
                 <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300 line-clamp-3">
                   {summary}
                 </p>
-                {allTags.length > 1 && (
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {allTags.map((tag) => (
-                      <button
-                        key={`${post.slug}-${tag}`}
-                        type="button"
-                        aria-label={`Filter by ${tag}`}
-                        className="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setActiveTag(tag);
-                          setVisibleCount(6);
-                        }}
-                      >
-                        #{tag}
-                      </button>
-                    ))}
-                  </div>
-                )}
                 <div className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
                   {new Date(post.metadata.publishedAt).toLocaleDateString(language === 'fi' ? 'fi-FI' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </div>
