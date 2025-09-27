@@ -23,6 +23,7 @@ interface BlogGridProps {
   posts: BlogListItem[];
   initialTag?: string;
   basePath?: string; // defaults to /blog; set to /audits for audits
+  showDate?: boolean;
 }
 
 function normalizeAndSplitTags(tagString?: string): string[] {
@@ -44,7 +45,7 @@ function getUniqueTags(posts: BlogListItem[], language: 'en' | 'fi'): string[] {
   return Array.from(set).sort((a, b) => a.localeCompare(b));
 }
 
-export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: BlogGridProps) {
+export default function BlogGrid({ posts, initialTag, basePath = '/blog', showDate = true }: BlogGridProps) {
   const { language, t } = useLanguage();
   const ALL = '__ALL__';
   const [activeTag, setActiveTag] = React.useState<string>(initialTag || ALL);
@@ -143,9 +144,14 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog' }: Blog
                 <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300 line-clamp-3">
                   {summary}
                 </p>
-                <div className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
-                  {new Date(post.metadata.publishedAt).toLocaleDateString(language === 'fi' ? 'fi-FI' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                </div>
+                {showDate && (
+                  <div className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
+                    {new Date(post.metadata.publishedAt).toLocaleDateString(
+                      language === 'fi' ? 'fi-FI' : 'en-US',
+                      { month: 'short', day: 'numeric', year: 'numeric' }
+                    )}
+                  </div>
+                )}
               </div>
             </Link>
           );

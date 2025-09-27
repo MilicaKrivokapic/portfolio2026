@@ -8,7 +8,13 @@
   }
 }
 
+/* Selection colors */
 ::selection {
+  background-color: theme('colors.accent.light');
+  color: #FFFFFF;
+}
+
+.dark ::selection {
   background-color: #FF3366;
   color: #FFFFFF;
 }
@@ -64,7 +70,7 @@
 }
 
 html {
-  min-width: 360px;
+  min-width: 320px;
   scroll-behavior: smooth;
 }
 

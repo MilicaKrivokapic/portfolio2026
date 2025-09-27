@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
-import { formatDate, getAuditPosts } from "app/lib/posts";
+import { getAuditPosts } from "app/lib/posts";
 import { metaData } from "app/config";
 import { serialize } from 'next-mdx-remote/serialize';
 import Image from "next/image";
@@ -83,8 +83,6 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
           {post.metadata.title}
         </h1>
         <div className="flex flex-col md:flex-row items-center gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
-          <span>📅 {formatDate(post.metadata.publishedAt)}</span>
-          <span className="hidden md:inline">&bull;</span>
           <span>{readTime} min read</span>
         </div>
         <CustomMDX source={source} />

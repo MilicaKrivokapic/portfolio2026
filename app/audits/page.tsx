@@ -18,7 +18,7 @@ export default async function AuditPosts({ searchParams }: { searchParams: Promi
           Accessibility Audits
         </h1>
         <p className="text-neutral-600 dark:text-neutral-400 mb-10">Case studies and reports focused on practical WCAG improvements.</p>
-        <BlogGrid posts={allAudits as any} initialTag={initialTag} basePath="/audits" />
+        <BlogGrid posts={allAudits as any} initialTag={initialTag} basePath="/audits" showDate={false} />
       </section>
     </div>
   );
