@@ -45,19 +45,19 @@ export function Navbar() {
           <ThemeSwitch />
         </div>
       </nav>
-      {/* Mobile menu overlay */}
+      {/* Mobile menu overlay (partial height to reveal page behind) */}
       <div 
         id="mobile-menu"
-        className={`fixed top-0 left-0 w-full h-[50vh] bg-background-light dark:bg-background-dark z-[100] flex flex-col items-center pt-16 shadow-lg transition-all animate-fade-in-down md:hidden ${
+        className={`fixed top-0 left-0 w-full h-[70vh] bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-zinc-800 z-[100] flex flex-col items-center pt-16 pb-6 shadow-lg transition-opacity md:hidden ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col gap-6 mt-4">
+        <div className="flex flex-col gap-4 mt-2">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.id}
               href={{ pathname: "/", hash: item.id }}
-              className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+              className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
@@ -65,14 +65,14 @@ export function Navbar() {
           ))}
           <Link
             href="/blog"
-            className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
             onClick={() => setMenuOpen(false)}
           >
             Blog
           </Link>
           <Link
             href="/audits"
-            className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
             onClick={() => setMenuOpen(false)}
           >
             Audits

@@ -1,0 +1,92 @@
+---
+title: "Saavutettavuusraportti – Briljant verkkosivut"
+slug: "briljant-saavutettavuusraportti-2025"
+publishedAt: "2025-06-20"
+author: "Milica Krivokapic"
+summary: "WCAG 2.2 -pohjainen auditointi, löydökset ja korjausehdotukset."
+image: "/opengraph-image.png"
+tags: "saavutettavuus, WCAG 2.2, auditointi, Finnish"
+---
+
+## 1. Johdanto
+
+Tämä saavutettavuusarviointi on laadittu Briljant OSK:n verkkosivustolle. Arviointi perustuu **WCAG 2.2** -kriteeristöön keskittyen **A- ja AA-tasoihin**; mukana on myös suosituksia, jotka tukevat AAA-tasoa ja yleistä käytettävyyttä. Tavoitteena on tunnistaa kohdat, jotka estävät tai vaikeuttavat käyttöä, sekä esittää korjaukset, joilla parannetaan yhdenvertaista käyttökokemusta ja täytetään digipalvelulain velvoitteet.
+
+Arviointi on tehty huolellisesti ja maksutta harjoitustyönä; se ei välttämättä kata kaikkia mahdollisia puutteita.
+
+## 1.2 Korjausehdotukset ja prioriteetit
+
+Puutteet on luokiteltu: **korkea**, **keskitaso**, **matala** ja **suositus**.
+
+- **Korkea:** Merkittävästi käyttöä estävät/vaikeuttavat, usein selkeässä ristiriidassa WCAG- ja digipalvelulain vaatimusten kanssa → korjattava ensisijaisesti.  
+- **Keskitaso:** Heikentää käytettävyyttä/ymmärrettävyyttä tietyille ryhmille.  
+- **Matala:** Vaikutus lievä; ei välttämättä suoraa WCAG-rikettä, mutta kasaantuneina haittaavat.  
+- **Suositus:** Käytettävyyttä parantavat toimet ilman varsinaista teknistä virhettä.
+
+## 1.3 Korjaus ja jatkotoimet
+
+Suositellaan erityisesti korkean ja keskitason puutteiden korjaamista, uudelleentestauksia korjausten jälkeen sekä jäljelle jäävien puutteiden dokumentointia saavutettavuusselosteessa. Olennaiset puutteet ilmoitetaan oma-aloitteisesti valvontaviranomaiselle.
+
+## 1.4 Auditointimenetelmät
+
+- **Viitekehykset:** WCAG 2.2 (A/AA), Suomen ja EU:n saavutettavuussääntely; huomioitu 28.6.2025 voimaan astuvat digipalvelulain muutokset (esim. verkkokaupat).  
+- **Kognitiivinen saavutettavuus:** Selkeästi meille -kriteeristö.  
+- **Työkalut:** WAVE, Lighthouse.  
+- **Manuaalitestaus:** Näppäimistö, ruudunlukijat **NVDA (Windows), TalkBack (Android), VoiceOver (iOS)**.  
+- **Laitteet:** iPhone 12 mini, MacBook Pro (M1).  
+- **Responsiivisuus ja käytettävyys:** Testattu käytännössä.
+
+---
+
+## 2.0 Saavutettavuuspuutteet
+
+### 2.1 Korkea prioriteetti
+
+#### 2.1.1 Tekstin kontrastipuutteet
+
+**Sijainnit (esimerkit):**
+- **Etusivu:** navigaatio, menu-banneri, “Ota yhteyttä!” -nappi, *Image with text* -osioiden tekstit
+- **Yhteystiedot:** puhelinnumero, sähköposti, “lähetä”-nappi
+- **Footer:** kontrasti lähellä AA-vaatimusta normaalitekstillä (arvio ~4.49:1). Firefoxin tarkistin pitää riittävänä, mutta konservatiivisemmat työkalut (esim. WebAIM) ilmoittavat hieman alle vaaditun. Varma keino on vaalentaa tekstiä tai tummentaa taustaa.
+
+**Korjausehdotus:**  
+Nosta vaalean tekstin **opacity 1.0**:aan tai tumenna taustaa. Turkooseihin nappeihin suositellaan hieman tummempaa taustasävyä.
+
+**Viite:** WCAG 2.2 – [1.4.3 Contrast (Minimum)](https://www.w3.org/Translations/WCAG21-fi/#contrast-minimum)
+
+### 2.3 Matalan prioriteetin korjausehdotuksia
+
+#### 2.3.1 Otsikkohierarkia
+
+**Puutteen kuvaus:**  
+Etusivulla logo toimii `<h1>`-tunnisteena, mutta muilla sivuilla (esim. *Yhteystiedot*, *Briljantin toimintaperiaatteet*, *Palvelut*) varsinaista `<h1>`-elementtiä ei ole. Tämä heikentää rakennetta ruudunlukijoille ja voi vaikuttaa myös SEO:oon.
+
+**Korjausehdotus:**  
+Lisää jokaisen muun kuin etusivun alkuun kuvaava **`<h1>`** (esim. `<h1>Yhteystiedot</h1>`).
+
+**Viite:** WAI Tutorials – [Heading structure](https://www.w3.org/WAI/tutorials/page-structure/headings/)
+
+---
+
+## Suosituksia
+
+- Ylläpidä johdonmukainen typografia ja kontrastit erityisesti painikkeissa ja navigaatiossa.  
+- Dokumentoi tehdyt korjaukset saavutettavuusselosteeseen ja aikatauluta uusintatestaukset.
+
+## Formin pieniä huomioita
+
+- Jos sähköpostiosoite puuttuu ja lomake lähetetään, **koko lomake tyhjenee** → käyttäjän on syötettävä kaikki uudelleen. Suositus: säilytä syötetyt arvot virhetilanteessa.  
+- **Validointiviestien kieli/sijoittelu** vaihtelee: puhelinnumerokentän virheviesti englanniksi, sähköpostissa suomeksi; sijoittelu eroaa → ei vakava, mutta vähennä epäjohdonmukaisuutta.  
+- **Kelluvat labelit:** aktiivisessa tilassa label pienenee ja jää näkyviin (hyvä!), mutta pienikokoinen teksti voi olla joillekin vaikeasti luettavissa. Myös varoitusteksti “Sähköposti on tyhjä tai virheellinen” on melko pienellä. Ruudunlukija lukee viestin, mutta harkitse hieman isompaa fonttikokoa ja riittävää kontrastia.
+
+---
+
+## Liitteet
+
+<div className="not-prose mt-4 rounded-xl border overflow-hidden">
+  <iframe
+    title="Briljant saavutettavuusraportti (PDF)"
+    src="/reports/briljant-saavutettavuusraportti-2025.pdf#view=FitH"
+    className="w-full h-[75vh]"
+  />
+</div>

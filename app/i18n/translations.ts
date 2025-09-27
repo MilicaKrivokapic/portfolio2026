@@ -10,7 +10,7 @@ export const translations = {
     },
     blog: {
       heading: 'Blog',
-      intro: "Exploring design trends, sharing lessons, and offering a peek behind the scenes.",
+      intro: "Thoughts on accessibility and web development in general",
       all: 'All',
       loadMore: 'Load More'
     },
@@ -76,7 +76,7 @@ export const translations = {
     },
     blog: {
       heading: 'Blogi',
-      intro: 'Tutkin design-trendejä, jaan oppeja ja kurkistuksia kulissien taakse.',
+      intro: 'Pohdintoja saavutettavuudesta ja ylipäätään web-kehityksestä',
       all: 'Kaikki',
       loadMore: 'Näytä lisää'
     },
