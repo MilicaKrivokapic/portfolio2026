@@ -63,6 +63,10 @@ export const translations = {
       accessibilityAudits: 'Accessibility Audits',
       accessibilityAuditsDesc: 'A comprehensive dashboard for monitoring web accessibility metrics and WCAG compliance.',
       underConstruction: 'Under construction'
+    },
+    audits: {
+      preview: 'Preview',
+      previewScroll: 'Scroll down'
     }
   },
   fi: {
@@ -129,6 +133,10 @@ export const translations = {
       accessibilityAudits: 'Saavutettavuusauditoinnit',
       accessibilityAuditsDesc: 'Saavutettavuusraportteja joiden tarkoituksena on auttaa ja selkeyttää sivujen kognitiivista ja teknistä saavutettavuutta.',
       underConstruction: 'Rakenteilla'
+    },
+    audits: {
+      preview: 'Esikatselu',
+      previewScroll: 'Scrollaa alas'
     }
   },
 };
