@@ -9,6 +9,7 @@ import { highlight } from "sugar-high";
 import { CaptionComponent } from "./caption";
 import { ImageGrid } from "./image-grid";
 import PresentationCard from "./PresentationCard";
+import { useLanguage } from "app/context/language-context";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href = '#' } = props;
@@ -120,6 +121,14 @@ const components = {
   Caption: CaptionComponent,
   ImageGrid,
   PresentationCard,
+  PreviewLabel: function PreviewLabel() {
+    const { t } = useLanguage();
+    return (
+      <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-300">
+        {t('audits.preview')}, {t('audits.previewScroll')}
+      </p>
+    );
+  },
 } as const;
 
 interface CustomMDXProps {
