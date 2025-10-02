@@ -13,7 +13,7 @@ export default function LatestPosts() {
   return (
     <section aria-labelledby="latest-posts-heading" className="space-y-8">
       <LatestPostsHeader />
-      <BlogGrid posts={posts} basePath="/blog" showDate />
+      <BlogGrid posts={posts} basePath="/blog" showDate showFilters={false} />
     </section>
   );
 }

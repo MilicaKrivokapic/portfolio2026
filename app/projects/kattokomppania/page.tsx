@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowLeft } from "react-icons/fi";
 import { useLanguage } from "../../context/language-context";
 
 export default function KattokomppaniaProject() {
@@ -88,14 +87,20 @@ export default function KattokomppaniaProject() {
 
   return (
     <article className="max-w-3xl mx-auto space-y-12">
-      <div className="mb-8">
-        <Link 
-          href="/" 
-          className="inline-flex items-center text-muted-light dark:text-muted-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors"
-        >
-          <FiArrowLeft className="mr-2 h-4 w-4" />
-          {language === 'en' ? 'Back to Home' : 'Takaisin etusivulle'}
-        </Link>
+      <div className="mb-4">
+        <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
+          <ol className="flex items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Home</Link>
+            </li>
+            <li aria-hidden="true" className="opacity-60">/</li>
+            <li>
+              <Link href="/projects" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Projects</Link>
+            </li>
+            <li aria-hidden="true" className="opacity-60">/</li>
+            <li className="truncate" aria-current="page">{currentContent.title}</li>
+          </ol>
+        </nav>
       </div>
 
       <header className="space-y-8">
