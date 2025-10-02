@@ -3,6 +3,7 @@ import Skills from './components/skills';
 import Contact from './components/contact';
 import AboutMe from './components/about-me';
 import Recommendations from './components/recommendations';
+import LatestPosts from './components/latest-posts';
 
 export default function Home() {
   return (
@@ -29,6 +30,10 @@ export default function Home() {
 
       <section id="contact">
         <Contact />
+      </section>
+
+      <section id="latest-posts">
+        <LatestPosts />
       </section>
     </div>
   );

@@ -89,12 +89,10 @@ html {
 
 .prose .anchor {
   position: absolute;
+  left: -1em;
   visibility: hidden;
   text-decoration: none;
-  margin-left: -1em;
   padding-right: 0.5em;
-  width: 80%;
-  max-width: 700px;
   cursor: pointer;
 }
 
@@ -117,6 +115,16 @@ html {
 
 .prose *:hover > .anchor {
   @apply visible;
+}
+
+/* Ensure heading anchors are positioned relative to their heading container */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  position: relative;
 }
 
 .prose pre {
@@ -181,10 +189,15 @@ input[type="email"] {
   appearance: none;
 }
 
-table {
+/* Make tables responsive within prose without causing page overflow */
+.prose table {
   display: block;
-  max-width: fit-content;
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+}
+.prose table th,
+.prose table td {
   white-space: nowrap;
 }
 

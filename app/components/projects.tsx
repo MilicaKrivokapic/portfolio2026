@@ -11,11 +11,16 @@ export default function Projects() {
   
   return (
     <section className="py-20">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12">
-        {t('projects.featuredWork')}
-      </h2>
+      <div className="flex items-center justify-between gap-4 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold">
+          {t('projects.featuredWork')}
+        </h2>
+        <Button as="a" href="/projects" aria-label={t('projects.seeAll')}>
+          {t('projects.seeAll')}
+        </Button>
+      </div>
       <div className="grid grid-cols-1 gap-20">
-        {projectData.map((project, index) => {
+        {projectData.slice(0, 2).map((project, index) => {
           // Use translations if available
           const title = project.title_fi && language === 'fi' ? project.title_fi : project.title;
           const description = project.description_fi && language === 'fi' ? project.description_fi : project.description;

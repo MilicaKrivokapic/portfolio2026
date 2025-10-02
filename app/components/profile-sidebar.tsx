@@ -62,7 +62,7 @@ export default function ProfileSidebar() {
       {/* Profile Card (not fixed, not sticky, just below the top bar) */}
   <div className="md:hidden mt-0 p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-zinc-800">
         <div className="flex items-center space-x-4">
-          <div className="w-20 h-20 rounded-full overflow-hidden p-[3px] border-4 border-accent-light dark:border-accent-dark bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#1B3157]">
+          <Link href="/" aria-label="Go to home" className="w-20 h-20 rounded-full overflow-hidden p-[3px] border-4 border-accent-light dark:border-accent-dark bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#1B3157]">
             <div className="w-full h-full rounded-full overflow-hidden">
               <Image
                 src="/aaaa_koiru_portfolio.png"
@@ -73,9 +73,9 @@ export default function ProfileSidebar() {
                 priority
               />
             </div>
-          </div>
+          </Link>
           <div>
-            <h1 className="text-lg font-bold">Milica Krivokapic</h1>
+            <Link href="/" className="text-lg font-bold hover:text-accent-light dark:hover:text-accent-dark transition-colors" aria-label="Go to home">Milica Krivokapic</Link>
             <p className="text-sm text-muted-light dark:text-muted-dark">
               {t('sidebar.role')}
             </p>
@@ -86,7 +86,7 @@ export default function ProfileSidebar() {
       {/* Desktop Sidebar */}
   <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[400px] bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-zinc-800 p-8 flex-col">
         <div className="flex flex-col items-center space-y-4">
-          <div className="relative w-56 h-48 rounded-3xl overflow-hidden p-[3px] border-2 border-accent-light dark:border-accent-dark bg-gradient-to-br bg-black flex items-center justify-center">
+          <Link href="/" aria-label="Go to home" className="relative w-56 h-48 rounded-3xl overflow-hidden p-[3px] border-2 border-accent-light dark:border-accent-dark bg-gradient-to-br bg-black flex items-center justify-center">
             <div className="w-full h-full overflow-hidden flex items-center justify-center">
               <Image
                 src="/aaaa_koiru_portfolio.png"
@@ -97,8 +97,8 @@ export default function ProfileSidebar() {
                 priority
               />
             </div>
-          </div>
-          <h1 className="text-2xl font-bold mt-2">MILICA KRIVOKAPIC</h1>
+          </Link>
+          <Link href="/" className="text-2xl font-bold mt-2 hover:text-accent-light dark:hover:text-accent-dark transition-colors" aria-label="Go to home">MILICA KRIVOKAPIC</Link>
           <p className="text-muted-light dark:text-muted-dark text-center">
             {t('sidebar.role')}
           </p>

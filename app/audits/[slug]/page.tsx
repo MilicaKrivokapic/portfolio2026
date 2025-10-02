@@ -5,6 +5,7 @@ import { getAuditPosts } from "app/lib/posts";
 import { metaData } from "app/config";
 import { serialize } from 'next-mdx-remote/serialize';
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export async function generateStaticParams() {
@@ -63,10 +64,19 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
   return (
     <section className="flex flex-col items-center w-full px-4">
       <div className="w-full max-w-5xl mb-4">
-        <a href="/audits" className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-accent-light dark:hover:text-accent-dark transition-colors">
-          <FaArrowLeft className="w-4 h-4" />
-          <span>Back to Audits</span>
-        </a>
+        <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
+          <ol className="flex items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Home</Link>
+            </li>
+            <li aria-hidden="true" className="opacity-60">/</li>
+            <li>
+              <Link href="/projects" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Projects</Link>
+            </li>
+            <li aria-hidden="true" className="opacity-60">/</li>
+            <li className="truncate max-w-[50vw] md:max-w-none" aria-current="page">{post.metadata.title}</li>
+          </ol>
+        </nav>
       </div>
       <article className="prose prose-neutral dark:prose-invert max-w-5xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
         <div className="w-full mb-8 rounded-lg overflow-hidden">
@@ -93,7 +103,7 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
               return (
                 <a
                   key={trimmed}
-                  href={`/audits?tag=${encodeURIComponent(trimmed)}`}
+                  href={`/projects?tag=${encodeURIComponent(trimmed)}`}
                   className="inline-block bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs font-medium hover:bg-accent-light hover:text-white dark:hover:bg-accent-dark transition-colors"
                 >
                   #{trimmed}

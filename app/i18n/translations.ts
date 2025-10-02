@@ -12,7 +12,9 @@ export const translations = {
       heading: 'Blog',
       intro: "Thoughts on accessibility and web development in general",
       all: 'All',
-      loadMore: 'Load More'
+      loadMore: 'Load More',
+      latestHeading: 'Latest posts',
+      seeAll: 'See all posts'
     },
     about: {
       title: 'About Me',
@@ -60,6 +62,7 @@ export const translations = {
     projects: {
       featuredWork: 'Featured Work',
       seeProject: 'See Project',
+      seeAll: 'See all projects',
       accessibilityAudits: 'Accessibility Audits',
       accessibilityAuditsDesc: 'A comprehensive dashboard for monitoring web accessibility metrics and WCAG compliance.',
       underConstruction: 'Under construction'
@@ -82,7 +85,9 @@ export const translations = {
       heading: 'Blogi',
       intro: 'Pohdintoja saavutettavuudesta ja ylipäätään web-kehityksestä',
       all: 'Kaikki',
-      loadMore: 'Näytä lisää'
+      loadMore: 'Näytä lisää',
+      latestHeading: 'Uusimmat kirjoitukset',
+      seeAll: 'Näytä kaikki'
     },
     about: {
       title: 'Minusta',
@@ -130,6 +135,7 @@ export const translations = {
     projects: {
       featuredWork: 'Töitäni',
       seeProject: 'Katso projekti',
+      seeAll: 'Näytä kaikki projektit',
       accessibilityAudits: 'Saavutettavuusauditoinnit',
       accessibilityAuditsDesc: 'Saavutettavuusraportteja joiden tarkoituksena on auttaa ja selkeyttää sivujen kognitiivista ja teknistä saavutettavuutta.',
       underConstruction: 'Rakenteilla'

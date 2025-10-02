@@ -7,14 +7,13 @@ export const projectData = [
     tags: ['UX', 'Squarespace', 'UI'],
   },
   {
-    title: 'Accessibility Audits',
-    title_fi: 'Saavutettavuusauditoinnit',
-    description: 'Accessibility reports aimed to help and clarify cognitive and technical accessibility of websites.',
-    description_fi: 'Saavutettavuusraportteja joiden tarkoituksena on auttaa ja selkeyttää sivujen kognitiivista ja teknistä saavutettavuutta.',
-    image: 'https://picsum.photos/800/400',
-    link: '/audits',
-    tags: ['Next.js', 'WCAG', 'TypeScript', 'Tailwind'],
-    underConstruction: false,
+    title: 'Briljant Accessibility Audit',
+    title_fi: 'Briljant saavutettavuusauditointi',
+    description: 'Case study improving accessibility with practical WCAG 2.2 recommendations.',
+    description_fi: 'Tapaustutkimus saavutettavuuden parantamisesta käytännön WCAG 2.2 -suosituksilla.',
+    image: '/briljant.png',
+    link: '/audits/briljant-audit',
+    tags: ['WCAG 2.2', 'Audit', 'Case Study'],
   }
 ];
 
