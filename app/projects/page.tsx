@@ -9,9 +9,10 @@ export const metadata: Metadata = {
   description: "Nextfolio Projects",
 };
 
-export default function Projects({ searchParams }: { searchParams?: { tag?: string } }) {
+export default async function Projects({ searchParams }: { searchParams: Promise<{ tag?: string }> }) {
   const audits = getAuditPosts();
-  const initialTag = searchParams?.tag;
+  const { tag } = await searchParams;
+  const initialTag = tag;
 
   function normalizeAndSplitTags(tagString?: string): string[] {
     if (!tagString) return [];
