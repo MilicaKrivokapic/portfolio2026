@@ -63,7 +63,7 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
 
   return (
     <section className="flex flex-col items-center w-full px-4">
-      <div className="w-full max-w-5xl mb-4">
+      <div className="w-full max-w-4xl mb-4">
         <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
           <ol className="flex items-center gap-2">
             <li>
@@ -78,7 +78,7 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
           </ol>
         </nav>
       </div>
-      <article className="prose prose-neutral dark:prose-invert max-w-5xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
+      <article className="prose prose-neutral dark:prose-invert max-w-4xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-4 sm:p-6 md:p-8 lg:p-12 mt-2 mb-16 text-[1.1rem] sm:text-[1.15rem] md:text-[1.2rem] overflow-hidden">
         <div className="w-full mb-8 rounded-lg overflow-hidden">
           <Image
             src={bannerImage}

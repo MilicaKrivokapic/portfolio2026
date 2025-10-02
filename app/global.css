@@ -201,6 +201,45 @@ input[type="email"] {
   white-space: nowrap;
 }
 
+/* Ensure all prose content handles overflow properly on mobile */
+.prose {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.prose p,
+.prose li,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Handle long URLs and code blocks on mobile */
+.prose a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.prose code {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Ensure iframe containers are responsive */
+.prose iframe {
+  max-width: 100%;
+  width: 100%;
+}
+
 .prose .callout > p {
   margin: 0 !important;
 }

@@ -86,73 +86,75 @@ export default function KattokomppaniaProject() {
   const currentContent = content[language];
 
   return (
-    <article className="max-w-3xl mx-auto space-y-12">
-      <div className="mb-4">
-        <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
-          <ol className="flex items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Home</Link>
-            </li>
-            <li aria-hidden="true" className="opacity-60">/</li>
-            <li>
-              <Link href="/projects" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Projects</Link>
-            </li>
-            <li aria-hidden="true" className="opacity-60">/</li>
-            <li className="truncate" aria-current="page">{currentContent.title}</li>
-          </ol>
-        </nav>
-      </div>
+    <div className="min-h-screen px-4 sm:px-6 lg:px-8 py-8">
+      <article className="max-w-4xl mx-auto space-y-8 md:space-y-12">
+        <div className="mb-4">
+          <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
+            <ol className="flex items-center gap-2">
+              <li>
+                <Link href="/" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Home</Link>
+              </li>
+              <li aria-hidden="true" className="opacity-60">/</li>
+              <li>
+                <Link href="/projects" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Projects</Link>
+              </li>
+              <li aria-hidden="true" className="opacity-60">/</li>
+              <li className="truncate max-w-[50vw] md:max-w-none" aria-current="page">{currentContent.title}</li>
+            </ol>
+          </nav>
+        </div>
 
-      <header className="space-y-8">
-        <h1 className="text-4xl font-bold font-heading">{currentContent.title}</h1>
-        <p className="text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed">
-          {currentContent.subtitle}
-        </p>
-      </header>
+        <header className="space-y-6 md:space-y-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading leading-tight">{currentContent.title}</h1>
+          <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            {currentContent.subtitle}
+          </p>
+        </header>
 
-      <div className="aspect-video relative w-full overflow-hidden rounded-xl shadow-lg bg-neutral-100 dark:bg-neutral-800">
-        <Image
-          src="/images/projects/kattis_project.png"
-          alt={`${currentContent.title} website screenshot`}
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+        <div className="aspect-video relative w-full overflow-hidden rounded-xl shadow-lg bg-neutral-100 dark:bg-neutral-800">
+          <Image
+            src="/images/projects/kattis_project.png"
+            alt={`${currentContent.title} website screenshot`}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
 
-      <div className="prose dark:prose-invert max-w-none">
-        <section>
-          <h2>{currentContent.overview.title}</h2>
-          <div>{currentContent.overview.text.map((t, i) => (<p key={i}>{t}</p>))}</div>
-        </section>
+        <div className="prose prose-neutral dark:prose-invert max-w-none prose-lg">
+          <section>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{currentContent.overview.title}</h2>
+            <div className="space-y-4">{currentContent.overview.text.map((t, i) => (<p key={i} className="text-base sm:text-lg leading-relaxed">{t}</p>))}</div>
+          </section>
 
-        <section className="mt-12">
-          <h2>{currentContent.features.title}</h2>
-          <ul>
-            {currentContent.features.list.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </section>
+          <section className="mt-8 md:mt-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{currentContent.features.title}</h2>
+            <ul className="space-y-2">
+              {currentContent.features.list.map((feature, index) => (
+                <li key={index} className="text-base sm:text-lg leading-relaxed">{feature}</li>
+              ))}
+            </ul>
+          </section>
 
-        <section className="mt-12">
-          <h2>{currentContent.tech.title}</h2>
-          <ul>
-            {currentContent.tech.list.map((tech, index) => (
-              <li key={index}>{tech}</li>
-            ))}
-          </ul>
-        </section>
+          <section className="mt-8 md:mt-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{currentContent.tech.title}</h2>
+            <ul className="space-y-2">
+              {currentContent.tech.list.map((tech, index) => (
+                <li key={index} className="text-base sm:text-lg leading-relaxed">{tech}</li>
+              ))}
+            </ul>
+          </section>
 
-        <section className="mt-12">
-          <h2>{currentContent.learning.title}</h2>
-          <ul>
-            {currentContent.learning.list.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </section>
-      </div>
-    </article>
+          <section className="mt-8 md:mt-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{currentContent.learning.title}</h2>
+            <ul className="space-y-2">
+              {currentContent.learning.list.map((item, index) => (
+                <li key={index} className="text-base sm:text-lg leading-relaxed">{item}</li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </article>
+    </div>
   );
 }
