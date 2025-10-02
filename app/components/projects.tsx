@@ -5,6 +5,8 @@ import { projectData } from '../config/mockData';
 import { useLanguage } from '../context/language-context';
 import Button from './ui/Button';
 
+type ProjectItem = (typeof projectData)[number] & { underConstruction?: boolean };
+
 
 export default function Projects() {
   const { t, language } = useLanguage();
@@ -20,10 +22,11 @@ export default function Projects() {
         </Button>
       </div>
       <div className="grid grid-cols-1 gap-20">
-        {projectData.slice(0, 2).map((project, index) => {
+        {projectData.slice(0, 2).map((project: ProjectItem, index) => {
           // Use translations if available
           const title = project.title_fi && language === 'fi' ? project.title_fi : project.title;
           const description = project.description_fi && language === 'fi' ? project.description_fi : project.description;
+          const isUnderConstruction = project.underConstruction === true;
 
           return (
             <div key={index} className="group relative flex flex-col md:flex-row gap-8 items-center">
@@ -34,12 +37,12 @@ export default function Projects() {
                   fill
                   className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-                {!project.underConstruction && (
+                {!isUnderConstruction && (
                   <Link href={project.link || '#'} className="absolute inset-0 z-10" aria-label={title}>
                     <span className="sr-only">{title}</span>
                   </Link>
                 )}
-                {project.underConstruction && (
+                {isUnderConstruction && (
                   <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
                     <div className="w-full h-12 flex items-center relative">
                       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-12" style={{ pointerEvents: 'none' }}>
@@ -72,7 +75,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                {project.underConstruction ? (
+                {isUnderConstruction ? (
                   <div
                     className="mt-3 px-6 py-2 rounded-lg bg-gray-300 text-gray-500 opacity-80 cursor-not-allowed text-center select-none"
                     tabIndex={-1}
