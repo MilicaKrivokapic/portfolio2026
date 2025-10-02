@@ -12,7 +12,7 @@ export const projectData = [
     description: 'Accessibility reports aimed to help and clarify cognitive and technical accessibility of websites.',
     description_fi: 'Saavutettavuusraportteja joiden tarkoituksena on auttaa ja selkeyttää sivujen kognitiivista ja teknistä saavutettavuutta.',
     image: 'https://picsum.photos/800/400',
-    link: '/audits',
+    link: '/projects',
     tags: ['Next.js', 'WCAG', 'TypeScript', 'Tailwind'],
     underConstruction: false,
   }

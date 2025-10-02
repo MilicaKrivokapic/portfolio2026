@@ -53,16 +53,19 @@ export function Navbar() {
         }`}
       >
         <div className="flex flex-col gap-4 mt-2">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.id}
-              href={{ pathname: "/", hash: item.id }}
-              className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const href = item.id === 'projects' ? '/projects' : { pathname: "/", hash: item.id } as any;
+            return (
+              <Link
+                key={item.id}
+                href={href as any}
+                className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <Link
             href="/blog"
             className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
@@ -70,13 +73,7 @@ export function Navbar() {
           >
             Blog
           </Link>
-          <Link
-            href="/audits"
-            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
-            onClick={() => setMenuOpen(false)}
-          >
-            Audits
-          </Link>
+          {/* Audits moved under Projects page; removed standalone link */}
         </div>
       </div>
     </header>

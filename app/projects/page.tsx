@@ -1,34 +1,62 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { projects } from "./project-data";
+import ProjectGrid, { ProjectGridItem } from "app/components/project-grid";
+import { getAuditPosts } from "app/lib/posts";
+import { projectData } from "app/config/mockData";
+import ProjectsFilteredGrid from "app/components/projects-filtered-grid";
 
 export const metadata: Metadata = {
   title: "Projects",
   description: "Nextfolio Projects",
 };
 
-export default function Projects() {
+export default function Projects({ searchParams }: { searchParams?: { tag?: string } }) {
+  const audits = getAuditPosts();
+  const initialTag = searchParams?.tag;
+
+  function normalizeAndSplitTags(tagString?: string): string[] {
+    if (!tagString) return [];
+    return tagString
+      .split(',')
+      .map((t) => t.trim())
+      .map((t) => t.replace(/^#/, ''))
+      .filter(Boolean);
+  }
+
+  const itemsFromProjects: ProjectGridItem[] = projectData.map((p) => ({
+    title: p.title,
+    summary: p.description,
+    href: p.link || '#',
+    image: p.image,
+    tags: p.tags,
+  }));
+
+  const itemsFromAudits: ProjectGridItem[] = audits.map((a: any) => ({
+    title: a.metadata.title,
+    summary: a.metadata.summary,
+    href: `/audits/${a.slug}`,
+    image: a.metadata.image,
+    tags: normalizeAndSplitTags(a.metadata.tags),
+  }));
+
+  const allItems: (ProjectGridItem & { allTags?: string[] })[] = [
+    ...itemsFromProjects.map((p) => ({ ...p, allTags: p.tags })),
+    ...audits.map((a: any) => ({
+      title: a.metadata.title,
+      summary: a.metadata.summary,
+      href: `/audits/${a.slug}`,
+      image: a.metadata.image,
+      tags: normalizeAndSplitTags(a.metadata.tags),
+      allTags: normalizeAndSplitTags(a.metadata.tags),
+    })),
+  ];
+
+
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">Projects</h1>
-      <div>
-        {projects.map((project, index) => (
-          <Link
-            key={index}
-            href={project.url}
-            className="flex flex-col space-y-1 mb-5 transition-opacity duration-200 hover:opacity-80"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-              <h2 className="text-black dark:text-white">{project.title}</h2>
-              <p className="text-neutral-600 dark:text-neutral-400 tracking-tight">
-                {project.description}
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
+    <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 md:py-20">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">Projects</h1>
+        <ProjectsFilteredGrid items={allItems} initialTag={initialTag} />
+      </section>
+    </div>
   );
 }

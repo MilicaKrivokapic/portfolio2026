@@ -62,6 +62,7 @@ export const translations = {
     projects: {
       featuredWork: 'Featured Work',
       seeProject: 'See Project',
+      seeAll: 'See all projects',
       accessibilityAudits: 'Accessibility Audits',
       accessibilityAuditsDesc: 'A comprehensive dashboard for monitoring web accessibility metrics and WCAG compliance.',
       underConstruction: 'Under construction'
@@ -134,6 +135,7 @@ export const translations = {
     projects: {
       featuredWork: 'Töitäni',
       seeProject: 'Katso projekti',
+      seeAll: 'Näytä kaikki projektit',
       accessibilityAudits: 'Saavutettavuusauditoinnit',
       accessibilityAuditsDesc: 'Saavutettavuusraportteja joiden tarkoituksena on auttaa ja selkeyttää sivujen kognitiivista ja teknistä saavutettavuutta.',
       underConstruction: 'Rakenteilla'
