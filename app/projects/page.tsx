@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ProjectGrid, { ProjectGridItem } from "app/components/project-grid";
+import type { ProjectGridItem } from "app/components/project-grid";
 import { getAuditPosts } from "app/lib/posts";
 import { projectData } from "app/config/mockData";
 import ProjectsFilteredGrid from "app/components/projects-filtered-grid";
