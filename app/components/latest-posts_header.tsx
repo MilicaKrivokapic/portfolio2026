@@ -10,9 +10,6 @@ export default function LatestPostsHeader() {
       <h2 id="latest-posts-heading" className="text-3xl md:text-4xl font-bold font-heading">
         {t('blog.latestHeading')}
       </h2>
-      <Button as="a" href="/blog" aria-label={t('blog.seeAll')}>
-        {t('blog.seeAll')}
-      </Button>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { getBlogPosts } from 'app/lib/posts';
 import BlogGrid from 'app/components/blog-grid';
 import type { BlogListItem } from 'app/components/blog-grid';
 import LatestPostsHeader from 'app/components/latest-posts_header';
+import Button from 'app/components/ui/Button';
 
 export default function LatestPosts() {
   const posts = (getBlogPosts() as unknown as BlogListItem[])
@@ -14,6 +15,11 @@ export default function LatestPosts() {
     <section aria-labelledby="latest-posts-heading" className="space-y-8">
       <LatestPostsHeader />
       <BlogGrid posts={posts} basePath="/blog" showDate showFilters={false} />
+      <div className="mt-6 flex">
+        <Button as="a" href="/blog" aria-label="See all blog posts">
+          See all blog posts
+        </Button>
+      </div>
     </section>
   );
 }

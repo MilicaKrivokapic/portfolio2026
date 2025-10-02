@@ -17,9 +17,6 @@ export default function Projects() {
         <h2 className="text-3xl md:text-4xl font-bold">
           {t('projects.featuredWork')}
         </h2>
-        <Button as="a" href="/projects" aria-label={t('projects.seeAll')}>
-          {t('projects.seeAll')}
-        </Button>
       </div>
       <div className="grid grid-cols-1 gap-20">
         {projectData.slice(0, 2).map((project: ProjectItem, index) => {
@@ -96,6 +93,11 @@ export default function Projects() {
             </div>
           );
         })}
+      </div>
+      <div className="mt-10 flex">
+        <Button as="a" href="/projects" aria-label={t('projects.seeAll')}>
+          {t('projects.seeAll')}
+        </Button>
       </div>
     </section>
   );

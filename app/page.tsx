@@ -7,7 +7,7 @@ import LatestPosts from './components/latest-posts';
 
 export default function Home() {
   return (
-    <div className="px-6 py-12 md:py-24 space-y-32 max-w-4xl mx-auto">
+    <div className="px-6 py-12 md:py-24 space-y-16 md:space-y-32 max-w-4xl mx-auto">
       <section id="about" className="space-y-8">
         <h2 className="text-4xl md:text-7xl font-bold font-heading">
           Building accessible
