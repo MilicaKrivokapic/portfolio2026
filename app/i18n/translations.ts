@@ -12,7 +12,9 @@ export const translations = {
       heading: 'Blog',
       intro: "Thoughts on accessibility and web development in general",
       all: 'All',
-      loadMore: 'Load More'
+      loadMore: 'Load More',
+      latestHeading: 'Latest posts',
+      seeAll: 'See all posts'
     },
     about: {
       title: 'About Me',
@@ -82,7 +84,9 @@ export const translations = {
       heading: 'Blogi',
       intro: 'Pohdintoja saavutettavuudesta ja ylipäätään web-kehityksestä',
       all: 'Kaikki',
-      loadMore: 'Näytä lisää'
+      loadMore: 'Näytä lisää',
+      latestHeading: 'Uusimmat kirjoitukset',
+      seeAll: 'Näytä kaikki'
     },
     about: {
       title: 'Minusta',
