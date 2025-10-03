@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { projectData } from '../config/mockData';
 import { useLanguage } from '../context/language-context';
 import Button from './ui/Button';
+import SquareUpRight from './icons/SquareUpRight';
 
 type ProjectItem = (typeof projectData)[number] & { underConstruction?: boolean };
 
@@ -95,8 +96,11 @@ export default function Projects() {
         })}
       </div>
       <div className="mt-10 flex">
-        <Button as="a" href="/projects" aria-label={t('projects.seeAll')}>
-          {t('projects.seeAll')}
+        <Button as="a" href="/projects" aria-label={t('projects.seeAll')} className="group">
+          <span className="flex items-center gap-2">
+            {t('projects.seeAll')}
+            <SquareUpRight className="w-4 h-4" />
+          </span>
         </Button>
       </div>
     </section>
