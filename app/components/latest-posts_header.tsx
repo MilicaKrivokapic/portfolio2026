@@ -1,6 +1,5 @@
 'use client';
 
-import Button from 'app/components/ui/Button';
 import { useLanguage } from 'app/context/language-context';
 
 export default function LatestPostsHeader() {

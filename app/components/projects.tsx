@@ -99,7 +99,7 @@ export default function Projects() {
         <Button as="a" href="/projects" aria-label={t('projects.seeAll')} className="group">
           <span className="flex items-center gap-2">
             {t('projects.seeAll')}
-            <SquareUpRight className="w-4 h-4" />
+            <SquareUpRight />
           </span>
         </Button>
       </div>

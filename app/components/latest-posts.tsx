@@ -20,7 +20,7 @@ export default function LatestPosts() {
         <Button as="a" href="/blog" aria-label="See all blog posts" className="group">
           <span className="flex items-center gap-2">
             See all blog posts
-            <SquareUpRight className="w-4 h-4" />
+            <SquareUpRight />
           </span>
         </Button>
       </div>
