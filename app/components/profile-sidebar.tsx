@@ -62,7 +62,17 @@ export default function ProfileSidebar() {
       {/* Profile Card (not fixed, not sticky, just below the top bar) */}
   <div className="md:hidden mt-0 p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-zinc-800">
         <div className="flex items-center space-x-4">
-          <Link href="/" aria-label="Go to home" className="w-20 h-20 rounded-full overflow-hidden p-[3px] border-4 border-accent-light dark:border-accent-dark bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#1B3157]">
+          <Link 
+            href="/" 
+            aria-label="Go to home" 
+            className="w-20 h-20 rounded-full overflow-hidden p-[3px] border-4 border-accent-light dark:border-accent-dark bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#1B3157]"
+            onClick={(e) => {
+              if (isHome) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+          >
             <div className="w-full h-full rounded-full overflow-hidden">
               <Image
                 src="/aaaa_koiru_portfolio.png"

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 type ButtonProps = {
@@ -22,20 +24,27 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
     const combinedClasses = `${baseClasses} ${disabledClasses} ${className}`.trim();
 
     const preset = {
-      default: { baseRadius: 12, baseOpacity: 0.7, hoverRadius: 8, hoverOpacity: 0.4 },
+      default: { baseRadius: 12, baseOpacity: 0.7, hoverRadius: 9, hoverOpacity: 0.4 },
       soft:    { baseRadius: 8,  baseOpacity: 0.45, hoverRadius: 6, hoverOpacity: 0.3 },
-      strong:  { baseRadius: 16, baseOpacity: 0.9,  hoverRadius: 12, hoverOpacity: 0.6 },
+      strong:  { baseRadius: 16, baseOpacity: 0.9,  hoverRadius: 9, hoverOpacity: 0.6 },
       none:    { baseRadius: 0,  baseOpacity: 0,    hoverRadius: 0,  hoverOpacity: 0 }
     }[shadow];
 
+    const baseShadowValue = `0 0 ${preset.baseRadius}px rgba(var(--accent-shadow), ${preset.baseOpacity})`;
+    const hoverShadowValue = `0 0 ${preset.hoverRadius}px rgba(var(--accent-shadow), ${preset.hoverOpacity})`;
+
     const shadowStyle = {
-      '--tw-shadow': `0 0 ${preset.baseRadius}px rgba(var(--accent-shadow), ${preset.baseOpacity})`,
+      '--tw-shadow': baseShadowValue,
       ...(props as any).style,
     } as React.CSSProperties;
 
-    const hoverShadowStyle = {
-      '--tw-shadow': `0 0 ${preset.hoverRadius}px rgba(var(--accent-shadow), ${preset.hoverOpacity})`,
-    } as React.CSSProperties;
+    const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
+      e.currentTarget.style.setProperty('--tw-shadow', hoverShadowValue);
+    };
+
+    const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+      e.currentTarget.style.setProperty('--tw-shadow', baseShadowValue);
+    };
 
     if (as === 'a') {
       return (
@@ -43,8 +52,8 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
           ref={ref as React.Ref<HTMLAnchorElement>}
           className={combinedClasses}
           style={shadowStyle}
-          onMouseEnter={(e) => Object.assign(e.currentTarget.style, hoverShadowStyle)}
-          onMouseLeave={(e) => Object.assign(e.currentTarget.style, shadowStyle)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {children}
@@ -57,8 +66,8 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
         ref={ref as React.Ref<HTMLButtonElement>}
         className={combinedClasses}
         style={shadowStyle}
-        onMouseEnter={(e) => Object.assign(e.currentTarget.style, hoverShadowStyle)}
-        onMouseLeave={(e) => Object.assign(e.currentTarget.style, shadowStyle)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
       >
         {children}
