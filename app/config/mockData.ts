@@ -35,7 +35,7 @@ export const skillsData: MultilingualSkill[] = [
       en: 'Web Accessibility',
       fi: 'Verkkosaavutettavuus'
     },
-    icon: 'FaUniversalAccess',
+    icon: 'UniversalAccess',
     description: {
       en: 'I work on developing accessible digital services with a focus on applying WCAG guidelines and implementing accessibility features in real projects. I also practice preparing accessibility reports and statements as part of the development process. My work includes testing on both Windows and macOS environments using NVDA and VoiceOver.',
       fi: 'Kehitän saavutettavia verkkopalveluita keskittyen WCAG-ohjeistojen soveltamiseen ja saavutettavien ominaisuuksien toteuttamiseen käytännön projekteissa. Harjoittelen myös saavutettavuusraporttien ja -selosteiden laatimista osana kehitysprosessia. Testaan toteutuksia Windows- ja Mac OS -ympäristöissä käyttäen sekä NVDA:ta että VoiceOveria. '
@@ -46,7 +46,7 @@ export const skillsData: MultilingualSkill[] = [
       en: 'Frontend Development',
       fi: 'Frontend-kehitys'
     },
-    icon: 'FaCode',
+    icon: 'Code',
     description: {
       en: "I have a solid foundation in HTML, CSS, and Shopify’s Liquid language, which I’ve been working with at Woolman for the past few years. I also have some basic experience with JavaScript and React. I have to admit I’m a big fan of Tailwind CSS and I really enjoy the philosophy behind utility-first styling.",
       fi: 'Vahva perusymmärrys HTML:stä, CSS:stä ja Shopifyn Liquid-kielestä, joita olen käyttänyt töissäni Woolmanilla viimeisest vuodet. Minulla on myös jonkun verran perusymmärrystä JavaScriptin ja Reactin käytöstä. Minun on tunnustauduttava Tailwind CSS:n faniksi, tykkään todella paljon utility-pohjaisen CSS:n filosofiasta. '
@@ -57,7 +57,7 @@ export const skillsData: MultilingualSkill[] = [
       en: 'UX Principles',
       fi: 'UX-periaatteet'
     },
-    icon: 'FaPencilRuler',
+    icon: 'PenRuler',
     description: {
       en: "Developing an eye for user-friendly interfaces. Learning about user research, wireframing, and the importance of user testing. I'm particularly interested in how UX intersects with accessibility. I can use Figma. I have extensive experience with other Adobe programs like Photoshop and Lightroom.",
       fi: 'Olen tottunut käyttämään Figmaa. Adoben ohjelmista (Photoshop, Lightroom) minulla on pitkällistä kokemusta. Haluan oppia enemmän käyttäjätutkimuksesta, rautalankamallien tekemisestä ja käyttäjätestausta käytännössä. Kaikista kiinnostunein olen UX:n ja saavutettavuuden yhtymäkohdista, eli ns. "design for all"-ajattelusta, joita myös käytän työssäni. '
@@ -68,7 +68,7 @@ export const skillsData: MultilingualSkill[] = [
       en: 'Productivity processes',
       fi: 'Prosessityöskentely'
     },
-    icon: 'FaHeadphones',
+    icon: 'Compass',
     description: {
       en:  "I enjoy developing processes such as Scrum rituals and participatory workshops that bring clarity and improve team efficiency. Clear definition of roles and responsibilities is important to me, and I continuously expand my skills through courses, documentation, and personal projects, with a particular focus on accessibility.",
       fi: "Nautin prosessien kehittämisestä, kuten Scrum-rituaaleista ja osallistavista työpajoista, jotka tuovat selkeyttä ja lisäävät tiimin tehokkuutta. Minulle on tärkeää, että roolit ja vastuut on määritelty selkeästi. Laajennan osaamistani jatkuvasti kursseilla, dokumentaatiolla ja omilla projekteilla erityisesti saavutettavuuden parissa."
