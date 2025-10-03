@@ -37,19 +37,8 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: 'FaUniversalAccess',
     description: {
-      en: 'Doing more accessible websites. Currently focusing on understanding WCAG guidelines and implementing accessibility features in projects.',
-      fi: 'Luon saavutettavampia verkkosivustoja. Keskityn tällä hetkellä WCAG-ohjeistojen ymmärtämiseen ja saavutettavien ominaisuuksien toteuttamiseen projekteissa sekä opettelen saavutettavuusraporttien ja -selosteiden laatimista. '
-    }
-  },
-  {
-    name: {
-      en: 'ARIA Standards',
-      fi: 'ARIA-standardit'
-    },
-    icon: 'FaKeyboard',
-    description: {
-      en: "I'm developing my understanding of ARIA roles and attributes. As of now I work with both Windows and MacOS environments, allowing me to test how to use VoiceOver and NVDA in testing.",
-      fi: 'Kehitän ymmärrystäni ARIA-rooleista ja -attribuuteista. Minulla on käytössäni tällä hetkellä sekä Windows- että Mac OS ympäristöt, joiden avulla pääsen testailemaan sekä Voice Overin että NVDA:n toimintaa.'
+      en: 'I work on developing accessible digital services with a focus on applying WCAG guidelines and implementing accessibility features in real projects. I also practice preparing accessibility reports and statements as part of the development process. My work includes testing on both Windows and macOS environments using NVDA and VoiceOver.',
+      fi: 'Kehitän saavutettavia verkkopalveluita keskittyen WCAG-ohjeistojen soveltamiseen ja saavutettavien ominaisuuksien toteuttamiseen käytännön projekteissa. Harjoittelen myös saavutettavuusraporttien ja -selosteiden laatimista osana kehitysprosessia. Testaan toteutuksia Windows- ja Mac OS -ympäristöissä käyttäen sekä NVDA:ta että VoiceOveria. '
     }
   },
   {
@@ -76,24 +65,13 @@ export const skillsData: MultilingualSkill[] = [
   },
   {
     name: {
-      en: 'Problem Solving',
-      fi: 'Ongelmanratkaisu'
+      en: 'Productivity processes',
+      fi: 'Prosessityöskentely'
     },
     icon: 'FaHeadphones',
     description: {
-      en:  "I enjoy breaking down complex problems into manageable parts and love Scrum-style development with its rituals that bring clarity and predictability to projects. I particularly value participatory workshops that both boost team efficiency and foster a psychologically safe atmosphere. Agile practices and internal development feel like real “candy” to me, and I find it essential that roles and responsibilities are clearly defined as part of workplace wellbeing – I would not thrive in an environment of complete anarchy without shared goals.",
-      fi: 'Nautin monimutkaisten ongelmien pilkkomisesta hallittaviin osiin ja rakastan Scrum-tyyppistä ja sen rituaaleja, jotka tuovat selkeyttä ja ennustettavuutta projekteihin. Pidän erityisesti osallistavista työpajoista, joissa yhdistyy tiimin tehokkuuden lisääminen ja psykologisesti turvallisen ilmapiirin helliminen. Agile-käytänteet ja sisäinen kehitys ovat minulle tuttua “karkkia”, ja koen tärkeäksi, että roolit ja vastuut sanoitetaan selkeästi osana työyhteisön hyvinvointia, enkä toivo ympäristöä, jossa vallitsee täydellinen anarkia ilman yhteisiä tavoitteita.'
-    }
-  },
-  {
-    name: {
-      en: 'Learning & Growth',
-      fi: 'Oppiminen & Kehitys'
-    },
-    icon: 'FaPalette',
-    description: {
-      en: 'I am continually expanding my skill set through online courses, intensive study of documentation, and hands-on projects. I actively discuss accessibility with my developer friends and am eager to learn from others. At the moment, I’m focusing on accessibility and modern front-end best practices.',
-      fi: 'Laajennan jatkuvasti osaamistani verkkokurssien, dokumentaation tankkaamisen ja käytännön projektien kautta. Keskustelen aktiivisesti kehittäjäystävieni kanssa saavutettavuudesta ja olen innokas oppimaan muilta. Keskityn tällä hetkellä saavutettavuuteen ja moderneihin frontend-käytäntöihin.'
+      en:  "I enjoy developing processes such as Scrum rituals and participatory workshops that bring clarity and improve team efficiency. Clear definition of roles and responsibilities is important to me, and I continuously expand my skills through courses, documentation, and personal projects, with a particular focus on accessibility.",
+      fi: "Nautin prosessien kehittämisestä, kuten Scrum-rituaaleista ja osallistavista työpajoista, jotka tuovat selkeyttä ja lisäävät tiimin tehokkuutta. Minulle on tärkeää, että roolit ja vastuut on määritelty selkeästi. Laajennan osaamistani jatkuvasti kursseilla, dokumentaatiolla ja omilla projekteilla erityisesti saavutettavuuden parissa."
     }
   }
 ];
