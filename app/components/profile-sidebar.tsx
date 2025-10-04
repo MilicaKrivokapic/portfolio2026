@@ -128,26 +128,41 @@ export default function ProfileSidebar() {
         </div>
 
         <nav className="mt-12 z-50">
-          <ul className="space-y-4">
+          <ul className="space-y-3">
             {navItems.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.href}
                   onClick={(e) => (item.id !== 'blog' && item.id !== 'home' && item.id !== 'about') ? handleNavClick(e, item.id) : undefined}
-                  className={`text-lg block relative py-1
-                    after:content-[''] after:absolute after:left-0 after:bottom-0 after:right-0 
-                    after:h-[2px] after:bg-accent-light dark:after:bg-accent-dark
-                    after:origin-left after:transition-transform after:duration-300 z-40
-                    ${(item.id === 'blog' && isBlogPage) || 
-                      (item.id === 'home' && isHome) ||
-                      (item.id === 'about' && isAboutPage) ||
-                      (item.id !== 'blog' && item.id !== 'home' && item.id !== 'about' && activeSection === item.id) ? 
-                      'after:scale-x-100' : 
-                      'after:scale-x-0 hover:after:scale-x-100'
-                    }
-                  `}
+                  className={`group relative block px-6 py-3 text-base font-medium
+                           text-primary-light dark:text-primary-dark
+                           bg-transparent 
+                           border border-gray-300/80 dark:border-zinc-600/70
+                           rounded-xl transition-all duration-300 ease-out
+                           hover:bg-surface-light/80 dark:hover:bg-surface-dark/80
+                           hover:border-accent-light/40 dark:hover:border-accent-dark/40
+                           hover:shadow-lg hover:shadow-accent-light/15 dark:hover:shadow-accent-dark/15
+                           hover:-translate-y-1 hover:scale-[1.02]
+                           focus-visible:bg-surface-light/80 dark:focus-visible:bg-surface-dark/80
+                           focus-visible:border-accent-light/50 dark:focus-visible:border-accent-dark/50
+                           active:translate-y-0 active:scale-[0.98]
+                           ${(item.id === 'blog' && isBlogPage) || 
+                             (item.id === 'home' && isHome) ||
+                             (item.id === 'about' && isAboutPage) ||
+                             (item.id !== 'blog' && item.id !== 'home' && item.id !== 'about' && activeSection === item.id) ? 
+                             'bg-surface-light/40 dark:bg-surface-dark/40 border-accent-light/50 dark:border-accent-dark/50 text-accent-light dark:text-accent-dark' : 
+                             ''
+                           }`}
                 >
-                  {item.label}
+                  <span className="relative z-10 transition-colors duration-300
+                                 group-hover:text-accent-light dark:group-hover:text-accent-dark">
+                    {item.label}
+                  </span>
+                  {/* Subtle background glow effect */}
+                  <div className="absolute inset-0 rounded-xl opacity-0 
+                                bg-gradient-to-r from-accent-light/8 to-transparent 
+                                dark:from-accent-dark/8 dark:to-transparent
+                                transition-opacity duration-300 group-hover:opacity-100" />
                 </Link>
               </li>
             ))}
