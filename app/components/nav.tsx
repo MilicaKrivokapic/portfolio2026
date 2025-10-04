@@ -4,12 +4,14 @@ import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ThemeSwitch } from "./theme-switch";
 import { LanguageSwitch } from "./language-switch";
+import { useLanguage } from "../context/language-context";
 import Link from "next/link";
 import { NAV_ITEMS } from "../../lib/nav";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   // Close menu on route change
   useEffect(() => {
@@ -54,7 +56,31 @@ export function Navbar() {
       >
         <div className="flex flex-col gap-4 mt-2">
           {NAV_ITEMS.map((item) => {
-            const href = item.id === 'projects' ? '/projects' : { pathname: "/", hash: item.id } as any;
+            let href: string | { pathname: string; hash: string };
+            let label: string;
+            
+            // Handle different navigation items
+            if (item.href && item.href !== undefined) {
+              href = item.href;
+            } else {
+              href = { pathname: "/", hash: item.id };
+            }
+            
+            // Get translated labels
+            switch (item.id) {
+              case 'home':
+                label = t('nav.home');
+                break;
+              case 'about':
+                label = t('about.title');
+                break;
+              case 'projects':
+                label = t('nav.projects');
+                break;
+              default:
+                label = item.label;
+            }
+            
             return (
               <Link
                 key={item.id}
@@ -62,7 +88,7 @@ export function Navbar() {
                 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
-                {item.label}
+                {label}
               </Link>
             );
           })}
@@ -71,7 +97,7 @@ export function Navbar() {
             className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            Blog
+            {t('nav.blog')}
           </Link>
           {/* Audits moved under Projects page; removed standalone link */}
         </div>

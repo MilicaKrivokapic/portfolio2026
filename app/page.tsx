@@ -1,40 +1,11 @@
-import Projects from './components/projects';
-import Skills from './components/skills';
-import Contact from './components/contact';
-import AboutMe from './components/about-me';
-import Recommendations from './components/recommendations';
-import LatestPosts from './components/latest-posts';
+import { getBlogPosts } from './lib/posts';
+import HomeClient from './components/home-client';
+import type { BlogListItem } from './components/blog-grid';
 
 export default function Home() {
-  return (
-    <div className="px-6 py-12 md:py-24 space-y-16 md:space-y-32 max-w-4xl mx-auto">
-      <section id="about" className="space-y-8">
-        <h2 className="text-4xl md:text-7xl font-bold font-heading">
-          Building accessible
-          <span className="text-accent-light dark:text-accent-dark"> digital experiences</span>
-        </h2>
-        <AboutMe />
-      </section>
+  const posts = (getBlogPosts() as unknown as BlogListItem[])
+    .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime())
+    .slice(0, 3);
 
-      <section id="experience" className="space-y-12">
-        <Skills />
-      </section>
-
-      <section id="projects">
-        <Projects />
-      </section>
-
-      <section id="recommendations">
-        <Recommendations />
-      </section>
-
-      <section id="contact">
-        <Contact />
-      </section>
-
-      <section id="latest-posts">
-        <LatestPosts />
-      </section>
-    </div>
-  );
+  return <HomeClient posts={posts} />;
 }
