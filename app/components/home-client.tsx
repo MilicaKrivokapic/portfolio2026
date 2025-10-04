@@ -1,6 +1,5 @@
 'use client';
 import Projects from './projects';
-import Skills from './skills';
 import Contact from './contact';
 import Recommendations from './recommendations';
 import LatestPostsClient from './latest-posts-client';
@@ -18,7 +17,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
   
   return (
     <div className="px-6 py-12 md:py-24 space-y-16 md:space-y-32 max-w-4xl mx-auto">
-      <section id="about" className="space-y-8">
+      <section className="space-y-8">
         <h1 className="text-4xl md:text-7xl font-bold font-heading">
           Building accessible
           <span className="text-accent-light dark:text-accent-dark"> digital experiences</span>
@@ -38,10 +37,6 @@ export default function HomeClient({ posts }: HomeClientProps) {
             </Button>
           </Link>
         </div>
-      </section>
-
-      <section id="experience" className="space-y-12">
-        <Skills />
       </section>
 
       <section id="projects">

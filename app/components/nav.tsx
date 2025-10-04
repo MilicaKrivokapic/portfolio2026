@@ -6,7 +6,6 @@ import { ThemeSwitch } from "./theme-switch";
 import { LanguageSwitch } from "./language-switch";
 import { useLanguage } from "../context/language-context";
 import Link from "next/link";
-import { NAV_ITEMS } from "../../lib/nav";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,43 +54,34 @@ export function Navbar() {
         }`}
       >
         <div className="flex flex-col gap-4 mt-2">
-          {NAV_ITEMS.map((item) => {
-            let href: string | { pathname: string; hash: string };
-            let label: string;
-            
-            // Handle different navigation items
-            if (item.href && item.href !== undefined) {
-              href = item.href;
-            } else {
-              href = { pathname: "/", hash: item.id };
-            }
-            
-            // Get translated labels
-            switch (item.id) {
-              case 'home':
-                label = t('nav.home');
-                break;
-              case 'about':
-                label = t('about.title');
-                break;
-              case 'projects':
-                label = t('nav.projects');
-                break;
-              default:
-                label = item.label;
-            }
-            
-            return (
-              <Link
-                key={item.id}
-                href={href as any}
-                className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
-                {label}
-              </Link>
-            );
-          })}
+          <Link
+            href="/"
+            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            {t('nav.home')}
+          </Link>
+          <Link
+            href="/about"
+            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            {t('about.title')}
+          </Link>
+          <Link
+            href="/projects"
+            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            {t('nav.projects')}
+          </Link>
+          <Link
+            href="/#contact"
+            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            {t('sidebar.contact')}
+          </Link>
           <Link
             href="/blog"
             className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
@@ -99,7 +89,6 @@ export function Navbar() {
           >
             {t('nav.blog')}
           </Link>
-          {/* Audits moved under Projects page; removed standalone link */}
         </div>
       </div>
     </header>
