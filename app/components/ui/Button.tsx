@@ -4,7 +4,7 @@ import React from 'react';
 
 type ButtonProps = {
   children: React.ReactNode;
-  variant?: 'primary';
+  variant?: 'primary' | 'secondary';
   as?: 'button' | 'a';
   className?: string;
   shadow?: 'default' | 'soft' | 'strong' | 'none';
@@ -15,7 +15,12 @@ type ButtonProps = {
 
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ children, className = '', variant = 'primary', as = 'button', shadow = 'default', ...props }, ref) => {
-    const baseClasses = "block text-center px-6 py-2 rounded-lg bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900 transition-all duration-200 ease-in-out hover:bg-stone-50 hover:scale-[0.97] shadow";
+    const variantClasses = {
+      primary: "bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 hover:bg-stone-50 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900",
+      secondary: "bg-transparent border border-gray-300 dark:border-neutral-700 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-neutral-800 active:bg-gray-100 dark:active:bg-neutral-800"
+    };
+    
+    const baseClasses = `block text-center px-6 py-2 rounded-lg transition-all duration-200 ease-in-out hover:scale-[0.97] shadow ${variantClasses[variant]}`;
     
     const disabledClasses = (as === 'button' && (props as any).disabled)
       ? "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-white dark:disabled:hover:bg-neutral-900"
