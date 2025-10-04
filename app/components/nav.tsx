@@ -41,7 +41,7 @@ export function Navbar() {
           </div>
         </button>
         {/* Language and Theme Switches (always visible) */}
-        <div className="flex gap-4 z-[110]">
+        <div className="flex gap-5 z-[110]">
           <LanguageSwitch />
           <ThemeSwitch />
         </div>

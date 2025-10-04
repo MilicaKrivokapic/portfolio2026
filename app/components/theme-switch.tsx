@@ -57,7 +57,7 @@ export function ThemeSwitch() {
       </button>
 
       {/* Desktop: full toggle with labels */}
-      <div className="hidden md:flex items-center gap-3">
+      <div className="hidden md:flex items-center gap-3 rounded-md border border-gray-200 dark:border-gray-700 p-2">
       {/* Sun icon */}
       <svg
         viewBox="0 0 16 16"
@@ -91,10 +91,10 @@ export function ThemeSwitch() {
         />
 
         {/* Track */}
-        <span className="block w-[140px] h-[30px] bg-[#E0E0E0] rounded-[26px] overflow-hidden motion-safe:transition-colors motion-safe:duration-300 peer-checked:bg-[#2a2a2a] border border-black/10 peer-checked:border-white/10 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-500" />
+        <span className="block w-[140px] h-[34px] bg-[#E0E0E0] rounded-[26px] overflow-hidden motion-safe:transition-colors motion-safe:duration-300 peer-checked:bg-[#2a2a2a] border border-black/10 peer-checked:border-white/10 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-500" />
 
         {/* Knob */}
-        <span className="pointer-events-none absolute left-[2px] top-[2px] w-[70px] h-[26px] bg-white rounded-[26px] shadow-[0_0_6px_-2px_#111] text-center motion-safe:transition-all motion-safe:duration-300 peer-checked:left-[68px] peer-checked:bg-[#3c3c3c]" />
+        <span className="pointer-events-none absolute left-[2px] top-[2px] w-[70px] h-[30px] bg-white rounded-[26px] shadow-[0_0_6px_-2px_#111] text-center motion-safe:transition-all motion-safe:duration-300 peer-checked:left-[68px] peer-checked:bg-[#3c3c3c]" />
 
         {/* Labels (decorative) */}
         <span aria-hidden="true" className="pointer-events-none absolute top-[7px] left-5 text-[12px] font-medium text-[#424242] motion-safe:transition-colors motion-safe:duration-300 peer-checked:text-white">

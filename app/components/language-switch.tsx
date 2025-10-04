@@ -62,7 +62,7 @@ export function LanguageSwitch() {
           type="button"
           aria-haspopup="menu"
           aria-expanded={open}
-          className="p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all"
+          className="p-2 h-[50px] rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center"
           onMouseEnter={openMenu}
           onMouseLeave={scheduleCloseMenu}
           onFocus={openMenu}
