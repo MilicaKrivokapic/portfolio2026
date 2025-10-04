@@ -4,7 +4,7 @@ export const projectData = [
     description: 'A website for a Finnish company spealising on roofs maintanance and repairs.',
     image: '/images/projects/kattokomppania.jpeg',
     link: '/projects/kattokomppania',
-    tags: ['UX', 'Squarespace', 'UI', 'Finnish'],
+    tags: ['UX', 'Squarespace', 'UI'],
   },
   {
     title: 'Briljant Accessibility Audit',
@@ -70,8 +70,8 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: 'Compass',
     description: {
-      en:  "I enjoy developing processes such as Scrum rituals and participatory workshops that bring clarity and improve team efficiency. Clear definition of roles and responsibilities is important to me, and I continuously expand my skills through courses, documentation, and personal projects, with a particular focus on accessibility.",
-      fi: "Nautin prosessien kehittämisestä, kuten Scrum-rituaaleista ja osallistavista työpajoista, jotka tuovat selkeyttä ja lisäävät tiimin tehokkuutta. Minulle on tärkeää, että roolit ja vastuut on määritelty selkeästi. Laajennan osaamistani jatkuvasti kursseilla, dokumentaatiolla ja omilla projekteilla erityisesti saavutettavuuden parissa."
+      en:  "I enjoy processes that improve both efficiency and wellbeing at work, and I like putting them into practice within teams. I’m also interested in productivity philosophies and often read about them in my free time.",
+      fi: "Nautin prosesseista, jotka parantavat työn tehokkuutta ja hyvinvointia, sekä niiden konkreettisesta tuomisesta tiimityöhön. Olen kiinnostunut produktiivisuusfilosofioista myös syvällisemmin ja luen aiheesta mielelläni vapaa-ajallani.."
     }
   }
 ];

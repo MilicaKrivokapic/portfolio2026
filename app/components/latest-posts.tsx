@@ -17,8 +17,14 @@ export default function LatestPosts() {
       <LatestPostsHeader />
       <BlogGrid posts={posts} basePath="/blog" showDate showFilters={false} />
       <div className="mt-6 flex">
-        <Button as="a" href="/blog" aria-label="See all blog posts" className="group">
-          <span className="flex items-center gap-2">
+        <Button 
+          as="a" 
+          href="/blog" 
+          aria-label="See all blog posts" 
+          className="group md:text-lg text-lg md:px-8 px-6 md:py-3 py-3 font-semibold md:w-auto w-full text-center"
+          shadow="strong"
+        >
+          <span className="flex items-center justify-center gap-2">
             See all blog posts
             <SquareUpRight />
           </span>
