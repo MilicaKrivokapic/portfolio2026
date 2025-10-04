@@ -4,6 +4,7 @@ export const translations = {
       backToTop: 'Back to top',
     },
     nav: {
+      home: 'Home',
       blog: 'Blog',
       projects: 'Projects',
       photos: 'Photos',
@@ -18,6 +19,8 @@ export const translations = {
     },
     about: {
       title: 'About Me',
+      aboutMeButton: 'About Me',
+      seeWorksButton: 'See Works',
       readMore: 'Read more',
       readLess: 'Read less',
       summary: "A media-born UI generalist who crafts websites that are both marketable and accessible to everyone with a precise, steady, yet enthusiastic hand.",
@@ -49,6 +52,7 @@ export const translations = {
     },
     sidebar: {
       role: 'Accessibility Enthuastic & UI Web Developer',
+      home: 'Home',
       about: 'About',
       experience: 'Skills & Expertise',
       projects: 'Projects',
@@ -77,6 +81,7 @@ export const translations = {
       backToTop: 'Takaisin ylös',
     },
     nav: {
+      home: 'Etusivu',
       blog: 'Blogi',
       projects: 'Projektit',
       photos: 'Kuvat',
@@ -91,6 +96,8 @@ export const translations = {
     },
     about: {
       title: 'Minusta',
+      aboutMeButton: 'Minusta',
+      seeWorksButton: 'Katso työt',
       readMore: 'Lue lisää',
       readLess: 'Lue vähemmän',
       summary: "Media-alalta ponnistanut ui-generalisti joka tekee sivuista myyviä ja samalla kaikille saavutettavia tarkalla ja vakaalla kädellä sekä innostuneella että myös iloisella asenteella.",
@@ -122,6 +129,7 @@ export const translations = {
     },
     sidebar: {
       role: 'Saavutettavuusasintoilija & web-kehittäjä',
+      home: 'Etusivu',
       about: 'Minusta',
       experience: 'Taidot & osaaminen',
       projects: 'Projektit',

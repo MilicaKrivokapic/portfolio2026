@@ -22,6 +22,7 @@ export default function ProfileSidebar() {
   const pathname = usePathname();
   const isHome = pathname === '/';
   const isBlogPage = pathname.startsWith('/blog');
+  const isAboutPage = pathname === '/about';
   const sectionIds = ['about', 'experience', 'projects', 'recommendations', 'contact'];
   const intersectionActiveSection = useActiveSection(sectionIds);
   
@@ -46,16 +47,23 @@ export default function ProfileSidebar() {
     }
   };
 
-  const navItems = [...sectionIds.map((item) => ({
-    id: item,
-    label: t(`sidebar.${item}`),
-    href: isHome ? `#${item}` : `/#${item}`
-  })),
-  {
-    id: 'blog',
-    label: t('sidebar.blog'),
-    href: '/blog'
-  }];
+  const navItems = [
+    {
+      id: 'home',
+      label: t('sidebar.home'),
+      href: '/'
+    },
+    ...sectionIds.map((item) => ({
+      id: item,
+      label: t(`sidebar.${item}`),
+      href: isHome ? `#${item}` : `/#${item}`
+    })),
+    {
+      id: 'blog',
+      label: t('sidebar.blog'),
+      href: '/blog'
+    }
+  ];
 
   return (
     <>
@@ -120,12 +128,15 @@ export default function ProfileSidebar() {
               <li key={item.id}>
                 <Link
                   href={item.href}
-                  onClick={(e) => item.id !== 'blog' ? handleNavClick(e, item.id) : undefined}
+                  onClick={(e) => (item.id !== 'blog' && item.id !== 'home') ? handleNavClick(e, item.id) : undefined}
                   className={`text-lg block relative py-1
                     after:content-[''] after:absolute after:left-0 after:bottom-0 after:right-0 
                     after:h-[2px] after:bg-accent-light dark:after:bg-accent-dark
                     after:origin-left after:transition-transform after:duration-300 z-40
-                    ${(item.id === 'blog' && isBlogPage) || (item.id !== 'blog' && activeSection === item.id) ? 
+                    ${(item.id === 'blog' && isBlogPage) || 
+                      (item.id === 'home' && isHome) ||
+                      (item.id === 'about' && isAboutPage) ||
+                      (item.id !== 'blog' && item.id !== 'home' && item.id !== 'about' && activeSection === item.id) ? 
                       'after:scale-x-100' : 
                       'after:scale-x-0 hover:after:scale-x-100'
                     }

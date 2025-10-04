@@ -1,15 +1,15 @@
-import { getBlogPosts } from 'app/lib/posts';
-import BlogGrid from 'app/components/blog-grid';
-import type { BlogListItem } from 'app/components/blog-grid';
-import LatestPostsHeader from 'app/components/latest-posts_header';
-import Button from 'app/components/ui/Button';
-import SquareUpRight from 'app/components/icons/SquareUpRight';
+'use client';
+import BlogGrid from './blog-grid';
+import type { BlogListItem } from './blog-grid';
+import LatestPostsHeader from './latest-posts_header';
+import Button from './ui/Button';
+import SquareUpRight from './icons/SquareUpRight';
 
-export default function LatestPosts() {
-  const posts = (getBlogPosts() as unknown as BlogListItem[])
-    .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime())
-    .slice(0, 3);
+interface LatestPostsClientProps {
+  posts: BlogListItem[];
+}
 
+export default function LatestPostsClient({ posts }: LatestPostsClientProps) {
   if (!posts || posts.length === 0) return null;
 
   return (
@@ -33,5 +33,3 @@ export default function LatestPosts() {
     </section>
   );
 }
-
-
