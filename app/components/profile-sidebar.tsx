@@ -27,7 +27,7 @@ export default function ProfileSidebar() {
   const isHome = pathname === '/';
   const isBlogPage = pathname.startsWith('/blog');
   const isAboutPage = pathname === '/about';
-  const sectionIds = ['projects', 'contact'];
+  const sectionIds = ['projects'];
   const intersectionActiveSection = useActiveSection(sectionIds);
   
   // Only use intersection active section if we're not on the blog page
@@ -111,34 +111,34 @@ export default function ProfileSidebar() {
       </div>
 
       {/* Desktop Sidebar */}
-  <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[400px] bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-zinc-800 p-8 flex-col">
-        <div className="flex flex-col items-center space-y-4">
-          <Link href="/" aria-label="Go to home" className="relative w-56 h-48 rounded-3xl overflow-hidden p-[3px] border-2 border-accent-light dark:border-accent-dark bg-gradient-to-br bg-black flex items-center justify-center">
+  <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[280px] bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-zinc-800 p-6 flex-col">
+        <div className="flex flex-col items-center space-y-3">
+          <Link href="/" aria-label="Go to home" className="relative w-32 h-32 rounded-2xl overflow-hidden p-[2px] border-2 border-accent-light dark:border-accent-dark bg-gradient-to-br bg-black flex items-center justify-center">
             <div className="w-full h-full overflow-hidden flex items-center justify-center">
               <Image
                 src="/aaaa_koiru_portfolio.png"
                 alt="Profile picture"
-                width={192}
-                height={192}
+                width={120}
+                height={120}
                 className="object-cover"
                 priority
               />
             </div>
           </Link>
-          <Link href="/" className="text-2xl font-bold mt-2 hover:text-accent-light dark:hover:text-accent-dark transition-colors" aria-label="Go to home">MILICA KRIVOKAPIC</Link>
-          <p className="text-muted-light dark:text-muted-dark text-center">
+          <Link href="/" className="text-xl font-bold mt-1 hover:text-accent-light dark:hover:text-accent-dark transition-colors text-center" aria-label="Go to home">MILICA KRIVOKAPIC</Link>
+          <p className="text-muted-light dark:text-muted-dark text-center text-sm">
             {t('sidebar.role')}
           </p>
         </div>
 
-        <nav className="mt-12 z-50">
-          <ul className="space-y-3">
+        <nav className="mt-8 z-50">
+          <ul className="space-y-2">
             {navItems.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.href}
                   onClick={(e) => (item.id !== 'blog' && item.id !== 'home' && item.id !== 'about') ? handleNavClick(e, item.id) : undefined}
-                  className={`group relative block px-6 py-3 text-base font-medium bubble-click
+                  className={`group relative block px-4 py-2.5 text-sm font-medium no-underline
                            text-primary-light dark:text-primary-dark
                            bg-transparent 
                            border border-gray-300/80 dark:border-zinc-600/70
@@ -157,21 +157,8 @@ export default function ProfileSidebar() {
                              'bg-surface-light/40 dark:bg-surface-dark/40 border-accent-light/50 dark:border-accent-dark/50 text-accent-light dark:text-accent-dark' : 
                              ''
                            }`}
-                  onMouseDown={(ev) => {
-                    // Desktop-only click animation
-                    if (window.matchMedia('(min-width: 768px)').matches) {
-                      const el = (ev.currentTarget as HTMLElement);
-                      el.classList.remove('bubble-animate');
-                      // Force reflow to restart animation
-                      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-                      el.offsetHeight;
-                      el.classList.add('bubble-animate');
-                      // Clean up class after animation ends
-                      setTimeout(() => el.classList.remove('bubble-animate'), 700);
-                    }
-                  }}
                 >
-                  <span className="relative z-10 transition-colors duration-300 flex items-center gap-3
+                  <span className="relative z-10 transition-colors duration-300 flex items-center gap-2.5
                                  group-hover:text-accent-light dark:group-hover:text-accent-dark">
                     {item.id === 'home' && <HomeIcon />}
                     {item.id === 'about' && <FaceSmile />}

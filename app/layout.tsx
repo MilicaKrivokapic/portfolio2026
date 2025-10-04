@@ -53,7 +53,7 @@ export default function RootLayout({
           <LanguageProvider>
             <div className="min-h-screen">
               <ProfileSidebar />
-              <main className="md:ml-[400px]">
+              <main className="md:ml-[280px]">
                 <Navbar />
                 {children}
                 <Footer />
