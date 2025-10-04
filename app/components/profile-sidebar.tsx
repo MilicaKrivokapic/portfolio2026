@@ -9,6 +9,10 @@ import { TbMailFilled } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 import { useLanguage } from '../context/language-context';
 import { useActiveSection } from '../hooks/useActiveSection';
+import { HomeIcon } from './icons/menu-icon-home';
+import FaceSmile from './icons/FaceSmile';
+import FolderOpen from './icons/FolderOpen';
+import Pencil from './icons/Pencil';
 
 const iconMap: Record<string, IconType> = {
   FaGithub,
@@ -134,7 +138,7 @@ export default function ProfileSidebar() {
                 <Link
                   href={item.href}
                   onClick={(e) => (item.id !== 'blog' && item.id !== 'home' && item.id !== 'about') ? handleNavClick(e, item.id) : undefined}
-                  className={`group relative block px-6 py-3 text-base font-medium
+                  className={`group relative block px-6 py-3 text-base font-medium bubble-click
                            text-primary-light dark:text-primary-dark
                            bg-transparent 
                            border border-gray-300/80 dark:border-zinc-600/70
@@ -153,9 +157,26 @@ export default function ProfileSidebar() {
                              'bg-surface-light/40 dark:bg-surface-dark/40 border-accent-light/50 dark:border-accent-dark/50 text-accent-light dark:text-accent-dark' : 
                              ''
                            }`}
+                  onMouseDown={(ev) => {
+                    // Desktop-only click animation
+                    if (window.matchMedia('(min-width: 768px)').matches) {
+                      const el = (ev.currentTarget as HTMLElement);
+                      el.classList.remove('bubble-animate');
+                      // Force reflow to restart animation
+                      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                      el.offsetHeight;
+                      el.classList.add('bubble-animate');
+                      // Clean up class after animation ends
+                      setTimeout(() => el.classList.remove('bubble-animate'), 700);
+                    }
+                  }}
                 >
-                  <span className="relative z-10 transition-colors duration-300
+                  <span className="relative z-10 transition-colors duration-300 flex items-center gap-3
                                  group-hover:text-accent-light dark:group-hover:text-accent-dark">
+                    {item.id === 'home' && <HomeIcon />}
+                    {item.id === 'about' && <FaceSmile />}
+                    {item.id === 'projects' && <FolderOpen />}
+                    {item.id === 'blog' && <Pencil />}
                     {item.label}
                   </span>
                   {/* Subtle background glow effect */}
