@@ -35,7 +35,7 @@ export function ThemeSwitch() {
         {isDark ? (
           <svg
             viewBox="0 0 16 16"
-            className="w-[20px] h-[20px] text-white"
+            className="w-[20px] h-[20px] text-accent-light dark:text-accent-dark"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden
@@ -45,7 +45,7 @@ export function ThemeSwitch() {
         ) : (
           <svg
             viewBox="0 0 16 16"
-            className="w-[20px] h-[20px] text-black"
+            className="w-[20px] h-[20px] text-accent-light dark:text-accent-dark"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden
@@ -61,7 +61,7 @@ export function ThemeSwitch() {
       {/* Sun icon */}
       <svg
         viewBox="0 0 16 16"
-        className="w-[23px] h-[23px] text-red-500"
+        className="w-[23px] h-[23px] text-accent-light dark:text-accent-dark"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden
@@ -113,7 +113,7 @@ export function ThemeSwitch() {
       {/* Moon icon */}
       <svg
         viewBox="0 0 16 16"
-        className="w-[23px] h-[23px] text-orange-500"
+        className="w-[23px] h-[23px] text-accent-light dark:text-accent-dark"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden
