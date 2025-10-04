@@ -85,7 +85,7 @@ export default function Projects() {
                   <Button
                   as="a"
                   href={project.link || '#'}
-                  
+                  className="md:text-base text-sm md:px-6 px-4 md:py-2 py-1.5 md:w-auto w-fit inline-block"
                 >
                   {t('projects.seeProject')}
                 </Button>
@@ -96,8 +96,14 @@ export default function Projects() {
         })}
       </div>
       <div className="mt-10 flex">
-        <Button as="a" href="/projects" aria-label={t('projects.seeAll')} className="group">
-          <span className="flex items-center gap-2">
+        <Button 
+          as="a" 
+          href="/projects" 
+          aria-label={t('projects.seeAll')} 
+          className="group md:text-lg text-lg md:px-8 px-6 md:py-3 py-3 font-semibold md:w-auto w-full text-center"
+          shadow="strong"
+        >
+          <span className="flex items-center justify-center gap-2">
             {t('projects.seeAll')}
             <SquareUpRight />
           </span>

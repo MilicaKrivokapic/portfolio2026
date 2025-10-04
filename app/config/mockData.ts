@@ -9,11 +9,11 @@ export const projectData = [
   {
     title: 'Briljant Accessibility Audit',
     title_fi: 'Briljant saavutettavuusauditointi',
-    description: 'Case study improving accessibility with practical WCAG 2.2 recommendations.',
-    description_fi: 'Tapaustutkimus saavutettavuuden parantamisesta käytännön WCAG 2.2 -suosituksilla.',
+    description: 'Accessibility audit with practical WCAG 2.2 recommendations.',
+    description_fi: 'Saavutettavuusraportti Briljantin verkkosivuston parantamiseksi käytännön WCAG 2.2 -suosituksilla.',
     image: '/briljant.png',
     link: '/audits/briljant-audit',
-    tags: ['WCAG 2.2', 'Audit', 'Case Study'],
+    tags: ['WCAG 2.2', 'Audit', 'Finnish'],
   }
 ];
 
@@ -35,21 +35,10 @@ export const skillsData: MultilingualSkill[] = [
       en: 'Web Accessibility',
       fi: 'Verkkosaavutettavuus'
     },
-    icon: 'FaUniversalAccess',
+    icon: 'UniversalAccess',
     description: {
-      en: ' Learning to create more accessible websites. Currently focusing on understanding WCAG guidelines and implementing basic accessibility features in projects.',
-      fi: 'Opettelen luomaan saavutettavampia verkkosivustoja. Keskityn tällä hetkellä WCAG-ohjeistojen ymmärtämiseen ja saavutettavien perusominaisuuksien toteuttamiseen projekteissa sekä harjoittelen saavutettavuusraporttien laatimista. '
-    }
-  },
-  {
-    name: {
-      en: 'ARIA Standards',
-      fi: 'ARIA-standardit'
-    },
-    icon: 'FaKeyboard',
-    description: {
-      en: "I'm developing my understanding of ARIA roles and attributes. As of now I work with both Windows and MacOS environments, allowing me to test how to use VoiceOver and NVDA in testing. I actually find manual testing enjoyable work task, and would love to make it a part of my daily routine.",
-      fi: 'Kehitän ymmärrystäni ARIA-rooleista ja -attribuuteista. Minulla on käytössäni tällä hetkellä sekä Windows- että Mac OS ympäristöt, joiden avulla pääsen testailemaan sekä Voice Overin että NVDA:n toimintaa. Manuaalinen testaus on minusta rattoisaa työtä, enkä koe sitä puuduttavana.'
+      en: 'I work on developing accessible digital services with a focus on applying WCAG guidelines and implementing accessibility features in real projects. I also practice preparing accessibility reports and statements as part of the development process. My work includes testing on both Windows and macOS environments using NVDA and VoiceOver.',
+      fi: 'Kehitän saavutettavia verkkopalveluita keskittyen WCAG-ohjeistojen soveltamiseen ja saavutettavien ominaisuuksien toteuttamiseen käytännön projekteissa. Harjoittelen myös saavutettavuusraporttien ja -selosteiden laatimista osana kehitysprosessia. Testaan toteutuksia Windows- ja Mac OS -ympäristöissä käyttäen sekä NVDA:ta että VoiceOveria. '
     }
   },
   {
@@ -57,10 +46,10 @@ export const skillsData: MultilingualSkill[] = [
       en: 'Frontend Development',
       fi: 'Frontend-kehitys'
     },
-    icon: 'FaCode',
+    icon: 'Code',
     description: {
-      en: "I have a strong foundational understanding of HTML, CSS, and Shopify’s Liquid templating language, which I’ve been using in my work at Woolman for the past few years. I also have some basic experience with JavaScript and React. I have to admit—I’m a big fan of Tailwind CSS! I really appreciate the utility-first approach to styling. Lately, though, writing basic code by hand has started to feel a bit time-consuming and unnecessary, since AI handles so much of the repetitive coding work so efficiently. Because of that, I’ve been focusing more on HTML semantics and deepening my understanding of HTML from an accessibility perspective.",
-      fi: 'Minulla on vahva perusymmärrys HTML:stä, CSS:stä ja Shopifyn Liquid-kielestä, joita olen käyttänyt töissäni Woolmanilla viimeisest vuodet. Minulla on myös jonkun verran perusymmärrystä JavaScriptin ja Reactin käytöstä. Minun on tunnustauduttava Tailwind CSS:n faniksi, tykkään todella paljon utility-pohjaisen CSS:n filosofiasta. Lähiaikoina tosin peruskoodin käsinkirjoittaminen on tuntunut jotenkin aikaavievältä ja turhalta, koska AI hoitaa niin tehokkaasti kaiken koodamisen perusheinän, ja olen keskittynyt enemmän HTML:n semantikkaan ja ymmärtämään HTML:ää saavutettavuuden linssin läpi katsottuna.'
+      en: "I have a solid foundation in HTML, CSS, and Shopify’s Liquid language, which I’ve been working with at Woolman for the past few years. I also have some basic experience with JavaScript and React. I have to admit I’m a big fan of Tailwind CSS and I really enjoy the philosophy behind utility-first styling.",
+      fi: 'Vahva perusymmärrys HTML:stä, CSS:stä ja Shopifyn Liquid-kielestä, joita olen käyttänyt töissäni Woolmanilla viimeisest vuodet. Minulla on myös jonkun verran perusymmärrystä JavaScriptin ja Reactin käytöstä. Minun on tunnustauduttava Tailwind CSS:n faniksi, tykkään todella paljon utility-pohjaisen CSS:n filosofiasta. '
     }
   },
   {
@@ -68,32 +57,21 @@ export const skillsData: MultilingualSkill[] = [
       en: 'UX Principles',
       fi: 'UX-periaatteet'
     },
-    icon: 'FaPencilRuler',
+    icon: 'PenRuler',
     description: {
       en: "Developing an eye for user-friendly interfaces. Learning about user research, wireframing, and the importance of user testing. I'm particularly interested in how UX intersects with accessibility. I can use Figma. I have extensive experience with other Adobe programs like Photoshop and Lightroom.",
-      fi: 'Kehitän taitojani käyttäjäystävällisten käyttöliittymien ja yleensäottaen hyvien designratkaisujen ymmärtämiseksi. Haluan oppia enemmän käyttäjätutkimuksesta, rautalankamallien tekemisestä ja käyttäjätestauksen tärkeydestä. Kaikista kiinnostunein olen UX:n ja saavutettavuuden yhtymäkohdista, eli ns. "design for all"-ajattelusta. Olen tottunut käyttämään Figmaa. Adoben ohjelmista (Photoshop, Lightroom) minulla on pitkällistä kokemusta. '
+      fi: 'Olen tottunut käyttämään Figmaa. Adoben ohjelmista (Photoshop, Lightroom) minulla on pitkällistä kokemusta. Haluan oppia enemmän käyttäjätutkimuksesta, rautalankamallien tekemisestä ja käyttäjätestausta käytännössä. Kaikista kiinnostunein olen UX:n ja saavutettavuuden yhtymäkohdista, eli ns. "design for all"-ajattelusta, joita myös käytän työssäni. '
     }
   },
   {
     name: {
-      en: 'Problem Solving',
-      fi: 'Ongelmanratkaisu'
+      en: 'Productivity processes',
+      fi: 'Prosessityöskentely'
     },
-    icon: 'FaHeadphones',
+    icon: 'Compass',
     description: {
-      en:  "I enjoy breaking down complex problems into manageable parts. I absolutely love Scrum-style development or workflows with its structured rituals - being ADD, I find that predictability and well-defined steps bring a sense of security and clarity to everyone involved in a project or task. I’m also a big fan of interactive workshops that not only boost team productivity but also foster a psychologically safe environment where everyone has space to grow and be heard without the fear of asking 'stupid' questions or anything else that might hinder learning or progress. The Agile practices and internal development processes I’ve experienced in previous workplaces are like ‘candy’ to me, i really enjoy practising them in a team. That said, I also strongly believe that a certain level of leadership, along with clearly defined roles and responsibilities, is crucial for a healthy work environment. In my future workplace, I’d hope for a structure where these roles and responsibilities are respected.",
-      fi: 'Nautin monimutkaisten ongelmien pilkkomisesta hallittaviin osiin. Tykkään aivan valtavasti Scrum-tyyppisestä kehittämisestä prosessinomaisine rituaaleineen, koska ADD-häiriöisenä koen, että ennustettavuus ja valmiiksimääritellyt stepit tuovat turvaa ja varmuutta projektiin kaikille projektiin tai työtehtävään osallistuville. Pidän paljon erilaisista osallistavista työpajoista joiden tarkoituksena on samalla kiihdyttää tiimin työtehoa, mutta myös luoda psykologisesti turvallinen tunnelma, jossa jokaisella on tilaa kasvaa ja tulla kohdatuksi ilman pelkoa siitä, että kyselisi tyhmiä tai muuta, joka voisi haitata kehittymistä tai työntekoa. Edellisissä työpaikoissa koetut agilet kehittämisen käytänteet ja sisäinen kehitys on minulle hyvin tuttua "karkkia", joiden järjestelyly tuottaa minulle merkityksellisyyden tunteita. Kuitenkin koen, että tietynlainen johtajuus ja erityisesti roolien sekä vastuiden selkeä aukisanoitus on osa työyhteisön kokonaisvaltaista hyvinvointia. Toivoisinkin tulevalta työpaikaltani myös sitä että yhteisistä rooleista ja vastuista pidettäisiin kiinni,  eikä työpaikka ainakaan velloisi täydellisessä anarkistisuudessa jossa organisaation pää ei yhtään tiedä mitä häntä touhuaa tai tavoittelee, tai toisinpäin.'
-    }
-  },
-  {
-    name: {
-      en: 'Learning & Growth',
-      fi: 'Oppiminen & Kehitys'
-    },
-    icon: 'FaPalette',
-    description: {
-      en: 'I am continually expanding my skill set through online courses, intensive study of documentation, and hands-on projects. I actively discuss accessibility with my developer friends and am eager to learn from others. At the moment, I’m focusing on accessibility and modern front-end best practices.',
-      fi: 'Laajennan jatkuvasti osaamistani verkkokurssien, dokumentaation tankkaamisen ja käytännön projektien kautta. Keskustelen aktiivisesti kehittäjäystävieni kanssa saavutettavuudesta ja olen innokas oppimaan muilta. Keskityn tällä hetkellä saavutettavuuteen ja moderneihin frontend-käytäntöihin.'
+      en:  "I enjoy processes that improve both efficiency and wellbeing at work, and I like putting them into practice within teams. I’m also interested in productivity philosophies and often read about them in my free time.",
+      fi: "Nautin prosesseista, jotka parantavat työn tehokkuutta ja hyvinvointia, sekä niiden konkreettisesta tuomisesta tiimityöhön. Olen kiinnostunut produktiivisuusfilosofioista myös syvällisemmin ja luen aiheesta mielelläni vapaa-ajallani.."
     }
   }
 ];

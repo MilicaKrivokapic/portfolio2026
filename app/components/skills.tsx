@@ -1,17 +1,18 @@
 'use client';
 import React from 'react';
 import { skillsData } from '../config/mockData';
-import { FaUniversalAccess, FaKeyboard, FaHeadphones, FaPalette, FaPencilRuler, FaCode } from 'react-icons/fa';
 import { useLanguage } from '../context/language-context';
 import { motion } from 'framer-motion';
+import UniversalAccess from './icons/UniversalAccess';
+import Code from './icons/Code';
+import PenRuler from './icons/PenRuler';
+import Compass from './icons/Compass';
 
 const iconMap = {
-  FaUniversalAccess,
-  FaKeyboard,
-  FaHeadphones,
-  FaPalette,
-  FaPencilRuler,
-  FaCode
+  UniversalAccess,
+  Code,
+  PenRuler,
+  Compass
 };
 
 export default function Skills() {

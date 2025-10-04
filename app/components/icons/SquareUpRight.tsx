@@ -3,7 +3,7 @@ type SquareUpRightProps = {
   title?: string;
 };
 
-export default function SquareUpRight({ className = 'w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5', title }: SquareUpRightProps) {
+export default function SquareUpRight({ className = 'w-5 h-5 md:w-6 md:h-6', title }: SquareUpRightProps) {
   const ariaProps = title ? { role: 'img', 'aria-label': title } : { 'aria-hidden': true };
   return (
     <svg
