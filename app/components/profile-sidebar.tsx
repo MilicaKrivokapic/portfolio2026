@@ -3,10 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { socialData } from '../config/mockData';
-import { FaGithub, FaLinkedin, FaPenNib } from 'react-icons/fa6';
-import { TbMailFilled } from 'react-icons/tb';
-import { IconType } from 'react-icons';
+// removed social icons and blog link
 import { useLanguage } from '../context/language-context';
 import { useActiveSection } from '../hooks/useActiveSection';
 import { HomeIcon } from './icons/menu-icon-home';
@@ -14,12 +11,7 @@ import FaceSmile from './icons/FaceSmile';
 import FolderOpen from './icons/FolderOpen';
 import Pencil from './icons/Pencil';
 
-const iconMap: Record<string, IconType> = {
-  FaGithub,
-  FaLinkedin,
-  TbMailFilled,
-  FaPenNib
-};
+// social icons moved to footer
 
 export default function ProfileSidebar() {
   const { t } = useLanguage();
@@ -33,10 +25,7 @@ export default function ProfileSidebar() {
   // Only use intersection active section if we're not on the blog page
   const activeSection = isBlogPage ? '' : intersectionActiveSection;
 
-  const getIcon = (iconName: string) => {
-    const Icon = iconMap[iconName];
-    return Icon ? <Icon size={20} /> : null;
-  };
+  
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     if (!isHome) {
@@ -177,29 +166,7 @@ export default function ProfileSidebar() {
           </ul>
         </div>
 
-        <div className="mt-auto">
-          <div className="flex justify-center space-x-4">
-            {socialData.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
-                aria-label={link.name}
-              >
-                {getIcon(link.icon)}
-              </a>
-            ))}
-            <Link
-              href="/blog"
-              className="p-2 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
-              aria-label="Blog"
-            >
-              <FaPenNib size={20} />
-            </Link>
-          </div>
-        </div>
+        <div className="mt-auto" />
       </nav>
     </>
   );
