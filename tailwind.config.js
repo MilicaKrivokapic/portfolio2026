@@ -13,6 +13,21 @@ module.exports = {
         sans: ['var(--font-bricolage)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         heading: ['var(--font-syne)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
+      animation: {
+        'orb-breathe': 'orb-breathe 2.5s ease-in-out infinite',
+      },
+      keyframes: {
+        'orb-breathe': {
+          '0%, 100%': { 
+            opacity: '0.6',
+            transform: 'scale(1)',
+          },
+          '50%': { 
+            opacity: '0.9',
+            transform: 'scale(1.1)',
+          },
+        },
+      },
       // Theme color cheat sheet (where each is used):
       // - background-light: base page background in light mode (applied on <body> via bg-background-light)
       //   Used in: app/layout.tsx <body className="bg-background-light dark:bg-background-dark"> and many overlays

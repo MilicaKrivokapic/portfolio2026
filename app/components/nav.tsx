@@ -7,12 +7,19 @@ import { ThemeSwitch } from "./theme-switch";
 import { LanguageSwitch } from "./language-switch";
 import { useLanguage } from "../context/language-context";
 import Link from "next/link";
+import { ActivePageOrb } from "./active-page-orb";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const { t } = useLanguage();
+  
+  // Active state detection
+  const isHome = pathname === '/';
+  const isBlogPage = pathname.startsWith('/blog');
+  const isAboutPage = pathname === '/about';
+  const isProjectsPage = pathname.startsWith('/projects');
 
   // Track if component is mounted (client-side)
   useEffect(() => {
@@ -112,34 +119,38 @@ export function Navbar() {
              {/* Navigation links */}
              <div className="px-6 py-4">
                <div className="flex flex-col gap-6">
-                 <Link
-                   href="/"
-                   className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors py-2"
-                   onClick={() => setMenuOpen(false)}
-                 >
-                   {t('nav.home')}
-                 </Link>
-                 <Link
-                   href="/about"
-                   className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors py-2"
-                   onClick={() => setMenuOpen(false)}
-                 >
-                   {t('about.title')}
-                 </Link>
-                 <Link
-                   href="/projects"
-                   className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors py-2"
-                   onClick={() => setMenuOpen(false)}
-                 >
-                   {t('nav.projects')}
-                 </Link>
-                 <Link
-                   href="/blog"
-                   className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors py-2"
-                   onClick={() => setMenuOpen(false)}
-                 >
-                   {t('nav.blog')}
-                 </Link>
+                <Link
+                  href="/"
+                  className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors py-2 flex items-center"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t('nav.home')}
+                  {isHome && <ActivePageOrb />}
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors py-2 flex items-center"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t('about.title')}
+                  {isAboutPage && <ActivePageOrb />}
+                </Link>
+                <Link
+                  href="/projects"
+                  className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors py-2 flex items-center"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t('nav.projects')}
+                  {isProjectsPage && <ActivePageOrb />}
+                </Link>
+                <Link
+                  href="/blog"
+                  className="text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors py-2 flex items-center"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t('nav.blog')}
+                  {isBlogPage && <ActivePageOrb />}
+                </Link>
                </div>
              </div>
 

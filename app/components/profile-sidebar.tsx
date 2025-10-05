@@ -10,6 +10,7 @@ import { HomeIcon } from './icons/menu-icon-home';
 import FaceSmile from './icons/FaceSmile';
 import FolderOpen from './icons/FolderOpen';
 import Pencil from './icons/Pencil';
+import { ActivePageOrb } from './active-page-orb';
 
 // social icons moved to footer
 
@@ -20,7 +21,8 @@ export default function ProfileSidebar() {
   const isBlogPage = pathname.startsWith('/blog');
   const isAboutPage = pathname === '/about';
   const isContactPage = pathname === '/contact';
-  const sectionIds = ['projects'];
+  const isProjectsPage = pathname.startsWith('/projects');
+  const sectionIds: string[] = []; // Remove projects from sections since it's now a page
   const intersectionActiveSection = useActiveSection(sectionIds);
   
   // Only use intersection active section if we're not on the blog page
@@ -29,8 +31,10 @@ export default function ProfileSidebar() {
   
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    if (!isHome) {
-      // Don't prevent default if we're navigating to home page
+    // Since we no longer have section navigation for projects, this function is simplified
+    // It can be removed entirely if no sections are used
+    if (!isHome || sectionIds.length === 0) {
+      // Don't prevent default - allow normal navigation
       return;
     }
     
@@ -52,11 +56,11 @@ export default function ProfileSidebar() {
       label: t('about.title'),
       href: '/about'
     },
-    ...sectionIds.map((item) => ({
-      id: item,
-      label: t(`sidebar.${item}`),
-      href: isHome ? `#${item}` : `/#${item}`
-    })),
+    {
+      id: 'projects',
+      label: t('sidebar.projects'),
+      href: '/projects'
+    },
     {
       id: 'blog',
       label: t('sidebar.blog'),
@@ -127,7 +131,7 @@ export default function ProfileSidebar() {
               <li key={item.id}>
                 <Link
                   href={item.href}
-                  onClick={(e) => (item.id !== 'blog' && item.id !== 'home' && item.id !== 'about') ? handleNavClick(e, item.id) : undefined}
+                  onClick={(e) => (sectionIds.includes(item.id)) ? handleNavClick(e, item.id) : undefined}
                   className={`group relative block px-4 py-2.5 text-sm font-medium no-underline
                            text-primary-light dark:text-primary-dark
                            bg-transparent 
@@ -143,7 +147,8 @@ export default function ProfileSidebar() {
                            ${(item.id === 'blog' && isBlogPage) || 
                              (item.id === 'home' && isHome) ||
                              (item.id === 'about' && isAboutPage) ||
-                             (item.id !== 'blog' && item.id !== 'home' && item.id !== 'about' && activeSection === item.id) ? 
+                             (item.id === 'projects' && isProjectsPage) ||
+                             (sectionIds.includes(item.id) && activeSection === item.id) ? 
                              'bg-surface-light/40 dark:bg-surface-dark/40 border-accent-light/50 dark:border-accent-dark/50 text-accent-light dark:text-accent-dark' : 
                              ''
                            }`}
@@ -155,6 +160,13 @@ export default function ProfileSidebar() {
                     {item.id === 'projects' && <FolderOpen />}
                     {item.id === 'blog' && <Pencil />}
                     {item.label}
+                    {((item.id === 'blog' && isBlogPage) || 
+                      (item.id === 'home' && isHome) ||
+                      (item.id === 'about' && isAboutPage) ||
+                      (item.id === 'projects' && isProjectsPage) ||
+                      (sectionIds.includes(item.id) && activeSection === item.id)) && (
+                      <ActivePageOrb />
+                    )}
                   </span>
                   {/* Subtle background glow effect */}
                   <div className="absolute inset-0 rounded-xl opacity-0 
