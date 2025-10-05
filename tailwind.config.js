@@ -30,7 +30,7 @@ module.exports = {
       //            selection color in global.css, icons (ThemeSwitch), active states in sidebar links
       colors: {
         // Page background (light). Example: <body className="bg-background-light ...">
-        'background-light': '#FFFFFF',
+        'background-light': '#FCF9F7',
         'background-dark': '#452f47',
         // Surfaces/cards (light). Example: sidebars, cards: bg-surface-light
         'surface-light': '#FCF9F7',

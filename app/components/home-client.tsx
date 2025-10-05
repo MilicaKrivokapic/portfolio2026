@@ -16,7 +16,9 @@ export default function HomeClient({ posts }: HomeClientProps) {
   const { t } = useLanguage();
   
   return (
-    <div className="px-6 py-12 md:py-24 space-y-16 md:space-y-32 max-w-4xl mx-auto">
+    <div className="px-4 md:px-6 py-6 md:py-10">
+      <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 shadow-[0_10px_30px_rgba(0,0,0,0.06)] p-6 md:p-10">
+        <div className="space-y-16 md:space-y-32">
       <section className="space-y-8">
         <h1 className="text-4xl md:text-7xl font-bold font-heading">
           Building accessible
@@ -54,6 +56,8 @@ export default function HomeClient({ posts }: HomeClientProps) {
       <section id="latest-posts">
         <LatestPostsClient posts={posts} />
       </section>
+        </div>
+      </div>
     </div>
   );
 }
