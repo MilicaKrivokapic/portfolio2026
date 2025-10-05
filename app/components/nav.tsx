@@ -49,9 +49,12 @@ export function Navbar() {
       {/* Mobile menu overlay (partial height to reveal page behind) */}
       <div 
         id="mobile-menu"
-        className={`fixed top-0 left-0 w-full h-[70vh] bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-zinc-800 z-[100] flex flex-col items-center pt-16 pb-6 shadow-lg transition-opacity md:hidden ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`fixed top-0 left-0 w-full h-[70vh] bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-zinc-800 flex flex-col items-center pt-16 pb-6 shadow-lg transition-opacity md:hidden ${
+          menuOpen 
+            ? 'z-[100] opacity-100 pointer-events-auto visible' 
+            : '-z-10 opacity-0 pointer-events-none invisible'
         }`}
+        aria-hidden={!menuOpen}
       >
         <div className="flex flex-col gap-4 mt-2">
           <Link
