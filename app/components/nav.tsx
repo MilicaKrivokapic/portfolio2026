@@ -79,11 +79,11 @@ export function Navbar() {
             {t('nav.projects')}
           </Link>
           <Link
-            href="/#contact"
-            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+            href="/contact"
+            className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            {t('sidebar.contact')}
+            <span className="inline-block px-5 py-2 rounded-lg border border-accent-light/60 dark:border-accent-dark/60 text-accent-light dark:text-accent-dark bg-accent-light/5 dark:bg-accent-dark/5">{t('sidebar.contact')}</span>
           </Link>
           <Link
             href="/blog"

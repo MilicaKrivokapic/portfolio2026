@@ -1,6 +1,5 @@
 'use client';
 import Projects from './projects';
-import Contact from './contact';
 import Recommendations from './recommendations';
 import LatestPostsClient from './latest-posts-client';
 import Link from 'next/link';
@@ -49,9 +48,6 @@ export default function HomeClient({ posts }: HomeClientProps) {
         <Recommendations />
       </section>
 
-      <section id="contact">
-        <Contact />
-      </section>
 
       <section id="latest-posts">
         <LatestPostsClient posts={posts} />

@@ -33,6 +33,7 @@ export const translations = {
     },
     contact: {
       title: 'Get in Touch',
+      intro: 'Feel free to contact me any time!',
       connect: "Let's Connect",
       name: 'Your Name',
       email: 'Your Email',
@@ -110,6 +111,7 @@ export const translations = {
     },
     contact: {
       title: 'Ota yhteyttä',
+      intro: 'Ota yhteyttä milloin vain!',
       connect: 'Ollaan yhteydessä',
       name: 'Nimesi',
       email: 'Sähköpostisi',

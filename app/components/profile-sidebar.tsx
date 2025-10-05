@@ -19,6 +19,7 @@ export default function ProfileSidebar() {
   const isHome = pathname === '/';
   const isBlogPage = pathname.startsWith('/blog');
   const isAboutPage = pathname === '/about';
+  const isContactPage = pathname === '/contact';
   const sectionIds = ['projects'];
   const intersectionActiveSection = useActiveSection(sectionIds);
   
@@ -166,7 +167,29 @@ export default function ProfileSidebar() {
           </ul>
         </div>
 
-        <div className="mt-auto" />
+        {/* Separated Contact Section - like "Hire Me" in reference */}
+        <div className="pt-6 border-t border-gray-200/50 dark:border-zinc-700/50">
+          <div className="mb-3">
+           
+          </div>
+          <Link
+            href="/contact"
+            className={`group relative block w-full px-6 py-3 text-center font-semibold no-underline
+                       text-white bg-gradient-to-r from-accent-light to-purple-600 dark:from-accent-dark dark:to-purple-500
+                       rounded-2xl transition-all duration-300 ease-out
+                       hover:shadow-lg hover:shadow-accent-light/25 dark:hover:shadow-accent-dark/25
+                       hover:-translate-y-1 hover:scale-[1.02]
+                       active:translate-y-0 active:scale-[0.98]
+                       ${isContactPage ? 'ring-2 ring-accent-light/50 dark:ring-accent-dark/50' : ''}`}
+          >
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              {t('sidebar.contact')}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="transition-transform group-hover:translate-x-1">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+          </Link>
+        </div>
       </nav>
     </>
   );
