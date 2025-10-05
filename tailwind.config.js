@@ -51,7 +51,7 @@ module.exports = {
         // Surfaces/cards (light). Example: sidebars, cards: bg-surface-light
         'surface-light': '#FCF9F7',
         // Dark surfaces/cards
-        'surface-dark': '#151517',
+        'surface-dark': '#0F0F10',
         // Primary text (light). Example: <body className="text-primary-light ...">
         'primary-light': '#2d162c',
         'primary-dark': '#E7E7E7',
