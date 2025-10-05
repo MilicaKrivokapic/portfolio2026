@@ -31,20 +31,23 @@ module.exports = {
       colors: {
         // Page background (light). Example: <body className="bg-background-light ...">
         'background-light': '#FCF9F7',
-        'background-dark': '#452f47',
+        // Dark page background (charcoal)
+        'background-dark': '#0F0F10',
         // Surfaces/cards (light). Example: sidebars, cards: bg-surface-light
         'surface-light': '#FCF9F7',
-        'surface-dark': '#1E1E1E',
+        // Dark surfaces/cards
+        'surface-dark': '#151517',
         // Primary text (light). Example: <body className="text-primary-light ...">
         'primary-light': '#2d162c',
-        'primary-dark': '#E8E8E8',
+        'primary-dark': '#E7E7E7',
         'muted-light': '#4a2480',
-        'muted-dark': '#A0A0A0',
+        'muted-dark': '#9A9AA0',
         // Accent colors for emphasis, borders, icons, hovers, selection
         accent: {
           // Light-mode accent. Used by: hover:text-accent-light, border-accent-light, selection, icons
           light: '#4a2480',
-          dark: '#F93A6AFF',
+          // Dark-mode accent approximating reference glow
+          dark: '#C9A86C',
         }
       },
     },
