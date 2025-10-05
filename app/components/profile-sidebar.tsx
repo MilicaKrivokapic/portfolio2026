@@ -71,7 +71,7 @@ export default function ProfileSidebar() {
   return (
     <>
       {/* Profile Card (not fixed, not sticky, just below the top bar) */}
-  <div className="md:hidden mt-0 p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-zinc-800">
+  <div className="hidden mt-0 p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-zinc-800">
         <div className="flex items-center space-x-4">
           <Link 
             href="/" 

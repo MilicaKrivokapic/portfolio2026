@@ -47,7 +47,7 @@ export function LanguageSwitch() {
       <button
         type="button"
         onClick={() => setLanguage(other)}
-        className="md:hidden p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all"
+        className="md:hidden p-2 rounded-md bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all"
         aria-label={`Switch language to ${other === 'en' ? 'English' : 'Finnish'}`}
       >
         <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ export function LanguageSwitch() {
           type="button"
           aria-haspopup="menu"
           aria-expanded={open}
-          className="p-2 h-[50px] rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center"
+          className="p-2 h-[50px] rounded-md bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center"
           onMouseEnter={openMenu}
           onMouseLeave={scheduleCloseMenu}
           onFocus={openMenu}

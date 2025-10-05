@@ -57,7 +57,7 @@ export function ThemeSwitch() {
       </button>
 
       {/* Desktop: full toggle with labels */}
-      <div className="hidden md:flex items-center gap-3 rounded-md border border-gray-200 dark:border-gray-700 p-2">
+      <div className="hidden md:flex items-center gap-3 rounded-md border bg-white dark:bg-background-dark border-gray-200 dark:border-gray-700 p-2">
       {/* Sun icon */}
       <svg
         viewBox="0 0 16 16"
