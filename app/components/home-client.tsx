@@ -28,7 +28,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
           <Link href="/about">
-            <Button shadow="strong" className="w-full sm:w-auto">
+            <Button variant="secondary" shadow="strong" className="w-full sm:w-auto">
               {t('about.aboutMeButton')}
             </Button>
           </Link>

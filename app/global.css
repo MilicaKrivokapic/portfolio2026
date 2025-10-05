@@ -53,7 +53,7 @@
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
   --icon-color: theme('colors.accent.dark');
-  --accent-shadow: 249, 58, 106; /* #F93A6A in RGB for rgba() */
+  --accent-shadow: 74, 36, 128; /* #F93A6A in RGB for rgba() */
   --ring-accent: theme('colors.accent.dark');
   /* Default Tailwind ring variables */
   --tw-ring-color: var(--ring-accent);
