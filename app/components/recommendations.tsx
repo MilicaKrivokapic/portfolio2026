@@ -44,7 +44,7 @@ export default function Recommendations() {
       <h2 className="text-3xl md:text-4xl font-bold mb-24 text-center"> {/* Changed from mb-16 to mb-24 */}
         {t('recommendations.title')}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 px-4"> {/* Changed from gap-16 to gap-20 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-20"> {/* Changed from gap-16 to gap-20 */}
         {(recommendationsData as Recommendation[]).map((recommendation, index) => (
           <div key={index} className="relative">
             <div className="bg-stone-100 dark:bg-zinc-800/90 rounded-2xl shadow-2xs dark:shadow-sm border-2 border-stone-200/60 dark:border-zinc-700/50">
@@ -53,7 +53,7 @@ export default function Recommendations() {
                           w-24 h-24 rounded-full
                           bg-white dark:bg-zinc-900
                           flex items-center justify-center
-                          border-2 dark:border-4 border-stone-200/60 dark:border-zinc-800
+                          border-2 border-stone-200/60 dark:border-zinc-800
                           shadow-md dark:shadow-x1
                           z-10">
                 <div className="w-12 h-12 text-purple-900 dark:text-amber-400"> {/* Changed from w-8 h-12 to w-16 h-16 */}
@@ -62,7 +62,7 @@ export default function Recommendations() {
               </div>
               
               {/* Increase top padding to accommodate larger icon */}
-              <div className="pt-16 p-8"> {/* Changed from pt-10 to pt-16 */}
+              <div className="pt-16 p-4 md:pt-16 md:p-8"> {/* Changed from pt-10 to pt-16 */}
                 <div className="space-y-4">
                   <div className="text-center">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
@@ -80,7 +80,7 @@ export default function Recommendations() {
                   <blockquote className="text-gray-700 dark:text-gray-300 italic 
                                      leading-relaxed relative px-4 py-3 border-l 
                                      border-purple-700 dark:border-accent-dark
-                                     bg-white dark:bg-zinc-700/40 rounded-r-lg">
+                                     bg-gray-50 dark:bg-zinc-700/40 rounded-r-lg">
                     "{recommendation.text[language]}"
                   </blockquote>
                 </div>
