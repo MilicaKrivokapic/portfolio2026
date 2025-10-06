@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import SquareUpRight from '../icons/SquareUpRight';
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -16,11 +17,11 @@ type ButtonProps = {
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ children, className = '', variant = 'primary', as = 'button', shadow = 'default', ...props }, ref) => {
     const variantClasses = {
-      secondary: "bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 hover:bg-stone-50 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900",
+      secondary: "group relative no-underline text-white bg-gradient-to-r from-accent-light to-purple-600 dark:from-accent-dark dark:to-accent-light font-semibold transition-all duration-300 ease-out hover:shadow-lg hover:shadow-accent-light/25 dark:hover:shadow-accent-dark/25 hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98] px-6 py-3",
       primary: "border dark:border-accent-light dark:border-neutral-700 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-black active:bg-gray-100 dark:active:bg-neutral-800 dark:shadow-lg"
     };
     
-    const baseClasses = `block text-center px-6 py-2 rounded-lg transition-all duration-200 ease-in-out hover:scale-[0.97] shadow ${variantClasses[variant]}`;
+    const baseClasses = `block text-center px-6 py-2 rounded-xl transition-all duration-200 ease-in-out hover:scale-[0.97] shadow ${variantClasses[variant]}`;
     
     const disabledClasses = (as === 'button' && (props as any).disabled)
       ? "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-white dark:disabled:hover:bg-neutral-900"
@@ -51,6 +52,18 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
       e.currentTarget.style.setProperty('--tw-shadow', baseShadowValue);
     };
 
+    const content = variant === 'secondary'
+      ? (
+        <span className="relative z-10 flex items-center justify-center gap-2">
+          {children}
+          <span className="inline-block transform-none scale-100 transition-none">
+            <SquareUpRight className="w-5 h-5 pointer-events-none" />
+          </span>
+        </span>
+      ) : (
+        <>{children}</>
+      );
+
     if (as === 'a') {
       return (
         <a
@@ -61,7 +74,7 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
           onMouseLeave={handleMouseLeave}
           {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
-          {children}
+          {content}
         </a>
       );
     }
@@ -75,7 +88,7 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
         onMouseLeave={handleMouseLeave}
         {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
       >
-        {children}
+        {content}
       </button>
     );
   }

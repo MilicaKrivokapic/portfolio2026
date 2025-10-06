@@ -32,11 +32,6 @@ export default function HomeClient({ posts }: HomeClientProps) {
               {t('about.aboutMeButton')}
             </Button>
           </Link>
-          <Link href="/projects">
-            <Button variant="secondary" shadow="strong" className="w-full sm:w-auto">
-              {t('about.seeWorksButton')}
-            </Button>
-          </Link>
         </div>
       </section>
 
