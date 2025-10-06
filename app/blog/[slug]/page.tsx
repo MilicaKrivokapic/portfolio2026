@@ -92,15 +92,17 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
   const bannerImage = post.metadata.image || "/opengraph-image.png";
 
   return (
-    <section className="flex flex-col items-center w-full px-4">
-      {/* Back to Blog link outside the article box */}
-      <div className="w-full max-w-5xl mb-4">
-        <a href="/blog" className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-accent-light dark:hover:text-accent-dark transition-colors">
-          <FaArrowLeft className="w-4 h-4" />
-          <span>Back to Blog</span>
-        </a>
-      </div>
-      <article className="prose prose-neutral dark:prose-invert max-w-5xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
+    <div className="px-4 md:px-6 py-6 md:py-10">
+      <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/5 p-10 md:p-20">
+        <section className="flex flex-col items-center w-full">
+          {/* Back to Blog link outside the article box */}
+          <div className="w-full max-w-5xl mb-4">
+            <a href="/blog" className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-accent-light dark:hover:text-accent-dark transition-colors">
+              <FaArrowLeft className="w-4 h-4" />
+              <span>Back to Blog</span>
+            </a>
+          </div>
+          <article className="prose prose-neutral dark:prose-invert max-w-5xl w-full mx-auto bg-white/60 dark:bg-neutral-900/60 rounded-lg shadow-sm p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
         <div className="w-full mb-8 rounded-lg overflow-hidden">
           <Image
             src={bannerImage}
@@ -162,6 +164,8 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           ) : <span />}
         </div>
       </article>
-    </section>
+        </section>
+      </div>
+    </div>
   );
 }
