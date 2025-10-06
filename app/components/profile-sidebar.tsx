@@ -185,22 +185,29 @@ export default function ProfileSidebar() {
            
           </div>
           <Link
-            href="/contact"
-            className={`group relative block w-full px-6 py-3 text-center font-semibold no-underline
-                       text-white bg-gradient-to-r from-accent-light to-purple-600 dark:from-accent-dark dark:to-purple-500
-                       rounded-2xl transition-all duration-300 ease-out
-                       hover:shadow-lg hover:shadow-accent-light/25 dark:hover:shadow-accent-dark/25
-                       hover:-translate-y-1 hover:scale-[1.02]
-                       active:translate-y-0 active:scale-[0.98]
-                       ${isContactPage ? 'ring-2 ring-accent-light/50 dark:ring-accent-dark/50' : ''}`}
-          >
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              {t('sidebar.contact')}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="transition-transform group-hover:translate-x-1">
-                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          </Link>
+  href="/contact"
+  className={`group relative block w-full px-6 py-3 text-center font-semibold no-underline
+    text-white bg-gradient-to-r from-accent-light to-purple-600 dark:from-accent-dark dark:to-accent-light
+    rounded-2xl transition-all duration-300 ease-out
+    hover:shadow-lg hover:shadow-accent-light/25 dark:hover:shadow-accent-dark/25
+    hover:-translate-y-1 hover:scale-[1.02]
+    active:translate-y-0 active:scale-[0.98]
+    ${isContactPage ? 'ring-2 ring-accent-light/50 dark:ring-accent-dark/50' : ''}`}
+>
+  <span className="relative z-10 flex items-center justify-center gap-2">
+    {t('sidebar.contact')}
+    <span className="inline-block transform-none scale-100 transition-none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 640 640"
+        className="w-5 h-5 pointer-events-none"
+        fill="currentColor"
+      >
+        <path d="M480 96C515.3 96 544 124.7 544 160L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 160C96 124.7 124.7 96 160 96L480 96zM264 224C254.3 224 245.5 229.8 241.8 238.8C238.1 247.8 240.1 258.1 247 265L282 300L215 367C205.6 376.4 205.6 391.6 215 400.9L239 424.9C248.4 434.3 263.6 434.3 272.9 424.9L339.9 357.9L374.9 392.9C381.8 399.8 392.1 401.8 401.1 398.1C410.1 394.4 416 385.7 416 376L416 248C416 234.7 405.3 224 392 224L264 224z"/>
+      </svg>
+    </span>
+  </span>
+</Link>
         </div>
       </nav>
     </>

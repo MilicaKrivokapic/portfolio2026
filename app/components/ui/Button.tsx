@@ -16,8 +16,8 @@ type ButtonProps = {
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ children, className = '', variant = 'primary', as = 'button', shadow = 'default', ...props }, ref) => {
     const variantClasses = {
-      primary: "bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 hover:bg-stone-50 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900",
-      secondary: "bg-transparent border border-gray-300 dark:border-neutral-700 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-neutral-800 active:bg-gray-100 dark:active:bg-neutral-800"
+      secondary: "bg-white dark:bg-neutral-900 text-gray-800 dark:text-gray-100 hover:bg-stone-50 dark:hover:bg-neutral-900 active:bg-gray-200 dark:active:bg-neutral-900",
+      primary: "border dark:border-accent-light dark:border-neutral-700 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-black active:bg-gray-100 dark:active:bg-neutral-800 dark:shadow-lg"
     };
     
     const baseClasses = `block text-center px-6 py-2 rounded-lg transition-all duration-200 ease-in-out hover:scale-[0.97] shadow ${variantClasses[variant]}`;
