@@ -24,7 +24,7 @@ export function ThemeSwitch() {
         {/* Mobile skeleton: same button shape and icon logic via CSS only */}
         <button
           type="button"
-          className="md:hidden p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 bg-white dark:bg-background-dark"
+          className="md:hidden p-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 bg-white dark:bg-background-dark"
           aria-hidden
           tabIndex={-1}
           disabled
@@ -53,7 +53,7 @@ export function ThemeSwitch() {
         </button>
 
         {/* Desktop skeleton: mirrors structure and classes, inert */}
-        <div className="hidden md:flex items-center gap-3 rounded-md border bg-white dark:bg-background-dark border-gray-200 dark:border-gray-700 p-2" aria-hidden>
+        <div className="hidden md:flex items-center gap-3 rounded-lg border bg-white dark:bg-background-dark border-gray-200 dark:border-gray-700 p-2" aria-hidden>
           {/* Sun icon */}
           <svg
             viewBox="0 0 16 16"
@@ -102,7 +102,7 @@ export function ThemeSwitch() {
       <button
         type="button"
         onClick={toggleTheme}
-        className="md:hidden p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+        className="md:hidden p-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
         aria-label="Toggle theme"
         aria-pressed={isDark}
       >
@@ -131,7 +131,7 @@ export function ThemeSwitch() {
       </button>
 
       {/* Desktop: full toggle with labels */}
-      <div className="hidden md:flex items-center gap-3 rounded-md border bg-white dark:bg-background-dark border-gray-200 dark:border-gray-700 p-2">
+      <div className="hidden md:flex items-center gap-3 rounded-lg border bg-white dark:bg-background-dark border-gray-200 dark:border-gray-700 p-2">
       {/* Sun icon */}
       <svg
         viewBox="0 0 16 16"

@@ -47,7 +47,7 @@ export function LanguageSwitch() {
       <button
         type="button"
         onClick={() => setLanguage(other)}
-        className="md:hidden p-2 rounded-md bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all"
+        className="md:hidden p-2 rounded-lg bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all"
         aria-label={`Switch language to ${other === 'en' ? 'English' : 'Finnish'}`}
       >
         <div className="flex items-center gap-2">
@@ -56,18 +56,20 @@ export function LanguageSwitch() {
         </div>
       </button>
 
-      {/* Desktop: hover/focus dropdown */}
+      {/* Desktop: click to toggle, hover/focus for dropdown */}
       <div className="hidden md:inline-block relative">
         <button
           type="button"
           aria-haspopup="menu"
           aria-expanded={open}
-          className="p-2 h-[50px] rounded-md bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center"
+          className="p-2 h-[50px] rounded-lg bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center"
+          onClick={() => setLanguage(other)}
           onMouseEnter={openMenu}
           onMouseLeave={scheduleCloseMenu}
           onFocus={openMenu}
           onBlur={scheduleCloseMenu}
           ref={triggerRef}
+          aria-label={`Switch language to ${other === 'en' ? 'English' : 'Finnish'}`}
         >
           <div className="flex items-center gap-2">
             <CurrentFlag />
@@ -78,7 +80,7 @@ export function LanguageSwitch() {
         <div
           role="menu"
           aria-label="Select language"
-          className={`absolute left-0 top-full mt-1 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-neutral-900 shadow-lg ring-1 ring-black/5 z-[200] transition ease-out duration-150 ${open ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'}`}
+          className={`absolute left-0 top-full mt-1 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-neutral-900 shadow-lg ring-1 ring-black/5 z-[200] transition ease-out duration-150 ${open ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'}`}
           style={{ width: menuWidth ? `${menuWidth}px` : undefined }}
           onMouseEnter={openMenu}
           onMouseLeave={scheduleCloseMenu}
@@ -89,7 +91,7 @@ export function LanguageSwitch() {
             role="menuitemradio"
             aria-checked={false}
             onClick={() => setLanguage(other)}
-            className="w-full text-left px-2 py-2 text-sm hover:bg-gray-100 dark:hover:bg-neutral-800 flex items-center gap-2 rounded-md"
+            className="w-full text-left px-2 py-2 text-sm hover:bg-gray-100 dark:hover:bg-neutral-800 flex items-center gap-2 border rounded-lg"
           >
             <OtherFlag />
             <span className="font-medium">{other.toUpperCase()}</span>
