@@ -17,11 +17,11 @@ type ButtonProps = {
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ children, className = '', variant = 'primary', as = 'button', shadow = 'default', ...props }, ref) => {
     const variantClasses = {
-      secondary: "group relative no-underline text-white bg-gradient-to-r from-accent-light to-purple-600 dark:from-accent-dark dark:to-accent-light font-semibold transition-all duration-300 ease-out hover:shadow-lg hover:shadow-accent-light/25 dark:hover:shadow-accent-dark/25 hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98] px-6 py-3",
-      primary: "border dark:border-accent-light dark:border-neutral-700 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-black active:bg-gray-100 dark:active:bg-neutral-800 dark:shadow-lg"
+      secondary: "group relative no-underline text-white bg-gradient-to-r from-accent-light to-purple-600 dark:from-accent-dark dark:to-accent-light font-semibold transition-all duration-300 ease-out hover:shadow-lg hover:shadow-accent-light/25 dark:hover:shadow-accent-dark/25 ",
+      primary: "border border-amber-50 dark:border-accent-light dark:border-neutral-700 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-black active:bg-gray-100 dark:active:bg-neutral-800 dark:shadow-xl"
     };
     
-    const baseClasses = `block text-center px-6 py-2 rounded-xl transition-all duration-200 ease-in-out hover:scale-[0.97] shadow ${variantClasses[variant]}`;
+    const baseClasses = `block text-center px-6 py-2 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[0.97] shadow ${variantClasses[variant]}`;
     
     const disabledClasses = (as === 'button' && (props as any).disabled)
       ? "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-white dark:disabled:hover:bg-neutral-900"

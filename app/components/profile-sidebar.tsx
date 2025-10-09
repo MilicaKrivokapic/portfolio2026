@@ -105,8 +105,14 @@ export default function ProfileSidebar() {
       </div>
 
       {/* Desktop Primary Navigation */}
-      <nav aria-label="Primary" className="hidden md:flex fixed left-0 top-0 md:left-32 md:top-[6rem] h-screen md:h-[calc(100vh-5.6rem)] w-[280px] bg-surface-light dark:bg-surface-dark p-6 flex-col">
-        <div className="flex flex-col items-center space-y-3">
+      <nav aria-label="Primary" className="hidden md:flex md:flex-col
+              md:basis-[280px] md:shrink-0
+              md:sticky md:top-[var(--header-h)]
+              md:overflow-y-auto
+              mt-28
+              p-8 bg-surface-light bg-gradient-to-b from-white to-[#fcf9f7] dark:bg-gradient-to-b dark:from-[#161617] dark:to-[#0F0F10] rounded-3xl ring-1 ring-black/5 dark:ring-white/5
+              2xl:ml-40">
+        <div className="flex flex-col items-center space-y-3x">
           <Link href="/" aria-label="Go to home" className="relative w-32 h-32 rounded-2xl overflow-hidden p-[2px] border-2 border-accent-light dark:border-accent-dark bg-gradient-to-br bg-black flex items-center justify-center">
             <div className="w-full h-full overflow-hidden flex items-center justify-center">
               <Image
