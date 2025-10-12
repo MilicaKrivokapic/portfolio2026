@@ -20,8 +20,8 @@ export default function HomeClient({ posts }: HomeClientProps) {
         <div className="space-y-16 md:space-y-32">
       <section className="space-y-8">
         <h1 className="text-4xl md:text-7xl font-bold font-heading">
-          Building accessible
-          <span className="text-accent-light dark:text-accent-dark"> digital experiences</span>
+          {t('about.heroGreeting')}
+          <span className="text-accent-light dark:text-accent-dark"> {t('about.heroTagline')} </span>
         </h1>
         <p className="text-xl leading-relaxed max-w-3xl">
           {t('about.summary')}
