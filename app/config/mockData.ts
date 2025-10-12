@@ -32,13 +32,13 @@ interface MultilingualSkill {
 export const skillsData: MultilingualSkill[] = [
   {
     name: {
-      en: 'Web Accessibility',
+      en: 'Web Accessibility (WCAG 2.2 A–AA)',
       fi: 'Verkkosaavutettavuus'
     },
     icon: 'UniversalAccess',
     description: {
-      en: 'I work on developing accessible digital services with a focus on applying WCAG guidelines and implementing accessibility features in real projects. I also practice preparing accessibility reports and statements as part of the development process. My work includes testing on both Windows and macOS environments using NVDA and VoiceOver.',
-      fi: 'Kehitän saavutettavia verkkopalveluita keskittyen WCAG-ohjeistojen soveltamiseen ja saavutettavien ominaisuuksien toteuttamiseen käytännön projekteissa. Harjoittelen myös saavutettavuusraporttien ja -selosteiden laatimista osana kehitysprosessia. Testaan toteutuksia Windows- ja Mac OS -ympäristöissä käyttäen sekä NVDA:ta että VoiceOveria. '
+      en: 'Using Axe DevTools, WAVE, Lighthouse, and manual keyboard/screen reader testing (NVDA, VoiceOver) and following guidelines and educating myself everyday on the matter',
+      fi: 'Saavutettavuuden tarkistamisessa käytän Axe DevToolssia, WAVEa, Lighthousea ja testaan myös manuaalisesti NVDA:lla ja Applen Voiceoverilla noudattaen säädöksiä. Luen saavutettavuudesta lisää päivittäin.'
     }
   },
   {
@@ -48,8 +48,8 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: 'Code',
     description: {
-      en: "I have a solid foundation in HTML, CSS, and Shopify’s Liquid language, which I’ve been working with at Woolman for the past few years. I also have some basic experience with JavaScript and React. I have to admit I’m a big fan of Tailwind CSS and I really enjoy the philosophy behind utility-first styling.",
-      fi: 'Vahva perusymmärrys HTML:stä, CSS:stä ja Shopifyn Liquid-kielestä, joita olen käyttänyt töissäni Woolmanilla viimeisest vuodet. Minulla on myös jonkun verran perusymmärrystä JavaScriptin ja Reactin käytöstä. Minun on tunnustauduttava Tailwind CSS:n faniksi, tykkään todella paljon utility-pohjaisen CSS:n filosofiasta. '
+      en: "Strong foundations of HTML, CSS, ARIA roles and Shopify's Liquid. Some experience with JavaScript/React.",
+      fi: 'Osaaminen HTML:stä, CSS:stä ja Shopifyn Liquid-kielestä. Minulla on myös jonkun verran perusymmärrystä JavaScriptin ja Reactin käytöstä. '
     }
   },
   {
@@ -59,8 +59,8 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: 'PenRuler',
     description: {
-      en: "Developing an eye for user-friendly interfaces. Learning about user research, wireframing, and the importance of user testing. I'm particularly interested in how UX intersects with accessibility. I can use Figma. I have extensive experience with other Adobe programs like Photoshop and Lightroom.",
-      fi: 'Olen tottunut käyttämään Figmaa. Adoben ohjelmista (Photoshop, Lightroom) minulla on pitkällistä kokemusta. Haluan oppia enemmän käyttäjätutkimuksesta, rautalankamallien tekemisestä ja käyttäjätestausta käytännössä. Kaikista kiinnostunein olen UX:n ja saavutettavuuden yhtymäkohdista, eli ns. "design for all"-ajattelusta, joita myös käytän työssäni. '
+      en: "Using Figma&Adobe products (Photoshop, Lightroom). Understanding of some 3d programs like Blender and Autodesk Maya",
+      fi: 'Olen tottunut käyttämään Figmaa. Adoben ohjelmista (Photoshop, Lightroom) minulla on pitkällistä kokemusta. Osaan myös käyttää jonkun verran 3D-ohjelmia kuten Blenderiä ja Autodesk Mayaa.'
     }
   },
   {
@@ -71,7 +71,7 @@ export const skillsData: MultilingualSkill[] = [
     icon: 'Compass',
     description: {
       en:  "I enjoy processes that improve both efficiency and wellbeing at work, and I like putting them into practice within teams. I’m also interested in productivity philosophies and often read about them in my free time.",
-      fi: "Nautin prosesseista, jotka parantavat työn tehokkuutta ja hyvinvointia, sekä niiden konkreettisesta tuomisesta tiimityöhön. Olen kiinnostunut produktiivisuusfilosofioista myös syvällisemmin ja luen aiheesta mielelläni vapaa-ajallani.."
+      fi: "Nautin prosesseista, jotka parantavat työn tehokkuutta ja hyvinvointia, sekä niiden konkreettisesta tuomisesta tiimityöhön. Olen kiinnostunut produktiivisuusfilosofioista myös syvällisemmin ja luen aiheesta mielelläni vapaa-ajallani."
     }
   }
 ];
