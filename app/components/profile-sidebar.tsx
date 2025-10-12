@@ -105,10 +105,10 @@ export default function ProfileSidebar() {
       </div>
 
       {/* Desktop Primary Navigation */}
-      <nav aria-label="Primary" className="hidden md:flex md:flex-col
-              md:basis-[280px] md:shrink-0
-              md:sticky md:top-[var(--header-h)]
-              md:overflow-y-auto
+      <nav aria-label="Primary" className="hidden lg:flex lg:flex-col
+              lg:basis-[280px] lg:shrink-0
+              lg:sticky lg:top-[var(--header-h)]
+              lg:overflow-y-auto
               mt-28
               p-8 bg-surface-light bg-gradient-to-b from-white to-[#fcf9f7] dark:bg-gradient-to-b dark:from-[#161617] dark:to-[#0F0F10] rounded-3xl ring-1 ring-black/5 dark:ring-white/5
               2xl:ml-40">

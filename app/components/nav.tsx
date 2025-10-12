@@ -44,12 +44,12 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-[100] md:justify-end">
-      <nav aria-label="Utility" className="relative px-6 py-4 flex justify-between md:justify-end items-center gap-4">
+    <header className="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-[100] lg:justify-end">
+      <nav aria-label="Utility" className="relative px-6 py-4 flex justify-between lg:justify-end items-center gap-4">
         {/* Hamburger icon for mobile that transforms to X (when menu closed) */}
         {!menuOpen && (
           <button
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none z-[999999] relative"
+            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none z-[999999] relative"
             aria-label="Open menu"
             aria-expanded={false}
             aria-controls="mobile-menu"
@@ -64,7 +64,7 @@ export function Navbar() {
         )}
 
         {/* Desktop Navigation - Language and Theme Switches */}
-        <div className="hidden md:flex gap-5 z-[110]">
+        <div className="hidden lg:flex gap-5 z-[110]">
           <LanguageSwitch />
           <ThemeSwitch />
         </div>
@@ -76,7 +76,7 @@ export function Navbar() {
          {/* Close button (X) when menu is open */}
          {menuOpen && (
            <button
-             className="md:hidden fixed top-4 left-6 flex flex-col justify-center items-center w-10 h-10 focus:outline-none z-[999999] bg-white/90 dark:bg-gray-800/90 rounded-full"
+             className="lg:hidden fixed top-4 left-6 flex flex-col justify-center items-center w-10 h-10 focus:outline-none z-[999999] bg-white/90 dark:bg-gray-800/90 rounded-full"
              aria-label="Close menu"
              aria-expanded={true}
              aria-controls="mobile-menu"
@@ -92,7 +92,7 @@ export function Navbar() {
 
          {/* Mobile menu backdrop */}
          <div 
-           className={`md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 z-[9800] ${
+           className={`lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 z-[9800] ${
              menuOpen 
                ? 'opacity-100 visible' 
                : 'opacity-0 invisible pointer-events-none'
@@ -104,7 +104,7 @@ export function Navbar() {
            {/* Mobile slide-in menu */}
            <div 
            id="mobile-menu"
-           className={`md:hidden fixed top-0 left-0 right-0 h-auto bg-background-light dark:bg-background-dark border-b border-gray-200/50 dark:border-white/10 shadow-2xl transition-transform duration-300 ease-out z-[99999] ${
+           className={`lg:hidden fixed top-0 left-0 right-0 h-auto bg-background-light dark:bg-background-dark border-b border-gray-200/50 dark:border-white/10 shadow-2xl transition-transform duration-300 ease-out z-[99999] ${
              menuOpen 
                ? 'translate-y-0' 
                : '-translate-y-full'
