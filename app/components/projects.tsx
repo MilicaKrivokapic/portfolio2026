@@ -13,7 +13,7 @@ export default function Projects() {
   const { t, language } = useLanguage();
   
   return (
-    <section className="py-20">
+    <section className="py-24 md:py-0">
       <div className="flex items-center justify-between gap-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold">
           {t('projects.featuredWork')}
