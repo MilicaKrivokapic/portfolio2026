@@ -18,7 +18,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
   return (
     <div className="px-4 md:px-6 py-6 md:py-6">
       <div className="max-w-5xl ml-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/5 p-10 md:p-20 overflow-hidden">
-        <div className="md:space-y-32">
+
           {/* Hero Section with CSS Grid Overlap */}
           <section className="grid grid-cols-12 md:gap-2 items-center overflow-hidden">
             {/* Image - appears first on mobile, overlaps on desktop */}
@@ -56,9 +56,9 @@ export default function HomeClient({ posts }: HomeClientProps) {
             </div>
           </section>
 
-      <section id="projects">
+ 
         <Projects />
-      </section>
+     
 
       <section id="recommendations">
         <Recommendations />
@@ -68,7 +68,6 @@ export default function HomeClient({ posts }: HomeClientProps) {
       <section id="latest-posts">
         <LatestPostsClient posts={posts} />
       </section>
-        </div>
       </div>
     </div>
   );

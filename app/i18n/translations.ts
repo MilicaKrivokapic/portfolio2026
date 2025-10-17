@@ -106,9 +106,9 @@ export const translations = {
       readMore: 'Lue lisää',
       readLess: 'Lue vähemmän',
       summary: "Olen helsinkiläinen saavutettavuus- ja web-intoilija, jonka juuret ovat media-alalla. Rakennan selkeitä, inklusiivisia ja erottuvia web-kokonaisuuksia, jotka ovat saavutettavia kaikille.",
-      intro: "Heippa! Olen Milica, helsinkiläinen iloinen tyyppi, joka on dipannut varpaitaan kaikenlaisissa keitoksissa - olen kokeillut nuoruudessani harjoittelujaksojen avulla mm. vanhustyötä, aakkostanut opuksia kirjastotätinä, huhkinut teollisuustiskikoneen ääressä suurkeittiössä, työskennellyt vain valkoisia esineitä myyvässä sisustuskaupassa... You name it.",
-      career: "Ensimmäinen tuntuva työintohimoni oli valokuvaus ja kuvankäsittely, jonka parissa viihdyin monta vuotta. Lopulta löysin uuden suunnan verkkosivujen kehittämisestä, kun saavutettavuus toi työhön aivan uudenlaisen merkityksellisyyden tunteen. Myös QA-hommat ja auditoinnit kiinnostavat ja innostuvat minua suuresti.",
-      education: "Tykkään ratkoa ongelmia, rakastan tiimityön flow-fiilistä ja haluan ehdottomasti tehdä verkosta kaikille vähän ystävällisemmän ja hyväksyvämmän paikan. Jos etsit positiivista, jatkuvasti itseopiskelevaa, AI-myönteistä ja motivoitunutta tekijää tiimiin, täällä ollaan! 👋",
+      intro: "Heippa! Olen Milica, iloinen helsinkiläinen tyyppi, joka on dipannut varpaitaan kaikenlaisissa keitoksissa - olen kokeillut nuoruudessani mm. vanhustyötä, aakkostanut opuksia kirjastotätinä, huhkinut teollisuustiskikoneen ääressä suurkeittiössä, työskennellyt vain valkoisia esineitä myyvässä sisustuskaupassa... You name it.",
+      career: "Ensimmäinen intohimoni oli valokuvaus ja kuvankäsittely, jonka parissa viihdyin monta vuotta. Löysin uuden suunnan verkkosivujen kehittämisestä, jossa edellisistä taidoista kuitenkin oli hyötyä.  Saavutettavuus toi työhön aivan uudenlaisen merkityksellisyyden tunteen, joka puskee itseäni uralla eteenpäin. Myös QA-hommat ja auditoinnit kiinnostavat ja innostavat!",
+      education: "Tykkään ratkoa ongelmia, rakastan tiimityön flow-fiilistä ja haluan ehdottomasti tehdä verkosta kaikille vähän ystävällisemmän ja helpomman paikan olla ja elää. Jos etsit positiivista, jatkuvasti itseopiskelevaa, AI- (ja muutenkin uudistusmyönteistä) ja motivoitunutta tekijää tiimiin, täällä ollaan! 👋",
       transition: "",
       current: "",
       conclusion: ""
