@@ -17,7 +17,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
   
   return (
     <div className="px-4 md:px-6 py-6 md:py-6">
-      <div className="max-w-5xl ml-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/5 p-10 md:p-20 overflow-hidden">
+      <div className="max-w-5xl ml-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/5 px-8 py-10 md:p-20 overflow-hidden">
 
           {/* Hero Section with CSS Grid Overlap */}
           <section className="grid grid-cols-12 md:gap-2 items-center overflow-hidden">
@@ -46,7 +46,7 @@ export default function HomeClient({ posts }: HomeClientProps) {
               <p className="text-xl md:col-start-1 md:col-end-3 leading-relaxed">
                 {t('about.summary')}
               </p>
-              <div className="flex flex-col sm:flex-row md:col-start-1 gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row md:col-start-1 gap-4 pt-6 md:pt-4">
                 <Link href="/about">
                   <Button variant="secondary" shadow="strong" className="w-full sm:w-auto group md:text-lg text-lg md:px-8 px-6 md:py-3 py-3 font-semibold md:w-auto text-center">
                     {t('about.aboutMeButton')}

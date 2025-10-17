@@ -117,7 +117,7 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog', showDa
             <Link
               key={post.slug}
               href={`${basePath}/${post.slug}`}
-              className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white"
+              className="group block bg-stone-100 dark:bg-zinc-800/90 rounded-2xl shadow-2xs dark:shadow-sm border-2 border-stone-200/60 dark:border-zinc-700/50 p-6 md:p-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white transition-transform hover:scale-[1.02]"
             >
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                 <Image
