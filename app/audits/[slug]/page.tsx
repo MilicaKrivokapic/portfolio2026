@@ -62,23 +62,25 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
   const bannerImage = post.metadata.image || "/opengraph-image.png";
 
   return (
-    <section className="flex flex-col items-center w-full px-4">
-      <div className="w-full max-w-4xl mb-4">
-        <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
-          <ol className="flex items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Home</Link>
-            </li>
-            <li aria-hidden="true" className="opacity-60">/</li>
-            <li>
-              <Link href="/projects" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Projects</Link>
-            </li>
-            <li aria-hidden="true" className="opacity-60">/</li>
-            <li className="truncate max-w-[50vw] md:max-w-none" aria-current="page">{post.metadata.title}</li>
-          </ol>
-        </nav>
-      </div>
-      <article className="prose prose-neutral dark:prose-invert max-w-4xl w-full mx-auto bg-white dark:bg-neutral-900 rounded-lg shadow-md p-4 sm:p-6 md:p-8 lg:p-12 mt-2 mb-16 text-[1.1rem] sm:text-[1.15rem] md:text-[1.2rem] overflow-hidden">
+    <div className="px-4 md:px-6 py-6 md:py-10">
+      <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/5 p-10 md:p-20">
+        <section className="flex flex-col items-center w-full">
+          <div className="w-full max-w-4xl mb-4">
+            <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
+              <ol className="flex items-center gap-2">
+                <li>
+                  <Link href="/" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Home</Link>
+                </li>
+                <li aria-hidden="true" className="opacity-60">/</li>
+                <li>
+                  <Link href="/projects" className="hover:text-accent-light dark:hover:text-accent-dark transition-colors">Projects</Link>
+                </li>
+                <li aria-hidden="true" className="opacity-60">/</li>
+                <li className="truncate max-w-[50vw] md:max-w-none" aria-current="page">{post.metadata.title}</li>
+              </ol>
+            </nav>
+          </div>
+          <article className="prose prose-neutral dark:prose-invert max-w-4xl w-full mx-auto bg-white/60 dark:bg-neutral-900/60 rounded-lg shadow-sm p-4 sm:p-6 md:p-8 lg:p-12 mt-2 mb-16 text-[1.1rem] sm:text-[1.15rem] md:text-[1.2rem] overflow-hidden">
         <div className="w-full mb-8 rounded-lg overflow-hidden">
           <Image
             src={bannerImage}
@@ -135,7 +137,9 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
           ) : <span />}
         </div>
       </article>
-    </section>
+        </section>
+      </div>
+    </div>
   );
 }
 

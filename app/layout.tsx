@@ -51,9 +51,11 @@ export default function RootLayout({
           storageKey="theme"
         >
           <LanguageProvider>
-            <div className="min-h-screen">
-              <ProfileSidebar />
-              <main className="md:ml-[400px]">
+            <div className="min-h-screen lg:flex lg:items-start lg:justify-center lg:gap-8 [--header-h:5.6rem] 2xl:px-0">
+              
+                <ProfileSidebar />
+              
+              <main className="flex flex-col justify-center">
                 <Navbar />
                 {children}
                 <Footer />

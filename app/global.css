@@ -31,10 +31,10 @@
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
   --icon-color: theme('colors.accent.light');
-  --accent-shadow: 51, 177, 215; /* #33B1D7 in RGB for rgba() */
-  --ring-accent: theme('colors.accent.light');
+  --accent-shadow: 215, 188, 173; /* #33B1D7 in RGB for rgba() */
+  --ring-accent: #ADC8D7;
   /* Default Tailwind ring variables */
-  --tw-ring-color: var(--ring-accent);
+  --tw-ring-color: #ADC8D7;
   --tw-ring-offset-color: theme('colors.surface-light');
   /* Focus outline color for light theme (dark outline) */
   --focus-outline-color: theme('colors.primary-light');
@@ -53,7 +53,7 @@
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
   --icon-color: theme('colors.accent.dark');
-  --accent-shadow: 249, 58, 106; /* #F93A6A in RGB for rgba() */
+  --accent-shadow: 74, 36, 128; /* #F93A6A in RGB for rgba() */
   --ring-accent: theme('colors.accent.dark');
   /* Default Tailwind ring variables */
   --tw-ring-color: var(--ring-accent);
@@ -85,6 +85,7 @@ html {
   .dark .prose {
     color: #e5e5e5;
   }
+
 }
 
 .prose .anchor {
@@ -280,3 +281,18 @@ svg {
 .animate-beat-once {
   animation: beat-once 0.5s;
 }
+
+@keyframes orb-breathe {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+.animate-orb-breathe {
+  animation: orb-breathe 2.5s ease-in-out infinite;
+}
+

@@ -38,7 +38,7 @@ export default function ProjectsFilteredGrid({
               aria-pressed={isActive}
               onClick={() => setActiveTag(tag)}
               className={
-                `px-4 py-2 rounded-full text-sm md:text-base font-semibold transition-colors ring-1 focus-visible:outline-none ` +
+                `px-4 py-2 rounded-2xl text-sm md:text-base font-semibold transition-colors ring-1 focus-visible:outline-none ` +
                 (isActive
                   ? 'bg-black text-white ring-black/30 focus-visible:ring-2 focus-visible:ring-black dark:bg-white dark:text-black dark:ring-white/40 dark:focus-visible:ring-white'
                   : 'bg-white text-black ring-black/20 hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-black dark:bg-black dark:text-white dark:ring-white/30 dark:hover:bg-white/10 dark:focus-visible:ring-white')
