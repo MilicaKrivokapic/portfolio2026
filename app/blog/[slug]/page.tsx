@@ -128,6 +128,12 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
         </h1>
         <div className="flex flex-col md:flex-row items-center gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
           <span>📅 {formatDate(post.metadata.publishedAt)}</span>
+          {post.metadata.updatedAt && (
+            <>
+              <span className="hidden md:inline">&bull;</span>
+              <span>🔄 Updated: {formatDate(post.metadata.updatedAt)}</span>
+            </>
+          )}
           <span className="hidden md:inline">&bull;</span>
           <span>{readTime} min read</span>
           <span className="hidden md:inline">&bull;</span>
