@@ -54,7 +54,7 @@ export default function AboutMe() {
 
       <Button
         onClick={() => setIsExpanded(!isExpanded)}
-        className={isExpanded ? 'mt-2' : 'mt-4'}
+        className={`${isExpanded ? 'mt-2' : 'mt-4'} md:text-lg text-lg md:px-8 px-6 md:py-3 py-3 font-semibold`}
         shadow="strong"
       >
         <span className="flex items-center gap-2">
