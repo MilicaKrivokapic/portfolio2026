@@ -13,7 +13,7 @@ export default function Projects() {
   const { t, language } = useLanguage();
   
   return (
-    <section className="py-24 md:py-0">
+    <section className="py-24 md:py-0 md:mb-20 xl:mb-32">
       <div className="flex items-center justify-between gap-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold">
           {t('projects.featuredWork')}
@@ -77,18 +77,20 @@ export default function Projects() {
                     </div>
                   </div>
                   {isUnderConstruction ? (
-                    <div
+                    <div 
                       className="mt-8 px-6 py-2 rounded-lg bg-gray-300 text-gray-500 opacity-80 cursor-not-allowed text-center select-none"
                       tabIndex={-1}
                       aria-disabled="true"
+                   
                     >
                       {t('projects.seeProject')}
                     </div>
                   ) : (
                     <Button
+                    shadow="strong"
                       as="a"
                       href={project.link || '#'}
-                      className="md:text-base text-sm md:px-6 px-4 md:py-2 py-1.5 mt-8 md:w-auto w-fit inline-block"
+                      className="md:text-base text-sm md:px-6 px-4 md:py-2 py-1.5 mt-8 md:w-auto w-fit inline-block dark:bg-zinc-900/50 dark:hover:bg-neutral-900 dark:active:bg-neutral-800"
                     >
                       {t('projects.seeProject')}
                     </Button>
