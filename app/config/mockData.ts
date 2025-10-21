@@ -14,6 +14,13 @@ export const projectData = [
     image: '/briljant.png',
     link: '/audits/briljant-audit',
     tags: ['WCAG 2.2', 'Audit', 'Finnish'],
+  },
+  {
+    title: 'Parhaat Pöntöt - Best Seats',
+    description: 'A playful web project celebrating the best toilet seats in Finland.',
+    image: '/opengraph-image.png',
+    link: '/projects/parhaat-pontot',
+    tags: ['Web Design', 'Fun Project', 'Work in Progress'],
   }
 ];
 
