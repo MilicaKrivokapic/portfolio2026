@@ -143,9 +143,9 @@ export default function Contact() {
       </section>
 
       {/* Form and Image Section - Two Columns */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <section className="w-full grid grid-cols-3 gap-8">
         {/* Left Column - Form */}
-        <div className="space-y-8">
+        <div className="space-y-8 w-full col-span-2">
           <h3 className="text-2xl font-bold text-primary-light dark:text-primary-dark">Or shoot me a message!</h3>
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Honeypot */}
@@ -160,47 +160,44 @@ export default function Contact() {
               />
             </div>
 
-            {/* Name and Email in two columns on desktop */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-              {/* Name Field */}
-              <div className="space-y-2">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-primary-light dark:text-primary-dark"
-                >
-                  Nimesi
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Kirjoita nimesi"
-                  className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-gray-500 dark:placeholder-gray-400 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
-                />
-              </div>
+            {/* Name Field */}
+            <div className="space-y-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-primary-light dark:text-primary-dark"
+              >
+                Nimesi
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="Kirjoita nimesi"
+                className="w-full bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-stone-500 dark:placeholder-zinc-500 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
+              />
+            </div>
 
-              {/* Email Field */}
-              <div className="space-y-2">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-primary-light dark:text-primary-dark"
-                >
-                  Sähköpostisi
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Kirjoita sähköpostiosoitteesi"
-                  className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-gray-500 dark:placeholder-gray-400 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
-                />
-              </div>
+            {/* Email Field */}
+            <div className="space-y-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-primary-light dark:text-primary-dark"
+              >
+                Sähköpostisi
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="Kirjoita sähköpostiosoitteesi"
+                className="w-full bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-stone-500 dark:placeholder-zinc-500 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
+              />
             </div>
 
             {/* Message Field */}
@@ -219,7 +216,7 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder="Kirjoita viestisi tähän..."
-                className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-gray-500 dark:placeholder-gray-400 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 resize-none transition-all"
+                className="w-full bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-stone-500 dark:placeholder-zinc-500 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 resize-none transition-all"
               />
             </div>
 
@@ -270,13 +267,12 @@ export default function Contact() {
         </div>
 
         {/* Right Column - Image */}
-                {/* Right Column - Image */}
-        <div className="relative aspect-square lg:aspect-auto lg:min-h-[600px]">
+        <div className="hidden lg:block w-full relative h-full min-h-96">
           <Image
             src="/contact.png"
             alt="Contact illustration"
             fill
-            className="object-contain p-8"
+            className="object-contain"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
