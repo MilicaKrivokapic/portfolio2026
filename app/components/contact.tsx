@@ -1,11 +1,15 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 // import { socialLinks } from '../config';
 import { socialData } from '../config/mockData';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { TbMailFilled } from 'react-icons/tb';
 import { useLanguage } from '../context/language-context';
 import type { IconType } from 'react-icons';
+import EnvelopeSolid from './icons/EnvelopeSolid';
+import LocationDot from './icons/LocationDot';
+import MobileScreen from './icons/MobileScreen';
 // import Button from './ui/Button';
 
 const iconMap: Record<string, IconType> = {
@@ -78,20 +82,72 @@ export default function Contact() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-primary-light dark:text-primary-dark">
-          {t('contact.title')}
-        </h2>
-        <p className="text-lg text-muted-light dark:text-muted-dark max-w-2xl mx-auto">
-          {t('contact.intro')}
-        </p>
-      </div>
+    <div className="space-y-16 md:space-y-24">
+      <section className="space-y-8">
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark">
+            {t('contact.title')}
+          </h1>
+          <p className="text-lg text-muted-light dark:text-muted-dark">
+            {t('contact.intro')}
+          </p>
+        </div>
 
-      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-        {/* Left Card - Contact Form */}
-        <div className="bg-white/90 dark:bg-white/5 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-gray-200/50 dark:border-white/10 shadow-2xl form-layer">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Contact Info Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          {/* Email Card */}
+          <a
+            href="mailto:milica.portfolio@proton.me"
+            className="group bg-stone-100 dark:bg-zinc-800/90 rounded-2xl p-6 border-2 border-stone-200/60 dark:border-zinc-700/50 hover:border-accent-light dark:hover:border-accent-dark transition-all hover:scale-[1.02] shadow-2xs dark:shadow-sm"
+          >
+            <div className="flex flex-col items-center text-center gap-3">
+              <div className="w-12 h-12 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center">
+                <EnvelopeSolid className="w-5 h-5 text-primary-light dark:text-primary-dark" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-muted-light dark:text-muted-dark mb-1">Email</p>
+                <p className="text-sm font-medium text-primary-light dark:text-primary-dark break-all">milica.portfolio@proton.me</p>
+              </div>
+            </div>
+          </a>
+
+          {/* Phone Card */}
+          <a
+            href="tel:+3580000000"
+            className="group bg-stone-100 dark:bg-zinc-800/90 rounded-2xl p-6 border-2 border-stone-200/60 dark:border-zinc-700/50 hover:border-accent-light dark:hover:border-accent-dark transition-all hover:scale-[1.02] shadow-2xs dark:shadow-sm"
+          >
+            <div className="flex flex-col items-center text-center gap-3">
+              <div className="w-12 h-12 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center">
+                <MobileScreen className="w-5 h-5 text-primary-light dark:text-primary-dark" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-muted-light dark:text-muted-dark mb-1">Call</p>
+                <p className="text-sm font-medium text-primary-light dark:text-primary-dark">+358 (0) 000 0000</p>
+              </div>
+            </div>
+          </a>
+
+          {/* Location Card */}
+          <div className="bg-stone-100 dark:bg-zinc-800/90 rounded-2xl p-6 border-2 border-stone-200/60 dark:border-zinc-700/50 shadow-2xs dark:shadow-sm">
+            <div className="flex flex-col items-center text-center gap-3">
+              <div className="w-12 h-12 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center">
+                <LocationDot className="w-5 h-5 text-primary-light dark:text-primary-dark" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-muted-light dark:text-muted-dark mb-1">Location</p>
+                <p className="text-sm font-medium text-primary-light dark:text-primary-dark">Helsinki, Finland</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Form and Image Section - Two Columns */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        {/* Left Column - Form */}
+        <div className="space-y-8">
+          <h3 className="text-2xl font-bold text-primary-light dark:text-primary-dark">Or shoot me a message!</h3>
+          <form onSubmit={handleSubmit} className="space-y-5">
             {/* Honeypot */}
             <div className="opacity-0 absolute -z-10 select-none pointer-events-none">
               <input
@@ -104,44 +160,47 @@ export default function Contact() {
               />
             </div>
 
-            {/* Name Field */}
-            <div className="space-y-2">
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-primary-light dark:text-primary-dark"
-              >
-                Nimesi
-              </label>
-              <input
-                id="name"
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Kirjoita nimesi"
-                className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-gray-500 dark:placeholder-gray-400 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
-              />
-            </div>
+            {/* Name and Email in two columns on desktop */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              {/* Name Field */}
+              <div className="space-y-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-primary-light dark:text-primary-dark"
+                >
+                  Nimesi
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Kirjoita nimesi"
+                  className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-gray-500 dark:placeholder-gray-400 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
+                />
+              </div>
 
-            {/* Email Field */}
-            <div className="space-y-2">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-primary-light dark:text-primary-dark"
-              >
-                Sähköpostisi
-              </label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="Kirjoita sähköpostiosoitteesi"
-                className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-gray-500 dark:placeholder-gray-400 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
-              />
+              {/* Email Field */}
+              <div className="space-y-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-primary-light dark:text-primary-dark"
+                >
+                  Sähköpostisi
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Kirjoita sähköpostiosoitteesi"
+                  className="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-gray-500 dark:placeholder-gray-400 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
+                />
+              </div>
             </div>
 
             {/* Message Field */}
@@ -189,78 +248,39 @@ export default function Contact() {
               </div>
             )}
           </form>
-        </div>
 
-        {/* Right Card - Contact Info */}
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-800 dark:to-gray-900 text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden shadow-2xl">
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-light/20 to-purple-500/20 rounded-full blur-3xl" aria-hidden="true" />
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-purple-500/20 to-accent-light/20 rounded-full blur-2xl" aria-hidden="true" />
-          
-          <div className="relative z-10">
-            <h3 className="text-2xl font-bold mb-8">Contact Info</h3>
-            
-            <div className="space-y-8">
-              {/* Phone */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.59 2.61a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.84.27 1.71.47 2.61.59A2 2 0 0 1 22 16.92z" fill="currentColor"/>
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-white/90 font-medium">+358 (0) 000 0000</p>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" strokeWidth="2"/>
-                    <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-white/90 font-medium break-all">milica.portfolio@proton.me</p>
-                </div>
-              </div>
-
-              {/* Location */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="none" stroke="currentColor" strokeWidth="2"/>
-                    <circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-white/90 font-medium">Helsinki, Finland</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="mt-12 pt-8 border-t border-white/10">
-              <h4 className="text-lg font-semibold mb-4">Connect with me</h4>
-              <div className="flex gap-4">
-                {socialData.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                    aria-label={`Connect on ${link.name}`}
-                  >
-                    {getIcon(link.icon)}
-                  </a>
-                ))}
-              </div>
+          {/* Social Links */}
+          <div className="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
+            <h4 className="text-lg font-semibold mb-4 text-center text-primary-light dark:text-primary-dark">Connect with me</h4>
+            <div className="flex justify-center gap-3 sm:gap-4">
+              {socialData.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 text-primary-light dark:text-primary-dark"
+                  aria-label={`Connect on ${link.name}`}
+                >
+                  {getIcon(link.icon)}
+                </a>
+              ))}
             </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        {/* Right Column - Image */}
+                {/* Right Column - Image */}
+        <div className="relative aspect-square lg:aspect-auto lg:min-h-[600px]">
+          <Image
+            src="/contact.png"
+            alt="Contact illustration"
+            fill
+            className="object-contain p-8"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </section>
+    </div>
   );
 }
