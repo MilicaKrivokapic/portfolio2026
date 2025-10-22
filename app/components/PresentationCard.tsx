@@ -27,9 +27,9 @@ export default function PresentationCard({ image, alt, heading, children, captio
     <aside
       role="region"
       aria-labelledby={id}
-      className="rounded-lg border-2 p-4 transition-colors mb-8 bg-surface-light dark:bg-surface-dark border-gray-100 dark:border-zinc-800"
+      className="rounded-lg border-2 md:p-4 transition-colors mb-8 bg-surface-light dark:bg-surface-dark border-gray-100 dark:border-zinc-800"
     >
-      <figure>
+      <figure className='p-4 md:0'>
         <Image src={image} alt={alt} width={640} height={500} className="rounded-lg" />
         {/** Visible caption when provided, otherwise keep alt as sr-only caption for screen readers */}
         {caption ? (
