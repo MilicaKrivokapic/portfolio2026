@@ -143,9 +143,9 @@ export default function Contact() {
       </section>
 
       {/* Form and Image Section - Two Columns */}
-      <section className="w-full grid grid-cols-3 gap-8">
+      <section className="w-full grid grid-cols-1 gap-8 md:grid-cols-[minmax(600px,2fr)_minmax(0,1fr)]">
         {/* Left Column - Form */}
-        <div className="space-y-8 w-full col-span-2">
+        <div className="space-y-8">
           <h3 className="text-2xl font-bold text-primary-light dark:text-primary-dark">Or shoot me a message!</h3>
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Honeypot */}
@@ -272,7 +272,7 @@ export default function Contact() {
             src="/contact.png"
             alt="Contact illustration"
             fill
-            className="object-contain"
+            className="object-contain p-8"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
