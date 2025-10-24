@@ -2,6 +2,9 @@
 
 import Link from 'next/link';
 import { useLanguage } from '../context/language-context';
+import BriefcaseSolidFull from './icons/BriefcaseSolidFull';
+import MusicSolidFull from './icons/MusicSolidFull';
+import SquareUpRight from './icons/SquareUpRight';
 
 export default function IdCard() {
   const { language } = useLanguage();
@@ -26,29 +29,41 @@ export default function IdCard() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Working on field */}
-      <div className="border-l-4 border-accent-light dark:border-accent-dark pl-4">
-        <div className="text-xs font-mono uppercase text-gray-500 dark:text-gray-500 mb-1">
-          {content[language].nowWorkingOn}
+      <div className="flex gap-3">
+        <div className="pr-2 border-l-4 border-accent-light/50 dark:border-accent-dark/50 pl-4">
+          <div className="text-xs font-mono uppercase text-gray-700 dark:text-gray-300 mb-1">
+            {content[language].nowWorkingOn}
+          </div>
+          <Link 
+            href="/projects/parhaat-pontot"
+            className="font-semibold text-lg text-accent-light dark:text-accent-dark hover:underline decoration-2 inline-block"
+          >
+            {content[language].projectName}
+          </Link>
+          <div className="text-sm text-gray-700 dark:text-gray-300">
+            {content[language].projectSub}
+          </div>
         </div>
-        <Link 
-          href="/projects/parhaat-pontot"
-          className="font-semibold text-lg text-accent-light dark:text-accent-dark hover:underline decoration-2 inline-block"
-        >
-          {content[language].projectName}
-        </Link>
-        <div className="text-sm text-gray-600 dark:text-gray-400">
-          {content[language].projectSub}
-        </div>
+        <BriefcaseSolidFull className="w-5 h-5 flex-shrink-0 text-accent-light dark:text-accent-dark self-center" />
       </div>
 
       {/* Listening to field */}
-      <div className="border-l-4 border-accent-light/50 dark:border-accent-dark/50 pl-4">
-        <div className="text-xs font-mono uppercase text-gray-500 dark:text-gray-500 mb-1">
-          {content[language].nowListeningTo}
+      <div className="flex gap-3">
+        <div className="pr-2 border-l-4 border-accent-light/50 dark:border-accent-dark/50 pl-4">
+          <div className="text-xs font-mono uppercase text-gray-700 dark:text-gray-300 mb-1">
+            {content[language].nowListeningTo}
+          </div>
+          <a 
+            href="https://www.youtube.com/watch?v=UaIjnejqfJg&list=RDUaIjnejqfJg&start_radio=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-lg text-gray-900 dark:text-gray-300 hover:text-accent-light dark:hover:text-accent-dark inline-flex items-center gap-1 group"
+          >
+            {content[language].music}
+            <SquareUpRight className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
+          </a>
         </div>
-        <div className="font-semibold text-lg text-gray-900 dark:text-gray-100">
-          {content[language].music} 🎵
-        </div>
+        <MusicSolidFull className="w-5 h-5 flex-shrink-0 text-accent-light dark:text-accent-dark self-center" />
       </div>
     </div>
   );
