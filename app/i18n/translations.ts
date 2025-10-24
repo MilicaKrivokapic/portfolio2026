@@ -19,6 +19,7 @@ export const translations = {
     },
     about: {
       title: 'About Me',
+      titleJourney: '& my journey',
       heroGreeting: "Hi! I'm Milica,",
       heroTagline: "I help make the web more accessible!",
       aboutMeButton: 'About Me',
@@ -88,6 +89,24 @@ export const translations = {
     audits: {
       preview: 'Preview',
       previewScroll: 'Scroll down'
+    },
+    parhaatPontot: {
+      title: 'Parhaat Pöntöt - Best Seats',
+      intro: 'Accessibility audit for site rating and documenting Helsinki\'s most iconic and most horrible public restrooms.',
+      cardHeading: 'Project Sneak Peek',
+      cardCaption: 'Map view presents a new challenge for accessibility evaluation and recommendations',
+      cardAlt: 'Example table showing toilet seat ratings',
+      cardIntro: 'Accessibility audit for a site that shows and rates public restrooms across Helsinki:',
+      features: [
+        'Includes: accessibility and cognitive audit for Best Seats in Helsinki',
+        'PDF report with findings and recommendation, includes cognitive accessibility aspects',
+        'Accessibility statement PDF',
+      ],
+      techNote: 'Lessons and biggest challenges: How to evaluate and improve map view accessibility',
+      cardHeading2: 'Design Details',
+      cardCaption2: 'User interface showcasing the restroom rating system',
+      cardAlt2: 'User interface displaying toilet ratings and details',
+      cardIntro2: 'The project features a clean, accessible interface with clear visual hierarchy and intuitive navigation patterns.',
     }
   },
   fi: {
@@ -110,6 +129,7 @@ export const translations = {
     },
     about: {
       title: 'Minusta',
+      titleJourney: '& matkastani',
       heroGreeting: "Heippa! Olen Milica,",
       heroTagline: "ja autan tekemään webistä saavutettavampaa!",
       aboutMeButton: 'Minusta',
@@ -179,6 +199,23 @@ export const translations = {
     audits: {
       preview: 'Esikatselu',
       previewScroll: 'Scrollaa alas'
+    },
+    parhaatPontot: {
+      title: 'Parhaat Pöntöt',
+      intro: 'Saavutettavuusauditointi Helsingin julkisia vessoja esittelevälle ja arvioivalle verkkosivustolle',
+      cardHeading: 'Projektin esikatselu',
+      cardCaption: 'Karttanäkymä asettaa itselleni uudenlaisen haasteen saavutettavuuden arvioinnin ja suositusten kannalta',
+      cardAlt: 'Esimerkkitaulukko, jossa näkyy WC-istuinten arvosteluja järjestettävissä sarakkeissa',
+      cardIntro: 'aavutettavuus- ja kognitiivisen saavutettavuuden auditointi sivustolle Best Seats in Helsinki - Parhaat Pöntöt',
+      features: [
+        'Löydöksiä ja suosituksia sisältävä raportti (PDF)',
+        'Saavutettavuusseloste (PDF)',
+      ],
+      techNote: 'Projektin opetukset ja suurimmat haasteet: Miten arvioida ja parantaa karttasovelluksen saavutettavuutta?',
+      cardHeading2: 'Suunnittelun yksityiskohdat',
+      cardCaption2: 'Käyttöliittymä esittelee WC-arviointijärjestelmää',
+      cardAlt2: 'Käyttöliittymä näyttää WC-arvostelut ja tiedot',
+      cardIntro2: 'Projektissa on selkeä, saavutettava käyttöliittymä, jossa on selkeä visuaalinen hierarkia ja intuitiiviset navigointimallit.',
     }
   },
 };

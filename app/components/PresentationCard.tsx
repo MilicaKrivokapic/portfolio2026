@@ -30,7 +30,9 @@ export default function PresentationCard({ image, alt, heading, children, captio
       className="rounded-lg border-2 md:p-4 transition-colors mb-8 bg-surface-light dark:bg-surface-dark border-gray-100 dark:border-zinc-800"
     >
       <figure className='p-4 md:0'>
-        <Image src={image} alt={alt} width={640} height={500} className="rounded-lg" />
+        <div className="max-w-4xl mx-auto">
+          <Image src={image} alt={alt} width={640} height={500} className="rounded-lg w-full h-auto" />
+        </div>
         {/** Visible caption when provided, otherwise keep alt as sr-only caption for screen readers */}
         {caption ? (
           <figcaption className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{caption}</figcaption>
