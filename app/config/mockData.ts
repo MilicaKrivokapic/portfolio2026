@@ -1,7 +1,9 @@
 export const projectData = [
   {
     title: 'Kattokomppania website',
+    title_fi: 'Kattokomppania verkkosivusto',
     description: 'A website for a Finnish company spealising on roofs maintanance and repairs.',
+    description_fi: 'Verkkosivusto kattojen huoltoon ja korjaukseen erikoistuneelle yritykselle.',
     image: '/images/projects/kattokomppania.jpeg',
     link: '/projects/kattokomppania',
     tags: ['UX', 'Squarespace', 'UI'],
@@ -14,6 +16,13 @@ export const projectData = [
     image: '/briljant.png',
     link: '/audits/briljant-audit',
     tags: ['WCAG 2.2', 'Audit', 'Finnish'],
+  },
+  {
+    title: 'Parhaat Pöntöt - Best Seats',
+    description: 'Accessibility audit for site rating and documenting Helsinki\'s most iconic and most horrid public restrooms.',
+    image: '/toiletten.jpg',
+    link: '/projects/parhaat-pontot',
+    tags: ['Audit', 'Work in Progress'],
   }
 ];
 

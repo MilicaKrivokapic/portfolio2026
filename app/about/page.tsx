@@ -13,7 +13,7 @@ export default function AboutPage() {
           <section className="space-y-8">
             <h1 className="text-4xl md:text-7xl font-bold font-heading">
               {t('about.title')}
-              <span className="text-accent-light dark:text-accent-dark"> & My Journey</span>
+              <span className="text-accent-light dark:text-accent-dark"> {t('about.titleJourney')}</span>
             </h1>
             <AboutMe />
           </section>

@@ -196,7 +196,7 @@ export default function ProfileSidebar() {
         </div>
 
         {/* Separated Contact Section - like "Hire Me" in reference */}
-        <div className="pt-6 border-t border-gray-200/50 dark:border-zinc-700/50">
+        <div className="pt-6">
           <div className="mb-3">
            
           </div>

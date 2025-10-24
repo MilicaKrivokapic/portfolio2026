@@ -1,4 +1,32 @@
-export const translations = {
+export type Language = 'en' | 'fi';
+
+// Minimal structural typing so both languages share the same shape including parhaatPontot
+type ParhaatPontotSection = {
+  title: string;
+  intro: string;
+  cardHeading: string;
+  cardCaption: string;
+  cardAlt: string;
+  cardIntro: string;
+  features: string[];
+  techNote: string;
+};
+
+type RootTranslations = {
+  common: unknown;
+  nav: unknown;
+  blog: unknown;
+  about: unknown;
+  contact: unknown;
+  skills: unknown;
+  sidebar: unknown;
+  recommendations: unknown;
+  projects: unknown;
+  audits: unknown;
+  parhaatPontot: ParhaatPontotSection;
+};
+
+export const translations: Record<Language, RootTranslations> = {
   en: {
     common: {
       backToTop: 'Back to top',
@@ -19,6 +47,7 @@ export const translations = {
     },
     about: {
       title: 'About Me',
+      titleJourney: '& my journey',
       heroGreeting: "Hi! I'm Milica,",
       heroTagline: "I help make the web more accessible!",
       aboutMeButton: 'About Me',
@@ -36,19 +65,30 @@ export const translations = {
     contact: {
       title: 'Get in Touch',
       intro: 'Feel free to contact me any time!',
+      emailLabel: 'Email',
+      callLabel: 'Call',
+      bookLabel: 'Book',
+      bookMeeting: 'Book a meeting',
+      locationLabel: 'Location',
+      formHeading: 'Or shoot me a message!',
+      connectHeading: 'Connect with me',
+      nameLabel: 'Your Name',
+      emailFieldLabel: 'Your Email',
+      messageLabel: 'Your Message',
+      namePlaceholder: 'Enter your name',
+      emailPlaceholder: 'Enter your email address',
+      messagePlaceholder: 'Write your message here...',
+      sendButton: 'Send Message',
+      sending: 'Sending...',
+      successMessage: 'Thank you! Your message has been sent successfully.',
+      errorMessage: 'Sorry, there was an error sending your message. Please try again.',
       connect: "Let's Connect",
+      reachOut: 'Feel free to reach out for collaborations or just a friendly hello',
+      sendEmail: 'Send me an email',
       name: 'Your Name',
       email: 'Your Email',
       message: 'Your Message',
-      send: 'Send Message',
-      sending: 'Sending...',
-      reachOut: 'Feel free to reach out for collaborations or just a friendly hello',
-      sendEmail: 'Send me an email',
-      successMessage: 'Thank you! Your message has been sent successfully.',
-      errorMessage: 'Sorry, there was an error sending your message. Please try again.',
-      namePlaceholder: 'Enter your name',
-      emailPlaceholder: 'Enter your email address',
-      messagePlaceholder: 'Write your message here...'
+      send: 'Send Message'
     },
     skills: {
       title: 'Skills & Expertise',
@@ -77,6 +117,20 @@ export const translations = {
     audits: {
       preview: 'Preview',
       previewScroll: 'Scroll down'
+    },
+    parhaatPontot: {
+      title: 'Parhaat Pöntöt - Best Seats',
+      intro: 'Accessibility audit for site rating and documenting Helsinki\'s most iconic and most horrible public restrooms.',
+      cardHeading: 'Project Sneak Peek',
+      cardCaption: 'Map view presents a new challenge for accessibility evaluation and recommendations',
+      cardAlt: 'Example table showing toilet seat ratings',
+      cardIntro: 'Accessibility audit for a site that shows and rates public restrooms across Helsinki:',
+      features: [
+        'Includes: accessibility and cognitive audit for Best Seats in Helsinki',
+        'PDF report with findings and recommendation, includes cognitive accessibility aspects',
+        'Accessibility statement PDF',
+      ],
+  techNote: 'Lessons and biggest challenges: How to evaluate and improve map view accessibility',
     }
   },
   fi: {
@@ -99,6 +153,7 @@ export const translations = {
     },
     about: {
       title: 'Minusta',
+      titleJourney: '& matkastani',
       heroGreeting: "Heippa! Olen Milica,",
       heroTagline: "ja autan tekemään webistä saavutettavampaa!",
       aboutMeButton: 'Minusta',
@@ -116,19 +171,30 @@ export const translations = {
     contact: {
       title: 'Ota yhteyttä',
       intro: 'Ota yhteyttä milloin vain!',
+      emailLabel: 'Sähköposti',
+      callLabel: 'Soita',
+      bookLabel: 'Google Meet',
+      bookMeeting: 'Varaa tapaaminen',
+      locationLabel: 'Sijainti',
+      formHeading: 'Tai nakkaa mulle viesti!',
+      connectHeading: 'Ota yhteyttä',
+      nameLabel: 'Nimi',
+      emailFieldLabel: 'Sähköposti',
+      messageLabel: 'Viestisi',
+      namePlaceholder: 'Heippa Heippalainen',
+      emailPlaceholder: 'heippa@heippa.com',
+      messagePlaceholder: 'Haluaisin keskustella kanssasi Kaizen-filosofiasta työn kontekstissa...',
+      sendButton: 'Lähetä viesti',
+      sending: 'Lähetetään...',
+      successMessage: 'Kiitos! Viestisi heilahti matkaaan.',
+      errorMessage: 'Pahoittelut, viestin lähetyksessä tapahtui virhe. Yritäppäs uudelleen.',
       connect: 'Ollaan yhteydessä',
+      reachOut: 'Otahan yhteyttä jos kiinnostuit musta työntekijänä, tai vain sanoaksesi moikka',
+      sendEmail: 'Lähetä sähköpostia',
       name: 'Nimesi',
       email: 'Sähköpostisi',
       message: 'Viestisi',
-      send: 'Lähetä viesti',
-      sending: 'Lähetetään...',
-      reachOut: 'Ota yhteyttä yhteistyön merkeissä tai vain sanoaksesi moikka',
-      sendEmail: 'Lähetä sähköpostia',
-      successMessage: 'Kiitos! Viestisi on lähetetty onnistuneesti.',
-      errorMessage: 'Pahoittelut, viestin lähetyksessä tapahtui virhe. Yritä uudelleen.',
-      namePlaceholder: 'Kirjoita nimesi',
-      emailPlaceholder: 'Kirjoita sähköpostiosoitteesi',
-      messagePlaceholder: 'Kirjoita viestisi tähän...'
+      send: 'Lähetä viesti'
     },
     skills: {
       title: 'Taidot & Osaaminen',
@@ -157,8 +223,20 @@ export const translations = {
     audits: {
       preview: 'Esikatselu',
       previewScroll: 'Scrollaa alas'
+    },
+    parhaatPontot: {
+      title: 'Parhaat Pöntöt',
+      intro: 'Saavutettavuusauditointi Helsingin julkisia vessoja esittelevälle ja arvioivalle verkkosivustolle',
+      cardHeading: 'Projektin esikatselu',
+      cardCaption: 'Karttanäkymä asettaa itselleni uudenlaisen haasteen saavutettavuuden arvioinnin ja suositusten kannalta',
+      cardAlt: 'Esimerkkitaulukko, jossa näkyy WC-istuinten arvosteluja järjestettävissä sarakkeissa',
+      cardIntro: 'aavutettavuus- ja kognitiivisen saavutettavuuden auditointi sivustolle Best Seats in Helsinki - Parhaat Pöntöt',
+      features: [
+        'Löydöksiä ja suosituksia sisältävä raportti (PDF)',
+        'Saavutettavuusseloste (PDF)',
+      ],
+  techNote: 'Projektin opetukset ja suurimmat haasteet: Miten arvioida ja parantaa karttasovelluksen saavutettavuutta?',
     }
   },
 };
 
-export type Language = 'en' | 'fi';
