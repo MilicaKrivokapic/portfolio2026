@@ -17,10 +17,10 @@ export const projectData = [
   },
   {
     title: 'Parhaat Pöntöt - Best Seats',
-    description: 'A playful web project celebrating the best toilet seats in Finland.',
-    image: '/opengraph-image.png',
+    description: 'Accessibility audit for site rating and documenting Helsinki\'s most iconic and most horrid public restrooms.',
+    image: '/toiletten.jpg',
     link: '/projects/parhaat-pontot',
-    tags: ['Web Design', 'Fun Project', 'Work in Progress'],
+    tags: ['Audit', 'Work in Progress'],
   }
 ];
 
