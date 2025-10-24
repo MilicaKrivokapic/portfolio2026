@@ -1,4 +1,32 @@
-export const translations = {
+export type Language = 'en' | 'fi';
+
+// Minimal structural typing so both languages share the same shape including parhaatPontot
+type ParhaatPontotSection = {
+  title: string;
+  intro: string;
+  cardHeading: string;
+  cardCaption: string;
+  cardAlt: string;
+  cardIntro: string;
+  features: string[];
+  techNote: string;
+};
+
+type RootTranslations = {
+  common: unknown;
+  nav: unknown;
+  blog: unknown;
+  about: unknown;
+  contact: unknown;
+  skills: unknown;
+  sidebar: unknown;
+  recommendations: unknown;
+  projects: unknown;
+  audits: unknown;
+  parhaatPontot: ParhaatPontotSection;
+};
+
+export const translations: Record<Language, RootTranslations> = {
   en: {
     common: {
       backToTop: 'Back to top',
@@ -102,11 +130,7 @@ export const translations = {
         'PDF report with findings and recommendation, includes cognitive accessibility aspects',
         'Accessibility statement PDF',
       ],
-      techNote: 'Lessons and biggest challenges: How to evaluate and improve map view accessibility',
-      cardHeading2: 'Design Details',
-      cardCaption2: 'User interface showcasing the restroom rating system',
-      cardAlt2: 'User interface displaying toilet ratings and details',
-      cardIntro2: 'The project features a clean, accessible interface with clear visual hierarchy and intuitive navigation patterns.',
+  techNote: 'Lessons and biggest challenges: How to evaluate and improve map view accessibility',
     }
   },
   fi: {
@@ -211,13 +235,8 @@ export const translations = {
         'Löydöksiä ja suosituksia sisältävä raportti (PDF)',
         'Saavutettavuusseloste (PDF)',
       ],
-      techNote: 'Projektin opetukset ja suurimmat haasteet: Miten arvioida ja parantaa karttasovelluksen saavutettavuutta?',
-      cardHeading2: 'Suunnittelun yksityiskohdat',
-      cardCaption2: 'Käyttöliittymä esittelee WC-arviointijärjestelmää',
-      cardAlt2: 'Käyttöliittymä näyttää WC-arvostelut ja tiedot',
-      cardIntro2: 'Projektissa on selkeä, saavutettava käyttöliittymä, jossa on selkeä visuaalinen hierarkia ja intuitiiviset navigointimallit.',
+  techNote: 'Projektin opetukset ja suurimmat haasteet: Miten arvioida ja parantaa karttasovelluksen saavutettavuutta?',
     }
   },
 };
 
-export type Language = 'en' | 'fi';
