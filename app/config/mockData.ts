@@ -1,7 +1,9 @@
 export const projectData = [
   {
     title: 'Kattokomppania website',
+    title_fi: 'Kattokomppania verkkosivusto',
     description: 'A website for a Finnish company spealising on roofs maintanance and repairs.',
+    description_fi: 'Verkkosivusto kattojen huoltoon ja korjaukseen erikoistuneelle yritykselle.',
     image: '/images/projects/kattokomppania.jpeg',
     link: '/projects/kattokomppania',
     tags: ['UX', 'Squarespace', 'UI'],

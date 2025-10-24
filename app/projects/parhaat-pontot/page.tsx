@@ -77,17 +77,6 @@ export default function ParhaatPontot() {
               </p>
             </div>
           </PresentationCard>
-
-          <PresentationCard
-            image="/mapView.jpeg"
-            alt={t.cardAlt2}
-            heading={t.cardHeading2}
-            caption={t.cardCaption2}
-          >
-            <p className="text-base md:text-lg">
-              {t.cardIntro2}
-            </p>
-          </PresentationCard>
           
         </section>
       </div>
