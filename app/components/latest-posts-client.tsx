@@ -13,7 +13,7 @@ export default function LatestPostsClient({ posts }: LatestPostsClientProps) {
   if (!posts || posts.length === 0) return null;
 
   return (
-    <section aria-labelledby="latest-posts-heading" className="space-y-8">
+    <section aria-labelledby="latest-posts-heading" className="pt-24 md:py-0 md:mb-20 xl:mb-32 space-y-8">
       <LatestPostsHeader />
       <BlogGrid posts={posts} basePath="/blog" showDate showFilters={false} />
       <div className="mt-6 flex">

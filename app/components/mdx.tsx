@@ -10,6 +10,7 @@ import { CaptionComponent } from "./caption";
 import { ImageGrid } from "./image-grid";
 import PresentationCard from "./PresentationCard";
 import { useLanguage } from "app/context/language-context";
+import UpRightFromSquareSolidFull from "./icons/UpRightFromSquareSolidFull";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href = '#' } = props;
@@ -23,7 +24,23 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   if (href.startsWith("#")) {
     return <a {...props} />;
   }
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  // External link: only show icon for http(s), not mailto/tel
+  if (/^https?:\/\//.test(href)) {
+    const { className, children, ...rest } = props;
+    return (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group inline ${className ?? ""}`}
+        href={href}
+        {...rest}
+      >
+        {children}
+        <UpRightFromSquareSolidFull className="ml-1.5 inline-block align-middle w-5 h-5 md:w-4 md:h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
+      </a>
+    );
+  }
+  return <a {...props} />;
 }
 
 function RoundedImage(props: ImageProps) {

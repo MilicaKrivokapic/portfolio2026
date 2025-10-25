@@ -40,8 +40,8 @@ export default function Recommendations() {
   const { t, language } = useLanguage();
 
   return (
-    <section className="md:mb-20 xl:mb-32">
-      <h2 className="text-3xl md:text-4xl font-bold mb-24 text-start"> {/* Changed from mb-16 to mb-24 */}
+    <section className="pt-24 md:py-0 md:mb-20 xl:mb-32 space-y-8">
+      <h2 className="text-3xl md:text-4xl font-bold mb-14 md:mb-24 text-start"> {/* Changed from mb-16 to mb-24 */}
         {t('recommendations.title')}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-20"> {/* Changed from gap-16 to gap-20 */}
