@@ -1,22 +1,10 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-// import { socialLinks } from '../config';
-import { socialData } from '../config/mockData';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { TbMailFilled } from 'react-icons/tb';
+import { FaLinkedin } from 'react-icons/fa';
 import { useLanguage } from '../context/language-context';
-import type { IconType } from 'react-icons';
 import EnvelopeSolid from './icons/EnvelopeSolid';
 import CalendarDaysSolidFull from './icons/CalendarDaysSolidFull';
-import MobileScreen from './icons/MobileScreen';
-// import Button from './ui/Button';
-
-const iconMap: Record<string, IconType> = {
-  FaGithub,
-  FaLinkedin,
-  TbMailFilled
-};
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -28,11 +16,6 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
-
-  const getIcon = (iconName: string) => {
-    const Icon = iconMap[iconName];
-    return Icon ? <Icon className="w-6 h-6" /> : null;
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,50 +65,46 @@ export default function Contact() {
   };
 
   return (
-    <div className="space-y-16 md:space-y-24">
-      <section className="space-y-8">
-        <div className="text-center space-y-4">
+    <div className="space-y-12 md:space-y-16">
+      <section className="space-y-6">
+        <div className="text-center space-y-2">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark">
             {t('contact.title')}
           </h1>
-          <p className="text-lg text-muted-light dark:text-muted-dark">
+          <p className="text-base md:text-lg text-muted-light dark:text-muted-dark">
             {t('contact.intro')}
           </p>
         </div>
 
         {/* Contact Info Cards */}
-        <div className="grid grid-cols-3 sm:grid-cols-3 gap-3 sm:gap-6">
+        <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto">
           {/* Email Card */}
           <a
             href="mailto:milica.portfolio@proton.me"
-            className="group sm:bg-stone-100 sm:dark:bg-zinc-800/90 rounded-2xl sm:p-6 sm:border-2 sm:border-stone-200/60 sm:dark:border-zinc-700/50 sm:hover:border-accent-light sm:dark:hover:border-accent-dark transition-all sm:hover:scale-[1.02] sm:shadow-2xs sm:dark:shadow-sm"
+            className="group flex flex-col items-center text-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl hover:bg-accent-light/5 dark:hover:bg-accent-dark/5 transition-all"
           >
-            <div className="flex flex-col items-center text-center gap-2 sm:gap-3">
-              <div className="w-10 h-10 sm:w-16 sm:h-16 sm:bg-accent-light/10 sm:dark:bg-accent-dark/10 rounded-xl flex items-center justify-center">
-                <EnvelopeSolid className="w-5 h-5 sm:w-7 sm:h-7 text-accent-light dark:text-accent-dark" />
-              </div>
-              <div className="hidden sm:block">
-                <p className="text-xs font-semibold text-muted-light dark:text-muted-dark mb-1">{t('contact.emailLabel')}</p>
-                <p className="text-sm font-medium text-primary-light dark:text-primary-dark break-all">milica.portfolio@proton.me</p>
-              </div>
-              <p className="sm:hidden text-xs font-semibold text-primary-light dark:text-primary-dark">{t('contact.emailLabel')}</p>
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-accent-light/10 dark:bg-accent-dark/10 rounded-xl flex items-center justify-center group-hover:bg-accent-light/20 dark:group-hover:bg-accent-dark/20 transition-colors">
+              <EnvelopeSolid className="w-7 h-7 sm:w-8 sm:h-8 text-accent-light dark:text-accent-dark" />
+            </div>
+            <div>
+              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">{t('contact.emailLabel')}</p>
+              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">milica.portfolio@proton.me</p>
             </div>
           </a>
 
-          {/* Phone Card */}
+          {/* LinkedIn Card */}
           <a
-            href="tel:+3580000000"
-            className="group sm:bg-stone-100 sm:dark:bg-zinc-800/90 rounded-2xl sm:p-6 sm:border-2 sm:border-stone-200/60 sm:dark:border-zinc-700/50 sm:hover:border-accent-light sm:dark:hover:border-accent-dark transition-all sm:hover:scale-[1.02] sm:shadow-2xs sm:dark:shadow-sm"
+            href="https://www.linkedin.com/in/milica-krivokapic/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center text-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl hover:bg-accent-light/5 dark:hover:bg-accent-dark/5 transition-all"
           >
-            <div className="flex flex-col items-center text-center gap-2 sm:gap-3">
-              <div className="w-10 h-10 sm:w-16 sm:h-16 sm:bg-accent-light/10 sm:dark:bg-accent-dark/10 rounded-xl flex items-center justify-center">
-                <MobileScreen className="w-5 h-5 sm:w-7 sm:h-7 text-accent-light dark:text-accent-dark" />
-              </div>
-              <div className="hidden sm:block">
-                <p className="text-xs font-semibold text-muted-light dark:text-muted-dark mb-1">{t('contact.callLabel')}</p>
-                <p className="text-sm font-medium text-primary-light dark:text-primary-dark">+358 (0) 000 0000</p>
-              </div>
-              <p className="sm:hidden text-xs font-semibold text-primary-light dark:text-primary-dark">{t('contact.callLabel')}</p>
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-accent-light/10 dark:bg-accent-dark/10 rounded-xl flex items-center justify-center group-hover:bg-accent-light/20 dark:group-hover:bg-accent-dark/20 transition-colors">
+              <FaLinkedin className="w-7 h-7 sm:w-8 sm:h-8 text-accent-light dark:text-accent-dark" />
+            </div>
+            <div>
+              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">LinkedIn</p>
+              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">Connect with me</p>
             </div>
           </a>
 
@@ -134,24 +113,21 @@ export default function Contact() {
             href="https://cal.com/milica-krivokapic"
             target="_blank"
             rel="noopener noreferrer"
-            className="group sm:bg-stone-100 sm:dark:bg-zinc-800/90 rounded-2xl sm:p-6 sm:border-2 sm:border-stone-200/60 sm:dark:border-zinc-700/50 sm:hover:border-accent-light sm:dark:hover:border-accent-dark transition-all sm:hover:scale-[1.02] sm:shadow-2xs sm:dark:shadow-sm"
+            className="group flex flex-col items-center text-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl hover:bg-accent-light/5 dark:hover:bg-accent-dark/5 transition-all"
           >
-            <div className="flex flex-col items-center text-center gap-2 sm:gap-3">
-              <div className="w-10 h-10 sm:w-16 sm:h-16 sm:bg-accent-light/10 sm:dark:bg-accent-dark/10 rounded-xl flex items-center justify-center">
-                <CalendarDaysSolidFull className="w-5 h-5 sm:w-7 sm:h-7 text-accent-light dark:text-accent-dark" />
-              </div>
-              <div className="hidden sm:block">
-                <p className="text-xs font-semibold text-muted-light dark:text-muted-dark mb-1">{t('contact.bookLabel')}</p>
-                <p className="text-sm font-medium text-primary-light dark:text-primary-dark">{t('contact.bookMeeting')}</p>
-              </div>
-              <p className="sm:hidden text-xs font-semibold text-primary-light dark:text-primary-dark">{t('contact.bookLabel')}</p>
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-accent-light/10 dark:bg-accent-dark/10 rounded-xl flex items-center justify-center group-hover:bg-accent-light/20 dark:group-hover:bg-accent-dark/20 transition-colors">
+              <CalendarDaysSolidFull className="w-7 h-7 sm:w-8 sm:h-8 text-accent-light dark:text-accent-dark" />
+            </div>
+            <div>
+              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">{t('contact.bookLabel')}</p>
+              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">{t('contact.bookMeeting')}</p>
             </div>
           </a>
         </div>
       </section>
 
-      {/* Form and Image Section - Two Columns */}
-      <section className="w-full grid grid-cols-1 gap-8 md:grid-cols-[minmax(600px,2fr)_minmax(0,1fr)]">
+  {/* Form and Image Section - Two Columns */}
+  <section className="w-full grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:grid-cols-[minmax(520px,1.4fr)_minmax(0,1fr)]">
         {/* Left Column - Form */}
         <div className="space-y-8">
           <h3 className="text-2xl font-bold text-primary-light dark:text-primary-dark">{t('contact.formHeading')}</h3>
@@ -253,35 +229,16 @@ export default function Contact() {
               </div>
             )}
           </form>
-
-          {/* Social Links */}
-          <div className="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
-            <h4 className="text-lg font-semibold mb-4 text-center text-primary-light dark:text-primary-dark">{t('contact.connectHeading')}</h4>
-            <div className="flex justify-center gap-3 sm:gap-4">
-              {socialData.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 text-primary-light dark:text-primary-dark"
-                  aria-label={`Connect on ${link.name}`}
-                >
-                  {getIcon(link.icon)}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Right Column - Image */}
-        <div className="hidden lg:block w-full relative h-full min-h-96">
+        <div className="hidden md:block w-full relative h-full min-h-[18rem] md:min-h-[28rem] lg:min-h-[32rem]">
           <Image
             src="/contact.png"
             alt="Contact illustration"
             fill
-            className="object-contain p-8"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-contain p-4 md:p-4 lg:p-6"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 65vw, 45vw"
           />
         </div>
       </section>
