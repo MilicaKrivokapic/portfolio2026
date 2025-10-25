@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useLanguage } from '../context/language-context';
 import BriefcaseSolidFull from './icons/BriefcaseSolidFull';
 import MusicSolidFull from './icons/MusicSolidFull';
-import SquareUpRight from './icons/SquareUpRight';
+import UpRightFromSquareSolidFull from './icons/UpRightFromSquareSolidFull';
 
 export default function IdCard() {
   const { language } = useLanguage();
@@ -57,10 +57,10 @@ export default function IdCard() {
             href="https://www.youtube.com/watch?v=UaIjnejqfJg&list=RDUaIjnejqfJg&start_radio=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-lg text-gray-900 dark:text-gray-300 hover:text-accent-light dark:hover:text-accent-dark inline-flex items-center gap-1 group"
+            className="font-semibold text-lg text-gray-900 dark:text-gray-300 hover:text-accent-light dark:hover:text-accent-dark inline group"
           >
             {content[language].music}
-            <SquareUpRight className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
+            <UpRightFromSquareSolidFull className="ml-1.5 inline-block align-middle w-5 h-5 md:w-4 md:h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
           </a>
         </div>
         <MusicSolidFull className="w-5 h-5 flex-shrink-0 text-accent-light dark:text-accent-dark self-center" />
