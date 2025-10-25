@@ -33,7 +33,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
         {/* Footer Links - Stacked on left */}
         <nav aria-label="Footer navigation" className="md:order-1">
-          <ul className="flex flex-col gap-2 text-sm md:text-base">
+          <ul className="flex flex-col gap-2 text-sm md:text-base ml-4 md:ml-0">
             {currentLinks.map((link, index) => (
               <li key={index} className="relative">
                 <a
@@ -54,7 +54,7 @@ export default function Footer() {
         </nav>
         
         {/* Copyright - Right side on desktop */}
-        <div className="text-xs md:text-sm text-muted-light dark:text-muted-dark md:order-2 md:text-right">
+        <div className="text-xs ml-2 md:ml-0 md:text-sm text-muted-light dark:text-muted-dark md:order-2 md:text-right">
           © {YEAR} Milica Krivokapic
         </div>
       </div>
