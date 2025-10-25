@@ -150,8 +150,8 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Form and Image Section - Two Columns */}
-      <section className="w-full grid grid-cols-1 gap-8 md:grid-cols-[minmax(600px,2fr)_minmax(0,1fr)]">
+  {/* Form and Image Section - Two Columns */}
+  <section className="w-full grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:grid-cols-[minmax(520px,1.4fr)_minmax(0,1fr)]">
         {/* Left Column - Form */}
         <div className="space-y-8">
           <h3 className="text-2xl font-bold text-primary-light dark:text-primary-dark">{t('contact.formHeading')}</h3>
@@ -275,13 +275,13 @@ export default function Contact() {
         </div>
 
         {/* Right Column - Image */}
-        <div className="hidden lg:block w-full relative h-full min-h-96">
+        <div className="hidden md:block w-full relative h-full min-h-[18rem] md:min-h-[28rem] lg:min-h-[32rem]">
           <Image
             src="/contact.png"
             alt="Contact illustration"
             fill
-            className="object-contain p-8"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-contain p-4 md:p-4 lg:p-6"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 65vw, 45vw"
           />
         </div>
       </section>
