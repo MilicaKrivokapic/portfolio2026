@@ -84,16 +84,6 @@ export default function ProfileSidebar() {
               }
             }}
           >
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <Image
-                src="/aaaa_koiru_portfolio.png"
-                alt="Profile picture of Milica Krivokapic, a cartoon dog"
-                width={80}
-                height={80}
-                className="object-cover"
-                priority
-              />
-            </div>
           </Link>
           <div>
             <Link href="/" className="text-lg font-bold hover:text-accent-light dark:hover:text-accent-dark transition-colors" aria-label="Go to home">Milica Krivokapic</Link>
@@ -110,18 +100,18 @@ export default function ProfileSidebar() {
               lg:sticky lg:top-[var(--header-h)]
               lg:overflow-y-auto
               mt-28
-              p-8 bg-surface-light bg-gradient-to-b from-white to-[#fcf9f7] dark:bg-gradient-to-b dark:from-[#161617] dark:to-[#0F0F10] rounded-3xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.3)]
-              2xl:ml-40">
+              p-8 bg-white dark:bg-gradient-to-b dark:from-[#161617] dark:to-[#0F0F10] rounded-3xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.3)]
+              2xl:ml-40 ring-1 ring-black/5 dark:ring-white/5">
         <div className="flex flex-col items-center space-y-3x">
-          <Link href="/" aria-label="Go to home" className="relative w-32 h-32 rounded-2xl overflow-hidden bg-gradient-to-br bg-black flex items-center justify-center">
-            <div className="w-full h-full overflow-hidden flex items-center justify-center">
+          <Link href="/" aria-label="Go to home" className="relative w-32 h-32 overflow-hidden bg-gradient-to-br flex items-center justify-center">
+            <div className="w-full h-full overflow-hidden flex items-center justify-center rounded-2xl">
               {/* Light mode image */}
               <Image
                 src="/testing.png"
                 alt="Profile picture"
                 width={120}
                 height={120}
-                className="object-cover dark:hidden"
+                className="object-cover dark:hidden rounded-2xl"
                 priority
               />
               {/* Dark mode image */}
@@ -130,7 +120,7 @@ export default function ProfileSidebar() {
                 alt="Profile picture"
                 width={120}
                 height={120}
-                className="object-cover hidden dark:block"
+                className="object-cover hidden dark:block rounded-2xl"
                 priority
               />
             </div>

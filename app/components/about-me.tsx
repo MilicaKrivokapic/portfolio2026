@@ -30,8 +30,8 @@ export default function AboutMe() {
             {/* Grid layout with text and image */}
             <section className="grid grid-cols-12 md:gap-x-6 items-start mt-4">
               {/* Image - appears first on mobile, side-by-side on desktop */}
-              <div className="col-span-12 md:col-span-5 md:col-start-8 md:row-start-1 md:row-span-6 order-1 md:order-2 mb-4 md:mb-0">
-                <div className="relative aspect-[4/5] w-48 mx-auto md:w-full">
+              <div className="col-span-12 md:col-span-5 md:col-start-8 md:row-start-1 md:row-span-6 order-1 md:order-2 mb-4 md:mb-0 md:self-center">
+                <div className="relative aspect-[4/5] w-48 mx-auto md:w-full md:mx-0">
                   {/* Mobile image */}
                   <Image
                     src="/mobile_about_me-test.png"
