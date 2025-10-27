@@ -163,6 +163,23 @@ h6 {
   @apply font-medium tracking-tight !important;
 }
 
+/* Hyphenation for h2 and h3 headings from md to mobile sizes */
+.prose h2,
+.prose h3 {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+@media (min-width: 1280px) {
+  .prose h2,
+  .prose h3 {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+  }
+}
+
 .prose strong {
   @apply font-medium;
 }
@@ -206,7 +223,6 @@ input[type="email"] {
 .prose {
   overflow-wrap: break-word;
   word-wrap: break-word;
-  hyphens: auto;
   max-width: 100%;
 }
 
