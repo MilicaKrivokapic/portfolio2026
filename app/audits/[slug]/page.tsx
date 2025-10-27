@@ -81,13 +81,13 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
             </nav>
           </div>
           <article className="prose prose-neutral dark:prose-invert max-w-4xl w-full mx-auto bg-white/60 dark:bg-neutral-900/60 rounded-lg shadow-sm p-4 sm:p-6 md:p-8 lg:p-12 mt-2 mb-16 text-[1.1rem] sm:text-[1.15rem] md:text-[1.2rem] overflow-hidden">
-        <div className="w-full mb-8 rounded-lg overflow-hidden">
+        <div className="w-full mb-8 rounded-lg overflow-hidden max-w-2xl">
           <Image
             src={bannerImage}
             alt={post.metadata.title}
             width={1200}
             height={500}
-            className="w-full h-auto max-h-[800px] object-contain rounded-lg"
+            className="w-full h-auto max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-contain object-left rounded-lg"
             priority
           />
         </div>

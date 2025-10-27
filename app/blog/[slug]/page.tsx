@@ -113,13 +113,13 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             </nav>
           </div>
           <article className="prose prose-neutral dark:prose-invert max-w-5xl w-full mx-auto bg-white/60 dark:bg-neutral-900/60 rounded-lg shadow-sm p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
-        <div className="w-full mb-8 rounded-lg overflow-hidden">
+        <div className="w-full mb-8 rounded-lg overflow-hidden max-w-2xl mx-auto">
           <Image
             src={bannerImage}
             alt={post.metadata.title}
             width={1200}
             height={500}
-            className="w-full h-auto max-h-[800px] object-contain rounded-lg"
+            className="w-full h-auto max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-contain rounded-lg"
             priority
           />
         </div>
