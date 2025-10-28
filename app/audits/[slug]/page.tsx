@@ -7,6 +7,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Accordion, AccordionItem } from "app/components/ui/Accordion";
 
 export async function generateStaticParams() {
   let posts = getAuditPosts();
@@ -97,7 +98,23 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
         <div className="flex flex-col md:flex-row items-center gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
           <span>{readTime} min read</span>
         </div>
-        <CustomMDX source={source} />
+
+        <Accordion className="mt-6">
+          <AccordionItem id="what-why" title="What and Why" defaultOpen>
+            <div className="prose prose-neutral dark:prose-invert max-w-none">
+              <p>
+                This section explains what this audit is about and why it matters. It summarizes the scope, goals, and key outcomes at a glance for quick orientation.
+              </p>
+              {post.metadata.summary && (
+                <p className="text-neutral-700 dark:text-neutral-200">{post.metadata.summary}</p>
+              )}
+            </div>
+          </AccordionItem>
+
+          <AccordionItem id="full-report" title="Full Report" defaultOpen={false}>
+            <CustomMDX source={source} />
+          </AccordionItem>
+        </Accordion>
         {post.metadata.tags && (
           <div className="mt-10 flex flex-wrap gap-2">
             {post.metadata.tags.split(',').map((tag: string) => {

@@ -11,6 +11,7 @@ import { ImageGrid } from "./image-grid";
 import PresentationCard from "./PresentationCard";
 import { useLanguage } from "app/context/language-context";
 import UpRightFromSquareSolidFull from "./icons/UpRightFromSquareSolidFull";
+import { Accordion, AccordionItem } from "./ui/Accordion";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href = '#' } = props;
@@ -138,6 +139,8 @@ const components = {
   Caption: CaptionComponent,
   ImageGrid,
   PresentationCard,
+  Accordion,
+  AccordionItem,
   PreviewLabel: function PreviewLabel() {
     const { t } = useLanguage();
     return (
