@@ -61,7 +61,7 @@ export default function Projects() {
                 </div>
                 <div className="w-full md:w-1/3 md:min-w-0">
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-bold break-words hyphens-auto" lang={language}>{title}</h3>
+                    <h3 className="text-2xl font-bold break-words" lang={language}>{title}</h3>
                     <p className="text-neutral-600 dark:text-neutral-400">
                       {description}
                     </p>

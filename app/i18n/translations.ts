@@ -57,7 +57,7 @@ export const translations: Record<Language, RootTranslations> = {
       summary: "Helsinki-based accessibility and web specialist. I build clear, inclusive digital experiences for everyone.",
       intro: "Hi! I'm Milica, a Helsinki-based professional who has tried my hand at various fields - from elderly care to working as a library assistant, operating industrial dishwashers in large kitchens, and even working in a shop selling exclusively white décor items... You name it.",
       career: "My first real passion was photography and image editing, which I enjoyed for many years. Eventually, I found a new direction in web development when accessibility brought a whole new sense of meaning and purpose to my work. I'm also deeply interested in QA work and audits.",
-      education: "I enjoy problem-solving, love the flow of teamwork, and want to make the web a more welcoming and accessible place for everyone. If you're looking for a positive, continuously self-learning, AI-friendly, and motivated team member, here I am! 👋",
+      education: "I enjoy problem-solving, love the flow of teamwork, and want to make the web a more welcoming and accessible place for everyone. I’m now looking for a remote or hybrid position in accessibility auditing or manual QA testing, where I can keep growing and help make digital products more inclusive. If you're looking for a positive, happy, continuously self-learning, AI-friendly, and motivated team member, here I am! 👋",
       transition: "",
       current: "",
       conclusion: ""
@@ -163,7 +163,7 @@ export const translations: Record<Language, RootTranslations> = {
       summary: "Olen helsinkiläinen saavutettavuus- ja web-intoilija, jonka juuret ovat media-alalla. Rakennan selkeitä, inklusiivisia ja erottuvia web-kokonaisuuksia, jotka ovat saavutettavia kaikille.",
       intro: "Heippa! Olen Milica, iloinen helsinkiläinen tyyppi, joka on dipannut varpaitaan kaikenlaisissa keitoksissa - olen kokeillut nuoruudessani mm. vanhustyötä, aakkostanut opuksia kirjastotätinä, huhkinut teollisuustiskikoneen ääressä suurkeittiössä, työskennellyt vain valkoisia esineitä myyvässä sisustuskaupassa... You name it.",
       career: "Ensimmäinen intohimoni oli valokuvaus ja kuvankäsittely, jonka parissa viihdyin monta vuotta. Löysin uuden suunnan verkkosivujen kehittämisestä, jossa edellisistä taidoista kuitenkin oli hyötyä.  Saavutettavuus toi työhön aivan uudenlaisen merkityksellisyyden tunteen, joka puskee itseäni uralla eteenpäin. Myös QA-hommat ja auditoinnit kiinnostavat ja innostavat!",
-      education: "Tykkään ratkoa ongelmia, rakastan tiimityön flow-fiilistä ja haluan ehdottomasti tehdä verkosta kaikille vähän ystävällisemmän ja helpomman paikan olla ja elää. Jos etsit positiivista, jatkuvasti itseopiskelevaa, AI- (ja muutenkin uudistusmyönteistä) ja motivoitunutta tekijää tiimiin, täällä ollaan! 👋",
+      education: "Tykkään ratkoa ongelmia, rakastan tiimityön flow-fiilistä ja haluan ehdottomasti tehdä verkosta kaikille vähän ystävällisemmän ja helpomman paikan olla ja elää. Olen nyt etsimässä saavutettavuusauditointia tai QA:han liittyvää työtä, jossa pystyn jatkuvasti kehittymään niin itsenäisesti kuin myös sitten tulevan tiimini kanssa. Jos etsit positiivista, innokasta, jatkuvasti itseopiskelevaa, AI- (ja muutenkin uudistusmyönteistä) ja motivoitunutta tekijää tiimiisi, niin täällä ollaan! 👋",
       transition: "",
       current: "",
       conclusion: ""

@@ -63,7 +63,7 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
 
   return (
     <div className="px-4 md:px-6 py-6 md:py-10">
-      <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/5 p-10 md:p-20">
+      <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/5 p-6 md:p-20">
         <section className="flex flex-col items-center w-full">
           <div className="w-full max-w-4xl mb-4">
             <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -81,13 +81,13 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
             </nav>
           </div>
           <article className="prose prose-neutral dark:prose-invert max-w-4xl w-full mx-auto bg-white/60 dark:bg-neutral-900/60 rounded-lg shadow-sm p-4 sm:p-6 md:p-8 lg:p-12 mt-2 mb-16 text-[1.1rem] sm:text-[1.15rem] md:text-[1.2rem] overflow-hidden">
-        <div className="w-full mb-8 rounded-lg overflow-hidden">
+        <div className="w-full mb-8 rounded-lg overflow-hidden max-w-2xl">
           <Image
             src={bannerImage}
             alt={post.metadata.title}
             width={1200}
             height={500}
-            className="w-full h-auto max-h-[800px] object-contain rounded-lg"
+            className="w-full h-auto max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-contain object-left rounded-lg"
             priority
           />
         </div>

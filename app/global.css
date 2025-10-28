@@ -163,6 +163,23 @@ h6 {
   @apply font-medium tracking-tight !important;
 }
 
+/* Hyphenation for h2 and h3 headings from md to mobile sizes */
+.prose h2,
+.prose h3 {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+@media (min-width: 1280px) {
+  .prose h2,
+  .prose h3 {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+  }
+}
+
 .prose strong {
   @apply font-medium;
 }
@@ -206,8 +223,30 @@ input[type="email"] {
 .prose {
   overflow-wrap: break-word;
   word-wrap: break-word;
-  hyphens: auto;
   max-width: 100%;
+}
+
+/* Optimal line length for readability: 45-75 characters per line */
+/* Mobile: full width (lines are naturally shorter) */
+/* md (768px+): ~65-70 characters at 16px font */
+@media (min-width: 768px) {
+  .prose {
+    max-width: 42rem; /* ~672px - optimal for 65-70 chars per line */
+  }
+}
+
+/* lg (1024px+): ~70-75 characters at 16px font */
+@media (min-width: 1024px) {
+  .prose {
+    max-width: 48rem; /* ~768px - optimal for 70-75 chars per line */
+  }
+}
+
+/* xl (1280px+): ~75-80 characters at 16px font */
+@media (min-width: 1280px) {
+  .prose {
+    max-width: 52rem; /* ~832px - optimal for 75-80 chars per line */
+  }
 }
 
 .prose p,
