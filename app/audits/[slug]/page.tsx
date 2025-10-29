@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CustomMDX } from "app/components/mdx";
 import { getAuditPosts } from "app/lib/posts";
 import { metaData } from "app/config";
 import { serialize } from 'next-mdx-remote/serialize';
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Accordion, AccordionItem } from "app/components/ui/Accordion";
+import { AuditAccordions } from "app/components/audit-accordions";
 
 export async function generateStaticParams() {
   let posts = getAuditPosts();
@@ -99,22 +98,17 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
           <span>{readTime} min read</span>
         </div>
 
-        <Accordion className="mt-6">
-          <AccordionItem id="what-why" title="What and Why" defaultOpen>
-            <div className="prose prose-neutral dark:prose-invert max-w-none">
-              <p>
-                This section explains what this audit is about and why it matters. It summarizes the scope, goals, and key outcomes at a glance for quick orientation.
-              </p>
-              {post.metadata.summary && (
-                <p className="text-neutral-700 dark:text-neutral-200">{post.metadata.summary}</p>
-              )}
-            </div>
-          </AccordionItem>
-
-          <AccordionItem id="full-report" title="Full Report" defaultOpen={false}>
-            <CustomMDX source={source} />
-          </AccordionItem>
-        </Accordion>
+        <AuditAccordions 
+          source={source} 
+          summary={post.metadata.summary}
+          titleOverrides={{
+            fullReport: {
+              en: post.metadata.reportTitle_en,
+              fi: post.metadata.reportTitle_fi,
+            },
+          }}
+          useTranslations={(post.metadata as any).useTranslations}
+        />
         {post.metadata.tags && (
           <div className="mt-10 flex flex-wrap gap-2">
             {post.metadata.tags.split(',').map((tag: string) => {

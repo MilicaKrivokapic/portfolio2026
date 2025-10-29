@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import SquareCaretDown from '../icons/SquareCaretDown';
+import { FaChevronDown } from 'react-icons/fa';
 
 function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(' ');
@@ -48,18 +48,18 @@ export function AccordionItem({ id, title, defaultOpen = false, children, classN
           aria-expanded={isOpen}
           className={cn(
             'w-full text-left flex items-center justify-between gap-3 px-4 md:px-6 py-4 md:py-5',
-            'bg-accent-light dark:bg-accent-dark text-white',
-            'hover:bg-accent-light/90 dark:hover:bg-accent-dark/90 transition-colors',
-            'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-light dark:focus-visible:ring-accent-dark'
+            'bg-accent-light dark:bg-accent-dark text-white dark:text-black',
+            'hover:bg-accent-light/90 dark:hover:bg-[#6f5d3c] transition-colors',
+            'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-light dark:focus-visible:ring-amber-700'
           )}
           onClick={() => setIsOpen((o) => !o)}
         >
           <span className="font-semibold text-lg md:text-xl">
             {title}
           </span>
-          <SquareCaretDown
+          <FaChevronDown
             className={cn(
-              'w-6 h-6 transition-transform duration-300',
+              'w-5 h-5 transition-transform duration-300',
               isOpen ? 'rotate-180' : 'rotate-0'
             )}
           />

@@ -12,6 +12,38 @@ type ParhaatPontotSection = {
   techNote: string;
 };
 
+type BriljantAuditContent = {
+  introduction: string;
+  objective: string;
+  context: string;
+  disclaimer: string;
+  priorities: {
+    title: string;
+    high: string;
+    medium: string;
+    low: string;
+    recommendations: string;
+  };
+  remediation: {
+    title: string;
+    content: string;
+  };
+  methods: {
+    title: string;
+    content: string;
+  };
+  issues: {
+    title: string;
+    highPriority: string;
+    contrast: string;
+    contrastDetails: string;
+    lowPriority: string;
+    heading: string;
+    recommendations: string;
+    formNotes: string;
+  };
+};
+
 type RootTranslations = {
   common: unknown;
   nav: unknown;
@@ -24,6 +56,7 @@ type RootTranslations = {
   projects: unknown;
   audits: unknown;
   parhaatPontot: ParhaatPontotSection;
+  briljantAudit: BriljantAuditContent;
 };
 
 export const translations: Record<Language, RootTranslations> = {
@@ -116,7 +149,9 @@ export const translations: Record<Language, RootTranslations> = {
     },
     audits: {
       preview: 'Preview',
-      previewScroll: 'Scroll down'
+      previewScroll: 'Scroll down',
+      whatAndWhy: 'What and Why',
+      fullReport: 'Accessibility Audit Report'
     },
     parhaatPontot: {
       title: 'Parhaat Pöntöt - Best Seats',
@@ -131,6 +166,37 @@ export const translations: Record<Language, RootTranslations> = {
         'Accessibility statement PDF',
       ],
   techNote: 'Lessons and biggest challenges: How to evaluate and improve map view accessibility',
+    },
+    briljantAudit: {
+      introduction: "This accessibility evaluation was prepared for the Briljant OSK website. The assessment was conducted by Milica Krivokapic (hereafter \"the author\") between 1 May and 20 June 2025. The work is based on the Web Content Accessibility Guidelines (WCAG) version 2.2, with a primary focus on conformity with Level A and AA success criteria. Where relevant, the report also provides recommendations related to AAA-level requirements or other measures that improve usability and accessibility.",
+      objective: "The objective of the evaluation is to identify issues that may prevent or hinder the use of the site or the understanding of its content. Addressing these issues will improve the usability and accessibility of the service and help meet the obligations of the Finnish Act on the Provision of Digital Services. Accessibility is not only a legal requirement; it also supports an equal and high-quality web experience.",
+      context: "Over one million people in Finland require accessible digital services due to, for example, sensory, motor, or cognitive limitations. Moreover, accessibility benefits all users in contexts where devices or environments temporarily affect a person's ability to act. A highly accessible service is often clearer, easier to understand, and more robust from a technical standpoint.",
+      disclaimer: "This report was prepared free of charge as a practice project. Although the assessment has been carried out carefully and to the best of current expertise, it may not cover every possible accessibility shortcoming. The author is not responsible for any legal consequences arising from following or not following the recommendations.",
+      priorities: {
+        title: "Fixing recommendations and priorities",
+        high: "High-priority issues significantly prevent or hinder use of the service, for example for screen reader users or those relying on assistive technologies. These issues often conflict clearly with WCAG criteria and the requirements of the Digital Services Act. It is recommended to address these issues first and without delay.",
+        medium: "Medium-priority issues do not prevent use of the service but reduce usability or comprehension for certain user groups. Fixing these issues helps meet accessibility requirements and improves the overall user experience.",
+        low: "Low-priority issues have a minor impact. They are not typically direct violations of WCAG requirements, but individually or in combination may reduce the service's usability.",
+        recommendations: "Recommendations relate to situations where clarity or usability could be improved even if no technical error is present. Considering these points supports continuous improvement of accessibility and a high-quality service experience."
+      },
+      remediation: {
+        title: "Fixes and next steps",
+        content: "In particular, high- and medium-priority issues should be addressed to ensure the site meets the requirements of the Digital Services Act and is accessible for different user groups. Resolving all shortcomings also supports a better user experience and strengthens overall service quality. When fixes are implemented, their accessibility impact should be verified through re-testing. If any issues remain unresolved, they must be documented in the accessibility statement. Material shortcomings should be proactively reported to the supervisory authority."
+      },
+      methods: {
+        title: "Audit methods",
+        content: "The evaluation is based on WCAG 2.2 success criteria at Levels A and AA. The assessment also considers Finnish and EU accessibility legislation, including the amendments to the Digital Services Act entering into force on 28 June 2025, which introduce new requirements for, for example, e-commerce. Cognitive accessibility was assessed with reference to the criteria developed by the Selkeästi meille project. The audit combines automated and manual methods. Automated checks used the WAVE extension and Google Chrome Lighthouse. Manual testing was performed with keyboard navigation and the following screen readers: NVDA (Windows), TalkBack (Android), and VoiceOver (iOS). Mobile use was evaluated in addition to browser developer tools with physical devices: iPhone 12 mini and MacBook Pro (M1). Responsiveness and usability were tested in practice."
+      },
+      issues: {
+        title: "Accessibility issues",
+        highPriority: "High priority",
+        contrast: "Insufficient text contrast",
+        contrastDetails: "The text contrast on a dark background is very close to the WCAG 2.2 AA threshold for normal-sized text (calculated value approximately 4.49:1). Firefox's accessibility checker considers the combination sufficient, but more conservative tools (e.g., WebAIM) flag it as slightly below the requirement. If you want to ensure conformance in all contexts, a lighter text color in the footer is recommended. This is not strictly necessary, however.",
+        lowPriority: "Low-priority recommendations",
+        heading: "Heading hierarchy",
+        recommendations: "Recommendations",
+        formNotes: "If the email address is omitted and the form is submitted, the entire form clears on submit, requiring the user to re-enter all fields. For the \"phone number\" field, the invalid input message appears in English, whereas in the email field it appears in Finnish and in a different position. This may be slightly confusing, though it is unlikely to be a significant issue for most users. When a field is active, the label shrinks. It is good that the label remains visible—this is preferable for usability compared to labels that disappear entirely. However, some users may not see the reduced text clearly. Similarly, the \"Email is empty or invalid\" message is displayed at a relatively small size. This may not require action—making everything 100% accessible is not always feasible. The screen reader reads the warning text correctly."
+      }
     }
   },
   fi: {
@@ -222,7 +288,9 @@ export const translations: Record<Language, RootTranslations> = {
     },
     audits: {
       preview: 'Esikatselu',
-      previewScroll: 'Scrollaa alas'
+      previewScroll: 'Scrollaa alas',
+      whatAndWhy: 'Mitä ja miksi',
+      fullReport: 'Saavutettavuusauditointiraportti'
     },
     parhaatPontot: {
       title: 'Parhaat Pöntöt',
@@ -236,6 +304,37 @@ export const translations: Record<Language, RootTranslations> = {
         'Saavutettavuusseloste (PDF)',
       ],
   techNote: 'Projektin opetukset ja suurimmat haasteet: Miten arvioida ja parantaa karttasovelluksen saavutettavuutta?',
+    },
+    briljantAudit: {
+      introduction: "Tämä saavutettavuusarviointi on laadittu Briljant OSK:in verkkosivustolle. Arvioinnin suoritti Milica Krivokapic (myöhemmin \"laatija\") aikavälillä 1.5–20.6.2025. Työ perustuu Verkkosisällön saavutettavuusohjeistuksen (WCAG) versioon 2.2, keskittyen erityisesti A- ja AA-tason kriteerien täyttymiseen. Tarvittaessa raportissa esitetään myös suosituksia, jotka liittyvät AAA-tason vaatimuksiin tai muihin käytettävyyttä ja saavutettavuutta parantaviin ratkaisuihin.",
+      objective: "Arvioinnin tavoitteena on tunnistaa ne ongelmakohdat, jotka voivat estää tai vaikeuttaa sivuston käyttöä tai sisällön hahmottamista. Korjaamalla nämä kohdat voidaan parantaa verkkopalvelun käytettävyyttä ja saavutettavuutta sekä täyttää digipalvelulain velvoitteet. Saavutettavuus ei ole vain lakisääteinen vaatimus, vaan se tukee yhdenvertaista ja laadukasta verkkopalvelukokemusta.",
+      context: "Yli miljoona suomalaista tarvitsee saavutettavia digipalveluja esimerkiksi aisti-, motoristen tai kognitiivisten rajoitteiden vuoksi. Lisäksi saavutettavuus hyödyttää kaikkia käyttäjiä esimerkiksi tilanteissa, joissa laitteet tai ympäristöt muuttavat käyttäjän toimintakykyä. Hyvin saavutettava verkkopalvelu on usein myös selkeämpi, helpommin ymmärrettävä ja teknisesti toimivampi kokonaisuus.",
+      disclaimer: "Tämä raportti on laadittu maksutta harjoitustyönä. Vaikka arviointi on tehty huolellisesti ja parhaaseen osaamiseen nojaten, se ei välttämättä kata kaikkia mahdollisia saavutettavuuspuutteita. Laatija ei vastaa mahdollisista oikeudellisista seuraamuksista, joita suositusten noudattaminen tai noudattamatta jättäminen saattaa aiheuttaa.",
+      priorities: {
+        title: "Korjausehdotukset ja prioriteetit",
+        high: "Korkean prioriteetin ongelmat estävät tai vaikeuttavat verkkopalvelun käyttöä merkittävästi esimerkiksi ruudunlukijaa käyttävien tai muiden apuvälineiden varassa toimivien käyttäjien kohdalla. Ne ovat usein selvästi ristiriidassa WCAG-kriteerien ja digipalvelulain vaatimusten kanssa. Näiden ongelmien korjaamista suositellaan ensisijaisesti ja viipymättä.",
+        medium: "Keskitason ongelmat eivät estä palvelun käyttöä, mutta heikentävät käytettävyyttä tai sisällön ymmärrettävyyttä tietylle käyttäjäryhmälle. Näiden korjaaminen auttaa täyttämään saavutettavuusvaatimuksia ja parantaa kokonaisvaltaista käyttökokemusta.",
+        low: "Matalan prioriteetin puutteet ovat vaikutukseltaan lieviä. Ne eivät yleensä ole suoraan WCAG-vaatimusten vastaisia, mutta voivat yksittäisinä tai kasaantuneina heikentää palvelun käytettävyyttä.",
+        recommendations: "Suositukset liittyvät tilanteisiin, joissa käytettävyyttä tai selkeyttä voisi parantaa, vaikka varsinaista teknistä virhettä ei ole. Näiden huomioiminen tukee saavutettavuuden jatkuvaa kehittämistä ja laadukasta palvelukokemusta."
+      },
+      remediation: {
+        title: "Korjaus ja jatkotoimet",
+        content: "Erityisesti korkean ja keskitason ongelmien korjaamista suositellaan, jotta sivusto täyttää digipalvelulain vaatimukset ja on saavutettava eri käyttäjäryhmille. Kaikkien puutteiden korjaaminen tukee myös hyvää käyttökokemusta ja vahvistaa palvelun laatua. Kun korjauksia tehdään, niiden vaikutus saavutettavuuteen kannattaa tarkistaa uudelleentestauksella. Mikäli puutteita jää korjaamatta, ne tulee dokumentoida saavutettavuusselosteessa. Olennaiset puutteet tulee ilmoittaa oma-aloitteisesti valvontaviranomaiselle."
+      },
+      methods: {
+        title: "Auditointimenetelmät",
+        content: "Arviointi perustuu WCAG 2.2 -kriteeristöön A- ja AA-tasojen osalta. Työssä on otettu huomioon myös Suomen ja EU:n saavutettavuuslainsäädäntö sekä 28. kesäkuuta 2025 voimaan astuvat digipalvelulain muutokset, jotka tuovat uusia vaatimuksia esimerkiksi verkkokaupoille. Kognitiivista saavutettavuutta arvioitiin Selkeästi meille -hankkeen kehittämän kriteeristön pohjalta. Auditointi yhdistää automaattisia ja manuaalisia menetelmiä. Automaattisessa tarkastelussa käytettiin WAVE-lisäosaa ja Google Chromen Lighthouse-työkalua. Manuaalinen testaus suoritettiin näppäimistönavigoinnilla sekä ruudunlukijoilla: NVDA (Windows), TalkBack (Android) ja VoiceOver (iOS). Mobiilikäyttöä arvioitiin selaimen kehittäjätyökalujen lisäksi fyysisillä laitteilla: iPhone 12 mini ja MacBook Pro (M1). Sivuston responsiivisuus ja käytettävyys testattiin käytännössä."
+      },
+      issues: {
+        title: "Saavutettavuuspuutteet",
+        highPriority: "Korkea prioriteetti",
+        contrast: "Kontrastiarvojen puutteet tekstissä",
+        contrastDetails: "Tekstin kontrasti tumman taustan päällä on hyvin lähellä WCAG 2.2 AA -rajaa normaalikokoisella tekstillä (laskennallinen arvo noin 4.49:1). Firefoxin saavutettavuustarkistin tunnistaa yhdistelmän riittäväksi, mutta konservatiivisemmat kontrastityökalut (esim. WebAIM) ilmoittavat sen hieman alle vaaditun. Mikäli halutaan varmistaa vaatimuksen täyttyminen kaikissa olosuhteissa, suositellaan vaaleamman tekstivärin käyttöä myös Footerissa. Tämä ei kuitenkaan ole välttämätöntä.",
+        lowPriority: "Matalan prioriteetin korjausehdotuksia",
+        heading: "Otsikkohierarkia",
+        recommendations: "Suosituksia",
+        formNotes: "Kun lomakkeeseen unohti laittaa sähköpostiosoitteen ja lähetti lomakkeen, koko lomake tyhjentyi painaessa \"lähetä\", jolloin kaikki kenttiin piti kirjoittaa samat asiat uudestaan. Kentässä \"puhelinnumero\" ilmoitus vääränlaisesta kentän sisällöstä tulee englanniksi, kun sähköpostikentässä se taas tulee suomeksi ja eri kohtaan, mikä voi olla hieman sekavaa, mutta en usko että se on iso ongelma käyttäjille. Kun kenttä on aktiivinen niin kentän label menee pieneksi. On todella hyvä, että label on yhä nähtävillä, tämä ratkaisu on paljon parempi käytettävyyden kannalta kuin se että label katoaisi kokonaan. Toisaalta pienentynyttä tekstiä eivät välttämättä kaikki nää. Samoin \"Sähköposti on tyhjä tai virheellinen\"-teksti on aika pienellä kirjasimella. Tämä ei kuitenkaan välttämättä ole mikään ongelma johon pitäisi puuttua, kaikkea ei voi tehdä 100% saavutettavaksi. Ruudunlukija lukee kuitenkin tuon varoitustekstin."
+      }
     }
   },
 };
