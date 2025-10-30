@@ -7,8 +7,9 @@ import Panda from './icons/panda';
 import Seahorse from './icons/seahorse';
 import Elephant from './icons/elephant';
 import Hedgehog from './icons/hedgehog';
+import Toucan from './icons/toucan';
 
-type AnimalIconType = 'panda-bear' | 'seahorse' | 'elephant' | 'hedgehog';
+type AnimalIconType = 'panda-bear' | 'seahorse' | 'elephant' | 'hedgehog' | 'toucan';
 
 const AnimalIcons: Record<AnimalIconType, JSX.Element> = {
   'panda-bear': (
@@ -22,6 +23,9 @@ const AnimalIcons: Record<AnimalIconType, JSX.Element> = {
   ),
   'hedgehog': (
    <Hedgehog />
+  ),
+  'toucan': (
+   <Toucan />
   )
 };
 
@@ -44,7 +48,7 @@ export default function Recommendations() {
       <h2 className="text-3xl md:text-4xl font-bold mb-14 md:mb-24 text-start"> {/* Changed from mb-16 to mb-24 */}
         {t('recommendations.title')}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20"> {/* Changed from gap-16 to gap-20 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 space-y-8"> {/* Changed from gap-16 to gap-20 */}
         {(recommendationsData as Recommendation[]).map((recommendation, index) => (
           <div key={index} className="relative">
             <div className="bg-stone-100 dark:bg-zinc-800/90 rounded-2xl shadow-2xs dark:shadow-sm border-2 border-stone-200/60 dark:border-zinc-700/50">
