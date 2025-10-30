@@ -100,7 +100,6 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
 
         <AuditAccordions 
           source={source} 
-          summary={post.metadata.summary}
           titleOverrides={{
             fullReport: {
               en: post.metadata.reportTitle_en,

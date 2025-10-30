@@ -9,7 +9,6 @@ import Link from "next/link";
 
 interface AuditAccordionsProps {
   source: MDXRemoteSerializeResult;
-  summary?: string;
   titleOverrides?: {
     fullReport?: { en?: string; fi?: string };
     whatAndWhy?: { en?: string; fi?: string };
@@ -17,7 +16,7 @@ interface AuditAccordionsProps {
   useTranslations?: string;
 }
 
-export function AuditAccordions({ source, summary, titleOverrides, useTranslations }: AuditAccordionsProps) {
+export function AuditAccordions({ source, titleOverrides, useTranslations }: AuditAccordionsProps) {
   const { t, language } = useLanguage();
   const fullReportTitle = (titleOverrides?.fullReport && (titleOverrides.fullReport[language as 'en' | 'fi'] || undefined)) || t('audits.fullReport');
   const whatAndWhyTitle = (titleOverrides?.whatAndWhy && (titleOverrides.whatAndWhy[language as 'en' | 'fi'] || undefined)) || t('audits.whatAndWhy');
