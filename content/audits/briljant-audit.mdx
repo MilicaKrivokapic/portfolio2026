@@ -3,76 +3,12 @@ title: "Saavutettavuusraportti – Briljant verkkosivut"
 slug: "briljant-saavutettavuusraportti-2025"
 publishedAt: "2025-06-20"
 author: "Milica Krivokapic"
-summary: "WCAG 2.2 -pohjainen auditointi, löydökset ja korjausehdotukset."
 image: "/briljant.png"
 tags: "WCAG 2.2, auditointi, Finnish"
+reportTitle_fi: "Saavutettavuusauditointiraportti – Briljant"
+reportTitle_en: "Briljant Accessibility Audit Report"
+useTranslations: "briljantAudit"
 ---
-
-## Johdanto
-
-Tämä saavutettavuusarviointi on laadittu Briljant OSK:in verkkosivustolle (). Arvioinnin suoritti Milica Krivokapic (myöhemmin "laatija") aikavälillä 1.5–20.6.2025. Työ perustuu Verkkosisällön saavutettavuusohjeistuksen (WCAG) versioon 2.2, keskittyen erityisesti A- ja AA-tason kriteerien täyttymiseen. Tarvittaessa raportissa esitetään myös suosituksia, jotka liittyvät AAA-tason vaatimuksiin tai muihin käytettävyyttä ja saavutettavuutta parantaviin ratkaisuihin.
-
-Arvioinnin tavoitteena on tunnistaa ne ongelmakohdat, jotka voivat estää tai vaikeuttaa sivuston käyttöä tai sisällön hahmottamista. Korjaamalla nämä kohdat voidaan parantaa verkkopalvelun käytettävyyttä ja saavutettavuutta sekä täyttää digipalvelulain velvoitteet. Saavutettavuus ei ole vain lakisääteinen vaatimus, vaan se tukee yhdenvertaista ja laadukasta verkkopalvelukokemusta.
-
-Yli miljoona suomalaista tarvitsee saavutettavia digipalveluja esimerkiksi aisti-, motoristen tai kognitiivisten rajoitteiden vuoksi. Lisäksi saavutettavuus hyödyttää kaikkia käyttäjiä esimerkiksi tilanteissa, joissa laitteet tai ympäristöt muuttavat käyttäjän toimintakykyä. Hyvin saavutettava verkkopalvelu on usein myös selkeämpi, helpommin ymmärrettävä ja teknisesti toimivampi kokonaisuus.
-
-Tämä raportti on laadittu maksutta harjoitustyönä. Vaikka arviointi on tehty huolellisesti ja parhaaseen osaamiseen nojaten, se ei välttämättä kata kaikkia mahdollisia saavutettavuuspuutteita. Laatija ei vastaa mahdollisista oikeudellisista seuraamuksista, joita suositusten noudattaminen tai noudattamatta jättäminen saattaa aiheuttaa.
-
-### 1.2 Korjausehdotukset ja prioriteetit
-
-Havaitut saavutettavuuspuutteet on jaoteltu neljään luokkaan vaikutuksen ja korjaustarpeen mukaan: korkea, keskitaso, matala ja suositus.
-
-Korkean prioriteetin ongelmat estävät tai vaikeuttavat verkkopalvelun käyttöä merkittävästi esimerkiksi ruudunlukijaa käyttävien tai muiden apuvälineiden varassa toimivien käyttäjien kohdalla. Ne ovat usein selvästi ristiriidassa WCAG-kriteerien ja digipalvelulain vaatimusten kanssa. Näiden ongelmien korjaamista suositellaan ensisijaisesti ja viipymättä.
-
-Keskitason ongelmat eivät estä palvelun käyttöä, mutta heikentävät käytettävyyttä tai sisällön ymmärrettävyyttä tietylle käyttäjäryhmälle. Näiden korjaaminen auttaa täyttämään saavutettavuusvaatimuksia ja parantaa kokonaisvaltaista käyttökokemusta.
-
-Matalan prioriteetin puutteet ovat vaikutukseltaan lieviä. Ne eivät yleensä ole suoraan WCAG-vaatimusten vastaisia, mutta voivat yksittäisinä tai kasaantuneina heikentää palvelun käytettävyyttä.
-
-Suositukset liittyvät tilanteisiin, joissa käytettävyyttä tai selkeyttä voisi parantaa, vaikka varsinaista teknistä virhettä ei ole. Näiden huomioiminen tukee saavutettavuuden jatkuvaa kehittämistä ja laadukasta palvelukokemusta.
-
-#### 1.3 Korjaus ja jatkotoimet
-
-Erityisesti korkean ja keskitason ongelmien korjaamista suositellaan, jotta sivusto täyttää digipalvelulain vaatimukset ja on saavutettava eri käyttäjäryhmille. Kaikkien puutteiden korjaaminen tukee myös hyvää käyttökokemusta ja vahvistaa palvelun laatua.
-
-Kun korjauksia tehdään, niiden vaikutus saavutettavuuteen kannattaa tarkistaa uudelleentestauksella. Mikäli puutteita jää korjaamatta, ne tulee dokumentoida saavutettavuusselosteessa. Olennaiset puutteet tulee ilmoittaa oma-aloitteisesti valvontaviranomaiselle.
-
-### 1.4 Auditointimenetelmät
-
-Arviointi perustuu WCAG 2.2 -kriteeristöön A- ja AA-tasojen osalta. Työssä on otettu huomioon myös Suomen ja EU:n saavutettavuuslainsäädäntö sekä 28. kesäkuuta 2025 voimaan astuvat digipalvelulain muutokset, jotka tuovat uusia vaatimuksia esimerkiksi verkkokaupoille.
-
-Kognitiivista saavutettavuutta arvioitiin Selkeästi meille -hankkeen kehittämän kriteeristön pohjalta.
-
-Auditointi yhdistää automaattisia ja manuaalisia menetelmiä. Automaattisessa tarkastelussa käytettiin WAVE-lisäosaa ja Google Chromen Lighthouse-työkalua. Manuaalinen testaus suoritettiin näppäimistönavigoinnilla sekä ruudunlukijoilla: NVDA (Windows), TalkBack (Android) ja VoiceOver (iOS).
-
-Mobiilikäyttöä arvioitiin selaimen kehittäjätyökalujen lisäksi fyysisillä laitteilla: iPhone 12 mini ja MacBook Pro (M1). Sivuston responsiivisuus ja käytettävyys testattiin käytännössä.
-
-## 2.0 Saavutettavuuspuutteet
-
-### 2.1 Korkea prioriteetti
-
-#### 2.1.1 Kontrastiarvojen puutteet tekstissä
-
-##### 2.1.1.1 Etusivu
-
-##### 2.1.1.2 Yhteystiedot-sivu
-
-*Lisätietoja liittyen Footeriin: 
-Tekstin kontrasti tumman taustan päällä on hyvin lähellä WCAG 2.2 AA -rajaa normaalikokoisella tekstillä (laskennallinen arvo noin 4.49:1). Firefoxin saavutettavuustarkistin tunnistaa yhdistelmän riittäväksi, mutta konservatiivisemmat kontrastityökalut (esim. WebAIM) ilmoittavat sen hieman alle vaaditun. Mikäli halutaan varmistaa vaatimuksen täyttyminen kaikissa olosuhteissa, suositellaan vaaleamman tekstivärin käyttöä myös Footerissa. Tämä ei kuitenkaan ole välttämätöntä.
-
-### 2.3 Matalan prioriteetin korjausehdotuksia
-
-#### 2.3.1 Otsikkohierarkia
-
-#### Suosituksia
-
-#### Formin pieniä huomioita
-
-Kun lomakkeeseen unohti laittaa sähköpostiosoitteen ja lähetti lomakkeen, koko lomake tyhjentyi painaessa “lähetä”, jolloin kaikki kenttiin piti kirjoittaa samat asiat uudestaan.
-
-Kentässä “puhelinnumero” ilmoitus vääränlaisesta kentän sisällöstä tulee englanniksi, kun sähköpostikentässä se taas tulee suomeksi ja eri kohtaan, mikä voi olla hieman sekavaa, mutta en usko että se on iso ongelma käyttäjille.
-
-Kun kenttä on aktiivinen niin kentän label menee pieneksi. On todella hyvä, että label on yhä nähtävillä, tämä ratkaisu on paljon parempi käytettävyyden kannalta kuin se että label katoaisi kokonaan. Toisaalta pienentynyttä tekstiä eivät välttämättä kaikki nää.  Samoin “Sähköposti on tyhjä tai virheellinen”-teksti on aika pienellä kirjasimella. Tämä ei kuitenkaan välttämättä ole mikään ongelma johon pitäisi puuttua, kaikkea ei voi tehdä 100% saavutettavaksi. Ruudunlukija lukee kuitenkin tuon varoitustekstin.
-
 
 ## Liitteet
 

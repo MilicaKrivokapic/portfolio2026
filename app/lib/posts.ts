@@ -8,6 +8,9 @@ type Metadata = {
   tags: string;
   image?: string;
   updatedAt?: string;
+  language?: string;
+  reportTitle_en?: string;
+  reportTitle_fi?: string;
 };
 
 function parseFrontmatter(fileContent: string) {

@@ -96,7 +96,7 @@ export interface Recommendation {
   role: string;
   email: string;
   text: string;
-  icon: 'panda-bear' | 'seahorse' | 'hedgehog' |'elephant';
+  icon: 'panda-bear' | 'seahorse' | 'hedgehog' |'elephant' | 'toucan';
 }
 
 export interface MultilingualRecommendation extends Omit<Recommendation, 'text'> {
@@ -146,5 +146,15 @@ export const recommendationsData: MultilingualRecommendation[] = [
       fi: 'Milica on tarkka ja tunnollinen, ja arvostaa avointa ilmapiiriä ja selkeää kommunikaatiota. Lisäksi vielä mainiota seuraa, jestas!'
     },
     icon: 'elephant'
+  },
+  {
+    name: 'Joonas Pitkonen',
+    role: 'Software Developer',
+    email: 'mailto:joonas.pitkonen@almamedia.fi',
+    text: {
+      en: 'Milica is a solid professional, from whom you get a strong team player in the team, no matter which team. When somewhere a genuinely good worker is needed, everyone who has worked with Milica knows who to call!',
+      fi: 'Milica on rautainen ammattilainen, josta saa vankan luottopelaajan tiimiin kuin tiimiin. Kun jossain tarvitaan aidosti hyvää tekijää, tietävät kaikki Milican kanssa työskennelleet kelle soittaa!'
+    },
+    icon: 'toucan'
   }
 ];

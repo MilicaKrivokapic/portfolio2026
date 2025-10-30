@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CustomMDX } from "app/components/mdx";
 import { getAuditPosts } from "app/lib/posts";
 import { metaData } from "app/config";
 import { serialize } from 'next-mdx-remote/serialize';
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { AuditAccordions } from "app/components/audit-accordions";
 
 export async function generateStaticParams() {
   let posts = getAuditPosts();
@@ -97,7 +97,18 @@ export default async function AuditPage({ params }: { params: Promise<{ slug: st
         <div className="flex flex-col md:flex-row items-center gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
           <span>{readTime} min read</span>
         </div>
-        <CustomMDX source={source} />
+
+        <AuditAccordions 
+          source={source} 
+          summary={post.metadata.summary}
+          titleOverrides={{
+            fullReport: {
+              en: post.metadata.reportTitle_en,
+              fi: post.metadata.reportTitle_fi,
+            },
+          }}
+          useTranslations={(post.metadata as any).useTranslations}
+        />
         {post.metadata.tags && (
           <div className="mt-10 flex flex-wrap gap-2">
             {post.metadata.tags.split(',').map((tag: string) => {
