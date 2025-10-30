@@ -5,6 +5,7 @@ import { CustomMDX } from "./mdx";
 import { useLanguage } from "app/context/language-context";
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { BriljantAuditContent } from "./briljant-audit-content";
+import Link from "next/link";
 
 interface AuditAccordionsProps {
   source: MDXRemoteSerializeResult;
@@ -26,11 +27,28 @@ export function AuditAccordions({ source, summary, titleOverrides, useTranslatio
       <AccordionItem id="what-why" title={whatAndWhyTitle} defaultOpen>
         <div className="prose prose-neutral dark:prose-invert max-w-none">
           <p>
-            {t('audits.whatAndWhyDescription')}
+            {(() => {
+              const description = t('audits.whatAndWhyDescription');
+              if (typeof description === 'object' && description !== null && 'beforeLink' in description) {
+                const desc = description as { beforeLink: string; linkText: string; afterLink1: string; middleText: string; afterLink2: string };
+                return (
+                  <>
+                    {desc.beforeLink}
+                    <Link href="https://portfolio2025-delta-dusky.vercel.app/blog/briljant-audit" className="text-accent-light dark:text-accent-dark hover:underline">
+                      {desc.linkText}
+                    </Link>
+                    {desc.afterLink1}
+                    <br />
+                    <br />
+                    {desc.middleText}
+                    <br />
+                    {desc.afterLink2}
+                  </>
+                );
+              }
+              return description;
+            })()}
           </p>
-          {summary && (
-            <p className="text-neutral-700 dark:text-neutral-200">{summary}</p>
-          )}
         </div>
       </AccordionItem>
 

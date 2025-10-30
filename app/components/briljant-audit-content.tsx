@@ -9,7 +9,7 @@ export function BriljantAuditContent() {
   return (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-3">Introduction</h2>
+        <h2 className="text-2xl font-bold mb-3">{audit.introductionTitle}</h2>
         <p className="mb-4">{audit.introduction}</p>
         <p className="mb-4">{audit.objective}</p>
         <p className="mb-4">{audit.context}</p>

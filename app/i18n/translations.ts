@@ -13,6 +13,7 @@ type ParhaatPontotSection = {
 };
 
 type BriljantAuditContent = {
+  introductionTitle: string;
   introduction: string;
   objective: string;
   context: string;
@@ -151,7 +152,13 @@ export const translations: Record<Language, RootTranslations> = {
       preview: 'Preview',
       previewScroll: 'Scroll down',
       whatAndWhy: 'What and Why',
-      whatAndWhyDescription: 'I conducted an accessibility review for the website of Briljant, a new cooperative founded by my former colleagues. I wanted to support their work while also exploring how well the site meets accessibility requirements. You can read more about the project background here. The testing process was both engaging and educational. Most of the findings were minor and easy to fix, and I also learned how browser and operating system language settings can affect the accessibility of form elements. Overall, the Briljant.fi accessibility report turned out fairly concise — simply because there were very few issues to report.',
+      whatAndWhyDescription: {
+        beforeLink: 'I conducted an accessibility review for the website of Briljant, a new cooperative founded by my former colleagues. I wanted to support their work while also exploring how well the site meets accessibility requirements. You can read more about the project background ',
+        linkText: 'here',
+        afterLink1: '.',
+        middleText: 'The testing process was both engaging and educational.',
+        afterLink2: ' Most of the findings were minor and easy to fix, and I also learned how browser and operating system language settings can affect the accessibility of form elements. Overall, the Briljant.fi accessibility report turned out fairly minimal simply because there were very few issues to report.'
+      },
       fullReport: 'Accessibility Audit Report'
     },
     parhaatPontot: {
@@ -169,6 +176,7 @@ export const translations: Record<Language, RootTranslations> = {
   techNote: 'Lessons and biggest challenges: How to evaluate and improve map view accessibility',
     },
     briljantAudit: {
+      introductionTitle: "Introduction",
       introduction: "This accessibility evaluation was prepared for the Briljant OSK website. The assessment was conducted by Milica Krivokapic (hereafter \"the author\") between 1 May and 20 June 2025. The work is based on the Web Content Accessibility Guidelines (WCAG) version 2.2, with a primary focus on conformity with Level A and AA success criteria. Where relevant, the report also provides recommendations related to AAA-level requirements or other measures that improve usability and accessibility.",
       objective: "The objective of the evaluation is to identify issues that may prevent or hinder the use of the site or the understanding of its content. Addressing these issues will improve the usability and accessibility of the service and help meet the obligations of the Finnish Act on the Provision of Digital Services. Accessibility is not only a legal requirement; it also supports an equal and high-quality web experience.",
       context: "Over one million people in Finland require accessible digital services due to, for example, sensory, motor, or cognitive limitations. Moreover, accessibility benefits all users in contexts where devices or environments temporarily affect a person's ability to act. A highly accessible service is often clearer, easier to understand, and more robust from a technical standpoint.",
@@ -291,7 +299,13 @@ export const translations: Record<Language, RootTranslations> = {
       preview: 'Esikatselu',
       previewScroll: 'Scrollaa alas',
       whatAndWhy: 'Mitä ja miksi',
-      whatAndWhyDescription: 'Tein saavutettavuuskatsauksen entisten kollegoideni perustaman uuden osuuskunnan Briljantin, verkkosivuille. Halusin tukea heidän työtään ja samalla tutkia, miten hyvin sivusto täyttää saavutettavuuden vaatimukset. Halutessasi voit lukea enemmän projektin taustasta tässä. Testaus oli innostavaa ja opettavaista. Useimmat havainnot olivat pieniä ja helposti korjattavia. Opin samalla, miten selaimen ja käyttöjärjestelmän kieliasetukset voivat vaikuttaa lomakkeiden saavutettavuuteen. Kokonaisuutena Briljantin sivuston saavutettavuusraportti jäi aika ohueksi, koska virheitä oli vähän.',
+      whatAndWhyDescription: {
+        beforeLink: 'Tein saavutettavuuskatsauksen entisten kollegoideni perustaman uuden osuuskunnan Briljantin, verkkosivuille. Halusin tukea heidän työtään ja samalla tutkia, miten hyvin sivusto täyttää saavutettavuuden vaatimukset. Halutessasi voit lukea enemmän projektin taustasta ',
+        linkText: 'tässä',
+        afterLink1: '.',
+        middleText: 'Testaus oli innostavaa ja opettavaista.',
+        afterLink2: ' Useimmat havainnot olivat pieniä ja helposti korjattavia. Opin samalla, miten selaimen ja käyttöjärjestelmän kieliasetukset voivat vaikuttaa lomakkeiden saavutettavuuteen. Kokonaisuutena Briljantin sivuston saavutettavuusraportti jäi aika ohueksi, koska virheitä oli vähän.'
+      },
       fullReport: 'Saavutettavuusauditointiraportti'
     },
     parhaatPontot: {
@@ -308,6 +322,7 @@ export const translations: Record<Language, RootTranslations> = {
   techNote: 'Projektin opetukset ja suurimmat haasteet: Miten arvioida ja parantaa karttasovelluksen saavutettavuutta?',
     },
     briljantAudit: {
+      introductionTitle: "Johdanto",
       introduction: "Tämä saavutettavuusarviointi on laadittu Briljant OSK:in verkkosivustolle. Arvioinnin suoritti Milica Krivokapic (myöhemmin \"laatija\") aikavälillä 1.5–20.6.2025. Työ perustuu Verkkosisällön saavutettavuusohjeistuksen (WCAG) versioon 2.2, keskittyen erityisesti A- ja AA-tason kriteerien täyttymiseen. Tarvittaessa raportissa esitetään myös suosituksia, jotka liittyvät AAA-tason vaatimuksiin tai muihin käytettävyyttä ja saavutettavuutta parantaviin ratkaisuihin.",
       objective: "Arvioinnin tavoitteena on tunnistaa ne ongelmakohdat, jotka voivat estää tai vaikeuttaa sivuston käyttöä tai sisällön hahmottamista. Korjaamalla nämä kohdat voidaan parantaa verkkopalvelun käytettävyyttä ja saavutettavuutta sekä täyttää digipalvelulain velvoitteet. Saavutettavuus ei ole vain lakisääteinen vaatimus, vaan se tukee yhdenvertaista ja laadukasta verkkopalvelukokemusta.",
       context: "Yli miljoona suomalaista tarvitsee saavutettavia digipalveluja esimerkiksi aisti-, motoristen tai kognitiivisten rajoitteiden vuoksi. Lisäksi saavutettavuus hyödyttää kaikkia käyttäjiä esimerkiksi tilanteissa, joissa laitteet tai ympäristöt muuttavat käyttäjän toimintakykyä. Hyvin saavutettava verkkopalvelu on usein myös selkeämpi, helpommin ymmärrettävä ja teknisesti toimivampi kokonaisuus.",
