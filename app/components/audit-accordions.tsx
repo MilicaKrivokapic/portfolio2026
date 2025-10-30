@@ -26,7 +26,7 @@ export function AuditAccordions({ source, summary, titleOverrides, useTranslatio
       <AccordionItem id="what-why" title={whatAndWhyTitle} defaultOpen>
         <div className="prose prose-neutral dark:prose-invert max-w-none">
           <p>
-            This section explains what this audit is about and why it matters. It summarizes the scope, goals, and key outcomes at a glance for quick orientation.
+            {t('audits.whatAndWhyDescription')}
           </p>
           {summary && (
             <p className="text-neutral-700 dark:text-neutral-200">{summary}</p>

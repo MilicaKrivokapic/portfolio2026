@@ -151,6 +151,7 @@ export const translations: Record<Language, RootTranslations> = {
       preview: 'Preview',
       previewScroll: 'Scroll down',
       whatAndWhy: 'What and Why',
+      whatAndWhyDescription: 'I conducted an accessibility review for the website of Briljant, a new cooperative founded by my former colleagues. I wanted to support their work while also exploring how well the site meets accessibility requirements. You can read more about the project background here. The testing process was both engaging and educational. Most of the findings were minor and easy to fix, and I also learned how browser and operating system language settings can affect the accessibility of form elements. Overall, the Briljant.fi accessibility report turned out fairly concise — simply because there were very few issues to report.',
       fullReport: 'Accessibility Audit Report'
     },
     parhaatPontot: {
@@ -290,6 +291,7 @@ export const translations: Record<Language, RootTranslations> = {
       preview: 'Esikatselu',
       previewScroll: 'Scrollaa alas',
       whatAndWhy: 'Mitä ja miksi',
+      whatAndWhyDescription: 'Tein saavutettavuuskatsauksen entisten kollegoideni perustaman uuden osuuskunnan Briljantin, verkkosivuille. Halusin tukea heidän työtään ja samalla tutkia, miten hyvin sivusto täyttää saavutettavuuden vaatimukset. Halutessasi voit lukea enemmän projektin taustasta tässä. Testaus oli innostavaa ja opettavaista. Useimmat havainnot olivat pieniä ja helposti korjattavia. Opin samalla, miten selaimen ja käyttöjärjestelmän kieliasetukset voivat vaikuttaa lomakkeiden saavutettavuuteen. Kokonaisuutena Briljantin sivuston saavutettavuusraportti jäi aika ohueksi, koska virheitä oli vähän.',
       fullReport: 'Saavutettavuusauditointiraportti'
     },
     parhaatPontot: {
