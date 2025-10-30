@@ -152,7 +152,7 @@ export const recommendationsData: MultilingualRecommendation[] = [
     role: 'Software Developer',
     email: 'mailto:joonas.pitkonen@almamedia.fi',
     text: {
-      en: 'Milica is a solid professional, from whom you get a strong team player in the team, no matter which team. When somewhere a genuinely good worker is needed, everyone who has worked with Milica knows who to call!',
+      en: 'Milica is a rock-solid professional and a dependable team player in any setting. When you need someone who truly delivers, everyone who has worked with her knows exactly who to call.',
       fi: 'Milica on rautainen ammattilainen, josta saa vankan luottopelaajan tiimiin kuin tiimiin. Kun jossain tarvitaan aidosti hyvää tekijää, tietävät kaikki Milican kanssa työskennelleet kelle soittaa!'
     },
     icon: 'toucan'
