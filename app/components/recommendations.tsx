@@ -48,7 +48,7 @@ export default function Recommendations() {
       <h2 className="text-3xl md:text-4xl font-bold mb-14 md:mb-24 text-start"> {/* Changed from mb-16 to mb-24 */}
         {t('recommendations.title')}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 space-y-8"> {/* Changed from gap-16 to gap-20 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-28"> {/* Increased vertical spacing between rows */}
         {(recommendationsData as Recommendation[]).map((recommendation, index) => (
           <div key={index} className="relative">
             <div className="bg-stone-100 dark:bg-zinc-800/90 rounded-2xl shadow-2xs dark:shadow-sm border-2 border-stone-200/60 dark:border-zinc-700/50">
