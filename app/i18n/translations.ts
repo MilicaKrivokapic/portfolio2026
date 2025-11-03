@@ -12,6 +12,17 @@ type ParhaatPontotSection = {
   techNote: string;
 };
 
+type PortfolioAuditSection = {
+  title: string;
+  intro: string;
+  cardHeading: string;
+  cardCaption: string;
+  cardAlt: string;
+  cardIntro: string;
+  features: string[];
+  techNote: string;
+};
+
 type BriljantAuditContent = {
   introductionTitle: string;
   introduction: string;
@@ -57,6 +68,7 @@ type RootTranslations = {
   projects: unknown;
   audits: unknown;
   parhaatPontot: ParhaatPontotSection;
+  portfolioAudit: PortfolioAuditSection;
   briljantAudit: BriljantAuditContent;
 };
 
@@ -174,6 +186,21 @@ export const translations: Record<Language, RootTranslations> = {
         'Accessibility statement PDF',
       ],
   techNote: 'Lessons and biggest challenges: How to evaluate and improve map view accessibility',
+    },
+    portfolioAudit: {
+      title: 'Portfolio Accessibility Audit',
+      intro: 'A self-audit of this portfolio website to identify accessibility improvements and document the process.',
+      cardHeading: 'Project Sneak Peek',
+      cardCaption: 'Starting point of the portfolio',
+      cardAlt: 'Accessibility audit findings and recommendations for portfolio website',
+      cardIntro: 'An ongoing accessibility audit project for this portfolio website:',
+      features: [
+        'WCAG 2.2 A–AA compliance evaluation',
+        'Automated and manual testing with screen readers',
+        'Documentation of findings and remediation process',
+        'Focus on continuous improvement and best practices',
+      ],
+      techNote: 'Lessons and key challenges: It’s harder to notice your own mistakes and humbling to realize how easy it is to overlook accessibility requirements yourself, even if you know about them.',
     },
     briljantAudit: {
       introductionTitle: "Introduction",
@@ -314,12 +341,27 @@ export const translations: Record<Language, RootTranslations> = {
       cardHeading: 'Projektin esikatselu',
       cardCaption: 'Karttanäkymä asettaa itselleni uudenlaisen haasteen saavutettavuuden arvioinnin ja suositusten kannalta',
       cardAlt: 'Esimerkkitaulukko, jossa näkyy WC-istuinten arvosteluja järjestettävissä sarakkeissa',
-      cardIntro: 'aavutettavuus- ja kognitiivisen saavutettavuuden auditointi sivustolle Best Seats in Helsinki - Parhaat Pöntöt',
+      cardIntro: 'Saavutettavuus- ja kognitiivisen saavutettavuuden auditointi sivustolle Best Seats in Helsinki - Parhaat Pöntöt',
       features: [
         'Löydöksiä ja suosituksia sisältävä raportti (PDF)',
         'Saavutettavuusseloste (PDF)',
       ],
   techNote: 'Projektin opetukset ja suurimmat haasteet: Miten arvioida ja parantaa karttasovelluksen saavutettavuutta?',
+    },
+    portfolioAudit: {
+      title: 'Portfolion saavutettavuusauditointi',
+      intro: 'Oma portfolio-verkkosivustoni saavutettavuusauditointi, jossa tunnistetaan parannuskohteita ja dokumentoidaan prosessi.',
+      cardHeading: 'Projektin esikatselu',
+      cardCaption: 'Sivun pohja',
+      cardAlt: 'Portfolion saavutettavuusauditoinnin löydökset ja suositukset',
+      cardIntro: 'Käynnissä oleva saavutettavuusauditointiprojekti tälle portfoliosivustolle:',
+      features: [
+        'WCAG 2.2 A–AA -vaatimusten täyttymisen arviointi',
+        'Automaattinen ja manuaalinen testaus ruudunlukijoilla',
+        'Löydösten ja korjausprosessin dokumentointi',
+        'Keskittyminen jatkuvaan parantamiseen ja parhaisiin käytäntöihin',
+      ],
+      techNote: 'Projektin opetukset ja suurimmat haasteet: On vaikeampi huomata omia virheitään, ja myös nöyristyttää sen edessä, että itselläkin unohtuu helposti huomioida kaikkia saavutettavuusvaatimuksia!',
     },
     briljantAudit: {
       introductionTitle: "Johdanto",

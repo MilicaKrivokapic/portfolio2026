@@ -23,6 +23,15 @@ export const projectData = [
     image: '/toiletten.jpg',
     link: '/projects/parhaat-pontot',
     tags: ['Audit', 'Work in Progress'],
+  },
+  {
+    title: 'Portfolio Accessibility Audit',
+    title_fi: 'Portfolion saavutettavuusauditointi',
+    description: 'A self-audit of this portfolio website to identify accessibility improvements and document the process.',
+    description_fi: 'Oma portfolio-verkkosivustoni saavutettavuusauditointi, jossa tunnistetaan parannuskohteita ja dokumentoidaan prosessi.',
+    image: '/dark-mode-demo.png',
+    link: '/projects/portfolio-audit',
+    tags: ['Audit', 'Work in Progress'],
   }
 ];
 

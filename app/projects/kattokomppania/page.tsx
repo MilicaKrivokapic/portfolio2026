@@ -14,7 +14,7 @@ export default function KattokomppaniaProject() {
       overview: {
         title: "Project Overview",
         text: [
-          <>Kattokomppania, specializing in roof repairs and maintenance, needed a fresh look for their website. I aimed to create a modern and user-friendly site that would effectively showcase their services while considering their specific customer segment. The main goal was to present their services in a straightforward, understandable way and make it easier for potential customers to get in touch. I created an initial design for the project which can be viewed <Link href="https://www.kattokomppania.fi/">here</Link>.</>,
+          "Kattokomppania, specializing in roof repairs and maintenance, needed a fresh look for their website. I aimed to create a modern and user-friendly site that would effectively showcase their services while considering their specific customer segment. The main goal was to present their services in a straightforward, understandable way and make it easier for potential customers to get in touch. I created an initial design for the project which can be viewed below.",
           "We spent considerable time with Kattokomppania discussing suitable platforms and technology choices, as they wanted a CMS that would allow them to modify content easily without touching the code. We ultimately decided to continue with Squarespace, as they were already familiar with the platform from their previous site. After finalizing the visual design phase, I implemented the site following my designed style, though I had to be flexible with the original design due to Squarespace's platform limitations compared to more open platforms like Shopify or WordPress that I had worked with before."
         ]
       },
@@ -51,7 +51,7 @@ export default function KattokomppaniaProject() {
       overview: {
         title: "Projektista",
         text: [
-        <>Kattokorjauksiin ja kattojen ylläpitoon erikoistunut Kattokomppania tarvitsi uuden ulkoasun nettisivuilleen. Ajatuksenani oli tehdä sivusta moderni ja mahdollisimman käyttäjäystävällinen huomioiden asiakassegmentin. Halusin, että sivusto esittelee selkeästi tarjottavia palveluita ja auttaa asiakkaita saamaan yhteyden yritykseen helposti. Tein projektiin alustavan designin, se on nähtävissä <Link href="https://www.kattokomppania.fi/">täällä</Link>.</>, 
+        "Kattokorjauksiin ja kattojen ylläpitoon erikoistunut Kattokomppania tarvitsi uuden ulkoasun nettisivuilleen. Ajatuksenani oli tehdä sivusta moderni ja mahdollisimman käyttäjäystävällinen huomioiden asiakassegmentin. Halusin, että sivusto esittelee selkeästi tarjottavia palveluita ja auttaa asiakkaita saamaan yhteyden yritykseen helposti. Tein projektiin alustavan designin, se on nähtävissä alla.", 
         "Mietimme Kattokomppanian kanssa pitkään sopivaa alustaa ja teknologiaa, sillä he halusivat jonkin CMS:n jonka avulla voisivat muokata sisältöä helposti ja nopeasti koskematta koodiin. Päädyimme Squarespaceen, sillä asiakas oli tottunut siihen - aiempi sivu oli tehty samalla alustalla. Visuaalisen suunnittelun jälkeen ryhdyin työhön ja toteutin sivuston suunnittelemani tyylin mukaan. Jouduin olemaan alkuperäisen suunnitelman kanssa kuitenkin hyvin joustava, sillä Squarespace ei ollut läheskään niin joustava tai 'avoin' kuin Shopify tai WordPress, joiden kanssa olin aiemmin tottunut työskentelemään."]
       },
       features: {
@@ -125,7 +125,21 @@ export default function KattokomppaniaProject() {
         <div className="prose prose-neutral dark:prose-invert max-w-none prose-lg">
           <section>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">{currentContent.overview.title}</h2>
-            <div className="space-y-4">{currentContent.overview.text.map((t, i) => (<p key={i} className="text-base sm:text-lg leading-relaxed">{t}</p>))}</div>
+            <div className="space-y-4">
+              <p className="text-base sm:text-lg leading-relaxed">{currentContent.overview.text[0]}</p>
+              <div className="w-full my-6 rounded-lg overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
+                    src="https://embed.figma.com/design/iAU376MlkcxlTvI2UptIpS/Kattokomppania?node-id=2313-1848&embed-host=share"
+                    allowFullScreen
+                    title="Kattokomppania Design"
+                  />
+                </div>
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed">{currentContent.overview.text[1]}</p>
+            </div>
           </section>
 
           <section className="mt-8 md:mt-12">
