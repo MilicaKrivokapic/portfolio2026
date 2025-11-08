@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { recommendationsData } from '../config/mockData';
 import { useLanguage } from '../context/language-context';
 import Panda from './icons/panda';
@@ -8,8 +9,9 @@ import Seahorse from './icons/seahorse';
 import Elephant from './icons/elephant';
 import Hedgehog from './icons/hedgehog';
 import Toucan from './icons/toucan';
+import BeeIcon from './icons/bee';
 
-type AnimalIconType = 'panda-bear' | 'seahorse' | 'elephant' | 'hedgehog' | 'toucan';
+type AnimalIconType = 'panda-bear' | 'seahorse' | 'elephant' | 'hedgehog' | 'toucan' | 'bee';
 
 const AnimalIcons: Record<AnimalIconType, JSX.Element> = {
   'panda-bear': (
@@ -26,12 +28,18 @@ const AnimalIcons: Record<AnimalIconType, JSX.Element> = {
   ),
   'toucan': (
    <Toucan />
+  ),
+  'bee': (
+   <BeeIcon />
   )
 };
 
 interface Recommendation {
   name: string;
-  role: string;
+  role: {
+    en: string;
+    fi: string;
+  };
   email: string;
   text: {
     en: string;
@@ -48,7 +56,7 @@ export default function Recommendations() {
       <h2 className="text-3xl md:text-4xl font-bold mb-14 md:mb-24 text-start"> {/* Changed from mb-16 to mb-24 */}
         {t('recommendations.title')}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 space-y-8"> {/* Changed from gap-16 to gap-20 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-28"> {/* Increased vertical spacing between rows */}
         {(recommendationsData as Recommendation[]).map((recommendation, index) => (
           <div key={index} className="relative">
             <div className="bg-stone-100 dark:bg-zinc-800/90 rounded-2xl shadow-2xs dark:shadow-sm border-2 border-stone-200/60 dark:border-zinc-700/50">
@@ -72,14 +80,28 @@ export default function Recommendations() {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
                       {recommendation.name}
                     </h3>
-                    <p className="text-sm text-purple-600 dark:text-amber-400 mt-1">
-                      {recommendation.role}
-                    </p>
-                    <a href={recommendation.email}
-                       className="text-sm text-purple-600 dark:text-amber-400 mt-0.5 
-                                block hover:underline transition-colors">
-                      {recommendation.email.replace('mailto:', '')}
-                    </a>
+                    {recommendation.role && (
+                      <p className="text-sm text-purple-600 dark:text-amber-400 mt-1">
+                        {recommendation.role[language]}
+                      </p>
+                    )}
+                    {recommendation.email.startsWith('mailto:') ? (
+                      <a href={recommendation.email}
+                         className="text-sm text-purple-600 dark:text-amber-400 mt-0.5 
+                                  block hover:underline transition-colors">
+                        {recommendation.email.replace('mailto:', '')}
+                      </a>
+                    ) : recommendation.email === 'ask for contact details' ? (
+                      <Link href="/contact"
+                            className="text-sm text-purple-600 dark:text-amber-400 mt-0.5 
+                                     block hover:underline transition-colors">
+                        {t('recommendations.askForContactDetails')}
+                      </Link>
+                    ) : (
+                      <p className="text-sm text-purple-600 dark:text-amber-400 mt-0.5">
+                        {recommendation.email}
+                      </p>
+                    )}
                   </div>
                   <blockquote className="text-gray-700 dark:text-gray-300 italic 
                                      leading-relaxed relative px-4 py-3 border-l 
