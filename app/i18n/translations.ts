@@ -151,6 +151,7 @@ export const translations: Record<Language, RootTranslations> = {
     },
     recommendations: {
       title: 'What people say about me',
+      askForContactDetails: 'Ask for contact details',
     },
     projects: {
       featuredWork: 'Featured Work',
@@ -313,6 +314,7 @@ export const translations: Record<Language, RootTranslations> = {
     },
     recommendations: {
       title: 'Mitä muut sanovat minusta',
+      askForContactDetails: 'Kysy yhteystietoja',
     },
     projects: {
       featuredWork: 'Töitäni',

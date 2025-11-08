@@ -105,7 +105,7 @@ export interface Recommendation {
   role: string;
   email: string;
   text: string;
-  icon: 'panda-bear' | 'seahorse' | 'hedgehog' |'elephant' | 'toucan';
+  icon: 'panda-bear' | 'seahorse' | 'hedgehog' |'elephant' | 'toucan' | 'bee';
 }
 
 export interface MultilingualRecommendation extends Omit<Recommendation, 'text'> {
@@ -165,5 +165,15 @@ export const recommendationsData: MultilingualRecommendation[] = [
       fi: 'Milica on rautainen ammattilainen, josta saa vankan luottopelaajan tiimiin kuin tiimiin. Kun jossain tarvitaan aidosti hyvää tekijää, tietävät kaikki Milican kanssa työskennelleet kelle soittaa!'
     },
     icon: 'toucan'
+  },
+  {
+    name: 'Pyry Sangi',
+    role: 'Software Developer',
+    email: 'ask for contact details',
+    text: {
+      en: 'Milica is a valuable coworker with great communication skills, and she clearly cares deeply about doing good work and continuously learning and improving.',
+      fi: 'Milica on arvokas tiimikaveri, jolla on mahtavien vuorovaikutustaitojen lisäksi selvä halu tehdä työssään hyvää jälkeä ja kehittää jatkuvasti osaamistaan.'
+    },
+    icon: 'bee'
   }
 ];
