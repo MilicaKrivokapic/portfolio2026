@@ -63,6 +63,7 @@ type RootTranslations = {
   about: unknown;
   contact: unknown;
   skills: unknown;
+  timeline: unknown;
   sidebar: unknown;
   recommendations: unknown;
   projects: unknown;
@@ -138,6 +139,9 @@ export const translations: Record<Language, RootTranslations> = {
     },
     skills: {
       title: 'Skills & Expertise',
+    },
+    timeline: {
+      title: 'My Journey',
     },
     sidebar: {
       role: 'Accessibility Enthuastic & UI Web Developer',
@@ -301,6 +305,9 @@ export const translations: Record<Language, RootTranslations> = {
     },
     skills: {
       title: 'Taidot & Osaaminen',
+    },
+    timeline: {
+      title: 'Matkani',
     },
     sidebar: {
       role: 'Saavutettavuusasintoilija & web-kehittäjä',

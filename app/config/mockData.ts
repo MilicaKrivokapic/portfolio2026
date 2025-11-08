@@ -119,6 +119,58 @@ export interface MultilingualRecommendation extends Omit<Recommendation, 'text' 
   };
 }
 
+interface TimelineItem {
+  year: string;
+  title: {
+    en: string;
+    fi: string;
+  };
+  description: {
+    en: string;
+    fi: string;
+  };
+  link?: string;
+  linkText?: {
+    en: string;
+    fi: string;
+  };
+}
+
+export const timelineData: TimelineItem[] = [
+  {
+    year: '2022',
+    title: {
+      en: 'My first frontend portfolio',
+      fi: 'Ensimmäinen frontend-portfolioni'
+    },
+    description: {
+      en: 'My first frontend portfolio was unpolished but clearly showed the development work I did before my current job. I originally aimed to become a fullstack developer, but in practice I discovered that my strengths are in interfaces, accessibility, and clear design.',
+      fi: 'Ensimmäinen it-alan portfolioni joka on hiomaton mutta kertoo selkeästi devaustöistäni ennen nykyistä työpaikkaani. Alun perin tavoittelin fullstack-osaamista, mutta käytännön työssä huomasin, että vahvuuteni on käyttöliittymien, saavutettavuuden ja selkeän suunnittelun parissa.'
+    },
+    link: 'https://portfolio2022-rho.vercel.app/',
+    linkText: {
+      en: 'View archived version',
+      fi: 'Katso arkistoitu versio'
+    }
+  },
+  {
+    year: '2020',
+    title: {
+      en: 'Freelancer portfolio',
+      fi: 'Freelancer-portfolioni'
+    },
+    description: {
+      en: 'Freelance work in video and photography, small marketing projects, and early experiments with web design.',
+      fi: 'Freelance-työtä video- ja valokuvauksessa, pieniä markkinointiprojekteja ja ensimmäisiä kokeiluja verkkosivujen suunnittelussa.'
+    },
+    link: 'https://milica.fi',
+    linkText: {
+      en: 'View archived version',
+      fi: 'Katso arkistoitu versio'
+    }
+  }
+];
+
 export const recommendationsData: MultilingualRecommendation[] = [
   {
     name: 'Rosemari Marttinen-Lahtinen',
