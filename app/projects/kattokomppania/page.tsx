@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/language-context";
 
 export default function KattokomppaniaProject() {
   const { language } = useLanguage();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const content = {
     en: {
@@ -52,7 +54,7 @@ export default function KattokomppaniaProject() {
         title: "Projektista",
         text: [
         "Kattokorjauksiin ja kattojen ylläpitoon erikoistunut Kattokomppania tarvitsi uuden ulkoasun nettisivuilleen. Ajatuksenani oli tehdä sivusta moderni ja mahdollisimman käyttäjäystävällinen huomioiden asiakassegmentin. Halusin, että sivusto esittelee selkeästi tarjottavia palveluita ja auttaa asiakkaita saamaan yhteyden yritykseen helposti. Tein projektiin alustavan designin, se on nähtävissä alla.", 
-        "Mietimme Kattokomppanian kanssa pitkään sopivaa alustaa ja teknologiaa, sillä he halusivat jonkin CMS:n jonka avulla voisivat muokata sisältöä helposti ja nopeasti koskematta koodiin. Päädyimme Squarespaceen, sillä asiakas oli tottunut siihen - aiempi sivu oli tehty samalla alustalla. Visuaalisen suunnittelun jälkeen ryhdyin työhön ja toteutin sivuston suunnittelemani tyylin mukaan. Jouduin olemaan alkuperäisen suunnitelman kanssa kuitenkin hyvin joustava, sillä Squarespace ei ollut läheskään niin joustava tai 'avoin' kuin Shopify tai WordPress, joiden kanssa olin aiemmin tottunut työskentelemään."]
+        "Mietimme Kattokomppanian kanssa pitkään sopivaa alustaa ja teknologiaa, sillä he halusivat jonkin CMS:n jonka avulla voisivat muokata sisältöä helposti ja nopeasti koskematta koodiin. Päädyimme Squarespaceen, sillä asiakas oli tottunut siihen aiempi sivu oli tehty samalla alustalla. Visuaalisen suunnittelun jälkeen ryhdyin työhön ja toteutin sivuston suunnittelemani tyylin mukaan. Jouduin olemaan alkuperäisen suunnitelman kanssa kuitenkin hyvin joustava, sillä Squarespace ei ollut läheskään niin joustava tai 'avoin' kuin Shopify tai WordPress, joiden kanssa olin aiemmin tottunut työskentelemään."]
       },
       features: {
         title: "Uudet ominaisuudet",
@@ -84,6 +86,24 @@ export default function KattokomppaniaProject() {
   };
 
   const currentContent = content[language];
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+
+    if (selectedImage) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedImage]);
 
   return (
     <div className="px-4 md:px-6 py-6 md:py-10">
@@ -127,16 +147,33 @@ export default function KattokomppaniaProject() {
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">{currentContent.overview.title}</h2>
             <div className="space-y-4">
               <p className="text-base sm:text-lg leading-relaxed">{currentContent.overview.text[0]}</p>
-              <div className="w-full my-6 rounded-lg overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800">
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
-                    src="https://embed.figma.com/design/iAU376MlkcxlTvI2UptIpS/Kattokomppania?node-id=2313-1848&embed-host=share"
-                    allowFullScreen
-                    title="Kattokomppania Design"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                <button
+                  onClick={() => setSelectedImage("/kattokomppania design.png")}
+                  className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 cursor-pointer hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:ring-offset-2"
+                  aria-label={`${currentContent.title} design mockup 1 - Click to enlarge`}
+                >
+                  <Image
+                    src="/kattokomppania design.png"
+                    alt={`${currentContent.title} design mockup 1`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                </div>
+                </button>
+                <button
+                  onClick={() => setSelectedImage("/kattokomppania_design2.png")}
+                  className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 cursor-pointer hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark focus:ring-offset-2"
+                  aria-label={`${currentContent.title} design mockup 2 - Click to enlarge`}
+                >
+                  <Image
+                    src="/kattokomppania_design2.png"
+                    alt={`${currentContent.title} design mockup 2`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </button>
               </div>
               <p className="text-base sm:text-lg leading-relaxed">{currentContent.overview.text[1]}</p>
             </div>
@@ -171,6 +208,51 @@ export default function KattokomppaniaProject() {
         </div>
       </article>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[300] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+          onClick={() => setSelectedImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Enlarged image view"
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 text-white hover:text-neutral-300 focus:outline-none focus:ring-2 focus:ring-white rounded p-2 transition-colors"
+            aria-label="Close image view"
+          >
+            <svg
+              className="w-6 h-6 md:w-8 md:h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <div
+            className="relative max-w-7xl max-h-[90vh] w-full h-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={selectedImage}
+              alt={`${currentContent.title} design mockup - enlarged view`}
+              fill
+              className="object-contain"
+              sizes="100vw"
+              priority
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

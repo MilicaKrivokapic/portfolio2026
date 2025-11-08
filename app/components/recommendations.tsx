@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { recommendationsData } from '../config/mockData';
 import { useLanguage } from '../context/language-context';
 import Panda from './icons/panda';
@@ -8,8 +9,9 @@ import Seahorse from './icons/seahorse';
 import Elephant from './icons/elephant';
 import Hedgehog from './icons/hedgehog';
 import Toucan from './icons/toucan';
+import BeeIcon from './icons/bee';
 
-type AnimalIconType = 'panda-bear' | 'seahorse' | 'elephant' | 'hedgehog' | 'toucan';
+type AnimalIconType = 'panda-bear' | 'seahorse' | 'elephant' | 'hedgehog' | 'toucan' | 'bee';
 
 const AnimalIcons: Record<AnimalIconType, JSX.Element> = {
   'panda-bear': (
@@ -26,6 +28,9 @@ const AnimalIcons: Record<AnimalIconType, JSX.Element> = {
   ),
   'toucan': (
    <Toucan />
+  ),
+  'bee': (
+   <BeeIcon />
   )
 };
 
@@ -72,14 +77,28 @@ export default function Recommendations() {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
                       {recommendation.name}
                     </h3>
-                    <p className="text-sm text-purple-600 dark:text-amber-400 mt-1">
-                      {recommendation.role}
-                    </p>
-                    <a href={recommendation.email}
-                       className="text-sm text-purple-600 dark:text-amber-400 mt-0.5 
-                                block hover:underline transition-colors">
-                      {recommendation.email.replace('mailto:', '')}
-                    </a>
+                    {recommendation.role && (
+                      <p className="text-sm text-purple-600 dark:text-amber-400 mt-1">
+                        {recommendation.role}
+                      </p>
+                    )}
+                    {recommendation.email.startsWith('mailto:') ? (
+                      <a href={recommendation.email}
+                         className="text-sm text-purple-600 dark:text-amber-400 mt-0.5 
+                                  block hover:underline transition-colors">
+                        {recommendation.email.replace('mailto:', '')}
+                      </a>
+                    ) : recommendation.email === 'ask for contact details' ? (
+                      <Link href="/contact"
+                            className="text-sm text-purple-600 dark:text-amber-400 mt-0.5 
+                                     block hover:underline transition-colors">
+                        {t('recommendations.askForContactDetails')}
+                      </Link>
+                    ) : (
+                      <p className="text-sm text-purple-600 dark:text-amber-400 mt-0.5">
+                        {recommendation.email}
+                      </p>
+                    )}
                   </div>
                   <blockquote className="text-gray-700 dark:text-gray-300 italic 
                                      leading-relaxed relative px-4 py-3 border-l 

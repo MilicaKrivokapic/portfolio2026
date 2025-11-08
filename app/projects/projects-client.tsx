@@ -33,3 +33,4 @@ export default function ProjectsClient({
   return <ProjectsFilteredGrid items={allItems} initialTag={initialTag} />;
 }
 
+
