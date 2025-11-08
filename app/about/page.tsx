@@ -1,6 +1,7 @@
 'use client';
 import AboutMe from '../components/about-me';
 import Skills from '../components/skills';
+import Timeline from '../components/timeline';
 import { useLanguage } from '../context/language-context';
 
 export default function AboutPage() {
@@ -20,6 +21,10 @@ export default function AboutPage() {
 
           <section className="space-y-12">
             <Skills />
+          </section>
+
+          <section className="space-y-12">
+            <Timeline />
           </section>
         </div>
       </div>
