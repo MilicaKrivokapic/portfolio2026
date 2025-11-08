@@ -171,6 +171,80 @@ export const timelineData: TimelineItem[] = [
   }
 ];
 
+interface QAItem {
+  question: {
+    en: string;
+    fi: string;
+  };
+  answer: {
+    en: string;
+    fi: string;
+  };
+}
+
+export const qaData: QAItem[] = [
+  {
+    question: {
+      en: 'When do you do your best work?',
+      fi: 'Mihin vuorokauden aikaan olet tuottavin?'
+    },
+    answer: {
+      en: "I'm most focused from mid-morning to afternoon, the perfect time between being half-asleep and over-caffeinated",
+      fi: 'Olen päiväihminen! Parhaiten toimin keskiviikkona kello 12-16. 😆'
+    }
+  },
+  {
+    question: {
+      en: 'What kind of environment helps you focus?',
+      fi: 'Minkälainen työympäristö on sinulle mieluisin?'
+    },
+    answer: {
+      en: 'I work best in calm, tidy surroundings with quiet music in the background.',
+      fi: 'Työskentelen mielelläni rauhallisessa ja siistissä ympäristössä, jossa voin kuunnella hiljaisella musiikkia kuulokkeista.'
+    }
+  },
+  {
+    question: {
+      en: 'What tools do you use most?',
+      fi: 'Mitä ohjelmia käytät eniten?'
+    },
+    answer: {
+      en: 'Cursor for coding, Figma for structure, Chatgpt for making sure there are no mistakes in my sentences (for example in documentation), Slack for collaboration, and Notion, Obsidian, and Jira for planning and documentation. Planning on moving from Jira to Linear! ',
+      fi: 'Käytän päivittäin Cursoria koodaukseen (joskus myös VSCodea, mutta preferoin Cursoria), Chatgpt:tä oikolukuun, Slackkia yhteistyöhön, ja sitten Notionia, Obsidiania ja Jiraa projektin suunnitteluun ja taskien trackkaamiseen. '
+    }
+  },
+  {
+    question: {
+      en: 'How do you usually start a new project?',
+      fi: 'Miten yleensä aloitat uuden projektin?'
+    },
+    answer: {
+      en: "I begin by sketching the structure and defining clear goals. Each week I create a task list with three categories: must-have, nice-to-have, and bonus. I keep a personal kanban in Notion to track progress and document what I learn in Obsidian. I also very much enjoy setting up Jira or Linear tasks if the team manager can't.",
+      fi: 'Aloitan hahmottelemalla projektin rangan ja listaan projektin keskeisimmät tavoitteet. Joka viikko teen Notionissa itselleni uuden kanbanin: must-have:t, nice-to-have:t ja sitten ylimääräiset bonusjutut, joita tehdään vain jos jää luppoaikaa. Dokumentoin oppimiani asioita Obsidianiin, olen innostunut zettelkasten-järjestelmästä. Tykkään tosi paljon virittää Jiran/Trellon/Linearin, jos projari ei jostain syystä ehdi tai pysty ja minulla on kaikki tarvittava tieto projektista.'
+    }
+  },
+  {
+    question: {
+      en: 'What motivates you at work?',
+      fi: 'Mikä sinua motivoi eniten töissä?'
+    },
+    answer: {
+      en: "I'm motivated when something becomes easier for someone else to use, and when I can work together with a team to make it happen.",
+      fi: 'Eniten motivoi, jos voin tehdä jostain asiasta toimivamman tai helpomman käyttää, ja jos mulla on tiimi jonka kanssa voin kokea yhdessä onnistumisen tunteita ja pallotella. '
+    }
+  },
+  {
+    question: {
+      en: 'A fun fact about your work style?',
+      fi: 'Kerro mielenkiintoinen juttu sun työskentelytyylistä?'
+    },
+    answer: {
+      en: "I'm one of those people who genuinely enjoys Scrum rituals. The structure helps me focus and stay connected with the team.",
+      fi: 'Oon yksi niistä harvoista henkilöistä jotka ihan aidosti nauttii Scrum rituaaleista! 😄 Scrumin ja muiden prosessinhallintaframeworkien struktuurit auttaa mua keskittymään ja kiihdyttää omaa tekemistä.'
+    }
+  }
+];
+
 export const recommendationsData: MultilingualRecommendation[] = [
   {
     name: 'Rosemari Marttinen-Lahtinen',

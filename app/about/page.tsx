@@ -1,5 +1,6 @@
 'use client';
 import AboutMe from '../components/about-me';
+import QASection from '../components/qa-section';
 import Skills from '../components/skills';
 import Timeline from '../components/timeline';
 import { useLanguage } from '../context/language-context';
@@ -25,6 +26,10 @@ export default function AboutPage() {
 
           <section className="space-y-12">
             <Timeline />
+          </section>
+
+          <section className="space-y-12">
+            <QASection />
           </section>
         </div>
       </div>
