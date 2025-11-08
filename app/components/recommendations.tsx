@@ -36,7 +36,10 @@ const AnimalIcons: Record<AnimalIconType, JSX.Element> = {
 
 interface Recommendation {
   name: string;
-  role: string;
+  role: {
+    en: string;
+    fi: string;
+  };
   email: string;
   text: {
     en: string;
@@ -79,7 +82,7 @@ export default function Recommendations() {
                     </h3>
                     {recommendation.role && (
                       <p className="text-sm text-purple-600 dark:text-amber-400 mt-1">
-                        {recommendation.role}
+                        {recommendation.role[language]}
                       </p>
                     )}
                     {recommendation.email.startsWith('mailto:') ? (

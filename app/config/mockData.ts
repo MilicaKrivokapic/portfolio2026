@@ -108,7 +108,11 @@ export interface Recommendation {
   icon: 'panda-bear' | 'seahorse' | 'hedgehog' |'elephant' | 'toucan' | 'bee';
 }
 
-export interface MultilingualRecommendation extends Omit<Recommendation, 'text'> {
+export interface MultilingualRecommendation extends Omit<Recommendation, 'text' | 'role'> {
+  role: {
+    en: string;
+    fi: string;
+  };
   text: {
     en: string;
     fi: string;
@@ -118,7 +122,10 @@ export interface MultilingualRecommendation extends Omit<Recommendation, 'text'>
 export const recommendationsData: MultilingualRecommendation[] = [
   {
     name: 'Rosemari Marttinen-Lahtinen',
-    role: 'Theme Developer',
+    role: {
+      en: 'Team member, Woolman',
+      fi: 'Tiimijäsen, Woolman'
+    },
     email: 'mailto: rosemari.marttinen-lahtinen@woolman.io',
     text: {
       en: 'As a colleague, Milica is curious, systematic, and responsible. Communication and collaboration with her are always clear and straightforward. She knows when to ask for help, but also how to guide others and express her own thoughts. Milica has a strong ability to see the big picture and considers perspectives that others might easily overlook. She is thoughtful towards her colleagues and has an inspiring impact on the work atmosphere.',
@@ -128,7 +135,10 @@ export const recommendationsData: MultilingualRecommendation[] = [
   },
   {
     name: 'Niko Rissanen',
-    role: 'Senior Developer',
+    role: {
+      en: 'Colleague, Woolman',
+      fi: 'Kolleega, Woolman'
+    },
     email: 'mailto: niko.rissanen@woolman.io',
     text: {
       en: 'Working with Milica is often fruitful, because she is great at exploring multiple perspectives. She can expertly provide and explain her solutions in easy-to-understand language. She is also very kind and considerate to others :) ',
@@ -138,8 +148,11 @@ export const recommendationsData: MultilingualRecommendation[] = [
   },
   {
     name: 'Jani Sompi',
-    role: 'Shopify Expert, Developer',
-    email: 'jani.sompi@woolman.io',
+    role: {
+      en: 'Colleague, Woolman',
+      fi: 'Kolleega, Woolman'
+    },
+    email: 'mailto:jani.sompi@woolman.io',
     text: {
       en: 'A genuinely pleasant person who not only takes pride in doing her job well but also cares about the well-being of her colleagues. She’s the voice of reason in the workplace, always keeping things on track before they even have a chance to go off course.',
       fi: 'Todella miellyttävä ihminen joka haluaa paitsi tehdä työnsä hyvin, huolehtia myös että hänen työkaverinsa voivat hyvin. Työpaikan järjen ääni joka pyrkii palauttamaan asiat raiteilleen jo ennen kun ne lähtevät sivuluisuun..'
@@ -148,7 +161,10 @@ export const recommendationsData: MultilingualRecommendation[] = [
   },
   {
     name: 'Aaro Paukkunen',
-    role: 'Developer',
+    role: {
+      en: 'Colleague, Woolman',
+      fi: 'Kolleega, Woolman'
+    },
     email: 'mailto:aaro.paukkunen@woolman.io',
     text: {
       en: 'Milica is precise and thoughtful, and values an open atmosphere and clear communication. Plus, she\'s absolutely fantastic company!',
@@ -158,7 +174,10 @@ export const recommendationsData: MultilingualRecommendation[] = [
   },
   {
     name: 'Joonas Pitkonen',
-    role: 'Software Developer',
+    role: {
+      en: 'Team Lead @ Helsingin Kaupunki',
+      fi: 'Team lead @ Helsingin Kaupunki'
+    },
     email: 'mailto:joonas.pitkonen@almamedia.fi',
     text: {
       en: 'Milica is a rock-solid professional and a dependable team player in any setting. When you need someone who truly delivers, everyone who has worked with her knows exactly who to call.',
@@ -168,7 +187,10 @@ export const recommendationsData: MultilingualRecommendation[] = [
   },
   {
     name: 'Pyry Sangi',
-    role: 'Software Developer',
+    role: {
+      en: 'Colleague, Helsingin Kaupunki',
+      fi: 'Kolleega, Helsingin Kaupunki'
+    },
     email: 'ask for contact details',
     text: {
       en: 'Milica is a valuable coworker with great communication skills, and she clearly cares deeply about doing good work and continuously learning and improving.',
