@@ -14,9 +14,10 @@ export default function Projects() {
   
   return (
     <section className="pt-24 md:py-0 md:mb-20 xl:mb-32">
-      <div className="flex items-center justify-between gap-4 mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold">
+      <div className="mb-8 md:mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold relative inline-block">
           {t('projects.featuredWork')}
+          <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-accent-light dark:bg-accent-dark rounded-full" />
         </h2>
       </div>
       <div className="grid grid-cols-1 gap-20">

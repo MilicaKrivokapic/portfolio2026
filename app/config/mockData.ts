@@ -230,7 +230,7 @@ export const qaData: QAItem[] = [
     },
     answer: {
       en: "I'm one of those people who genuinely enjoys Scrum rituals. The structure helps me focus and stay connected with the team.",
-      fi: 'Oon yksi niistä harvoista henkilöistä jotka ihan aidosti nauttii Scrum-rituaaleista! 😄 Scrumin ja muiden prosessinhallintaframeworkien struktuurit auttavat keskittymään ja kiihdyttävät omaa tekemistä.'
+      fi: 'Olen yksi niistä henkilöistä jotka ihan aidosti nauttii Scrum-rituaaleista! 😄 Scrumin ja muiden prosessinhallintaframeworkien struktuurit auttavat keskittymään ja kiihdyttävät omaa tekemistäni.'
     }
   }
 ];

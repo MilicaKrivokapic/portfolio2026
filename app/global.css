@@ -15,8 +15,8 @@
 }
 
 .dark ::selection {
-  background-color: #FF3366;
-  color: #FFFFFF;
+  background-color: theme('colors.accent.dark');
+  color: #000000;
 }
 
 /* Light theme colors */
