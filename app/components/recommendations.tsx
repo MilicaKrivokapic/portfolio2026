@@ -53,9 +53,12 @@ export default function Recommendations() {
 
   return (
     <section className="pt-24 md:py-0 md:mb-20 xl:mb-32 space-y-8">
-      <h2 className="text-3xl md:text-4xl font-bold mb-14 md:mb-24 text-start"> {/* Changed from mb-16 to mb-24 */}
-        {t('recommendations.title')}
-      </h2>
+      <div className="mb-14 md:mb-24">
+        <h2 className="text-2xl md:text-3xl font-bold relative inline-block">
+          {t('recommendations.title')}
+          <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-accent-light dark:bg-accent-dark rounded-full" />
+        </h2>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-28"> {/* Increased vertical spacing between rows */}
         {(recommendationsData as Recommendation[]).map((recommendation, index) => (
           <div key={index} className="relative">

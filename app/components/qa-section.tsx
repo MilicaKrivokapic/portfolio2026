@@ -83,9 +83,10 @@ export default function QASection() {
   const { t, language } = useLanguage();
 
   return (
-    <section className="space-y-6">
-      <h2 className="text-3xl md:text-5xl font-bold font-heading">
+    <section className="space-y-8 md:space-y-12">
+      <h2 className="text-2xl md:text-3xl font-bold relative inline-block">
         {t('qa.title')}
+        <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-accent-light dark:bg-accent-dark rounded-full" />
       </h2>
       
       <div className="max-w-4xl">
