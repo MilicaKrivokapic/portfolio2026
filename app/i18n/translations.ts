@@ -377,7 +377,7 @@ export const translations: Record<Language, RootTranslations> = {
         'Löydösten ja korjausprosessin dokumentointi',
         'Keskittyminen jatkuvaan parantamiseen ja parhaisiin käytäntöihin',
       ],
-      techNote: 'Projektin opetukset ja suurimmat haasteet: On vaikeampi huomata omia virheitään, ja myös nöyristyttää sen edessä, että itselläkin unohtuu helposti huomioida kaikkia saavutettavuusvaatimuksia!',
+      techNote: 'Projektin opetukset ja suurimmat haasteet: On vaikeampi huomata omia virheitään, ja myös nöyristyttävä sen edessä, että itselläkin unohtuu helposti huomioida kaikkia saavutettavuusvaatimuksia!',
     },
     briljantAudit: {
       introductionTitle: "Johdanto",
