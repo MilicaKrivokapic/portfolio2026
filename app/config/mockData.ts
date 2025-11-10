@@ -160,8 +160,8 @@ export const timelineData: TimelineItem[] = [
       fi: 'Freelancer-portfolioni'
     },
     description: {
-      en: 'Freelance work in video and photography, small marketing projects, and early experiments with web design.',
-      fi: 'Freelance-työtä video- ja valokuvauksessa, pieniä markkinointiprojekteja ja ensimmäisiä kokeiluja verkkosivujen suunnittelussa.'
+      en: 'Freelance work in video and photography',
+      fi: 'Freelance-työtä video- ja valokuvauksessa'
     },
     link: 'https://milica.fi',
     linkText: {
