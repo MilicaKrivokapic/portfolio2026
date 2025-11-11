@@ -42,7 +42,7 @@ export default function KattokomppaniaProject() {
         title: "What I Learned",
         list: [
           "Mastering Squarespace platform capabilities",
-          "Excellent client collaboration with seamless communication",
+          "Excellent client collaboration with seamless communication. I think it was possible because the customer had a clear vision of what they wanted to achieve with our overhaul of the website.",
           "Understanding the unique website needs of local service businesses compared to larger e-commerce projects I've worked on",
         ]
       }
@@ -78,7 +78,7 @@ export default function KattokomppaniaProject() {
         title: "Mitä opin",
         list: [
           "Käyttämään Squarespacea",
-          "Asiakkaan kanssa oli todella helppo tehdä yhteistyötä, haasteita kommunikkoinnissa ei ollut",
+          "Asiakkaan kanssa oli todella helppo tehdä yhteistyötä, haasteita kommunikoinnissa ei ollut. Koin, että asiakas oli hyvin perillä siitä mitkä hänen tavoitteensa verkkosivun suhteen olivat, joka oli iso tekijä sujuvassa kommunikoinnissa. ",
           "Ymmärsin miten erilaisia tarpeita paikallispalveluyrityksillä on verkkosivuston suhteen kuin suuremmilla yrityksillä, joiden verkkokauppoja olen ollut tekemässä.",
         ]
       }
