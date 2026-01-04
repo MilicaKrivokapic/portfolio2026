@@ -16,7 +16,7 @@ export default function IdCard() {
       projectName: 'Parhaat Pöntöt',
       projectSub: 'Accessibility Audit',
       nowListeningTo: 'Now listening to',
-      music: 'Japanese City Pop',
+      music: 'Yugo Funk',
       accompaniedBy: 'Accompanied by',
       companionName: 'Vaapukka the Home Officer',
     },
@@ -25,7 +25,7 @@ export default function IdCard() {
       projectName: 'Parhaat Pöntöt',
       projectSub: 'Saavutettavuusauditointi',
       nowListeningTo: 'Kuuntelen nyt',
-      music: 'Japanilaista city poppia',
+      music: 'Yugo Funkia',
       accompaniedBy: 'Seurana',
       companionName: 'Vaapukka, kotitoimiston päällikkö',
     },
@@ -58,8 +58,8 @@ export default function IdCard() {
           <div className="text-xs font-mono uppercase text-gray-700 dark:text-gray-300 mb-1">
             {content[language].nowListeningTo}
           </div>
-          <a 
-            href="https://www.youtube.com/watch?v=UaIjnejqfJg&list=RDUaIjnejqfJg&start_radio=1"
+          <a
+            href="https://youtu.be/aVZfl30zQXk?si=1y51w5W0znkj88A9"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-lg md:text-base text-gray-900 dark:text-gray-300 hover:text-accent-light dark:hover:text-accent-dark inline group"

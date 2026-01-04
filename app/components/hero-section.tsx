@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import Button from './ui/Button';
-import { useLanguage } from '../context/language-context';
+import Link from "next/link";
+import Image from "next/image";
+import Button from "./ui/Button";
+import { useLanguage } from "../context/language-context";
 
 export default function HeroSection() {
   const { t } = useLanguage();
@@ -25,20 +25,24 @@ export default function HeroSection() {
       </div>
 
       {/* Text Content - spans columns 1-9, rows 1-6 */}
-      <div className="col-span-12 md:col-span-8 md:col-start-1 md:row-start-1 md:row-span-6 z-10 space-y-2 grid order-2 md:order-1">
+      <div className="col-span-12 md:col-span-8 md:col-start-1 md:row-start-1 md:row-span-6 z-10 space-y-2 md:space-y-8 grid order-2 md:order-1 ">
         <h1 className="text-3xl sm:text-4xl md:text-5xl md:col-start-1 md:col-end-7 lg:text-6xl xl:text-7xl font-bold font-heading leading-tight break-words">
-          {t('about.heroGreeting')}
+          {t("about.heroGreeting")}
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl md:col-start-1 md:col-end-7 lg:text-4xl font-semibold text-accent-light dark:text-accent-dark leading-tight">
-          {t('about.heroTagline')}
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-6xl xl:text-7xl md:col-start-1 md:col-end-7 lg:text-4xl font-semibold text-accent-light dark:text-accent-dark leading-tight">
+          {t("about.heroTagline")}
         </p>
         <p className="text-xl md:col-start-1 md:col-end-3 leading-relaxed">
-          {t('about.summary')}
+          {t("about.summary")}
         </p>
         <div className="flex flex-col sm:flex-row md:col-start-1 gap-4 pt-6 md:pt-4">
           <Link href="/about">
-            <Button variant="secondary" shadow="strong" className="w-full sm:w-auto group md:text-lg text-lg md:px-8 px-6 md:py-3 py-3 font-semibold md:w-auto text-center">
-              {t('about.aboutMeButton')}
+            <Button
+              variant="secondary"
+              shadow="strong"
+              className="w-full sm:w-auto group md:text-lg text-lg md:px-8 px-6 md:py-3 py-3 font-semibold md:w-auto text-center"
+            >
+              {t("about.aboutMeButton")}
             </Button>
           </Link>
         </div>
