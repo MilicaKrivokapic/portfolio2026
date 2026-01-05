@@ -291,8 +291,8 @@ export const translations: Record<Language, RootTranslations> = {
       seeAll: "Näytä kaikki",
     },
     about: {
-      title: "Minusta",
-      titleJourney: "& matkastani",
+      title: "Lisää",
+      titleJourney: "minusta",
       heroGreeting: "Heippa! Olen Milica,",
       heroTagline: "Junior QA",
       aboutMeButton: "Minusta",
