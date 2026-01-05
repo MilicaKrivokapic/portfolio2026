@@ -135,32 +135,47 @@ export default function PlaywrightTestingProject() {
   const currentContent = content[language];
 
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-[#0A0A0A] pt-12 pb-24 md:pt-16">
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 md:px-12">
-        {/* Breadcrumb */}
-        <nav className="mb-8 text-sm text-stone-600 dark:text-stone-400">
-          <Link
-            href="/"
-            className="hover:text-stone-900 dark:hover:text-stone-200 transition-colors"
-          >
-            {language === "fi" ? "Etusivu" : "Home"}
-          </Link>
-          <span className="mx-2">/</span>
-          <Link
-            href="/projects"
-            className="hover:text-stone-900 dark:hover:text-stone-200 transition-colors"
-          >
-            {language === "fi" ? "Projektit" : "Projects"}
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-stone-900 dark:text-stone-100">
-            {currentContent.title}
-          </span>
-        </nav>
-
-        {/* Main content card */}
-        <div className="rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] border border-stone-200/60 dark:border-zinc-700/50 overflow-hidden">
-          <div className="p-8 md:p-12">
+    <div className="px-4 md:px-6 py-6 md:py-10">
+      <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-white to-neutral-100 dark:from-[#161617] dark:to-[#0F0F10] shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/5 p-6 md:p-20">
+        <article className="max-w-4xl mx-auto space-y-8 md:space-y-12">
+          {/* Breadcrumb */}
+          <div className="mb-4">
+            <nav
+              aria-label="Breadcrumb"
+              className="text-sm text-neutral-500 dark:text-neutral-400"
+            >
+              <ol className="flex items-center gap-2">
+                <li>
+                  <Link
+                    href="/"
+                    className="hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+                  >
+                    {language === "fi" ? "Etusivu" : "Home"}
+                  </Link>
+                </li>
+                <li aria-hidden="true" className="opacity-60">
+                  /
+                </li>
+                <li>
+                  <Link
+                    href="/projects"
+                    className="hover:text-accent-light dark:hover:text-accent-dark transition-colors"
+                  >
+                    {language === "fi" ? "Projektit" : "Projects"}
+                  </Link>
+                </li>
+                <li aria-hidden="true" className="opacity-60">
+                  /
+                </li>
+                <li
+                  className="truncate max-w-[50vw] md:max-w-none"
+                  aria-current="page"
+                >
+                  {currentContent.title}
+                </li>
+              </ol>
+            </nav>
+          </div>
             {/* Header */}
             <div className="mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900 dark:text-stone-100">
@@ -220,38 +235,30 @@ export default function PlaywrightTestingProject() {
               </p>
 
               {/* Tier 1 */}
-              <div className="mb-6 p-6 rounded-2xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
+              <div className="mb-6 p-6 rounded-xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
                 <h3 className="text-xl font-semibold mb-3 text-stone-900 dark:text-stone-100">
                   {currentContent.what.tier1.title}
                 </h3>
                 <ul className="space-y-2">
                   {currentContent.what.tier1.list.map((item, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="mr-2 text-stone-500 dark:text-stone-400">
-                        •
-                      </span>
-                      <span className="text-stone-700 dark:text-stone-300">
-                        {item}
-                      </span>
+                    <li key={index} className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2">
+                      <span className="text-accent-light dark:text-accent-dark">•</span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Tier 2 */}
-              <div className="p-6 rounded-2xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
+              <div className="mb-6 p-6 rounded-xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
                 <h3 className="text-xl font-semibold mb-3 text-stone-900 dark:text-stone-100">
                   {currentContent.what.tier2.title}
                 </h3>
                 <ul className="space-y-2">
                   {currentContent.what.tier2.list.map((item, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="mr-2 text-stone-500 dark:text-stone-400">
-                        •
-                      </span>
-                      <span className="text-stone-700 dark:text-stone-300">
-                        {item}
-                      </span>
+                    <li key={index} className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2">
+                      <span className="text-accent-light dark:text-accent-dark">•</span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -301,15 +308,11 @@ export default function PlaywrightTestingProject() {
               <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
                 {currentContent.tech.title}
               </h2>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {currentContent.tech.list.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="mr-3 text-stone-500 dark:text-stone-400 mt-1">
-                      →
-                    </span>
-                    <span className="text-stone-700 dark:text-stone-300">
-                      {item}
-                    </span>
+                  <li key={index} className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2">
+                    <span className="text-accent-light dark:text-accent-dark">→</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -320,56 +323,42 @@ export default function PlaywrightTestingProject() {
               <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
                 {currentContent.learning.title}
               </h2>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {currentContent.learning.list.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="mr-3 text-stone-500 dark:text-stone-400 mt-1">
-                      ✓
-                    </span>
-                    <span className="text-stone-700 dark:text-stone-300">
-                      {item}
-                    </span>
+                  <li key={index} className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2">
+                    <span className="text-accent-light dark:text-accent-dark">✓</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </section>
 
             {/* Honest Section */}
-            <section className="p-6 rounded-2xl bg-gradient-to-br from-stone-100 to-stone-50 dark:from-zinc-800/50 dark:to-zinc-900/50 border border-stone-200/60 dark:border-zinc-700/50">
-              <div className="flex gap-4 items-center">
-                <div className="flex-1">
-                  <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
-                    {currentContent.honest.title}
-                  </h2>
-                  <p className="text-stone-700 dark:text-stone-300 leading-relaxed">
-                    {currentContent.honest.text}
-                  </p>
-                </div>
-                <div className="hidden sm:block flex-shrink-0">
-                  <Image
-                    src="/images/mr-bean-thumbs-up.gif"
-                    alt="Mr Bean thumbs up"
-                    width={140}
-                    height={80}
-                    className="rounded-lg"
-                    unoptimized
-                  />
+            <section className="mb-12">
+              <div className="p-6 rounded-xl bg-gradient-to-br from-stone-100 to-stone-50 dark:from-zinc-800/50 dark:to-zinc-900/50 border border-stone-200/60 dark:border-zinc-700/50">
+                <div className="flex gap-4 items-start">
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
+                      {currentContent.honest.title}
+                    </h2>
+                    <p className="leading-relaxed text-stone-700 dark:text-stone-300">
+                      {currentContent.honest.text}
+                    </p>
+                  </div>
+                  <div className="hidden sm:block flex-shrink-0">
+                    <Image
+                      src="/images/mr-bean-thumbs-up.gif"
+                      alt="Mr Bean thumbs up"
+                      width={140}
+                      height={80}
+                      className="rounded-lg"
+                      unoptimized
+                    />
+                  </div>
                 </div>
               </div>
             </section>
-          </div>
-        </div>
-
-        {/* Back to Projects Link */}
-        <div className="mt-8">
-          <Link
-            href="/projects"
-            className="inline-flex items-center text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
-          >
-            <span className="mr-2">←</span>
-            {language === "fi" ? "Takaisin projekteihin" : "Back to Projects"}
-          </Link>
-        </div>
+        </article>
       </div>
 
       {/* Image Modal */}
