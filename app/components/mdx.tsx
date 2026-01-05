@@ -12,6 +12,7 @@ import PresentationCard from "./PresentationCard";
 import { useLanguage } from "app/context/language-context";
 import UpRightFromSquareSolidFull from "./icons/UpRightFromSquareSolidFull";
 import { Accordion, AccordionItem } from "./ui/Accordion";
+import { ClickableImage } from "./clickable-image";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href = '#' } = props;
@@ -141,6 +142,7 @@ const components = {
   PresentationCard,
   Accordion,
   AccordionItem,
+  ClickableImage,
   PreviewLabel: function PreviewLabel() {
     const { t } = useLanguage();
     return (

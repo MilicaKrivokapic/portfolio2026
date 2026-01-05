@@ -9,6 +9,15 @@ export const projectData = [
     tags: ['UX', 'Squarespace', 'UI'],
   },
   {
+    title: 'Learning Playwright Testing',
+    title_fi: 'Playwright-testauksen opiskelu',
+    description: 'First steps with Playwright - building smoke tests for this portfolio to learn automated testing.',
+    description_fi: 'Ensimmäiset askeleet Playwrightin kanssa - smoke-testien rakentaminen tälle portfoliolle oppiakseni automaattista testausta.',
+    image: '/images/projects/playwright-testing.png',
+    link: '/projects/playwright-smoke-tests',
+    tags: ['Testing', 'Playwright', 'Learning'],
+  },
+  {
     title: 'Briljant Accessibility Audit',
     title_fi: 'Briljant saavutettavuusauditointi',
     description: 'Accessibility audit with practical WCAG 2.2 recommendations.',
