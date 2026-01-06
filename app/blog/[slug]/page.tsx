@@ -154,7 +154,7 @@ export default async function Blog({
                 alt={post.metadata.title}
                 width={1200}
                 height={500}
-                style={{ objectPosition: 'left center' }}
+                style={{ objectPosition: "left center" }}
                 className="w-full h-auto max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-cover rounded-lg"
                 priority
               />
@@ -162,7 +162,7 @@ export default async function Blog({
             <h1 className="text-4xl md:text-5xl text-left font-extrabold mb-2 leading-tight">
               {post.metadata.title}
             </h1>
-            <div className="flex flex-col md:flex-row items-center gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
+            <div className="flex flex-row flex-wrap items-center gap-2 md:gap-4 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
               <span>📅 {formatDate(post.metadata.publishedAt)}</span>
               {post.metadata.updatedAt && (
                 <>
@@ -193,36 +193,36 @@ export default async function Blog({
               </div>
             )}
             {/* Prev/Next arrows with labels and links below */}
-            <div className="flex justify-between items-center mt-12 gap-2">
+            <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mt-12 gap-6 lg:gap-8">
               {prevPost ? (
-                <div className="flex flex-col items-start max-w-[45%]">
-                  <span className="text-sm md:text-base font-semibold text-neutral-700 dark:text-neutral-100 mb-1 flex items-center gap-1">
+                <div className="flex flex-col w-full lg:w-auto lg:max-w-[45%] mb-4 lg:mb-0 items-center">
+                  <span className="text-sm md:text-base font-semibold text-neutral-700 dark:text-neutral-100 mb-1 flex gap-1">
                     <FaArrowLeft className="w-5 h-5 inline mr-1" /> Previous
                   </span>
                   <a
                     href={`/blog/${prevPost.slug}`}
-                    className="truncate text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold"
+                    className="text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold break-words"
                   >
                     {prevPost.metadata.title}
                   </a>
                 </div>
               ) : (
-                <span />
+                <span className="hidden lg:block" />
               )}
               {nextPost ? (
-                <div className="flex flex-col items-end max-w-[45%]">
-                  <span className="text-sm md:text-base font-semibold text-neutral-700 dark:text-neutral-100 mb-1 flex items-center gap-1 justify-end">
+                <div className="flex flex-col lg:items-end w-full lg:w-auto lg:max-w-[45%] items-center">
+                  <span className="text-sm md:text-base font-semibold text-neutral-700 dark:text-neutral-100 mb-1 flex items-center gap-1 lg:justify-end">
                     Up next <FaArrowRight className="w-5 h-5 inline ml-1" />
                   </span>
                   <a
                     href={`/blog/${nextPost.slug}`}
-                    className="truncate text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold text-right"
+                    className="text-base md:text-lg text-accent-light dark:text-accent-dark hover:underline font-semibold break-words lg:text-right"
                   >
                     {nextPost.metadata.title}
                   </a>
                 </div>
               ) : (
-                <span />
+                <span className="hidden lg:block" />
               )}
             </div>
           </article>
