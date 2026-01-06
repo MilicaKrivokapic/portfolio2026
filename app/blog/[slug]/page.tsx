@@ -147,7 +147,7 @@ export default async function Blog({
               </ol>
             </nav>
           </div>
-          <article className="prose prose-neutral dark:prose-invert prose-xl max-w-none w-full mx-auto p-8 md:p-12 mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
+          <article className="prose prose-neutral dark:prose-invert prose-xl max-w-none w-full mx-auto mt-2 mb-16 text-[1.15rem] md:text-[1.2rem]">
             <div className="w-full mb-8 rounded-lg overflow-hidden max-w-2xl">
               <Image
                 src={bannerImage}
