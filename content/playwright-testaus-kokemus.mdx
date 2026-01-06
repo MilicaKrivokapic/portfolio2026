@@ -1,0 +1,52 @@
+---
+title: "Playwright-testauskokemus: Portfolion automaattinen testaaminen"
+publishedAt: "2026-01-06"
+summary: "Kokemus Playwright-testien luomisesta"
+tags: "Finnish, testing, Playwright, automation, CI/CD"
+image: "/images/reading-side.svg"
+---
+
+## Projektin aloittaminen
+
+Innostuin testaamaan Playwright-lisäosaa VSCodessa. Mietitytti että mitähän siitä tulee, sillä aikaisemmat testikokemukseni koodin kanssa oli rajoittuneet lähinnä Cypressin saavutettavuusautomaatioon, ja Exercise-harjoitteluappin valmiiden testien ajamiseen ja muokkaamiseen.
+
+Latasin extensionin, ja katsoin hyvän opetusvideon Playwrightista. (linkki) Aloin jutella kalliin Claude-mallin kanssa samalla kun lisäosa asentui.
+
+### Asennusongelmat ja ratkaisut
+
+Aluksi Playwrightin testit eivät toimineet ollenkaan, extension vain ilmoitti `"playwright tests not found"`. Juttelin yhtäaikaa sekä Clauden että Chatgpt:n kanssa ongelmasta. Kävi ilmi, että extension ei jostain syystä ollut asentanut selainriippuvuuksia ja ei pystynyt toimimaan sen takia.Tämä piti korjata kirjoittamalla terminaliin seuraavat komennot:
+
+```bash
+# Lisää test frameworkin repoon
+pnpm add -D @playwright/test
+
+# Lataa selaimet joita Playwright käyttää
+pnpm exec playwright install
+
+# Asentaa puuttuvat Linux selainriippuvuudet jotta selaimet toimivat
+sudo pnpm exec playwright install-deps
+```
+
+Koska minulla on portfoliossani käytössä TypeScript, tuotantoon deployauksessa tuli ongelmia. Jostain syystä `tsconfig.json` oli konfiguroitu niin, että se käsitteli myös `tests`-kansion tiedostot TypeScript-käännöksessä, vaikka testit eivät kuulu tuotantobuildiin.
+
+Vercel yritti buildata sivustoa, mutta kaatui virheeseen, koska Playwrightin tyypit eivät olleet saatavilla tuotantoympäristössä. Korjasimme ongelman Clauden kanssa sulkemalla testit pois `tsconfig.json`:sta ja luomalla `.vercelignore`-tiedoston.
+
+### CI/CD-konfiguraatio
+
+GitHub Actions workflow oli itseasiassa jo valmiiksi konfiguroitu ajamaan Playwright-testit automaattisesti joka kerta kun koodia pusketaan mainiin tai tehdään pull request. Muutin ainoastaan pnpm versioksi 10 vastavan lokaalin version kanssa yhteensopivaksi, lisäsin `CI: true` -ympäristömuuttujan ja lopulta kommentoin webkitin pois myös `playwright.config.ts`:stä koska sitä en ollut asentanut.
+
+## AI opena
+
+Claude opetti perusterminologiaa Playwrightin kanssa ihan kädestä pitäen, ja selitti myös testaukseen liittyvää sanastoa. Olin tietenkin aikaisemmin töissä tullut törmänneeksi joihinkin termeihin, mutta en tiennyt että **"smoke test"**-sanonta on terminä niin yleinen!
+
+Tuntui tosi mukavalta käydä AI:n kanssa läpi koodia ja miettiä testicaseja, mitä sivuilla kannattaa testata ja kysyä. Olin innoissani koska testien ja Playwrightin virittäminen olikin niin helppoa, olin odottanut että testien tekemisessä menisi ikuisuus.
+
+AI:n hyvä puoli opettajana on, että sillä ei koskaan mene hermot ja se ei ikinä luovuta tai koe ihmismäisiä tunteita, jotka tarttuisivat tai tekisivät oppimisestä jotenkin stressaavaa tai paineistavaa.
+
+Tietenkin AI:n kanssa pitää myös olla tarkkana, ettei usko pureskelematta kaikkea sen opettamaa. Tuntuu myös usein raskaalta kun kaikki faktat pitäisi tarkistaa ja varmistaa, ja on hyvin vaikea olla pedantti sen tarkistamisen tavan kanssa. Uskon että AI:n käyttö opetusmielessä voi lisätä misinformaation määrää, koska se on niin hirveän itsevarma, että se tunnu huomaavan kun se on väärässä.
+
+## Lopuksi
+
+Tuntui, että Playwrigthin virittäminen johonkin tälläiseen kepoisaan repoon kuten portfoliosivuille voi olla vähän overkilliä. Toisaalta, koen että opin tästä todella paljon, ja innoistuin automaatioista.
+
+Seuravaaksi voisin virittää automaattisia Cypress-testejä. Ja ehkä jonkinlainen oikeinkirjoitus-testaus olisi myös hyvä, löydän ihan jatkuvasti typoja täältä blogista. :D
