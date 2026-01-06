@@ -23,7 +23,7 @@ export default function PlaywrightTestingProject() {
       },
       what: {
         title: "What I Built",
-        text: "Two tiers of smoke tests - basically a safety net to catch if something major breaks:",
+        text: "Two tiers of smoke tests, basically a safety net to catch if something major breaks:",
         tier1: {
           title: "Tier 1: Is the site completely broken?",
           list: [
@@ -46,20 +46,19 @@ export default function PlaywrightTestingProject() {
       tech: {
         title: "What I used",
         list: [
-          "Playwright - the testing framework itself",
-          "TypeScript - same language the portfolio uses, so it felt familiar",
-          "GitHub Actions - runs the tests automatically whenever I push code to git",
+          "Playwright for the testing framework",
+          "GitHub Actions to run tests automatically whenever I push code to git",
           "Different configs for local testing vs CI (learned this the hard way)",
         ],
       },
       learning: {
         title: "What I learned",
         list: [
-          "The basics: page.goto(), expect(), getByRole() - testing wasn't as scary as I thought",
-          "Smoke tests vs detailed tests - smoke tests are just quick sanity checks",
+          "The basics: page.goto(), expect(), getByRole(). Testing wasn't as scary as I thought",
+          "Smoke tests vs detailed tests. Smoke tests are just quick sanity checks",
           "How to group related tests together with test.describe()",
-          "Getting Playwright to work on CachyOS took some troubleshooting - needed to install specific browser dependencies",
-          "CI/CD setup is different from local - GitHub Actions needed its own configuration",
+          "Getting Playwright to work on CachyOS took some troubleshooting, needed to install specific browser dependencies",
+          "CI/CD setup is different from local. GitHub Actions needed its own configuration",
           "Testing on different screen sizes by changing viewport",
           "Using accessibility roles to find elements is way better than CSS selectors",
           "Why and how AI can be super helpful when learning something new",
@@ -68,6 +67,10 @@ export default function PlaywrightTestingProject() {
       honest: {
         title: "What's next",
         text: "I know there's visual regression testing, API testing, and all kinds of other much more complex testing out there. But starting with basic smoke tests helped me understand the fundamentals. Going from zero to working tests in one day learning together with Claude felt like a good achievement. I'll definitely be implementing automated tests in all my bigger and frequently changing projects going forward.",
+      },
+      blogLink: {
+        text: "Want to read more about my learning process and setup details?",
+        linkText: "Read the full blog post about learning Playwright",
       },
     },
     fi: {
@@ -83,7 +86,7 @@ export default function PlaywrightTestingProject() {
       },
       what: {
         title: "Mitä rakensin",
-        text: "Kaksi tasoa smoke-testejä - käytännössä turvaverkko joka huomaa jos jotain isoa hajoaisi:",
+        text: "Kaksi tasoa smoke-testejä, käytännössä turvaverkko joka huomaa jos jotain isoa hajoaisi:",
         tier1: {
           title: "Taso 1: Toimiiko sivusto?",
           list: [
@@ -106,20 +109,19 @@ export default function PlaywrightTestingProject() {
       tech: {
         title: "Mitä käytin",
         list: [
-          "Playwright - itse testausframework",
-          "TypeScript - sama kieli mitä portfolio käyttää, joten tuntui tutulta",
-          "GitHub Actions - ajaa testit automaattisesti aina kun pusken koodia gittiin",
+          "Playwright testausframeworkina",
+          "GitHub Actions ajaa testit automaattisesti aina kun pusken koodia gittiin",
           "Erilaiset konfiguraatiot paikalliseen testaukseen vs CI:hin (opin tämän kantapään kautta)",
         ],
       },
       learning: {
         title: "Mitä opin",
         list: [
-          "Perusteet: page.goto(), expect(), getByRole() - testaus ei ollutkaan niin pelottavaa kuin luulin",
-          "Smoke-testit vs yksityiskohtaiset testit - smoke-testit on vaan nopeita järkitarkistuksia",
+          "Perusteet: page.goto(), expect(), getByRole(). Testaus ei ollutkaan niin pelottavaa kuin luulin",
+          "Smoke-testit vs yksityiskohtaiset testit. Smoke-testit on vaan nopeita järkitarkistuksia",
           "Miten ryhmitellä liittyvät testit yhteen test.describe():lla",
-          "Playwrightin saaminen toimimaan CachyOS:llä vaati vähän trubleshoottausta - piti asentaa tiettyjä selaimen riippuvuuksia",
-          "CI/CD-setup on erilainen kuin lokaali - GitHub Actions tarvitsi oman konfiguraation",
+          "Playwrightin saaminen toimimaan CachyOS:llä vaati vähän trubleshoottausta, piti asentaa tiettyjä selaimen riippuvuuksia",
+          "CI/CD-setup on erilainen kuin lokaali. GitHub Actions tarvitsi oman konfiguraation",
           "Testaaminen eri näyttöko'oilla muuttamalla viewporttia",
           "Saavutettavuusroolien käyttö elementtien löytämiseen on paljon parempi kuin CSS-selektorit",
           "Miksi ja miten AI voi olla superhyödyllinen kun opettelee jotain uutta asiaa tai asiakokonaisuutta",
@@ -128,6 +130,10 @@ export default function PlaywrightTestingProject() {
       honest: {
         title: "Mitä seuraavaksi",
         text: "Tiedän että on olemassa esimerkiksi visuaalista regressiotestausta, API-testausta ja kaikenlaista muuta paljon monimutkaisempaa testausta. Mutta perus-smoke-testeistä aloittaminen auttoi ymmärtämään perusteet. Nollasta toimiviin testeihin yhdessä päivässä Clauden kanssa yhdessä opetellen tuntui hyvältä saavutukselta. Tulen jatkossa varmasti implementoimaan kaikkiin isompiin ja paljon muuttuviin projekteihin automaattisia testejä.",
+      },
+      blogLink: {
+        text: "Haluatko lukea lisää oppimisprosessistani ja setupin yksityiskohdista?",
+        linkText: "Lue koko blogikirjoitus Playwrightin opiskelusta",
       },
     },
   };
@@ -377,6 +383,22 @@ export default function PlaywrightTestingProject() {
                 </div>
               </div>
             </div>
+          </section>
+
+          {/* Blog Link Section */}
+          <section className="mb-12">
+            <p className="text-stone-600 dark:text-stone-400 mb-3">
+              {currentContent.blogLink.text}
+            </p>
+            <Link
+              href="/blog/playwright-testaus-kokemus"
+              className="inline-flex items-center gap-2 text-stone-900 dark:text-stone-100 hover:text-stone-600 dark:hover:text-stone-300 transition-colors"
+            >
+              <span className="underline underline-offset-4">
+                {currentContent.blogLink.linkText}
+              </span>
+              <span aria-hidden="true">→</span>
+            </Link>
           </section>
         </article>
       </div>
