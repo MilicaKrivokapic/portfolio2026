@@ -154,7 +154,8 @@ export default async function Blog({
                 alt={post.metadata.title}
                 width={1200}
                 height={500}
-                className="w-full h-auto max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-contain rounded-lg"
+                style={{ objectPosition: 'left center' }}
+                className="w-full h-auto max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-cover rounded-lg"
                 priority
               />
             </div>
