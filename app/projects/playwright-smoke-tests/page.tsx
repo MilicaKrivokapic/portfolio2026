@@ -176,103 +176,113 @@ export default function PlaywrightTestingProject() {
               </ol>
             </nav>
           </div>
-            {/* Header */}
-            <div className="mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900 dark:text-stone-100">
-                {currentContent.title}
-              </h1>
-              <p className="text-xl text-stone-600 dark:text-stone-400 leading-relaxed">
-                {currentContent.subtitle}
-              </p>
-            </div>
+          {/* Header */}
+          <div className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900 dark:text-stone-100">
+              {currentContent.title}
+            </h1>
+            <p className="text-xl text-stone-600 dark:text-stone-400 leading-relaxed">
+              {currentContent.subtitle}
+            </p>
+          </div>
 
-            {/* Hero Image */}
-            <div className="mb-12 rounded-2xl overflow-hidden border border-stone-200/60 dark:border-zinc-700/50">
-              <div
-                className="relative aspect-video cursor-pointer hover:opacity-95 transition-opacity"
-                onClick={() =>
-                  setSelectedImage("/images/projects/playwright-testing.png")
+          {/* Hero Image */}
+          <div className="mb-12 rounded-2xl overflow-hidden border border-stone-200/60 dark:border-zinc-700/50">
+            <div
+              className="relative aspect-video cursor-pointer hover:opacity-95 transition-opacity"
+              onClick={() =>
+                setSelectedImage("/images/projects/playwright-testing.png")
+              }
+            >
+              <Image
+                src="/images/projects/playwright-testing.png"
+                alt={
+                  language === "fi"
+                    ? "Playwright-testien koodi VS Codessa"
+                    : "Playwright test code in VS Code"
                 }
-              >
-                <Image
-                  src="/images/projects/playwright-testing.png"
-                  alt={
-                    language === "fi"
-                      ? "Playwright-testien koodi VS Codessa"
-                      : "Playwright test code in VS Code"
-                  }
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Overview Section */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
+              {currentContent.overview.title}
+            </h2>
+            <div className="prose prose-stone dark:prose-invert max-w-none">
+              {currentContent.overview.text.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-stone-700 dark:text-stone-300 leading-relaxed mb-4"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </section>
+
+          {/* What I Built Section */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
+              {currentContent.what.title}
+            </h2>
+            <p className="text-stone-700 dark:text-stone-300 leading-relaxed mb-6">
+              {currentContent.what.text}
+            </p>
+
+            {/* Tier 1 */}
+            <div className="mb-6 p-6 rounded-xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
+              <h3 className="text-xl font-semibold mb-3 text-stone-900 dark:text-stone-100">
+                {currentContent.what.tier1.title}
+              </h3>
+              <ul className="space-y-2">
+                {currentContent.what.tier1.list.map((item, index) => (
+                  <li
+                    key={index}
+                    className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2"
+                  >
+                    <span className="text-accent-light dark:text-accent-dark">
+                      •
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Overview Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
-                {currentContent.overview.title}
-              </h2>
-              <div className="prose prose-stone dark:prose-invert max-w-none">
-                {currentContent.overview.text.map((paragraph, index) => (
-                  <p
+            {/* Tier 2 */}
+            <div className="mb-6 p-6 rounded-xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
+              <h3 className="text-xl font-semibold mb-3 text-stone-900 dark:text-stone-100">
+                {currentContent.what.tier2.title}
+              </h3>
+              <ul className="space-y-2">
+                {currentContent.what.tier2.list.map((item, index) => (
+                  <li
                     key={index}
-                    className="text-stone-700 dark:text-stone-300 leading-relaxed mb-4"
+                    className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2"
                   >
-                    {paragraph}
-                  </p>
+                    <span className="text-accent-light dark:text-accent-dark">
+                      •
+                    </span>
+                    <span>{item}</span>
+                  </li>
                 ))}
-              </div>
-            </section>
+              </ul>
+            </div>
+          </section>
 
-            {/* What I Built Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
-                {currentContent.what.title}
-              </h2>
-              <p className="text-stone-700 dark:text-stone-300 leading-relaxed mb-6">
-                {currentContent.what.text}
-              </p>
-
-              {/* Tier 1 */}
-              <div className="mb-6 p-6 rounded-xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
-                <h3 className="text-xl font-semibold mb-3 text-stone-900 dark:text-stone-100">
-                  {currentContent.what.tier1.title}
-                </h3>
-                <ul className="space-y-2">
-                  {currentContent.what.tier1.list.map((item, index) => (
-                    <li key={index} className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2">
-                      <span className="text-accent-light dark:text-accent-dark">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Tier 2 */}
-              <div className="mb-6 p-6 rounded-xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
-                <h3 className="text-xl font-semibold mb-3 text-stone-900 dark:text-stone-100">
-                  {currentContent.what.tier2.title}
-                </h3>
-                <ul className="space-y-2">
-                  {currentContent.what.tier2.list.map((item, index) => (
-                    <li key={index} className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2">
-                      <span className="text-accent-light dark:text-accent-dark">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-
-            {/* Code Sample Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
-                {language === "fi" ? "Esimerkkitestikoodi" : "Sample Test Code"}
-              </h2>
-              <div className="rounded-xl bg-stone-900 dark:bg-black p-6 overflow-x-auto border border-stone-700">
-                <pre className="text-sm text-stone-100 dark:text-stone-200">
-                  <code>{`test('Home: loads and shows hero + navigation', async ({ page }) => {
+          {/* Code Sample Section */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
+              {language === "fi" ? "Esimerkkitestikoodi" : "Sample Test Code"}
+            </h2>
+            <div className="rounded-xl bg-stone-900 dark:bg-black p-6 overflow-x-auto border border-stone-700">
+              <pre className="text-sm text-stone-100 dark:text-stone-200">
+                <code>{`test('Home: loads and shows hero + navigation', async ({ page }) => {
   await page.goto(BASE_URL);
 
   // Navigation is visible
@@ -287,77 +297,87 @@ export default function PlaywrightTestingProject() {
     page.locator('section').filter({ hasText: /featured work|projects/i })
   ).toBeVisible();
 });`}</code>
-                </pre>
-              </div>
-              <p className="text-sm text-stone-600 dark:text-stone-400 mt-3">
-                {language === "fi"
-                  ? "Katso koko testisarja: "
-                  : "See the full test suite: "}
-                <Link
-                  href="https://github.com/MilicaKrivokapic/portfolio2025/blob/main/tests/portfolio-smoke.spec.ts"
-                  target="_blank"
-                  className="text-stone-900 dark:text-stone-100 hover:underline"
+              </pre>
+            </div>
+            <p className="text-sm text-stone-600 dark:text-stone-400 mt-3">
+              {language === "fi"
+                ? "Katso koko testisarja: "
+                : "See the full test suite: "}
+              <Link
+                href="https://github.com/MilicaKrivokapic/portfolio2025/blob/main/tests/portfolio-smoke.spec.ts"
+                target="_blank"
+                className="text-stone-900 dark:text-stone-100 hover:underline"
+              >
+                portfolio-smoke.spec.ts
+              </Link>
+            </p>
+          </section>
+
+          {/* Technologies Section */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
+              {currentContent.tech.title}
+            </h2>
+            <ul className="space-y-2">
+              {currentContent.tech.list.map((item, index) => (
+                <li
+                  key={index}
+                  className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2"
                 >
-                  portfolio-smoke.spec.ts
-                </Link>
-              </p>
-            </section>
+                  <span className="text-accent-light dark:text-accent-dark">
+                    →
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-            {/* Technologies Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
-                {currentContent.tech.title}
-              </h2>
-              <ul className="space-y-2">
-                {currentContent.tech.list.map((item, index) => (
-                  <li key={index} className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2">
-                    <span className="text-accent-light dark:text-accent-dark">→</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
+          {/* Learning Section */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
+              {currentContent.learning.title}
+            </h2>
+            <ul className="space-y-2">
+              {currentContent.learning.list.map((item, index) => (
+                <li
+                  key={index}
+                  className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2"
+                >
+                  <span className="text-accent-light dark:text-accent-dark">
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-            {/* Learning Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
-                {currentContent.learning.title}
-              </h2>
-              <ul className="space-y-2">
-                {currentContent.learning.list.map((item, index) => (
-                  <li key={index} className="leading-relaxed text-stone-700 dark:text-stone-300 flex gap-2">
-                    <span className="text-accent-light dark:text-accent-dark">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            {/* Honest Section */}
-            <section className="mb-12">
-              <div className="p-6 rounded-xl bg-gradient-to-br from-stone-100 to-stone-50 dark:from-zinc-800/50 dark:to-zinc-900/50 border border-stone-200/60 dark:border-zinc-700/50">
-                <div className="flex gap-4 items-start">
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
-                      {currentContent.honest.title}
-                    </h2>
-                    <p className="leading-relaxed text-stone-700 dark:text-stone-300">
-                      {currentContent.honest.text}
-                    </p>
-                  </div>
-                  <div className="hidden sm:block flex-shrink-0">
-                    <Image
-                      src="/images/mr-bean-thumbs-up.gif"
-                      alt="Mr Bean thumbs up"
-                      width={140}
-                      height={80}
-                      className="rounded-lg"
-                      unoptimized
-                    />
-                  </div>
+          {/* Honest Section */}
+          <section className="mb-12">
+            <div className="p-6 rounded-xl bg-gradient-to-br from-stone-100 to-stone-50 dark:from-zinc-800/50 dark:to-zinc-900/50 border border-stone-200/60 dark:border-zinc-700/50">
+              <div className="flex gap-4 items-center">
+                <div className="flex-1">
+                  <h2 className="text-2xl font-semibold mb-4 text-stone-900 dark:text-stone-100">
+                    {currentContent.honest.title}
+                  </h2>
+                  <p className="leading-relaxed text-stone-700 dark:text-stone-300">
+                    {currentContent.honest.text}
+                  </p>
+                </div>
+                <div className="hidden sm:block flex-shrink-0">
+                  <Image
+                    src="/images/mr-bean-thumbs-up.gif"
+                    alt="Mr Bean thumbs up"
+                    width={140}
+                    height={80}
+                    className="rounded-lg"
+                    unoptimized
+                  />
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
         </article>
       </div>
 
