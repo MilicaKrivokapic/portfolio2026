@@ -1,0 +1,73 @@
+---
+title: "Pohdintaa bugiraporteista"
+publishedAt: "2026-01-06"
+summary: "Millainen on hyvä bugiraportti"
+tags: "Finnish, ideas, communication"
+image: "/bugs.png"
+---
+
+## Bugiraporttien merkitys
+
+Lyhyehkön työurani aikana on tullut nähtyä jo jos jonkunmoista tikettiä. Se yhdistävä tekijä huonoissa tiketeissä on yleensä sama: niistä ei käy ilmi missä ympäristössä bugi tapahtuu, eikä mitä se tarkalleen aiheuttaa.
+
+Pahimmillaan tiketillä lukee vain "KORJAA". Silloin devaajana olen ollut ihmeissäni, kun omassa ympäristössä tai tuotannossa en saa aikaiseksi mitään vikaa, vaikka miten yrittäisin. Ja sitten lopulta käy ilmi, että asiakas on vahingossa käyttänyt jotain ikivanhaa rikkinäistä testiympäristöä tai katsonut väärää linkkiä. Jos häntä olisi ohjattu kirjoittamaan bugiraporttipohja, tai kirjoitettu se vaikka yhdessä, oltaisiin huomattu helposti tuo että ollaan ihan väärässä paikassa kuikuilemassa räjähtäviä kauppoja.
+
+Siksi toivon aina, että projektin alussa kirjoiteltaisiin yhdessä Jiraan, Lineariin tai muuhun trackaysohjelmaan yhdessä bugiraportin pohja, ja että se olisi käyty yhdessä asiakkaan kanssa selkeästi läpi, ja selitetty miksi sen lisääminen helpottaa myös asiakkaan työtä, vaikka sen täyttäminen tietysti hieman vaatiikin aikaa ja päänvaivaa.
+
+## Hyvä bugiraportti
+
+Minusta seuraavanlainen bugiraportti on ollut oivallinen:
+
+<div className="mb-6 p-6 rounded-xl bg-white/50 dark:bg-black/20 border border-stone-200/60 dark:border-zinc-700/50">
+
+**Otsikko:** Checkout: "Maksa"-nappi ei tee mitään Safari iOS:llä
+
+**Vaikutus:** Ostaminen estyy Safari iPhone -käyttäjillä
+
+**Ympäristö:** iPhone 13, iOS 17.x, Safari 17.x, tuotantoteema, checkout-sivu
+(asiakkaalle kannattaa tehdä erillinen selkeä ajantasainen ohjeistus siitä miten tarkistaa selainversio ja laiteversio, sekä teeman nimi)
+
+**Toistovaiheet:**
+
+1. Lisää tuote ostoskoriin
+2. Siirry checkoutiin
+3. Valitse maksutapa "Kortti"
+4. Paina "Maksa"
+
+**Odotettu:** Maksu lähtee eteenpäin ja käyttäjä siirtyy maksun vahvistukseen
+
+**Toteutunut:** "Maksa"-nappi näyttää painuva, mutta mitään ei tapahdu. Ei siirtymää eikä virheilmoitusta
+
+**Liitteet:** video (näyttötallenne) + screenshot konsolista.
+
+</div>
+
+Pohja kannattaa laittaa automaattisesti luoda Jiraan tai Lineariin niin, että kun label on "bug", pakolliset fieldit ilmestyvät automaattisesti tiketillä, eikä asiakkaan tarvitse copypasteta manuaalisesti tuota litaniaa joka kerta.
+
+<div style={{ maxWidth: "300px" }}>
+  <ClickableImage
+    src="/bugiraportti.png"
+    alt="Esimerkki hyvästä bugiraportista"
+    width={300}
+    height={300}
+  />
+  <Caption align="left">
+    Esimerkki hyvästä bugiraportista Linearissa (klikkaa kuvaa isommaksi)
+  </Caption>
+</div>
+
+## Tikettien käsittely
+
+Mielestäni devaajien on todella tärkeää on huomioida tiketit, niitä ei kannata missään nimessä siirrellä kanbanilla ympäriinsä ilman kommentointia ja vastausta asiakkaalle sillä tiketillä jossa bugiraportti on (jos kyse on isommasta bugista, niin pidän siitä että tiketille tulee myös teknistä dokumentaatiota, tai ainakin linkkejä siitä mihin feature branchiin muutos tehtiin ja muita huomioita).
+
+Varsinkin vaihtuvassa ympäristössä kaikki keskustelu olisi minusta tärkeää käydä nimenomaan tiketeillä eikä Slackissa tai Teamsissa. Jos vaikka itse sairastuu tai vaihtaa projektia, kaikkea keskustelua on tosi vaikea löytää chateista jälkeenpäin. Lisäksi niiden sävy voi olla kahdenkeskisessä viestissä sellainen, ettei asiakas välttämättä toivoisi sen olevan koko tiimin tai organisaation nähtävillä. Tiketissä asiat tulevat yleensä kirjattua selkeämmin ja neutraalimmin.
+
+Tässä päästäänkin toiseen asiaan, joka on itsellä ollut paljon ajatuksissa: tikettien kirjoituksen sävy.
+
+On täysin ok, että tiketit ovat kuivan asiallisia ja selkeitä. Mutta varsinkin markkinointipuolen asiakkaiden kanssa asioidessa on tullut huomattua, että ystävällinen, kärsivällinen ja asiantuntevasti selittävä sävy tuntuu asiakkaasta parhaammalta. Silloin asiakas ymmärtää missä mennään ja hänellä on ikään kuin langat käsissään koko ajan, kun häntä pidetään mukana kärryillä myös teknisemmissä asioissa, jotka eivät kuulu hänen toimialaansa.
+
+## Kultakutrin periaate
+
+Tämä oli mielestäni hyvä artikkeli tästä aiheesta: [Ministry of Testing - Goldilocks Principle](https://www.ministryoftesting.com/articles/11b82aee?s_id=15060040)
+
+Minusta tuo Goldilocks Principle- ajatus oli tuossa erityisen hyvä: itse olen saattanut joskus rönsyillä kuvauksissani, jolloin seuraavan devaajan tai asiakkaan voi olla vähän vaikea nopeasti löytää vastauksista olennaisia asioita. Tuo Kultakutrin periaate on hyvä nimi, se jää mieleen ja nousee sieltä aina kun avaan bugitiketin :D

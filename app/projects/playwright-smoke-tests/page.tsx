@@ -70,7 +70,7 @@ export default function PlaywrightTestingProject() {
       },
       blogLink: {
         text: "Want to read more about my learning process and setup details?",
-        linkText: "Read the full blog post about learning Playwright",
+        linkText: "Read blog post about learning Playwright",
       },
     },
     fi: {
@@ -133,7 +133,7 @@ export default function PlaywrightTestingProject() {
       },
       blogLink: {
         text: "Haluatko lukea lisää oppimisprosessistani ja setupin yksityiskohdista?",
-        linkText: "Lue koko blogikirjoitus Playwrightin opiskelusta",
+        linkText: "Lue blogikirjoitus Playwrightin opiskelusta",
       },
     },
   };
