@@ -61,6 +61,47 @@ function Code({ children, ...props }: CodeProps) {
   );
 }
 
+interface PreProps {
+  children: React.ReactNode;
+  [key: string]: any;
+}
+
+function Pre({ children, ...props }: PreProps) {
+  // Extract the code content and language from children
+  const childArray = React.Children.toArray(children);
+  const codeElement = childArray[0] as React.ReactElement;
+
+  if (codeElement && codeElement.props) {
+    const { children: code, className } = codeElement.props;
+    const language = className?.replace('language-', '') || '';
+
+    // For bash/shell, apply basic styling without sugar-high to avoid false highlighting
+    if (language === 'bash' || language === 'sh' || language === 'shell') {
+      return (
+        <pre className="bg-neutral-100 dark:bg-[#0F0F10] rounded-lg p-4 overflow-x-auto my-6 text-sm" {...props}>
+          <code className="text-neutral-800 dark:text-neutral-200 font-mono">
+            {code}
+          </code>
+        </pre>
+      );
+    }
+
+    // For other languages, use sugar-high
+    const codeHTML = highlight(code);
+    return (
+      <pre className="bg-neutral-100 dark:bg-[#0F0F10] rounded-lg p-4 overflow-x-auto my-6 text-sm" {...props}>
+        <code dangerouslySetInnerHTML={{ __html: codeHTML }} />
+      </pre>
+    );
+  }
+
+  return (
+    <pre className="bg-neutral-100 dark:bg-[#0F0F10] rounded-lg p-4 overflow-x-auto my-6" {...props}>
+      {children}
+    </pre>
+  );
+}
+
 function Table({ children, ...props }: React.TableHTMLAttributes<HTMLTableElement>) {
   return (
     <table className="border-collapse border w-full my-4" {...props}>
@@ -133,7 +174,8 @@ const components = {
   h6: createHeading(6),
   a: CustomLink,
   Image: RoundedImage,
-  pre: Code,
+  pre: Pre,
+  code: Code,
   table: Table,
   del: Strikethrough,
   Callout,

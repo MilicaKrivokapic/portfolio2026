@@ -127,18 +127,6 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog', showDa
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
-                {allTags.length > 0 && (
-                  <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-2">
-                    {allTags.map((tag) => (
-                      <span
-                        key={`${post.slug}-badge-${tag}`}
-                        className="text-xs md:text-sm px-2.5 py-1.5 rounded-full bg-black/80 text-white backdrop-blur-sm dark:bg-white/90 dark:text-black shadow-sm ring-1 ring-black/20 dark:ring-white/30"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
               <div className="pt-5">
                 <h3 className="text-xl md:text-2xl font-medium leading-snug text-primary-light dark:text-primary-dark group-hover:text-accent-light dark:group-hover:text-accent-dark">
@@ -153,6 +141,18 @@ export default function BlogGrid({ posts, initialTag, basePath = '/blog', showDa
                       language === 'fi' ? 'fi-FI' : 'en-US',
                       { month: 'short', day: 'numeric', year: 'numeric' }
                     )}
+                  </div>
+                )}
+                {allTags.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {allTags.map((tag) => (
+                      <span
+                        key={`${post.slug}-badge-${tag}`}
+                        className="text-xs md:text-sm px-2.5 py-1.5 rounded-full bg-neutral-200 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200 ring-1 ring-neutral-300 dark:ring-neutral-600"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 )}
               </div>

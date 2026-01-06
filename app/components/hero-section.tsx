@@ -29,7 +29,7 @@ export default function HeroSection() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl md:col-start-1 md:col-end-7 lg:text-6xl xl:text-7xl font-bold font-heading leading-tight break-words">
           {t("about.heroGreeting")}
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-6xl xl:text-7xl md:col-start-1 md:col-end-7 lg:text-4xl font-semibold text-accent-light dark:text-accent-dark leading-tight">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-6xl xl:text-7xl md:col-start-1 md:col-end-7 font-semibold text-accent-light dark:text-accent-dark leading-tight">
           {t("about.heroTagline")}
         </p>
         <p className="text-xl md:col-start-1 md:col-end-3 leading-relaxed">

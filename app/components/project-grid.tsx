@@ -53,22 +53,6 @@ export default function ProjectGrid({ items }: { items: ProjectGridItem[] }) {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
               />
-              
-              {item.tags && item.tags.length > 0 && (
-                <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-2">
-                  {item.tags.map((tag) => {
-                    const isWIPTag = tag === 'Work in Progress';
-                    return (
-                      <span
-                        key={`${item.href}-badge-${tag}`}
-                        className="text-xs md:text-sm px-2.5 py-1.5 rounded-full bg-black/80 text-white backdrop-blur-sm dark:bg-white/90 dark:text-black shadow-sm ring-1 ring-black/20 dark:ring-white/30"
-                      >
-                        {tag} {isWIPTag && '🚧'}
-                      </span>
-                    );
-                  })}
-                </div>
-              )}
             </div>
             <div className="pt-5">
               <h3 className="text-xl md:text-2xl font-medium leading-snug">
@@ -78,6 +62,21 @@ export default function ProjectGrid({ items }: { items: ProjectGridItem[] }) {
                 <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300 line-clamp-3">
                   {item.summary}
                 </p>
+              )}
+              {item.tags && item.tags.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => {
+                    const isWIPTag = tag === 'Work in Progress';
+                    return (
+                      <span
+                        key={`${item.href}-badge-${tag}`}
+                        className="text-xs md:text-sm px-2.5 py-1.5 rounded-full bg-neutral-200 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200 ring-1 ring-neutral-300 dark:ring-neutral-600"
+                      >
+                        {tag} {isWIPTag && '🚧'}
+                      </span>
+                    );
+                  })}
+                </div>
               )}
             </div>
           </Link>
