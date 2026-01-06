@@ -3,7 +3,7 @@ export const projectData = [
     title: "Kattokomppania website",
     title_fi: "Kattokomppania verkkosivusto",
     description:
-      "A website for a Finnish company spealising on roofs maintanance and repairs.",
+      "A website for a Finnish company specialising in roof maintenance and repairs.",
     description_fi:
       "Verkkosivusto kattojen huoltoon ja korjaukseen erikoistuneelle yritykselle.",
     image: "/images/projects/kattokomppania.jpeg",
@@ -72,7 +72,7 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: "UniversalAccess",
     description: {
-      en: "Using Axe DevTools, WAVE, Lighthouse, and manual keyboard/screen reader testing (NVDA, VoiceOver) and following guidelines and educating myself everyday on the matter",
+      en: "Using Axe DevTools, WAVE, Lighthouse, and manual keyboard/screen reader testing (NVDA, VoiceOver) and following guidelines and educating myself every day on the matter",
       fi: "Saavutettavuuden tarkistamisessa käytän Axe DevToolssia, WAVEa, Lighthousea ja testaan myös manuaalisesti NVDA:lla ja Applen Voiceoverilla noudattaen säädöksiä. Luen saavutettavuudesta lisää päivittäin.",
     },
   },
@@ -94,7 +94,7 @@ export const skillsData: MultilingualSkill[] = [
     },
     icon: "PenRuler",
     description: {
-      en: "Using Figma&Adobe products (Photoshop, Lightroom). Understanding of some 3d programs like Blender and Autodesk Maya",
+      en: "Using Figma & Adobe products (Photoshop, Lightroom). Understanding of some 3D programs like Blender and Autodesk Maya",
       fi: "Olen tottunut käyttämään Figmaa. Adoben ohjelmista (Photoshop, Lightroom) minulla on pitkällistä kokemusta. Osaan myös käyttää jonkun verran 3D-ohjelmia kuten Blenderiä ja Autodesk Mayaa.",
     },
   },
@@ -221,7 +221,7 @@ export const qaData: QAItem[] = [
       fi: "Mitä ohjelmia käytät eniten?",
     },
     answer: {
-      en: "Cursor for coding, Figma for structure, Chatgpt for making sure there are no mistakes in my sentences (for example in documentation), Slack for collaboration, and Notion, Obsidian, and Jira for planning and documentation. Planning on moving from Jira to Linear! ",
+      en: "Cursor for coding, Figma for structure, ChatGPT for making sure there are no mistakes in my sentences (for example in documentation), Slack for collaboration, and Notion, Obsidian, and Jira for planning and documentation. Planning on moving from Jira to Linear!",
       fi: "Käytän päivittäin Cursoria koodaukseen (joskus myös VSCodea, mutta preferoin Cursoria), Chatgpt:tä oikolukuun, Slackkia yhteistyöhön, ja sitten Notionia, Obsidiania ja Jiraa projektin suunnitteluun ja taskien trackkaamiseen. ",
     },
   },

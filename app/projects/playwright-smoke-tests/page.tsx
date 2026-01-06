@@ -76,7 +76,7 @@ export default function PlaywrightTestingProject() {
     fi: {
       title: "Playwright-testauksen perusteiden opiskelua",
       subtitle:
-        "Oppetelin yhteistyössä Claude Sonnetin kanssa tekemään smoke-testit Playwrightillä tälle portfoliolle. Innostuin testaamisesti kovasti, ja koko sunnuntai sujui joutuisasti testien pakertamisen äärellä.",
+        "Oppetelin yhteistyössä Claude Sonnetin kanssa tekemään smoke-testit Playwrightillä tälle portfoliolle. Innostuin testaamisesta kovasti, ja koko sunnuntai sujui joutuisasti testien pakertamisen äärellä.",
       overview: {
         title: "Miksi tein tämän",
         text: [
@@ -122,7 +122,7 @@ export default function PlaywrightTestingProject() {
           "Miten ryhmitellä liittyvät testit yhteen test.describe():lla",
           "Playwrightin saaminen toimimaan CachyOS:llä vaati vähän trubleshoottausta, piti asentaa tiettyjä selaimen riippuvuuksia",
           "CI/CD-setup on erilainen kuin lokaali. GitHub Actions tarvitsi oman konfiguraation",
-          "Testaaminen eri näyttöko'oilla muuttamalla viewporttia",
+          "Testaaminen eri näyttökoilla muuttamalla viewporttia",
           "Saavutettavuusroolien käyttö elementtien löytämiseen on paljon parempi kuin CSS-selektorit",
           "Miksi ja miten AI voi olla superhyödyllinen kun opettelee jotain uutta asiaa tai asiakokonaisuutta",
         ],

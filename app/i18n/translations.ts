@@ -204,7 +204,7 @@ export const translations: Record<Language, RootTranslations> = {
         "Accessibility audit for a site that shows and rates public restrooms across Helsinki:",
       features: [
         "Includes: accessibility and cognitive audit for Best Seats in Helsinki",
-        "PDF report with findings and recommendation, includes cognitive accessibility aspects",
+        "PDF report with findings and recommendations, includes cognitive accessibility aspects",
         "Accessibility statement PDF",
       ],
       techNote:
@@ -331,7 +331,7 @@ export const translations: Record<Language, RootTranslations> = {
         "Haluaisin keskustella kanssasi Kaizen-filosofiasta työn kontekstissa...",
       sendButton: "Lähetä viesti",
       sending: "Lähetetään...",
-      successMessage: "Kiitos! Viestisi heilahti matkaaan.",
+      successMessage: "Kiitos! Viestisi heilahti matkaan.",
       errorMessage:
         "Pahoittelut, viestin lähetyksessä tapahtui virhe. Yritäppäs uudelleen.",
       connect: "Ollaan yhteydessä",
