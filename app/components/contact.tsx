@@ -1,83 +1,87 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import { FaLinkedin } from 'react-icons/fa';
-import { useLanguage } from '../context/language-context';
-import EnvelopeSolid from './icons/EnvelopeSolid';
-import CalendarDaysSolidFull from './icons/CalendarDaysSolidFull';
+"use client";
+import React from "react";
+import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa";
+import { useLanguage } from "../context/language-context";
+import EnvelopeSolid from "./icons/EnvelopeSolid";
+import CalendarDaysSolidFull from "./icons/CalendarDaysSolidFull";
 
 export default function Contact() {
   const { t } = useLanguage();
   const [formData, setFormData] = React.useState({
-    name: '',
-    email: '',
-    message: '',
-    honeypot: ''
+    name: "",
+    email: "",
+    message: "",
+    honeypot: "",
   });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = React.useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (formData.honeypot) {
-      setSubmitStatus('success');
+      setSubmitStatus("success");
       return;
     }
 
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setSubmitStatus("idle");
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: 'a64a1d36-6e40-46a1-8c2d-258ac14ebb1b',
+          access_key: "a64a1d36-6e40-46a1-8c2d-258ac14ebb1b",
           from_name: formData.name,
           replyTo: formData.email,
           subject: `New contact from ${formData.name}`,
           message: formData.message,
-          email_to: 'Milica.portfolio@proton.me'
-        })
+          email_to: "Milica.portfolio@proton.me",
+        }),
       });
 
       const data = await response.json();
       if (data.success) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '', honeypot: '' });
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "", honeypot: "" });
       } else {
-        setSubmitStatus('error');
+        setSubmitStatus("error");
       }
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
     <div className="space-y-12 md:space-y-16">
       <section className="space-y-6">
-        <div className="text-center space-y-2">
+        <div className="text-start space-y-2">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark">
-            {t('contact.title')}
+            {t("contact.title")}
           </h1>
           <p className="text-base md:text-lg text-muted-light dark:text-muted-dark">
-            {t('contact.intro')}
+            {t("contact.intro")}
           </p>
         </div>
 
         {/* Contact Info Cards */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-3 gap-3 pt-4 sm:gap-4 max-w-3xl">
           {/* Email Card */}
           <a
             href="mailto:milica.portfolio@proton.me"
@@ -87,8 +91,12 @@ export default function Contact() {
               <EnvelopeSolid className="w-7 h-7 sm:w-8 sm:h-8 text-accent-light dark:text-accent-dark" />
             </div>
             <div>
-              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">{t('contact.emailLabel')}</p>
-              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">milica.portfolio@proton.me</p>
+              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">
+                {t("contact.emailLabel")}
+              </p>
+              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">
+                milica.portfolio@proton.me
+              </p>
             </div>
           </a>
 
@@ -103,8 +111,12 @@ export default function Contact() {
               <FaLinkedin className="w-7 h-7 sm:w-8 sm:h-8 text-accent-light dark:text-accent-dark" />
             </div>
             <div>
-              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">LinkedIn</p>
-              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">Connect with me</p>
+              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">
+                LinkedIn
+              </p>
+              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">
+                Connect with me
+              </p>
             </div>
           </a>
 
@@ -119,18 +131,24 @@ export default function Contact() {
               <CalendarDaysSolidFull className="w-7 h-7 sm:w-8 sm:h-8 text-accent-light dark:text-accent-dark" />
             </div>
             <div>
-              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">{t('contact.bookLabel')}</p>
-              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">{t('contact.bookMeeting')}</p>
+              <p className="text-sm sm:text-base font-semibold text-primary-light dark:text-primary-dark">
+                {t("contact.bookLabel")}
+              </p>
+              <p className="hidden sm:block text-xs text-muted-light dark:text-muted-dark mt-0.5">
+                {t("contact.bookMeeting")}
+              </p>
             </div>
           </a>
         </div>
       </section>
 
-  {/* Form and Image Section - Two Columns */}
-  <section className="w-full grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:grid-cols-[minmax(520px,1.4fr)_minmax(0,1fr)]">
+      {/* Form and Image Section - Two Columns */}
+      <section className="w-full grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:grid-cols-[minmax(520px,1.4fr)_minmax(0,1fr)]">
         {/* Left Column - Form */}
         <div className="space-y-8">
-          <h3 className="text-2xl font-bold text-primary-light dark:text-primary-dark">{t('contact.formHeading')}</h3>
+          <h3 className="text-2xl font-bold text-primary-light dark:text-primary-dark">
+            {t("contact.formHeading")}
+          </h3>
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Honeypot */}
             <div className="opacity-0 absolute -z-10 select-none pointer-events-none">
@@ -150,7 +168,7 @@ export default function Contact() {
                 htmlFor="name"
                 className="block text-sm font-medium text-primary-light dark:text-primary-dark"
               >
-                {t('contact.nameLabel')}
+                {t("contact.nameLabel")}
               </label>
               <input
                 id="name"
@@ -159,7 +177,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder={t('contact.namePlaceholder')}
+                placeholder={t("contact.namePlaceholder")}
                 className="w-full bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-stone-500 dark:placeholder-zinc-500 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
               />
             </div>
@@ -170,7 +188,7 @@ export default function Contact() {
                 htmlFor="email"
                 className="block text-sm font-medium text-primary-light dark:text-primary-dark"
               >
-                {t('contact.emailFieldLabel')}
+                {t("contact.emailFieldLabel")}
               </label>
               <input
                 id="email"
@@ -179,7 +197,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder={t('contact.emailPlaceholder')}
+                placeholder={t("contact.emailPlaceholder")}
                 className="w-full bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-stone-500 dark:placeholder-zinc-500 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 transition-all"
               />
             </div>
@@ -190,7 +208,7 @@ export default function Contact() {
                 htmlFor="message"
                 className="block text-sm font-medium text-primary-light dark:text-primary-dark"
               >
-                {t('contact.messageLabel')}
+                {t("contact.messageLabel")}
               </label>
               <textarea
                 id="message"
@@ -199,7 +217,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={5}
-                placeholder={t('contact.messagePlaceholder')}
+                placeholder={t("contact.messagePlaceholder")}
                 className="w-full bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-primary-light dark:text-primary-dark placeholder-stone-500 dark:placeholder-zinc-500 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent-light/20 dark:focus:ring-accent-dark/20 resize-none transition-all"
               />
             </div>
@@ -210,21 +228,27 @@ export default function Contact() {
               disabled={isSubmitting}
               className="w-full bg-gradient-to-r from-accent-light to-purple-600 dark:from-accent-dark dark:to-purple-500 text-white font-semibold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-accent-light/25 dark:hover:shadow-accent-dark/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? t('contact.sending') : t('contact.sendButton')}
+              {isSubmitting ? t("contact.sending") : t("contact.sendButton")}
             </button>
 
             {/* Status Messages */}
-            {submitStatus === 'success' && (
-              <div className="p-4 bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/20 rounded-xl" aria-live="polite">
+            {submitStatus === "success" && (
+              <div
+                className="p-4 bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/20 rounded-xl"
+                aria-live="polite"
+              >
                 <p className="text-green-600 dark:text-green-400 text-sm">
-                  {t('contact.successMessage')}
+                  {t("contact.successMessage")}
                 </p>
               </div>
             )}
-            {submitStatus === 'error' && (
-              <div className="p-4 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-xl" aria-live="polite">
+            {submitStatus === "error" && (
+              <div
+                className="p-4 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-xl"
+                aria-live="polite"
+              >
                 <p className="text-red-600 dark:text-red-400 text-sm">
-                  {t('contact.errorMessage')}
+                  {t("contact.errorMessage")}
                 </p>
               </div>
             )}
