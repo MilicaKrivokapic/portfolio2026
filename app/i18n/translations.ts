@@ -97,7 +97,7 @@ export const translations: Record<Language, RootTranslations> = {
       title: "About Me",
       titleJourney: "& my journey",
       heroGreeting: "Hi! I'm Milica,",
-      heroTagline: "Junior QA",
+      heroTagline: "QA minded frontend dev",
       aboutMeButton: "About Me",
       seeWorksButton: "See Works",
       readMore: "Read more",
@@ -155,7 +155,7 @@ export const translations: Record<Language, RootTranslations> = {
       title: "Q&A",
     },
     sidebar: {
-      role: "Junior QA & Frontend (Accessibility-focused)",
+      role: "Frontend dev\nQA mindset, Accessibility focus",
       home: "Home",
       about: "About",
       experience: "Skills & Expertise",
@@ -204,7 +204,7 @@ export const translations: Record<Language, RootTranslations> = {
         "Accessibility audit for a site that shows and rates public restrooms across Helsinki:",
       features: [
         "Includes: accessibility and cognitive audit for Best Seats in Helsinki",
-        "PDF report with findings and recommendation, includes cognitive accessibility aspects",
+        "PDF report with findings and recommendations, includes cognitive accessibility aspects",
         "Accessibility statement PDF",
       ],
       techNote:
@@ -294,7 +294,7 @@ export const translations: Record<Language, RootTranslations> = {
       title: "Lisää",
       titleJourney: "minusta",
       heroGreeting: "Heippa! Olen Milica,",
-      heroTagline: "Junior QA",
+      heroTagline: "Frontend-kehittäjä QA-mindsetillä",
       aboutMeButton: "Minusta",
       seeWorksButton: "Katso työt",
       readMore: "Lue lisää",
@@ -331,7 +331,7 @@ export const translations: Record<Language, RootTranslations> = {
         "Haluaisin keskustella kanssasi Kaizen-filosofiasta työn kontekstissa...",
       sendButton: "Lähetä viesti",
       sending: "Lähetetään...",
-      successMessage: "Kiitos! Viestisi heilahti matkaaan.",
+      successMessage: "Kiitos! Viestisi heilahti matkaan.",
       errorMessage:
         "Pahoittelut, viestin lähetyksessä tapahtui virhe. Yritäppäs uudelleen.",
       connect: "Ollaan yhteydessä",
@@ -353,7 +353,7 @@ export const translations: Record<Language, RootTranslations> = {
       title: "Kysymyksiä & Vastauksia",
     },
     sidebar: {
-      role: "Junior QA & frontend (saavutettavuuspainotteinen)",
+      role: "Frontend-kehittäjä\nLaatu ja saavutettavuus edellä",
       home: "Etusivu",
       about: "Minusta",
       experience: "Taidot & osaaminen",

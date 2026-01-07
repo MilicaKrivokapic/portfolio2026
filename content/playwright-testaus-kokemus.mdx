@@ -33,7 +33,7 @@ Vercel yritti buildata sivustoa, mutta kaatui virheeseen, koska Playwrightin tyy
 
 ### CI/CD-konfiguraatio
 
-GitHub Actions workflow oli itseasiassa jo valmiiksi konfiguroitu ajamaan Playwright-testit automaattisesti joka kerta kun koodia pusketaan mainiin tai tehdään pull request. Muutin ainoastaan pnpm versioksi 10 vastavan lokaalin version kanssa yhteensopivaksi, lisäsin `CI: true` -ympäristömuuttujan ja lopulta kommentoin webkitin pois myös `playwright.config.ts`:stä koska sitä en ollut asentanut.
+GitHub Actions workflow oli itseasiassa jo valmiiksi konfiguroitu ajamaan Playwright-testit automaattisesti joka kerta kun koodia pusketaan mainiin tai tehdään pull request. Muutin pnpm versioksi 10 (vastavan lokaalin version kanssa yhteensopivaksi), lisäsin `CI: true` -ympäristömuuttujan ja lopulta kommentoin webkitin pois myös `playwright.config.ts`:stä koska sitä en ollut asentanut.
 
 ## AI opena
 
@@ -47,8 +47,8 @@ Tietenkin AI:n kanssa pitää myös olla tarkkana, ettei usko pureskelematta kai
 
 ## Lopuksi
 
-Tuntui, että Playwrigthin virittäminen johonkin tälläiseen kepoisaan repoon kuten portfoliosivuille voi olla vähän overkilliä. Toisaalta, koen että opin tästä todella paljon, ja innoistuin automaatioista.
+Tuntui, että Playwrightin virittäminen johonkin tälläiseen kepoisaan repoon kuten portfoliosivuille voi olla vähän overkilliä. Toisaalta, koen että opin tästä miniprojektista, ja innoistuin hurjan paljon automaatioista!
 
-Seuravaaksi voisin virittää automaattisia Cypress-testejä. Ja ehkä jonkinlainen oikeinkirjoitus-testaus olisi myös hyvä, löydän ihan jatkuvasti typoja täältä blogista. :D
+Seuraavaksi voisin virittää automaattisia Cypress-testejä. Ja ehkä jonkinlainen oikeinkirjoitus-testaus olisi myös hyvä, löydän ihan jatkuvasti typoja täältä blogista. :D Pahoittelut siitä...
 
 [Lue täältä mitä varsinaisesti testasin ja miten se meni](/projects/playwright-smoke-tests)
