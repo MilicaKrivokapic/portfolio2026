@@ -126,7 +126,7 @@ export default function ProfileSidebar() {
             </div>
           </Link>
           <Link href="/" className="text-xl font-bold mt-1 hover:text-accent-light dark:hover:text-accent-dark transition-colors text-center" aria-label="Go to home">MILICA KRIVOKAPIC</Link>
-          <p className="text-muted-light dark:text-muted-dark text-center text-sm">
+          <p className="text-muted-light dark:text-muted-dark text-center text-sm whitespace-pre-line">
             {t('sidebar.role')}
           </p>
         </div>
