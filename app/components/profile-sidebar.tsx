@@ -53,7 +53,7 @@ export default function ProfileSidebar() {
     },
     {
       id: 'about',
-      label: t('about.title'),
+      label: t('sidebar.about'),
       href: '/about'
     },
     {
